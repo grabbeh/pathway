@@ -144,7 +144,7 @@ const IndexPage = props => {
               </Text>
               <Box my={4}>
                 <Flex justifyContent='space-around' flexWrap='wrap'>
-                  <Box>
+                  <Box width={[1,1/3]}>
                     <Text fontSize={5} color='white' fontWeight='bold' mt={0}>
                       47%
                     </Text>
@@ -155,7 +155,7 @@ const IndexPage = props => {
                       in A&E attendances
                     </Text>
                   </Box>
-                  <Box>
+                  <Box width={[1,1/3]}>
                     <Text fontSize={5} color='white' fontWeight='bold' mt={0}>
                       48%
                     </Text>
@@ -166,7 +166,7 @@ const IndexPage = props => {
                       in admissions
                     </Text>
                   </Box>
-                  <Box>
+                  <Box width={[1,1/3]}>
                     <Text fontSize={5} color='white' fontWeight='bold' mt={0}>
                       39%
                     </Text>
