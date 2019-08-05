@@ -145,35 +145,35 @@ const IndexPage = props => {
               <Box my={4}>
                 <Flex justifyContent='space-around' flexWrap='wrap'>
                   <Box width={[1,1/3]}>
-                    <Text fontSize={5} color='white' fontWeight='bold' mt={0}>
+                    <Text textAlign='center' fontSize={5} color='white' fontWeight='bold' mt={0}>
                       47%
                     </Text>
-                    <Text fontSize={4} color='white' fontWeight='bold' mt={0}>
+                    <Text textAlign='center' fontSize={4} color='white' fontWeight='bold' mt={0}>
                       reduction
                     </Text>
-                    <Text color='white' mt={0}>
+                    <Text textAlign='center' color='white' mt={0}>
                       in A&E attendances
                     </Text>
                   </Box>
                   <Box width={[1,1/3]}>
-                    <Text fontSize={5} color='white' fontWeight='bold' mt={0}>
+                    <Text textAlign='center'  fontSize={5} color='white' fontWeight='bold' mt={0}>
                       48%
                     </Text>
-                    <Text fontSize={4} color='white' fontWeight='bold' mt={0}>
+                    <Text textAlign='center' fontSize={4} color='white' fontWeight='bold' mt={0}>
                       reduction
                     </Text>
-                    <Text color='white' mt={0}>
+                    <Text textAlign='center' color='white' mt={0}>
                       in admissions
                     </Text>
                   </Box>
                   <Box width={[1,1/3]}>
-                    <Text fontSize={5} color='white' fontWeight='bold' mt={0}>
+                    <Text textAlign='center' fontSize={5} color='white' fontWeight='bold' mt={0}>
                       39%
                     </Text>
-                    <Text fontSize={4} color='white' fontWeight='bold' mt={0}>
+                    <Text textAlign='center' fontSize={4} color='white' fontWeight='bold' mt={0}>
                       reduction
                     </Text>
-                    <Text color='white' mt={0}>
+                    <Text textAlign='center' color='white' mt={0}>
                       in bed days
                     </Text>
                   </Box>
