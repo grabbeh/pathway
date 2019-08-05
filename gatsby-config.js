@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `The Pathway Social Franchise`,
     description: `The Pathway model offers a new way to help people who are homeless`,
-   
+    author: `John Doe`
   },
   plugins: [
     `gatsby-plugin-styled-components`,
