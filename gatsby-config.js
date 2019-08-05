@@ -4,9 +4,9 @@ if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`
+    title: `The Pathway Social Franchise`,
+    description: `The Pathway model offers a new way to help people who are homeless`,
+   
   },
   plugins: [
     `gatsby-plugin-styled-components`,
