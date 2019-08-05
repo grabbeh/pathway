@@ -45,9 +45,7 @@ const Layout = props => {
       </ThemeProvider>
 
       <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href='https://www.gatsbyjs.org'>Gatsby</a>
+        <Box bg='grey' height={100}/>
       </footer>
     </Fragment>
   )
