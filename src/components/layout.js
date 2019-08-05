@@ -29,11 +29,11 @@ const Layout = props => {
         meta={[
           {
             name: 'description',
-            content: 'Friendly neighbourhood cafe/restaurant in Stroud Green'
+            content: 'Pathway Social Franchise'
           },
           {
             name: 'keywords',
-            content: 'Crouch End, Stroud Green, Cafe, Restaurant'
+            content: 'Homelessness, franchises, charity, partnerships, hospitals'
           }
         ]}
       >
