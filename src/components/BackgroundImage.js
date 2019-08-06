@@ -21,11 +21,11 @@ const BackgroundSection = ({ className, children }) => (
     `}
      render={data => {
        // Set ImageData.
-       const imageData = data.allContentfulHomePage.headerImage.fluid
+       //const imageData = data.allContentfulHomePage.headerImage.fluid
        return (
           <BackgroundImage Tag="section"
                            className={className}
-                           fluid={imageData}
+                         //  fluid={imageData}
                            backgroundColor={`#040e18`}
           >
     {children}
