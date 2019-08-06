@@ -75,7 +75,7 @@ const IndexPage = props => {
           //  image='https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80'
           //>
             <Flex justifyContent='center'>
-              <Box maxWidth={1200}>
+              <Box maxWidth={960}>
                 <Flex
                   alignItems='center'
                   width={[1, 3 / 4, 1 / 2]}
@@ -97,7 +97,7 @@ const IndexPage = props => {
         </Flex>
         <Box px={[3, 4, 6]} py={4}>
           <Flex justifyContent='center'>
-            <Box maxWidth={1200}>
+            <Box maxWidth={960}>
               <Flex flexWrap='wrap'>
                 <Box width={[1, 1 / 2]}>
                   <Box mr={3}>
@@ -133,7 +133,7 @@ const IndexPage = props => {
         </Box>
         <Box bg='green'>
           <Flex justifyContent='center'>
-            <Box my={6} px={[3, 5]} maxWidth={1200}>
+            <Box my={6} px={[3, 5]} maxWidth={960}>
               <Text
                 mt={0}
                 color='white'
