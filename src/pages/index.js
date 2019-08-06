@@ -4,6 +4,7 @@ import SEO from '../components/seo'
 import Flex from '../components/Flex'
 import Box from '../components/Box'
 import Text from '../components/Text'
+import BackgroundImage from '../components/BackgroundImage'
 import styled from 'styled-components'
 import { layout } from 'styled-system'
 import { graphql } from 'gatsby'
@@ -68,10 +69,11 @@ const IndexPage = props => {
         </Box>
         <Flex flexWrap='wrap'>
           <Flex bg='green' flex='0 0 20px' />
-          <BackgroundImage
-            style={{ flex: '1' }}
-            image='https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80'
-          >
+    
+          <BackgroundImage>
+           // style={{ flex: '1' }}
+          //  image='https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80'
+          //>
             <Flex justifyContent='center'>
               <Box maxWidth={1200}>
                 <Flex
