@@ -186,7 +186,7 @@ const IndexPage = props => {
         </Box>
         <Box pb={5} px={[3, 5]}>
           <Flex justifyContent='center'>
-            <Box maxWidth={800}>
+            <Box maxWidth={960}>
               <Box>
                 <Text color='blue' textAlign='center'>
                   About
