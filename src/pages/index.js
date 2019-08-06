@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Wrapper from '../components/Wrapper'
 import SEO from '../components/seo'
 import IntroSection from '../components/IntroSection'
 import AboutSection from '../components/AboutSection'
@@ -8,13 +8,13 @@ import Hero from '../components/Hero'
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Wrapper>
       <SEO title='Home' />
       <Hero />
       <IntroSection />
       <Stats />
       <AboutSection />
-    </Layout>
+    </Wrapper>
   )
 }
 
