@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
-const BackgroundSection = ({ className }) => (
+const BackgroundSection = ({ className, children }) => (
     <StaticQuery query={graphql`
       query {
          allContentfulHomePage {
@@ -28,7 +28,7 @@ const BackgroundSection = ({ className }) => (
                            fluid={imageData}
                            backgroundColor={`#040e18`}
           >
-            <h1>Hello gatsby-background-image</h1>
+    {children}
           </BackgroundImage>
        )
      }
