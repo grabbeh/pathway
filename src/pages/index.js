@@ -20,7 +20,7 @@ const image = props =>
   props.image ? { backgroundImage: `url(${props.image})` } : null
 
 const height = props => (props.height ? { height: props.height } : null)
-
+/*
 const BackgroundImage = styled.div`
   background-position: center;
   background-size: cover;
@@ -40,7 +40,7 @@ BackgroundImage.propTypes = {
   width: numberStringOrArray
 }
 
-BackgroundImage.displayName = 'BackgroundImage'
+BackgroundImage.displayName = 'BackgroundImage'*/
 
 const Heading = Text.withComponent('h1')
 
