@@ -4,7 +4,7 @@ import SEO from '../components/seo'
 import Flex from '../components/Flex'
 import Box from '../components/Box'
 import Text from '../components/Text'
-import BackgroundImage from '../components/BackgroundImage'
+//import BackgroundImage from '../components/BackgroundImage'
 import styled from 'styled-components'
 import { layout } from 'styled-system'
 import { graphql } from 'gatsby'
@@ -20,7 +20,7 @@ const image = props =>
   props.image ? { backgroundImage: `url(${props.image})` } : null
 
 const height = props => (props.height ? { height: props.height } : null)
-/*
+
 const BackgroundImage = styled.div`
   background-position: center;
   background-size: cover;
@@ -40,7 +40,7 @@ BackgroundImage.propTypes = {
   width: numberStringOrArray
 }
 
-BackgroundImage.displayName = 'BackgroundImage'*/
+BackgroundImage.displayName = 'BackgroundImage'
 
 const Heading = Text.withComponent('h1')
 
@@ -71,9 +71,9 @@ const IndexPage = props => {
           <Flex bg='green' flex='0 0 20px' />
     
           <BackgroundImage>
-           // style={{ flex: '1' }}
-          //  image='https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80'
-          //>
+           style={{ flex: '1' }}
+           image='https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80'
+          >
             <Flex justifyContent='center'>
               <Box maxWidth={960}>
                 <Flex
