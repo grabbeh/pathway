@@ -4,11 +4,15 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../theme.js'
-import Box from '../components/Box'
+import Box from './Box'
+import Header from './Header'
 
 const Style = createGlobalStyle`
   * { box-sizing: border-box; }
-  body{ margin:0; padding: 0;}
+  body{ margin:0; padding: 0;
+    font-family: Poppins, system-ui, sans-serif;
+    line-height: 1.5;
+  }
 `
 
 const Layout = props => {
@@ -33,7 +37,8 @@ const Layout = props => {
           },
           {
             name: 'keywords',
-            content: 'Homelessness, franchises, charity, partnerships, hospitals'
+            content:
+              'Homelessness, franchises, charity, partnerships, hospitals'
           }
         ]}
       >
@@ -41,12 +46,14 @@ const Layout = props => {
       </Helmet>
       <Style />
       <ThemeProvider theme={theme}>
-        <Box>{props.children}</Box>
+        <Box>
+          <Header />
+          <Box>{props.children}</Box>
+          <footer>
+            <Box bg='grey' height={100} />
+          </footer>
+        </Box>
       </ThemeProvider>
-
-      <footer>
-        <Box bg='grey' height={100}/>
-      </footer>
     </Fragment>
   )
 }
