@@ -26,6 +26,7 @@ module.exports = {
         }
       }
     },
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-theme-ui`
   ]
 }

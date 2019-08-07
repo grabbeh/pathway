@@ -3,6 +3,7 @@ import Text from './Text'
 import Box from './Box'
 import { graphql, useStaticQuery } from 'gatsby'
 import CenterSection from './CenterSection'
+import Animation from './ScrollAnimation'
 
 const IntroSection = () => {
   const data = useStaticQuery(graphql`
@@ -26,25 +27,31 @@ const IntroSection = () => {
 
   return (
     <CenterSection>
-      <Box mb={3}>
-        <Text fontWeight='bold' fontSize={3} textAlign='center'>
-          Who is Pathway?
-        </Text>
+      <Animation>
+        <Box mb={3}>
+          <Text fontWeight='bold' fontSize={3} textAlign='center'>
+            Who is Pathway?
+          </Text>
+        </Box>
+      </Animation>
+      <Box>
+        <Animation>
+          <Text fontSize={3} textAlign='center' color='blue'>
+            Pathway is the UK’s leading homeless healthcare charity. We work
+            with the NHS and other partners to create improved models of care
+            for homeless people.
+          </Text>
+        </Animation>
       </Box>
       <Box>
-        <Text fontSize={3} textAlign='center' color='blue'>
-          Pathway is the UK’s leading homeless healthcare charity. We work with
-          the NHS and other partners to create improved models of care for
-          homeless people.
-        </Text>
-      </Box>
-      <Box>
-        <Text
-          dangerouslySetInnerHTML={{
-            __html:
-              childContentfulHomePageAboutTextNode.childMarkdownRemark.html
-          }}
-        />
+        <Animation>
+          <Text
+            dangerouslySetInnerHTML={{
+              __html:
+                childContentfulHomePageAboutTextNode.childMarkdownRemark.html
+            }}
+          />
+        </Animation>
       </Box>
     </CenterSection>
   )

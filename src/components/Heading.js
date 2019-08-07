@@ -3,10 +3,11 @@ import Text from './Text'
 const Heading = Text.withComponent('h1')
 
 Heading.defaultProps = {
-  fontSize: 6,
-  lineHeight: 1.1,
+  fontSize: 7,
+  lineHeight: '68px',
   m: 0,
-  color: 'green'
+  color: 'green',
+  mb: 3
 }
 
 export default Heading

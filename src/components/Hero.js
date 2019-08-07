@@ -13,8 +13,13 @@ const Hero = () => (
         <Box maxWidth={800}>
           <Flex alignItems='center' width={[1, 3 / 4, 1 / 2]} height={500}>
             <Box px={[3, 3, 0]}>
-              <Heading>The Pathway Social Franchise</Heading>
-              <Text color='white' fontSize={2} fontWeight='bold'>
+              <Heading>Pathway Social Franchise</Heading>
+              <Text
+                color='white'
+                lineHeight='subtitle'
+                fontSize={4}
+                fontWeight='subtitle'
+              >
                 The Pathway model offers a new way to help people who are
                 homeless
               </Text>

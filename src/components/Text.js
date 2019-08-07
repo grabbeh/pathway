@@ -22,7 +22,8 @@ Text.propTypes = {
 
 Text.defaultProps = {
   color: 'grey',
-  fontSize: 2
+  fontSize: 2,
+  fontWeight: 'normal'
 }
 
 Text.span = Text.withComponent('span')
