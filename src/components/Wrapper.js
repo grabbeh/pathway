@@ -6,6 +6,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../theme.js'
 import Box from './Box'
 import Header from './Header'
+import '../index.css'
 
 const Style = createGlobalStyle`
   * { box-sizing: border-box; }

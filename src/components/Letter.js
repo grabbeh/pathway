@@ -44,7 +44,7 @@ const Letter = () => {
       </Box>
       <Flex justifyContent='space-between' flexWrap='wrap'>
         <Box width={[1, 1 / 2]}>
-          <Box mt={-4} mr={4}>
+          <Box mt={-4} mr={[0, 4]}>
             <Text
               lineHeight='45px'
               dangerouslySetInnerHTML={{
@@ -52,7 +52,7 @@ const Letter = () => {
                   childContentfulHomePageIntroTaglineTextNode
                     .childMarkdownRemark.html
               }}
-              textAlign='right'
+              textAlign={['center', 'right']}
               color='blue'
               fontWeight='bold'
               fontSize={5}
@@ -60,7 +60,7 @@ const Letter = () => {
           </Box>
         </Box>
         <Box width={[1, 1 / 2]}>
-          <Box ml={4}>
+          <Box ml={[0, 4]}>
             <Text
               lineHeight='25px'
               fontSize={3}

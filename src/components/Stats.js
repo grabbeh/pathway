@@ -12,9 +12,9 @@ const Stats = () => (
         <Text
           mt={0}
           color='white'
-          fontWeight='bold'
-          fontSize={3}
-          textAlign='center'
+          fontWeight='subtitle'
+          fontSize={5}
+          lineHeight='46px'
         >
           A review of 100 homeless A&E frequent attenders during the first 6
           months of Manchester’s MPath service showed a:
@@ -26,71 +26,84 @@ const Stats = () => (
             <Box width={[1, 1 / 3]}>
               <Text
                 textAlign='center'
-                fontSize={5}
+                fontSize={9}
                 color='white'
-                fontWeight='bold'
+                fontWeight='heavy'
                 mt={0}
               >
                 47%
               </Text>
-              <Text
+              <Text.span
                 textAlign='center'
+                fontWeight='subtitle'
                 fontSize={4}
-                color='white'
-                fontWeight='bold'
-                mt={0}
+                color='yellow'
               >
                 reduction
-              </Text>
-              <Text textAlign='center' color='white' mt={0}>
+              </Text.span>
+              <Text.span
+                textAlign='center'
+                fontWeight='subtitle'
+                fontSize={4}
+                color='white'
+              >
                 in A&E attendances
-              </Text>
+              </Text.span>
             </Box>
             <Box width={[1, 1 / 3]}>
               <Text
                 textAlign='center'
-                fontSize={5}
+                fontSize={9}
                 color='white'
-                fontWeight='bold'
-                mt={0}
+                fontWeight='heavy'
               >
                 48%
               </Text>
-              <Text
+              <Text.span
                 textAlign='center'
+                fontWeight='subtitle'
                 fontSize={4}
-                color='white'
-                fontWeight='bold'
-                mt={0}
+                color='yellow'
               >
                 reduction
-              </Text>
-              <Text textAlign='center' color='white' mt={0}>
+              </Text.span>
+              <Text.span
+                textAlign='center'
+                fontWeight='subtitle'
+                fontSize={4}
+                color='white'
+                mt={0}
+              >
                 in admissions
-              </Text>
+              </Text.span>
             </Box>
             <Box width={[1, 1 / 3]}>
               <Text
                 textAlign='center'
-                fontSize={5}
+                fontSize={9}
                 color='white'
-                fontWeight='bold'
+                fontWeight='heavy'
                 mt={0}
               >
                 39%
               </Text>
-              <Text
+              <Text.span
                 textAlign='center'
+                fontWeight='subtitle'
                 fontSize={4}
-                color='white'
-                fontWeight='bold'
-                mt={0}
+                color='yellow'
               >
                 reduction
-              </Text>
-              <Text textAlign='center' color='white' mt={0}>
+              </Text.span>
+              <Text.span
+                textAlign='center'
+                fontWeight='subtitle'
+                color='white'
+                fontSize={4}
+                mt={0}
+              >
                 in bed days
-              </Text>
+              </Text.span>
             </Box>
           </Flex>
         </Animation>

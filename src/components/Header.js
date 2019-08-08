@@ -40,9 +40,11 @@ const Header = () => (
         </MenuHide>
       </Flex>
       <div style={{ margin: 'auto' }} />
-      <BurgerShow>
-        <Burger />
-      </BurgerShow>
+      <Box mt={4} mr={2}>
+        <BurgerShow>
+          <Burger />
+        </BurgerShow>
+      </Box>
     </Flex>
   </Box>
 )
@@ -50,7 +52,7 @@ const Header = () => (
 const MenuHide = styled('div')(
   css({
     display: 'flex',
-    '@media screen and (max-width: 40em)': {
+    '@media screen and (max-width: 1200px)': {
       display: 'none'
     }
   })
@@ -60,7 +62,7 @@ const BurgerShow = styled('div')(
   css({
     display: 'none',
     justifyContent: 'flex-end',
-    '@media screen and (max-width: 40em)': {
+    '@media screen and (max-width: 1200px)': {
       display: 'flex'
     }
   })
