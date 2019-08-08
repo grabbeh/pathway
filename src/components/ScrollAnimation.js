@@ -4,7 +4,7 @@ import { useSpring, animated } from 'react-spring'
 
 const ScrollAnimation = ({ children, values }) => {
   const [ref, inView] = useInView({
-    threshold: 0,
+    threshold: -50,
     triggerOnce: true
   })
 
