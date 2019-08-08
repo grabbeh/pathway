@@ -24,73 +24,45 @@ const Stats = () => (
         <Animation>
           <Flex justifyContent='space-around' flexWrap='wrap'>
             <Box width={[1, 1 / 3]}>
-              <Text
-                textAlign='center'
-                fontSize={9}
-                color='white'
-                fontWeight='heavy'
-                mt={0}
-              >
+              <Text fontSize={9} color='white' fontWeight='heavy' mt={0}>
                 47%
               </Text>
               <Text.span
-                textAlign='center'
+                mr={2}
                 fontWeight='subtitle'
-                fontSize={4}
+                fontSize={3}
                 color='yellow'
               >
                 reduction
               </Text.span>
-              <Text.span
-                textAlign='center'
-                fontWeight='subtitle'
-                fontSize={4}
-                color='white'
-              >
+              <Text.span fontWeight='subtitle' fontSize={3} color='white'>
                 in A&E attendances
               </Text.span>
             </Box>
             <Box width={[1, 1 / 3]}>
-              <Text
-                textAlign='center'
-                fontSize={9}
-                color='white'
-                fontWeight='heavy'
-              >
+              <Text fontSize={9} color='white' fontWeight='heavy'>
                 48%
               </Text>
               <Text.span
-                textAlign='center'
+                mr={2}
                 fontWeight='subtitle'
-                fontSize={4}
+                fontSize={3}
                 color='yellow'
               >
                 reduction
               </Text.span>
-              <Text.span
-                textAlign='center'
-                fontWeight='subtitle'
-                fontSize={4}
-                color='white'
-                mt={0}
-              >
+              <Text.span fontWeight='subtitle' fontSize={3} color='white'>
                 in admissions
               </Text.span>
             </Box>
             <Box width={[1, 1 / 3]}>
-              <Text
-                textAlign='center'
-                fontSize={9}
-                color='white'
-                fontWeight='heavy'
-                mt={0}
-              >
+              <Text fontSize={9} color='white' fontWeight='heavy'>
                 39%
               </Text>
               <Text.span
-                textAlign='center'
+                mr={2}
                 fontWeight='subtitle'
-                fontSize={4}
+                fontSize={3}
                 color='yellow'
               >
                 reduction
@@ -99,7 +71,7 @@ const Stats = () => (
                 textAlign='center'
                 fontWeight='subtitle'
                 color='white'
-                fontSize={4}
+                fontSize={3}
                 mt={0}
               >
                 in bed days

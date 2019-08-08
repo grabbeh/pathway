@@ -8,7 +8,7 @@ import { FaAngleRight } from 'react-icons/fa'
 
 const FindOutMore = () => (
   <Flex justifyContent='center'>
-    <Box mx={6} maxWidth={800} py={5}>
+    <Box mx={[3, 6]} maxWidth={800} py={5}>
       <Text fontSize={5} fontWeight='subtitle' color='grey'>
         Find out more...
       </Text>
@@ -17,7 +17,7 @@ const FindOutMore = () => (
         and how you can get involved
       </Text>
       <Box mt={3}>
-        <Flex justifyContent='space-between' flexWrap='flex'>
+        <Flex justifyContent='space-between' flexWrap='wrap'>
           <Box width={[1, 1 / 3]}>
             <FullButton text='About' link='/About' />
           </Box>
@@ -36,11 +36,11 @@ const FindOutMore = () => (
 export default FindOutMore
 
 const FullButton = ({ text, link }) => (
-  <Button>
-    <Link to={link}>
-      <Box>
-        <Flex flexWrap='wrap'>
-          <Box width={150} bg='blue' p={2}>
+  <Box mt={[3, 0]}>
+    <Button>
+      <Link to={link}>
+        <Flex minWidth={200} width={[1, 200]} flexWrap='wrap'>
+          <Box style={{ flex: '1' }} bg='blue' p={2}>
             <Text
               fontSize={4}
               textAlign='center'
@@ -50,13 +50,13 @@ const FullButton = ({ text, link }) => (
               {text}
             </Text>
           </Box>
-          <Box width={50} bg='turquoise'>
+          <Flex bg='turquoise' flex='0 0 50px'>
             <Text mt={10} fontSize={4} textAlign='center' color='white'>
               <FaAngleRight />
             </Text>
-          </Box>
+          </Flex>
         </Flex>
-      </Box>
-    </Link>
-  </Button>
+      </Link>
+    </Button>
+  </Box>
 )
