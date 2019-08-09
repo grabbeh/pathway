@@ -21,17 +21,17 @@ const FindOutMore = () => (
           <Box width={[1, 1 / 3]}>
             <Box mr={[0, 3]}>
               <Circle />
-              <FullButton text='About' link='/about' />
+              <FullButton text='About' link='/' />
             </Box>
           </Box>
           <Box width={[1, 1 / 3]}>
             <Box mr={[0, 3]}>
-              <FullButton text='Go' link='/go' />
+              <FullButton text='Go' link='/' />
             </Box>
           </Box>
           <Box width={[1, 1 / 3]}>
             <Box>
-              <FullButton text='Franchise' link='/franchise' />
+              <FullButton text='Franchise' link='/' />
             </Box>
           </Box>
         </Flex>
