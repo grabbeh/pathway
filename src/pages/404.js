@@ -1,11 +1,11 @@
 import React from 'react'
 import Box from '../components/Box'
 
-const 404 = () => (
+  const Error = () => (
   <Box>
   ERROR!!!
   </Box>
 
 )
 
-export default 404
+export default Error
