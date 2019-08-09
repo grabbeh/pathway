@@ -29,7 +29,7 @@ const FindOutMore = () => (
             </Box>
           </Box>
           <Box width={[1, 1 / 3]}>
-            <Box mt={3} mr={[0, 3]}>
+            <Box mb={3} mr={[0, 3]}>
                 <Flex justifyContent='center'>
                 <Circle />
                 </Flex>
@@ -38,7 +38,7 @@ const FindOutMore = () => (
             </Box>
           </Box>
           <Box width={[1, 1 / 3]}>
-            <Box>
+            <Box mb={3}>
                 <Flex justifyContent='center'>
                 <Circle />
                 </Flex>
