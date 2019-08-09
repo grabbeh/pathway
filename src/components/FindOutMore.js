@@ -58,7 +58,7 @@ const FullButton = ({ text, link }) => (
             </Text>
           </Box>
           <Flex bg='turquoise' flex='0 0 50px'>
-            <Text mt={10} fontSize={4} textAlign='center' color='white'>
+            <Text width={1} mt={10} fontSize={4} textAlign='center' color='white'>
               <FaAngleRight />
             </Text>
           </Flex>
