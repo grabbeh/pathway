@@ -31,7 +31,7 @@ const FindOutMore = () => (
           </Box>
           <Box width={[1, 1 / 3]}>
             <Box>
-              <FullButton text='Franchise' link='/' />
+              <FullButton text='Franchise' link='/franchise' />
             </Box>
           </Box>
         </Flex>
