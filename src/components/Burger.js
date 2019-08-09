@@ -7,8 +7,8 @@ export default ({ size = 24 }) => (
     width={size}
     height={size}
     fill='none'
-    stroke='currentcolor'
-    strokeWidth='3'
+    stroke='#4A4A4A'
+    strokeWidth='2'
     style={{
       display: 'block',
       verticalAlign: 'middle',

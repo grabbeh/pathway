@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useContext } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -7,6 +7,7 @@ import theme from '../theme.js'
 import Box from './Box'
 import Header from './Header'
 import '../index.css'
+import { useSpring, animated } from 'react-spring'
 
 const Style = createGlobalStyle`
   * { box-sizing: border-box; }
@@ -15,6 +16,9 @@ const Style = createGlobalStyle`
     line-height: 1.5;
   }
 `
+
+export const Context = React.createContext()
+export const useAppContext = () => useContext(Context)
 
 const Wrapper = props => {
   const data = useStaticQuery(graphql`
@@ -26,6 +30,19 @@ const Wrapper = props => {
       }
     }
   `)
+
+  const [open, setOpen] = useState(false)
+
+  const context = {
+    open,
+    setOpen,
+    toggleOpen: () => setOpen(!open)
+  }
+
+  const animProps = useSpring({
+    config: { duration: 200 },
+    opacity: open ? 0 : 1
+  })
 
   return (
     <Fragment>
@@ -46,15 +63,21 @@ const Wrapper = props => {
         <html lang='en' />
       </Helmet>
       <Style />
-      <ThemeProvider theme={theme}>
-        <Box>
-          <Header />
-          <Box>{props.children}</Box>
-          <footer>
-            <Box bg='grey' height={100} />
-          </footer>
-        </Box>
-      </ThemeProvider>
+
+      <Context.Provider value={context}>
+        <ThemeProvider theme={theme}>
+          <Box>
+            <Header />
+            <animated.div style={animProps}>
+              <Box>{props.children}</Box>
+            </animated.div>
+
+            <footer>
+              <Box bg='grey' height={100} />
+            </footer>
+          </Box>
+        </ThemeProvider>
+      </Context.Provider>
     </Fragment>
   )
 }
