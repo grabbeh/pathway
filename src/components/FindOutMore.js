@@ -19,6 +19,7 @@ const FindOutMore = () => (
       <Box mt={3}>
         <Flex justifyContent='space-between' flexWrap='wrap'>
           <Box width={[1, 1 / 3]}>
+            <Circle />
             <FullButton text='About' link='/About' />
           </Box>
           <Box width={[1, 1 / 3]}>
@@ -37,9 +38,9 @@ export default FindOutMore
 
 const FullButton = ({ text, link }) => (
   <Box mt={[3, 0]}>
-    <Button>
+    <Button width={1}>
       <Link to={link}>
-        <Flex minWidth={200} width={[1, 200]} flexWrap='wrap'>
+        <Flex flexWrap='wrap'>
           <Box style={{ flex: '1' }} bg='blue' p={2}>
             <Text
               fontSize={4}
@@ -59,4 +60,21 @@ const FullButton = ({ text, link }) => (
       </Link>
     </Button>
   </Box>
+)
+
+const Circle = () => (
+  <svg
+    width='168'
+    height='168'
+    viewBox='0 0 168 168'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      fill-rule='evenodd'
+      clip-rule='evenodd'
+      d='M84 168C130.392 168 168 130.392 168 84C168 37.6081 130.392 0 84 0C37.6081 0 0 37.6081 0 84C0 130.392 37.6081 168 84 168Z'
+      fill='#F7B100'
+    />
+  </svg>
 )
