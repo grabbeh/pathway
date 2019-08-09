@@ -4,12 +4,10 @@ import Flex from '../components/Flex'
 import Text from '../components/Text'
 import { useSpring, animated } from 'react-spring'
 
-const Menu = ({ open, setOpen }) => {
+const Menu = ({ open }) => {
   const props = useSpring({
     config: { duration: 200 },
-    opacity: open ? 1 : 0,
-    touchAction: 'none',
-    overscrollBehavior: 'contain'
+    opacity: open ? 1 : 0
   })
   return (
     <animated.div style={props}>
