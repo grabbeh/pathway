@@ -19,14 +19,20 @@ const FindOutMore = () => (
       <Box mt={3}>
         <Flex justifyContent='space-between' flexWrap='wrap'>
           <Box width={[1, 1 / 3]}>
-            <Circle />
-            <FullButton text='About' link='/About' />
+            <Box mr={[0, 3]}>
+              <Circle />
+              <FullButton text='About' link='/About' />
+            </Box>
           </Box>
           <Box width={[1, 1 / 3]}>
-            <FullButton text='Go' link='/Go' />
+            <Box mr={[0, 3]}>
+              <FullButton text='Go' link='/Go' />
+            </Box>
           </Box>
           <Box width={[1, 1 / 3]}>
-            <FullButton text='Franchise' link='/Franchise' />
+            <Box>
+              <FullButton text='Franchise' link='/Franchise' />
+            </Box>
           </Box>
         </Flex>
       </Box>
