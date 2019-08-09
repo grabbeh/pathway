@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import propTypes from '@styled-system/prop-types'
-import { space, color, typography } from 'styled-system'
+import { space, layout, color, typography } from 'styled-system'
 
 export const caps = props =>
   props.caps
@@ -10,7 +10,7 @@ export const caps = props =>
     }
     : null
 
-const Text = styled('div')(typography, space, color, caps)
+const Text = styled('div')(typography, space, color, caps, layout)
 
 Text.displayName = 'Text'
 
