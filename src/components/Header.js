@@ -52,8 +52,8 @@ const Header = () => {
                     return (
                       <Box key={i}>
                         <Link to={`/${url}`}>
-                          <Text fontSize={1}>{title}</Text>
-                          <Text color='green' fontSize={1}>
+                          <Text fontSize={2}>{title}</Text>
+                          <Text color='blue' fontSize={0}>
                             {subtitle}
                           </Text>
                         </Link>
