@@ -2,9 +2,10 @@ import React from 'react'
 import Box from '../components/Box'
 import Flex from '../components/Flex'
 import Text from '../components/Text'
+import Link from './InternalLink'
 import { useSpring, animated } from 'react-spring'
 
-const Menu = ({ open }) => {
+const Menu = ({ open, navigationItems }) => {
   const props = useSpring({
     config: { duration: 200 },
     opacity: open ? 1 : 0
@@ -21,24 +22,25 @@ const Menu = ({ open }) => {
         bg='white'
         mt={5}
       >
-        <Box pt={[4, 6]}>
+        <Box>
           <Flex alignItems='center' justifyContent='center'>
             <Box>
-              <Box mb={3}>
-                <Text fontWeight='bold' color='grey' fontSize={5}>
-                  Home
-                </Text>
-              </Box>
-              <Box mb={3}>
-                <Text fontWeight='bold' color='grey' fontSize={5}>
-                  About
-                </Text>
-              </Box>
-              <Box>
-                <Text fontWeight='bold' color='grey' fontSize={5}>
-                  Team
-                </Text>
-              </Box>
+              {navigationItems.map(({ url, title }, i) => {
+                return (
+                  <Box mb={3} key={i}>
+                    <Link to={`/${url}`}>
+                      <Text
+                        textAlign='center'
+                        color='grey'
+                        fontWeight='bold'
+                        fontSize={5}
+                      >
+                        {title}
+                      </Text>
+                    </Link>
+                  </Box>
+                )
+              })}
             </Box>
           </Flex>
         </Box>

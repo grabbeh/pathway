@@ -7,14 +7,38 @@ import { css } from 'theme-ui'
 import styled from 'styled-components'
 import Logo from './Logo'
 import Menu from './Menu'
+import Link from './InternalLink'
 import { MdClose } from 'react-icons/md'
 import { useAppContext } from './Wrapper'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulNavigationContainer {
+        edges {
+          node {
+            navigationItem {
+              title
+              subtitle
+              url
+            }
+          }
+        }
+      }
+    }
+  `)
+  let { node } = data.allContentfulNavigationContainer.edges[0]
+  console.log(node)
+
   let state = useAppContext()
   return (
     <Box>
-      <Menu open={state.open} setOpen={state.toggleOpen} />
+      <Menu
+        navigationItems={node.navigationItem}
+        open={state.open}
+        setOpen={state.toggleOpen}
+      />
       <Box>
         <Flex flexWrap='wrap'>
           <Box width={225} mr={5}>
@@ -24,24 +48,18 @@ const Header = () => {
             <MenuHide>
               <Box width={900}>
                 <Flex justifyContent='space-between'>
-                  <Box>
-                    <Text fontSize={1}>About us</Text>
-                  </Box>
-                  <Box>
-                    <Text fontSize={1}>Homelessness</Text>
-                  </Box>
-                  <Box>
-                    <Text fontSize={1}>What we do</Text>
-                  </Box>
-                  <Box>
-                    <Text fontSize={1}>How you can get involved</Text>
-                  </Box>
-                  <Box>
-                    <Text fontSize={1}>Our online manual</Text>
-                  </Box>
-                  <Box>
-                    <Text fontSize={1}>Contact</Text>
-                  </Box>
+                  {node.navigationItem.map(({ url, title, subtitle }, i) => {
+                    return (
+                      <Box key={i}>
+                        <Link to={`/${url}`}>
+                          <Text fontSize={1}>{title}</Text>
+                          <Text color='green' fontSize={1}>
+                            {subtitle}
+                          </Text>
+                        </Link>
+                      </Box>
+                    )
+                  })}
                 </Flex>
               </Box>
             </MenuHide>
