@@ -6,6 +6,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../theme.js'
 import Box from './Box'
 import Header from './Header'
+import Footer from './Footer'
 import '../index.css'
 import { useSpring, animated } from 'react-spring'
 
@@ -71,10 +72,7 @@ const Wrapper = props => {
             <animated.div style={animProps}>
               <Box>{props.children}</Box>
             </animated.div>
-
-            <footer>
-              <Box bg='grey' height={100} />
-            </footer>
+            <Footer />
           </Box>
         </ThemeProvider>
       </Context.Provider>

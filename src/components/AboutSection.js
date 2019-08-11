@@ -2,16 +2,21 @@ import React from 'react'
 import Text from './Text'
 import Box from './Box'
 import { graphql, useStaticQuery } from 'gatsby'
-import CenterSection from './CenterSection'
+import Flex from './Flex'
 import Animation from './ScrollAnimation'
 
-const IntroSection = () => {
+const AboutSection = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulHomePage {
+      allContentfulAboutPage {
         edges {
           node {
-            childContentfulHomePageAboutTextNode {
+            childContentfulAboutPageAboutDescriptionTextNode {
+              childMarkdownRemark {
+                html
+              }
+            }
+            childContentfulAboutPageAboutSubtitleTextNode {
               childMarkdownRemark {
                 html
               }
@@ -22,39 +27,54 @@ const IntroSection = () => {
     }
   `)
 
-  let { node } = data.allContentfulHomePage.edges[0]
-  let { childContentfulHomePageAboutTextNode } = node
+  let { node } = data.allContentfulAboutPage.edges[0]
+  let {
+    childContentfulAboutPageAboutDescriptionTextNode,
+    childContentfulAboutPageAboutSubtitleTextNode
+  } = node
 
   return (
-    <CenterSection>
-      <Animation>
-        <Box mb={3}>
-          <Text fontWeight='bold' fontSize={3} textAlign='center'>
-            Who is Pathway?
-          </Text>
+    <Flex justifyContent='center'>
+      <Box mx={[3, 6]} maxWidth={800} py={5}>
+        <Animation>
+          <Box mb={3}>
+            <Text fontSize={3} color='green'>
+              About
+            </Text>
+            <Text fontWeight='bold' fontSize={5}>
+              Who is Pathway?
+            </Text>
+          </Box>
+        </Animation>
+        <Box>
+          <Animation>
+            <Text
+              fontSize={4}
+              fontWeight='bold'
+              color='green'
+              dangerouslySetInnerHTML={{
+                __html:
+                  childContentfulAboutPageAboutSubtitleTextNode
+                    .childMarkdownRemark.html
+              }}
+            />
+          </Animation>
         </Box>
-      </Animation>
-      <Box>
-        <Animation>
-          <Text fontSize={3} textAlign='center' color='blue'>
-            Pathway is the UK’s leading homeless healthcare charity. We work
-            with the NHS and other partners to create improved models of care
-            for homeless people.
-          </Text>
-        </Animation>
+        <Box>
+          <Animation>
+            <Text
+              fontSize={4}
+              dangerouslySetInnerHTML={{
+                __html:
+                  childContentfulAboutPageAboutDescriptionTextNode
+                    .childMarkdownRemark.html
+              }}
+            />
+          </Animation>
+        </Box>
       </Box>
-      <Box>
-        <Animation>
-          <Text
-            dangerouslySetInnerHTML={{
-              __html:
-                childContentfulHomePageAboutTextNode.childMarkdownRemark.html
-            }}
-          />
-        </Animation>
-      </Box>
-    </CenterSection>
+    </Flex>
   )
 }
 
-export default IntroSection
+export default AboutSection

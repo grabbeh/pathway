@@ -29,8 +29,6 @@ const Header = () => {
     }
   `)
   let { node } = data.allContentfulNavigationContainer.edges[0]
-  console.log(node)
-
   let state = useAppContext()
   return (
     <Box>
@@ -42,7 +40,9 @@ const Header = () => {
       <Box>
         <Flex flexWrap='wrap'>
           <Box width={225} mr={5}>
-            <Logo />
+            <Link to='/'>
+              <Logo />
+            </Link>
           </Box>
           <Flex justifyContent='center' alignItems='center'>
             <MenuHide>

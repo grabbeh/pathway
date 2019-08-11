@@ -2,7 +2,6 @@ import React from 'react'
 import Wrapper from '../components/Wrapper'
 import SEO from '../components/seo'
 import FindOutMore from '../components/FindOutMore'
-import AboutSection from '../components/AboutSection'
 import Stats from '../components/Stats'
 import Hero from '../components/Hero'
 import SocialFranchise from '../components/SocialFranchise'
@@ -16,8 +15,7 @@ const IndexPage = () => {
       <SocialFranchise />
       <Letter />
       <Stats />
-      <FindOutMore />
-      <AboutSection />
+      <FindOutMore homelessness howyoucanhelp whatwedo />
     </Wrapper>
   )
 }

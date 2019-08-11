@@ -5,47 +5,62 @@ import Link from './InternalLink'
 import Button from './Button'
 import Flex from './Flex'
 import { FaAngleRight } from 'react-icons/fa'
+import Circle from '../svg/Circle'
 
-const FindOutMore = () => (
-  <Flex justifyContent='center'>
-    <Box mx={[3, 6]} maxWidth={800} py={5}>
-      <Text fontSize={5} fontWeight='subtitle' color='grey'>
-        Find out more...
-      </Text>
-      <Text fontSize={3}>
-        Below you can find more information on homelessness, how Pathway helps,
-        and how you can get involved
-      </Text>
-      <Box mt={3}>
-        <Flex justifyContent='space-between' flexWrap='wrap'>
-          <Box width={[1, 1 / 3]}>
-            <Box mb={3} mr={[0, 3]}>
-                <Text textAlign='center'>
-                <Circle />
-                 </Text>
-                <FullButton text='About' link='/' />
-            </Box>
-          </Box>
-          <Box width={[1, 1 / 3]}>
-            <Box mb={3} mr={[0, 3]}> 
+const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => (
+  <Box bg={bg}>
+    <Flex justifyContent='center'>
+      <Box mx={[3, 6]} maxWidth={800} py={5}>
+        <Text fontSize={5} fontWeight='subtitle' color='grey'>
+          Find out more...
+        </Text>
+        <Text fontSize={3}>
+          Below you can find more information on homelessness, how Pathway
+          helps, and how you can get involved
+        </Text>
+        <Box mt={3}>
+          <Flex justifyContent='space-between' flexWrap='wrap'>
+            {homelessness && (
+              <Box width={[1, 1 / 3]}>
+                <Box mb={3} mr={[0, 3]}>
+                  <Box mb={3}>
                     <Text textAlign='center'>
-                <Circle />
-                 </Text>
-              <FullButton text='Go' link='/' />
-            </Box>
-          </Box>
-          <Box width={[1, 1 / 3]}>
-            <Box mb={3}>
-                   <Text textAlign='center'>
-                <Circle />
-                 </Text>
-              <FullButton text='Franchise' link='/franchise' />
-            </Box>
-          </Box>
-        </Flex>
+                      <Circle size={125} />
+                    </Text>
+                  </Box>
+                  <FullButton text='Homelessness' link='/about-us' />
+                </Box>
+              </Box>
+            )}
+            {whatwedo && (
+              <Box width={[1, 1 / 3]}>
+                <Box mb={3} mr={[0, 3]}>
+                  <Box mb={3}>
+                    <Text textAlign='center'>
+                      <Circle size={125} />
+                    </Text>
+                  </Box>
+                  <FullButton text='What we do' link='/' />
+                </Box>
+              </Box>
+            )}
+            {howyoucanhelp && (
+              <Box width={[1, 1 / 3]}>
+                <Box mb={3}>
+                  <Box mb={3}>
+                    <Text textAlign='center'>
+                      <Circle size={125} />
+                    </Text>
+                  </Box>
+                  <FullButton text='How you can help' link='/franchise' />
+                </Box>
+              </Box>
+            )}
+          </Flex>
+        </Box>
       </Box>
-    </Box>
-  </Flex>
+    </Flex>
+  </Box>
 )
 
 export default FindOutMore
@@ -66,7 +81,13 @@ const FullButton = ({ text, link }) => (
             </Text>
           </Box>
           <Flex bg='turquoise' flex='0 0 50px'>
-            <Text width={1} mt={10} fontSize={4} textAlign='center' color='white'>
+            <Text
+              width={1}
+              mt={10}
+              fontSize={4}
+              textAlign='center'
+              color='white'
+            >
               <FaAngleRight />
             </Text>
           </Flex>
@@ -74,21 +95,4 @@ const FullButton = ({ text, link }) => (
       </Link>
     </Button>
   </Box>
-)
-
-const Circle = () => (
-  <svg
-    width='168'
-    height='168'
-    viewBox='0 0 168 168'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
-      d='M84 168C130.392 168 168 130.392 168 84C168 37.6081 130.392 0 84 0C37.6081 0 0 37.6081 0 84C0 130.392 37.6081 168 84 168Z'
-      fill='#F7B100'
-    />
-  </svg>
 )

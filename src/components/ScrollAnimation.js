@@ -2,7 +2,7 @@ import React from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useSpring, animated } from 'react-spring'
 
-const ScrollAnimation = ({ children, values }) => {
+const ScrollAnimation = ({ children }) => {
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: true

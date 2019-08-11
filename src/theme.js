@@ -4,6 +4,8 @@ const theme = {
     green: '#00A880',
     grey: '#4A4A4A',
     lightGrey: '#F9F9F9',
+    midGrey: '#BBBBBB',
+    greyer: '#D8D8D8',
     yellow: '#F5A623',
     turquoise: '#518399'
   },
@@ -15,7 +17,9 @@ const theme = {
     heavy: 900
   },
   lineHeights: {
-    subtitle: '30px'
+    text: '22px',
+    subtitle: '30px',
+    heavy: '90px'
   }
 }
 
