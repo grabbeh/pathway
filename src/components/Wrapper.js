@@ -21,19 +21,18 @@ const Style = createGlobalStyle`
 export const Context = React.createContext()
 export const useAppContext = () => useContext(Context)
 
-const Wrapper = props => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
+const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
       }
     }
-  `)
-
+  }
+`
+const Wrapper = props => {
+  const data = useStaticQuery(query)
   const [open, setOpen] = useState(false)
-
   const context = {
     open,
     setOpen,
@@ -42,7 +41,8 @@ const Wrapper = props => {
 
   const animProps = useSpring({
     config: { duration: 200 },
-    opacity: open ? 0 : 1
+    opacity: open ? 0 : 1,
+    zIndex: open ? -1 : 9999
   })
 
   return (
@@ -64,7 +64,6 @@ const Wrapper = props => {
         <html lang='en' />
       </Helmet>
       <Style />
-
       <Context.Provider value={context}>
         <ThemeProvider theme={theme}>
           <Box>

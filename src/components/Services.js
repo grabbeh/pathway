@@ -1,29 +1,31 @@
 import React from 'react'
-import Box from '../components/Box'
-import Text from '../components/Text'
+import Box from './Box'
+import Text from './Text'
+import MarkdownText from './MarkdownText'
 import { useStaticQuery, graphql } from 'gatsby'
 import Flex from './Flex'
+import Animation from './ScrollAnimation'
 
-const Services = () => {
-  const query = graphql`
-    query {
-      allContentfulAboutPage {
-        edges {
-          node {
-            servicesHolder {
-              serviceDescription {
-                childMarkdownRemark {
-                  html
-                }
+const query = graphql`
+  query {
+    allContentfulAboutPage {
+      edges {
+        node {
+          servicesHolder {
+            serviceDescription {
+              childMarkdownRemark {
+                html
               }
-              service
             }
+            service
           }
         }
       }
     }
-  `
+  }
+`
 
+const Services = () => {
   const data = useStaticQuery(query)
   let {
     node: { servicesHolder }
@@ -38,23 +40,26 @@ const Services = () => {
           </Text>
         </Box>
         <Flex flexWrap='wrap'>
-          {servicesHolder.map(({ service, serviceDescription }, i) => (
-            <Box mb={3} width={[1, 1 / 2, 1 / 3]} key={i}>
-              <Box mr={4}>
-                <Box fontWeight='bold' fontSize={1}>
-                  {service}:
-                </Box>
-                <Box>
-                  <Text
-                    lineHeight='text'
-                    dangerouslySetInnerHTML={{
-                      __html: serviceDescription.childMarkdownRemark.html
-                    }}
-                  />
-                </Box>
+          {servicesHolder.map(({ service, serviceDescription }, i) => {
+            console.log(i)
+            return (
+              <Box mb={3} width={[1, 1 / 2, 1 / 3]} key={i}>
+                <Animation delay={i * 250}>
+                  <Box mr={4}>
+                    <Box fontWeight='bold' fontSize={1}>
+                      {service}:
+                    </Box>
+                    <Box>
+                      <MarkdownText
+                        lineHeight='text'
+                        html={serviceDescription.childMarkdownRemark.html}
+                      />
+                    </Box>
+                  </Box>
+                </Animation>
               </Box>
-            </Box>
-          ))}
+            )
+          })}
         </Flex>
       </Box>
     </Flex>

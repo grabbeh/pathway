@@ -5,22 +5,24 @@ import Box from './Box'
 import { useStaticQuery, graphql } from 'gatsby'
 import Flex from './Flex'
 
-const SocialFranchise = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulHomePage {
-        edges {
-          node {
-            childContentfulHomePageWhatIsASocialFranchiseTextNode {
-              childMarkdownRemark {
-                html
-              }
+const query = graphql`
+  query {
+    allContentfulHomePage {
+      edges {
+        node {
+          childContentfulHomePageWhatIsASocialFranchiseTextNode {
+            childMarkdownRemark {
+              html
             }
           }
         }
       }
     }
-  `)
+  }
+`
+
+const SocialFranchise = () => {
+  const data = useStaticQuery(query)
 
   let { node } = data.allContentfulHomePage.edges[0]
   let { childContentfulHomePageWhatIsASocialFranchiseTextNode } = node

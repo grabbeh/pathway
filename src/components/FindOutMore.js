@@ -21,38 +21,38 @@ const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => (
         <Box mt={3}>
           <Flex justifyContent='space-between' flexWrap='wrap'>
             {homelessness && (
-              <Box width={[1, 1 / 3]}>
+              <Box minWidth={200} width={[1, 1 / 2, 1 / 3]}>
                 <Box mb={3} mr={[0, 3]}>
                   <Box mb={3}>
                     <Text textAlign='center'>
                       <Circle size={125} />
                     </Text>
                   </Box>
-                  <FullButton text='Homelessness' link='/about-us' />
+                  <FullButton text='Homelessness' to='/about-us' />
                 </Box>
               </Box>
             )}
             {whatwedo && (
-              <Box width={[1, 1 / 3]}>
+              <Box minWidth={200} width={[1, 1 / 2, 1 / 3]}>
                 <Box mb={3} mr={[0, 3]}>
                   <Box mb={3}>
                     <Text textAlign='center'>
                       <Circle size={125} />
                     </Text>
                   </Box>
-                  <FullButton text='What we do' link='/' />
+                  <FullButton text='What we do' to='/' />
                 </Box>
               </Box>
             )}
             {howyoucanhelp && (
-              <Box width={[1, 1 / 3]}>
+              <Box minWidth={200} width={[1, 1 / 2, 1 / 3]}>
                 <Box mb={3}>
                   <Box mb={3}>
                     <Text textAlign='center'>
                       <Circle size={125} />
                     </Text>
                   </Box>
-                  <FullButton text='How you can help' link='/franchise' />
+                  <FullButton text='How you can help' to='/franchise' />
                 </Box>
               </Box>
             )}
@@ -65,10 +65,10 @@ const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => (
 
 export default FindOutMore
 
-const FullButton = ({ text, link }) => (
+const FullButton = ({ text, to }, props) => (
   <Box mt={[3, 0]}>
     <Button width={1}>
-      <Link to={link}>
+      <Link {...props} to={to}>
         <Flex flexWrap='wrap'>
           <Box style={{ flex: '1' }} bg='blue' p={2}>
             <Text
@@ -76,6 +76,7 @@ const FullButton = ({ text, link }) => (
               textAlign='center'
               fontWeight='subtitle'
               color='white'
+              style={{ wordWrap: 'break-word' }}
             >
               {text}
             </Text>

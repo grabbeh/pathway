@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Box from './Box'
 import Flex from './Flex'
-import Text from './Text'
 import Heading from './Heading'
+import MarkdownText from './MarkdownText'
+import Animation from './InitialLoadAnimation'
+import useLoad from '../hooks/useLoad'
 
-import InitialLoadAnimation from './InitialLoadAnimation'
-
-const AboutHero = ({ title, html }) => {
-  let [load, setLoad] = useState(false)
-
-  useEffect(() => {
-    setLoad(true)
-  }, [])
-
+const StandardHero = ({ title, html }) => {
+  let load = useLoad()
   return (
     <Flex flexWrap='wrap'>
       <Flex bg='blue' flex='0 0 20px' />
@@ -22,29 +17,27 @@ const AboutHero = ({ title, html }) => {
             <Box maxWidth={800}>
               <Flex alignItems='center' width={[1, 3 / 4, 1 / 2]} height={500}>
                 <Box px={[3, 3, 0]}>
-                  <InitialLoadAnimation load={load}>
+                  <Animation load={load}>
                     <Heading color='grey'>{title}</Heading>
-                    <Text
+                    <MarkdownText
                       lineHeight='subtitle'
                       fontSize={4}
                       fontWeight='subtitle'
-                      dangerouslySetInnerHTML={{
-                        __html: html
-                      }}
+                      html={html}
                     />
-                  </InitialLoadAnimation>
+                  </Animation>
                 </Box>
               </Flex>
             </Box>
           </Flex>
         ) : (
-          <Box>
-            <Flex justifyContent='center' height={500} alignItems='center'>
-              <InitialLoadAnimation load={load}>
-                <Box px={[3, 3, 0]} width={[1, 800]}>
+          <Box mx={[3, 6]}>
+            <Flex height={500} alignItems='center'>
+              <Animation load={load}>
+                <Box px={[3, 3, 0]} width={[1, 2 / 3]}>
                   <Heading color='grey'>{title}</Heading>
                 </Box>
-              </InitialLoadAnimation>
+              </Animation>
             </Flex>
           </Box>
         )}
@@ -53,4 +46,4 @@ const AboutHero = ({ title, html }) => {
   )
 }
 
-export default AboutHero
+export default StandardHero

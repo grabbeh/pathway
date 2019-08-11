@@ -2,22 +2,24 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
 
-const Logo = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulLogo {
-        edges {
-          node {
-            logoImage {
-              fluid(maxWidth: 1200) {
-                ...GatsbyContentfulFluid
-              }
+const query = graphql`
+  query {
+    allContentfulLogo {
+      edges {
+        node {
+          logoImage {
+            fluid(maxWidth: 1200) {
+              ...GatsbyContentfulFluid
             }
           }
         }
       }
     }
-  `)
+  }
+`
+
+const Logo = () => {
+  const data = useStaticQuery(query)
   const imageData = data.allContentfulLogo.edges[0].node.logoImage.fluid
   return <Image fluid={imageData} />
 }

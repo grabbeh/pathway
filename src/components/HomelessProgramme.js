@@ -5,25 +5,26 @@ import Circle from '../svg/Circle'
 import Text from './Text'
 import Flex from './Flex'
 import MarkdownText from './MarkdownText'
+import Animation from './ScrollAnimation'
 
-const HomelessProgramme = () => {
-  const query = graphql`
-    query {
-      allContentfulHomelessnessPage {
-        edges {
-          node {
-            childContentfulHomelessnessPageProgrammeTextTextNode {
-              childMarkdownRemark {
-                html
-              }
+const query = graphql`
+  query {
+    allContentfulHomelessnessPage {
+      edges {
+        node {
+          childContentfulHomelessnessPageProgrammeTextTextNode {
+            childMarkdownRemark {
+              html
             }
-            programmeTitle
           }
+          programmeTitle
         }
       }
     }
-  `
+  }
+`
 
+const HomelessProgramme = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomelessnessPage.edges[0]
   let {
@@ -37,29 +38,31 @@ const HomelessProgramme = () => {
           <Circle />
         </Box>
         <Box py={5} bg='green' width={[1, 2 / 3]}>
-          <Flex justifyContent='center'>
-            <Box width={0.7}>
-              <Box mb={3}>
-                <Text color='white' fontSize={3}>
-                  {programmeTitle}
-                </Text>
-              </Box>
-              <Box>
+          <Animation>
+            <Flex justifyContent='center'>
+              <Box p={[3, 0]} width={[1, 0.7]}>
+                <Box mb={3}>
+                  <Text color='white' fontSize={3}>
+                    {programmeTitle}
+                  </Text>
+                </Box>
                 <Box>
-                  <MarkdownText
-                    fontWeight='subtitle'
-                    fontSize={4}
-                    color='white'
-                    lineHeight='subtitle'
-                    html={
-                      childContentfulHomelessnessPageProgrammeTextTextNode
-                        .childMarkdownRemark.html
-                    }
-                  />
+                  <Box>
+                    <MarkdownText
+                      fontWeight='subtitle'
+                      fontSize={4}
+                      color='white'
+                      lineHeight='subtitle'
+                      html={
+                        childContentfulHomelessnessPageProgrammeTextTextNode
+                          .childMarkdownRemark.html
+                      }
+                    />
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-          </Flex>
+            </Flex>
+          </Animation>
         </Box>
       </Flex>
     </Box>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Heading from './Heading'
 import Flex from './Flex'
 import Box from './Box'
@@ -6,13 +6,10 @@ import Text from './Text'
 import BackgroundImage from './BackgroundImage'
 import { useStaticQuery, graphql } from 'gatsby'
 import LoadAnimation from './InitialLoadAnimation'
+import useLoad from '../hooks/useLoad'
 
 const Hero = () => {
-  let [load, setLoad] = useState(false)
-
-  useEffect(() => {
-    setLoad(true)
-  }, [])
+  let load = useLoad()
   const data = useStaticQuery(graphql`
     query {
       allContentfulHomePage {

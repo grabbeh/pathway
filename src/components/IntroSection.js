@@ -6,28 +6,28 @@ import { graphql, useStaticQuery } from 'gatsby'
 import CenterSection from './CenterSection'
 import Animation from './ScrollAnimation'
 
-const IntroSection = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulHomePage {
-        edges {
-          node {
-            childContentfulHomePageIntroTaglineTextNode {
-              childMarkdownRemark {
-                html
-              }
+const data = useStaticQuery(graphql`
+  query {
+    allContentfulHomePage {
+      edges {
+        node {
+          childContentfulHomePageIntroTaglineTextNode {
+            childMarkdownRemark {
+              html
             }
-            childContentfulHomePageIntroductionTextNode {
-              childMarkdownRemark {
-                html
-              }
+          }
+          childContentfulHomePageIntroductionTextNode {
+            childMarkdownRemark {
+              html
             }
           }
         }
       }
     }
-  `)
+  }
+`)
 
+const IntroSection = () => {
   let { node } = data.allContentfulHomePage.edges[0]
   let {
     childContentfulHomePageIntroTaglineTextNode,

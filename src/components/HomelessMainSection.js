@@ -5,34 +5,35 @@ import Text from './Text'
 import Animation from './ScrollAnimation'
 import { useStaticQuery, graphql } from 'gatsby'
 import HomelessStats from './HomelessStats'
+import MarkdownText from './MarkdownText'
 
-const HomelessnessMainSection = () => {
-  const query = graphql`
-    query {
-      allContentfulHomelessnessPage {
-        edges {
-          node {
-            childContentfulHomelessnessPageHomelessnessDescriptionPartOneTextNode {
-              childMarkdownRemark {
-                html
-              }
+const query = graphql`
+  query {
+    allContentfulHomelessnessPage {
+      edges {
+        node {
+          childContentfulHomelessnessPageHomelessnessDescriptionPartOneTextNode {
+            childMarkdownRemark {
+              html
             }
-            childContentfulHomelessnessPageHomelessnessDescriptionPartTwoTextNode {
-              childMarkdownRemark {
-                html
-              }
+          }
+          childContentfulHomelessnessPageHomelessnessDescriptionPartTwoTextNode {
+            childMarkdownRemark {
+              html
             }
-            childContentfulHomelessnessPageHomelessnessSubtitleTextNode {
-              childMarkdownRemark {
-                html
-              }
+          }
+          childContentfulHomelessnessPageHomelessnessSubtitleTextNode {
+            childMarkdownRemark {
+              html
             }
           }
         }
       }
     }
-  `
+  }
+`
 
+const HomelessnessMainSection = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomelessnessPage.edges[0]
   let {
@@ -55,40 +56,37 @@ const HomelessnessMainSection = () => {
       </Animation>
       <Box>
         <Animation>
-          <Text
+          <MarkdownText
             fontSize={4}
             fontWeight='bold'
             color='blue'
-            dangerouslySetInnerHTML={{
-              __html:
-                childContentfulHomelessnessPageHomelessnessSubtitleTextNode
-                  .childMarkdownRemark.html
-            }}
+            html={
+              childContentfulHomelessnessPageHomelessnessSubtitleTextNode
+                .childMarkdownRemark.html
+            }
           />
         </Animation>
       </Box>
       <Box>
         <Animation>
-          <Text
+          <MarkdownText
             fontSize={4}
-            dangerouslySetInnerHTML={{
-              __html:
-                childContentfulHomelessnessPageHomelessnessDescriptionPartOneTextNode
-                  .childMarkdownRemark.html
-            }}
+            html={
+              childContentfulHomelessnessPageHomelessnessDescriptionPartOneTextNode
+                .childMarkdownRemark.html
+            }
           />
         </Animation>
       </Box>
       <HomelessStats />
       <Box>
         <Animation>
-          <Text
+          <MarkdownText
             fontSize={4}
-            dangerouslySetInnerHTML={{
-              __html:
-                childContentfulHomelessnessPageHomelessnessDescriptionPartTwoTextNode
-                  .childMarkdownRemark.html
-            }}
+            html={
+              childContentfulHomelessnessPageHomelessnessDescriptionPartTwoTextNode
+                .childMarkdownRemark.html
+            }
           />
         </Animation>
       </Box>

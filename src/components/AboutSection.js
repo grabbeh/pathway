@@ -4,28 +4,31 @@ import Box from './Box'
 import { graphql, useStaticQuery } from 'gatsby'
 import Flex from './Flex'
 import Animation from './ScrollAnimation'
+import MarkdownText from './MarkdownText'
 
-const AboutSection = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulAboutPage {
-        edges {
-          node {
-            childContentfulAboutPageAboutDescriptionTextNode {
-              childMarkdownRemark {
-                html
-              }
+const query = graphql`
+  query {
+    allContentfulAboutPage {
+      edges {
+        node {
+          childContentfulAboutPageAboutDescriptionTextNode {
+            childMarkdownRemark {
+              html
             }
-            childContentfulAboutPageAboutSubtitleTextNode {
-              childMarkdownRemark {
-                html
-              }
+          }
+          childContentfulAboutPageAboutSubtitleTextNode {
+            childMarkdownRemark {
+              html
             }
           }
         }
       }
     }
-  `)
+  }
+`
+
+const AboutSection = () => {
+  const data = useStaticQuery(query)
 
   let { node } = data.allContentfulAboutPage.edges[0]
   let {
@@ -48,15 +51,14 @@ const AboutSection = () => {
         </Animation>
         <Box>
           <Animation>
-            <Text
+            <MarkdownText
               fontSize={4}
               fontWeight='bold'
               color='green'
-              dangerouslySetInnerHTML={{
-                __html:
-                  childContentfulAboutPageAboutSubtitleTextNode
-                    .childMarkdownRemark.html
-              }}
+              html={
+                childContentfulAboutPageAboutSubtitleTextNode
+                  .childMarkdownRemark.html
+              }
             />
           </Animation>
         </Box>

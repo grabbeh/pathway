@@ -12,22 +12,24 @@ import { MdClose } from 'react-icons/md'
 import { useAppContext } from './Wrapper'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulNavigationContainer {
-        edges {
-          node {
-            navigationItem {
-              title
-              subtitle
-              url
-            }
+const query = graphql`
+  query {
+    allContentfulNavigationContainer {
+      edges {
+        node {
+          navigationItem {
+            title
+            subtitle
+            url
           }
         }
       }
     }
-  `)
+  }
+`
+
+const Header = () => {
+  const data = useStaticQuery(query)
   let { node } = data.allContentfulNavigationContainer.edges[0]
   let state = useAppContext()
   return (

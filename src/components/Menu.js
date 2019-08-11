@@ -13,14 +13,14 @@ const Menu = ({ open, navigationItems }) => {
   return (
     <animated.div style={props}>
       <Box
-        aria-hidden='true'
-        zIndex='999'
-        height='100vh'
-        maxHeight='100vh'
-        width={1}
+        ml={open ? 0 : '-100%'}
+        width='100%'
+        zIndex={open ? 999 : 0}
         position='fixed'
+        top={0}
+        left={0}
         bg='white'
-        mt={5}
+        mt={[5, 6]}
       >
         <Box>
           <Flex alignItems='center' justifyContent='center'>

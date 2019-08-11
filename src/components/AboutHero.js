@@ -2,22 +2,24 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import StandardHero from './StandardHero'
 
-const AboutHero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulAboutPage {
-        edges {
-          node {
-            childContentfulAboutPageAboutTaglineTextNode {
-              childMarkdownRemark {
-                html
-              }
+const query = graphql`
+  query {
+    allContentfulAboutPage {
+      edges {
+        node {
+          childContentfulAboutPageAboutTaglineTextNode {
+            childMarkdownRemark {
+              html
             }
           }
         }
       }
     }
-  `)
+  }
+`
+
+const AboutHero = () => {
+  const data = useStaticQuery(query)
 
   let { node } = data.allContentfulAboutPage.edges[0]
   let {
