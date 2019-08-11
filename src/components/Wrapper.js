@@ -40,9 +40,8 @@ const Wrapper = props => {
   }
 
   const animProps = useSpring({
-    config: { duration: 200 },
-    opacity: open ? 0 : 1,
-    zIndex: open ? -1 : 9999
+    config: { duration: 300 },
+    opacity: open ? 0 : 1
   })
 
   return (

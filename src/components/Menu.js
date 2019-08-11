@@ -7,7 +7,7 @@ import { useSpring, animated } from 'react-spring'
 
 const Menu = ({ open, navigationItems }) => {
   const props = useSpring({
-    config: { duration: 200 },
+    config: { duration: 300 },
     opacity: open ? 1 : 0
   })
   return (
@@ -23,7 +23,7 @@ const Menu = ({ open, navigationItems }) => {
         mt={[5, 6]}
       >
         <Box>
-          <Flex alignItems='center' justifyContent='center'>
+          <Flex height='100vh' justifyContent='center'>
             <Box>
               {navigationItems.map(({ url, title }, i) => {
                 return (
