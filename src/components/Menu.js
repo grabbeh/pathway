@@ -20,7 +20,7 @@ const Menu = ({ open, navigationItems }) => {
         top={0}
         left={0}
         bg='white'
-        mt={[5, 6]}
+        pt={[5, 6]}
       >
         <Box>
           <Flex height='100vh' justifyContent='center'>
