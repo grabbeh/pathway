@@ -9,7 +9,7 @@ const Menu = ({ open, navigationItems }) => {
   const props = useSpring({
     config: { duration: 300 },
     opacity: open ? 1 : 0,
-    visibility: 'visible' : 'hidden'
+    visibility: open ? 'visible' : 'hidden'
   })
   return (
     <animated.div style={props}>
