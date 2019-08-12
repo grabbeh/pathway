@@ -42,7 +42,7 @@ const Wrapper = props => {
   const animProps = useSpring({
     config: { duration: 300 },
     opacity: open ? 0 : 1,
-    visibility: 'hidden' : 'visible'
+    visibility: open ? 'hidden' : 'visible'
   })
 
   return (
