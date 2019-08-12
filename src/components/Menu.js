@@ -17,6 +17,7 @@ const Menu = ({ open, navigationItems }) => {
         ml={open ? 0 : '100%'}
         zIndex={open ? 9999 : -1}
         position='fixed'
+        aria-hidden={!!open}
         top={60}
         left={0}
         bg='white'
