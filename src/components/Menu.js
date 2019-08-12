@@ -8,7 +8,7 @@ import { useSpring, animated } from 'react-spring'
 const Menu = ({ open, navigationItems }) => {
   const props = useSpring({
     config: { duration: 300 },
-    opacity: open ? 1 : 0
+    opacity: open ? 'visible' : 'hidden'
   })
   return (
     <animated.div style={props}>
