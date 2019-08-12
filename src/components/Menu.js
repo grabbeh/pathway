@@ -24,7 +24,7 @@ const Menu = ({ open, navigationItems }) => {
         height='100vh'
       >
         <Box>
-          <Flex justifyContent='center'>
+          <Flex height='100vh' justifyContent='center'>
             <Box>
               {navigationItems.map(({ url, title }, i) => {
                 return (
