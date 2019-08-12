@@ -1,4 +1,4 @@
-import Text from './general/Text'
+import Text from './Text'
 
 const Heading = Text.withComponent('h1')
 

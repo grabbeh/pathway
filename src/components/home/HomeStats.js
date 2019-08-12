@@ -1,9 +1,9 @@
 import React from 'react'
-import Box from './general/Box'
-import Text from './general/Text'
-import Flex from './general/Flex'
-import CenterSection from './CenterSection'
-import Animation from './ScrollAnimation'
+import Box from '../standard/Box'
+import Text from '../standard/Text'
+import Flex from '../standard/Flex'
+import CenterSection from '../standard/CenterSection'
+import Animation from '../animations/ScrollAnimation'
 
 const Stats = () => (
   <Box bg='green'>

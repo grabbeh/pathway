@@ -1,12 +1,12 @@
 import React from 'react'
-import Heading from './Heading'
-import Flex from './general/Flex'
-import Box from './general/Box'
-import MarkdownText from './general/Text'
-import BackgroundImage from './BackgroundImage'
+import Heading from '../standard/Heading'
+import Flex from '../standard/Flex'
+import Box from '../standard/Box'
+import MarkdownText from '../standard/Text'
+import BackgroundImage from '../standard/BackgroundImage'
 import { useStaticQuery, graphql } from 'gatsby'
-import LoadAnimation from './InitialLoadAnimation'
-import useLoad from '../hooks/useLoad'
+import LoadAnimation from '../animations/InitialLoadAnimation'
+import useLoad from '../../hooks/useLoad'
 
 const Hero = () => {
   let load = useLoad()

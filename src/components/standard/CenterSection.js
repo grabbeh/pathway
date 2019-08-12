@@ -1,6 +1,6 @@
 import React from 'react'
-import Flex from './general/Flex'
-import Box from './general/Box'
+import Flex from './Flex'
+import Box from './Box'
 
 const CenterSection = ({ children }) => (
   <section>

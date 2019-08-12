@@ -1,5 +1,5 @@
 import React from 'react'
-import StandardHero from '../StandardHero'
+import StandardHero from '../general/StandardHero'
 
 const WWDHero = () => {
   return <StandardHero title='What we do' />

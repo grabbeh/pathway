@@ -1,9 +1,9 @@
 import React from 'react'
-import Hero from '../components/StandardHero'
-import Wrapper from '../components/Wrapper'
-import HomelessMainSection from '../components/HomelessMainSection'
-import HomelessProgramme from '../components/HomelessProgramme'
-import FindOutMore from '../components/FindOutMore'
+import Hero from '../components/general/StandardHero'
+import Wrapper from '../components/general/Wrapper'
+import HomelessMainSection from '../components/homelessness/HomelessMainSection'
+import HomelessProgramme from '../components/homelessness/HomelessProgramme'
+import FindOutMore from '../components/general/FindOutMore'
 
 const Homelessness = () => (
   <Wrapper>

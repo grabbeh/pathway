@@ -1,12 +1,12 @@
 import React from 'react'
-import Box from './general/Box'
-import Text from './general/Text'
-import Link from './InternalLink'
-import Button from './general/Button'
-import Flex from './general/Flex'
+import Box from '../standard/Box'
+import Text from '../standard/Text'
+import Link from '../standard/InternalLink'
+import Button from '../standard/Button'
+import Flex from '../standard/Flex'
 import { FaAngleRight } from 'react-icons/fa'
-import Circle from '../svg/Circle'
-import SectionTitle from './general/SectionTitle'
+import Circle from '../../svg/Circle'
+import SectionTitle from '../standard/SectionTitle'
 
 const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => (
   <Box bg={bg}>

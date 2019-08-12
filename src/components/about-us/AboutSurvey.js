@@ -1,10 +1,10 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Box from './general/Box'
-import Text from './general/Text'
-import Flex from './general/Flex'
-import Animation from './ScrollAnimation'
-import Circle from '../svg/Circle'
+import Box from '../standard/Box'
+import Text from '../standard/Text'
+import Flex from '../standard/Flex'
+import Animation from '../animations/ScrollAnimation'
+import Circle from '../../svg/Circle'
 
 const query = graphql`
   query {

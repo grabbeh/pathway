@@ -1,5 +1,5 @@
 import React from 'react'
-import Box from '../components/general/Box'
+import Box from '../components/standard/Box'
 
 const Error = () => <Box>ERROR!!!</Box>
 

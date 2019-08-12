@@ -1,11 +1,11 @@
 import React from 'react'
-import Wrapper from '../components/Wrapper'
-import SEO from '../components/seo'
-import FindOutMore from '../components/FindOutMore'
-import Stats from '../components/HomeStats'
-import Hero from '../components/Hero'
-import SocialFranchise from '../components/SocialFranchise'
-import Letter from '../components/Letter'
+import Wrapper from '../components/general/Wrapper'
+import SEO from '../components/general/seo'
+import FindOutMore from '../components/general/FindOutMore'
+import Stats from '../components/home/HomeStats'
+import Hero from '../components/general/Hero'
+import SocialFranchise from '../components/home/SocialFranchise'
+import Letter from '../components/home/Letter'
 
 const IndexPage = () => {
   return (

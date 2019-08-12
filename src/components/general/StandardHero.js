@@ -1,10 +1,10 @@
 import React from 'react'
-import Box from './general/Box'
-import Flex from './general/Flex'
-import Heading from './Heading'
-import MarkdownText from './general/MarkdownText'
-import Animation from './InitialLoadAnimation'
-import useLoad from '../hooks/useLoad'
+import Box from '../standard/Box'
+import Flex from '../standard/Flex'
+import Heading from '../standard/Heading'
+import MarkdownText from '../standard/MarkdownText'
+import Animation from '../animations/InitialLoadAnimation'
+import useLoad from '../../hooks/useLoad'
 
 const StandardHero = ({ title, html }) => {
   let load = useLoad()

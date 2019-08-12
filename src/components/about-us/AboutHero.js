@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import StandardHero from './StandardHero'
+import StandardHero from '../general/StandardHero'
 
 const query = graphql`
   query {
