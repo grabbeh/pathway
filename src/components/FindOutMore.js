@@ -1,60 +1,44 @@
 import React from 'react'
-import Box from './Box'
-import Text from './Text'
+import Box from './general/Box'
+import Text from './general/Text'
 import Link from './InternalLink'
-import Button from './Button'
-import Flex from './Flex'
+import Button from './general/Button'
+import Flex from './general/Flex'
 import { FaAngleRight } from 'react-icons/fa'
 import Circle from '../svg/Circle'
+import SectionTitle from './general/SectionTitle'
 
 const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => (
   <Box bg={bg}>
     <Flex justifyContent='center'>
       <Box mx={[3, 6]} maxWidth={800} py={5}>
-        <Text fontSize={5} fontWeight='subtitle' color='grey'>
-          Find out more...
-        </Text>
-        <Text fontSize={3}>
+        <SectionTitle>Find out more...</SectionTitle>
+        <Text>
           Below you can find more information on homelessness, how Pathway
           helps, and how you can get involved
         </Text>
         <Box mt={3}>
           <Flex justifyContent='space-between' flexWrap='wrap'>
             {homelessness && (
-              <Box minWidth={200} width={[1, 1 / 2, 1 / 3]}>
-                <Box mb={3} mr={[0, 3]}>
-                  <Box mb={3}>
-                    <Text textAlign='center'>
-                      <Circle size={125} />
-                    </Text>
-                  </Box>
-                  <FullButton text='Homelessness' to='/about-us' />
-                </Box>
-              </Box>
+              <SiteSection text='Homelessness' to='/homelessness'>
+                <Text textAlign='center'>
+                  <Circle size={125} />
+                </Text>
+              </SiteSection>
             )}
             {whatwedo && (
-              <Box minWidth={200} width={[1, 1 / 2, 1 / 3]}>
-                <Box mb={3} mr={[0, 3]}>
-                  <Box mb={3}>
-                    <Text textAlign='center'>
-                      <Circle size={125} />
-                    </Text>
-                  </Box>
-                  <FullButton text='What we do' to='/' />
-                </Box>
-              </Box>
+              <SiteSection text='What we do' to='/what-we-do'>
+                <Text textAlign='center'>
+                  <Circle size={125} />
+                </Text>
+              </SiteSection>
             )}
             {howyoucanhelp && (
-              <Box minWidth={200} width={[1, 1 / 2, 1 / 3]}>
-                <Box mb={3}>
-                  <Box mb={3}>
-                    <Text textAlign='center'>
-                      <Circle size={125} />
-                    </Text>
-                  </Box>
-                  <FullButton text='How you can help' to='/franchise' />
-                </Box>
-              </Box>
+              <SiteSection text='How you can help' to='/franchise'>
+                <Text textAlign='center'>
+                  <Circle size={125} />
+                </Text>
+              </SiteSection>
             )}
           </Flex>
         </Box>
@@ -64,6 +48,17 @@ const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => (
 )
 
 export default FindOutMore
+
+const SiteSection = ({ children, text, to }) => (
+  <Box minWidth={200} width={[1, 1 / 2, 1 / 3]}>
+    <Box mb={3}>
+      <Box mb={3}>
+        <Text textAlign='center'>{children}</Text>
+      </Box>
+      <FullButton text={text} to={to} />
+    </Box>
+  </Box>
+)
 
 const FullButton = ({ text, to }, props) => (
   <Box mt={[3, 0]}>

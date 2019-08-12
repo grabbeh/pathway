@@ -1,8 +1,8 @@
 import React from 'react'
 import Heading from './Heading'
-import Flex from './Flex'
-import Box from './Box'
-import Text from './Text'
+import Flex from './general/Flex'
+import Box from './general/Box'
+import MarkdownText from './general/Text'
 import BackgroundImage from './BackgroundImage'
 import { useStaticQuery, graphql } from 'gatsby'
 import LoadAnimation from './InitialLoadAnimation'
@@ -39,16 +39,15 @@ const Hero = () => {
               <Box px={[3, 3, 0]}>
                 <LoadAnimation load={load}>
                   <Heading>Pathway Social Franchise</Heading>
-                  <Text
+                  <MarkdownText
                     color='white'
                     lineHeight='subtitle'
                     fontSize={4}
                     fontWeight='subtitle'
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        childContentfulHomePageHeroSubtitleTextNode
-                          .childMarkdownRemark.html
-                    }}
+                    html={
+                      childContentfulHomePageHeroSubtitleTextNode
+                        .childMarkdownRemark.html
+                    }
                   />
                 </LoadAnimation>
               </Box>

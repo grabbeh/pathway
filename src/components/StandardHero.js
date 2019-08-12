@@ -1,8 +1,8 @@
 import React from 'react'
-import Box from './Box'
-import Flex from './Flex'
+import Box from './general/Box'
+import Flex from './general/Flex'
 import Heading from './Heading'
-import MarkdownText from './MarkdownText'
+import MarkdownText from './general/MarkdownText'
 import Animation from './InitialLoadAnimation'
 import useLoad from '../hooks/useLoad'
 

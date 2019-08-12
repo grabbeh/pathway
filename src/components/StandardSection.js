@@ -1,6 +1,6 @@
 import React from 'react'
-import Box from './Box'
-import Flex from './Flex'
+import Box from './general/Box'
+import Flex from './general/Flex'
 
 const StandardSection = ({ children, bg }) => (
   <Box bg={bg}>

@@ -1,7 +1,7 @@
 import React from 'react'
-import Box from './Box'
-import Text from './Text'
-import Flex from './Flex'
+import Box from './general/Box'
+import Text from './general/Text'
+import Flex from './general/Flex'
 import CenterSection from './CenterSection'
 import Animation from './ScrollAnimation'
 

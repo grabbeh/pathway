@@ -1,9 +1,9 @@
 import React from 'react'
-import Box from './Box'
-import Text from './Text'
-import MarkdownText from './MarkdownText'
+import Box from './general/Box'
+import Text from './general/Text'
+import MarkdownText from './general/MarkdownText'
 import { useStaticQuery, graphql } from 'gatsby'
-import Flex from './Flex'
+import Flex from './general/Flex'
 import Animation from './ScrollAnimation'
 
 const query = graphql`

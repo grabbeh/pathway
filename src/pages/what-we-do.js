@@ -1,12 +1,12 @@
 import React from 'react'
-import WhatWeDo from '../components/WhatWeDo'
+import Hero from '../components/what-we-do/Hero'
 import Wrapper from '../components/Wrapper'
 import FindOutMore from '../components/FindOutMore'
 
 const page = () => (
   <Wrapper>
-    <WhatWeDo />
-    <FindOutMore />
+    <Hero />
+    <FindOutMore howyoucanhelp homelessness />
   </Wrapper>
 )
 

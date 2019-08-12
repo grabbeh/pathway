@@ -1,6 +1,6 @@
 import React from 'react'
-import Box from './Box'
-import Text from './Text'
+import Box from './general/Box'
+import Text from './general/Text'
 import StandardSection from './StandardSection'
 
 const Footer = () => (

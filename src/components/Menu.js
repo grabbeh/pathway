@@ -1,7 +1,7 @@
 import React from 'react'
-import Box from '../components/Box'
-import Flex from '../components/Flex'
-import Text from '../components/Text'
+import Box from './general/Box'
+import Flex from './general/Flex'
+import Text from './general/Text'
 import Link from './InternalLink'
 import { useSpring, animated } from 'react-spring'
 
@@ -20,7 +20,7 @@ const Menu = ({ open, navigationItems }) => {
         top={60}
         left={0}
         bg='white'
-        pt={[5,6]}
+        pt={[5, 6]}
       >
         <Box>
           <Flex height='100vh' justifyContent='center'>

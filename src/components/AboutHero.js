@@ -20,7 +20,6 @@ const query = graphql`
 
 const AboutHero = () => {
   const data = useStaticQuery(query)
-
   let { node } = data.allContentfulAboutPage.edges[0]
   let {
     childContentfulAboutPageAboutTaglineTextNode: {

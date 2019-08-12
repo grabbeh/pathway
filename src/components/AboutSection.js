@@ -1,10 +1,12 @@
 import React from 'react'
-import Text from './Text'
-import Box from './Box'
+import Box from './general/Box'
 import { graphql, useStaticQuery } from 'gatsby'
-import Flex from './Flex'
+import Flex from './general/Flex'
 import Animation from './ScrollAnimation'
-import MarkdownText from './MarkdownText'
+import BodyText from './general/BodyText'
+import Subtitle from './general/Subtitle'
+import IntroTitle from './general/IntroTitle'
+import SectionTitle from './general/SectionTitle'
 
 const query = graphql`
   query {
@@ -41,19 +43,13 @@ const AboutSection = () => {
       <Box mx={[3, 6]} maxWidth={800} py={5}>
         <Animation>
           <Box mb={3}>
-            <Text fontSize={3} color='green'>
-              About
-            </Text>
-            <Text fontWeight='bold' fontSize={5}>
-              Who is Pathway?
-            </Text>
+            <IntroTitle color='green'>About</IntroTitle>
+            <SectionTitle>Who is Pathway?</SectionTitle>
           </Box>
         </Animation>
         <Box>
           <Animation>
-            <MarkdownText
-              fontSize={4}
-              fontWeight='bold'
+            <Subtitle
               color='green'
               html={
                 childContentfulAboutPageAboutSubtitleTextNode
@@ -64,13 +60,11 @@ const AboutSection = () => {
         </Box>
         <Box>
           <Animation>
-            <Text
-              fontSize={4}
-              dangerouslySetInnerHTML={{
-                __html:
-                  childContentfulAboutPageAboutDescriptionTextNode
-                    .childMarkdownRemark.html
-              }}
+            <BodyText
+              html={
+                childContentfulAboutPageAboutDescriptionTextNode
+                  .childMarkdownRemark.html
+              }
             />
           </Animation>
         </Box>

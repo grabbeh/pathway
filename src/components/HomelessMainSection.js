@@ -1,11 +1,13 @@
 import React from 'react'
 import Section from './StandardSection'
-import Box from './Box'
-import Text from './Text'
+import Box from './general/Box'
+import IntroTitle from './general/IntroTitle'
+import SectionTitle from './general/SectionTitle'
+import Subtitle from './general/Subtitle'
+import BodyText from './general/BodyText'
 import Animation from './ScrollAnimation'
 import { useStaticQuery, graphql } from 'gatsby'
 import HomelessStats from './HomelessStats'
-import MarkdownText from './MarkdownText'
 
 const query = graphql`
   query {
@@ -46,19 +48,13 @@ const HomelessnessMainSection = () => {
     <Section>
       <Animation>
         <Box mb={3}>
-          <Text fontSize={3} color='blue'>
-            Homelessness
-          </Text>
-          <Text fontWeight='bold' fontSize={5}>
-            A major challenge to the NHS
-          </Text>
+          <IntroTitle color='blue'>Homelessness</IntroTitle>
+          <SectionTitle>A major challenge to the NHS</SectionTitle>
         </Box>
       </Animation>
       <Box>
         <Animation>
-          <MarkdownText
-            fontSize={4}
-            fontWeight='bold'
+          <Subtitle
             color='blue'
             html={
               childContentfulHomelessnessPageHomelessnessSubtitleTextNode
@@ -69,8 +65,7 @@ const HomelessnessMainSection = () => {
       </Box>
       <Box>
         <Animation>
-          <MarkdownText
-            fontSize={4}
+          <BodyText
             html={
               childContentfulHomelessnessPageHomelessnessDescriptionPartOneTextNode
                 .childMarkdownRemark.html
@@ -81,8 +76,7 @@ const HomelessnessMainSection = () => {
       <HomelessStats />
       <Box>
         <Animation>
-          <MarkdownText
-            fontSize={4}
+          <BodyText
             html={
               childContentfulHomelessnessPageHomelessnessDescriptionPartTwoTextNode
                 .childMarkdownRemark.html

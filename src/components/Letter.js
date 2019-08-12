@@ -1,11 +1,11 @@
 import React from 'react'
 import CenterSection from './CenterSection'
-import Text from './Text'
-import Box from './Box'
-import Flex from './Flex'
+import Text from './general/Text'
+import Box from './general/Box'
+import Flex from './general/Flex'
 import { useStaticQuery, graphql } from 'gatsby'
 import Animation from './ScrollAnimation'
-import MarkdownText from './MarkdownText'
+import MarkdownText from './general/MarkdownText'
 
 const query = graphql`
   query {
