@@ -13,7 +13,6 @@ const Menu = ({ open, navigationItems }) => {
   return (
     <animated.div style={props}>
       <Box
-        ml={open ? 0 : '-100%'}
         width='100%'
         zIndex={open ? 999 : 0}
         position='fixed'
@@ -21,6 +20,7 @@ const Menu = ({ open, navigationItems }) => {
         left={0}
         bg='white'
         pt={[5,6]}
+        height='100vh'
       >
         <Box>
           <Flex justifyContent='center'>
