@@ -14,7 +14,7 @@ const Menu = ({ open, navigationItems }) => {
     <animated.div style={props}>
       <Box
         width='100%'
-        zIndex={open ? 999 : 0}
+        ml={open ? 0 : '100%'}
         position='fixed'
         top={60}
         left={0}
