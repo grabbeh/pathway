@@ -21,7 +21,6 @@ const Menu = ({ open, navigationItems }) => {
         left={0}
         bg='white'
         pt={[5,6]}
-        height='100vh'
       >
         <Box>
           <Flex height='100vh' justifyContent='center'>
