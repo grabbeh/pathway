@@ -15,6 +15,7 @@ const Menu = ({ open, navigationItems }) => {
       <Box
         width='100%'
         ml={open ? 0 : '100%'}
+        zIndex={open ? 9999 : -1}
         position='fixed'
         top={60}
         left={0}
