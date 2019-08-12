@@ -20,10 +20,9 @@ const Menu = ({ open, navigationItems }) => {
         top={0}
         left={0}
         bg='white'
-        pt={[5, 6]}
       >
         <Box>
-          <Flex height='100vh' justifyContent='center'>
+          <Flex height='100vh' alignItems='center' justifyContent='center'>
             <Box>
               {navigationItems.map(({ url, title }, i) => {
                 return (
