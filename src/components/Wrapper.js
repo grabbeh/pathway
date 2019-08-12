@@ -68,7 +68,7 @@ const Wrapper = props => {
           <Box>
             <Header />
             <animated.div style={animProps}>
-              <Box>{props.children}</Box>
+              <Box zIndex={open ? -1 : 9999}>{props.children}</Box>
             </animated.div>
             <Footer />
           </Box>
