@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../../theme.js'
-import Box from '../standard/Box'
+import Box from '../general/Box'
 import Header from './Header'
 import Footer from './Footer'
-import '../index.css'
+import '../../index.css'
 import { useSpring, animated } from 'react-spring'
 
 const Style = createGlobalStyle`
@@ -68,7 +68,9 @@ const Wrapper = props => {
           <Box>
             <Header />
             <animated.div style={animProps}>
-              <Box aria-hidden={!!open} zIndex={open ? -1 : 9999}>{props.children}</Box>
+              <Box aria-hidden={!!open} zIndex={open ? -1 : 9999}>
+                {props.children}
+              </Box>
             </animated.div>
             <Footer />
           </Box>

@@ -1,7 +1,7 @@
 import React from 'react'
-import Box from '../standard/Box'
-import Text from '../standard/Text'
-import StandardSection from '../standard/StandardSection'
+import Box from '../general/Box'
+import Text from '../general/Text'
+import StandardSection from '../general/StandardSection'
 
 const Footer = () => (
   <footer>

@@ -1,10 +1,10 @@
 import React from 'react'
-import Text from '../standard/Text'
-import MarkdownText from '../standard/MarkdownText'
-import CenterSection from '../standard/CenterSection'
-import Box from '../standard/Box'
+import Text from '../general/Text'
+import MarkdownText from '../general/MarkdownText'
+import CenterSection from '../general/CenterSection'
+import Box from '../general/Box'
 import { useStaticQuery, graphql } from 'gatsby'
-import Flex from '../standard/Flex'
+import Flex from '../general/Flex'
 
 const query = graphql`
   query {

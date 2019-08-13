@@ -1,9 +1,9 @@
 import React from 'react'
-import Box from '../standard/Box'
-import Text from '../standard/Text'
-import MarkdownText from '../standard/MarkdownText'
+import Box from '../general/Box'
+import Text from '../general/Text'
+import BodyText from '../general/BodyText'
 import { useStaticQuery, graphql } from 'gatsby'
-import Flex from '../standard/Flex'
+import Flex from '../general/Flex'
 import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
@@ -12,12 +12,12 @@ const query = graphql`
       edges {
         node {
           servicesHolder {
-            serviceDescription {
+            description {
               childMarkdownRemark {
                 html
               }
             }
-            service
+            name
           }
         }
       }
@@ -40,20 +40,17 @@ const Services = () => {
           </Text>
         </Box>
         <Flex flexWrap='wrap'>
-          {servicesHolder.map(({ service, serviceDescription }, i) => {
+          {servicesHolder.map(({ name, description }, i) => {
             console.log(i)
             return (
               <Box mb={3} width={[1, 1 / 2, 1 / 3]} key={i}>
                 <Animation delay={i * 250}>
                   <Box mr={4}>
                     <Box fontWeight='bold' fontSize={1}>
-                      {service}:
+                      {name}:
                     </Box>
                     <Box>
-                      <MarkdownText
-                        lineHeight='text'
-                        html={serviceDescription.childMarkdownRemark.html}
-                      />
+                      <BodyText html={description.childMarkdownRemark.html} />
                     </Box>
                   </Box>
                 </Animation>

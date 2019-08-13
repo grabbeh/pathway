@@ -1,9 +1,9 @@
 import React from 'react'
-import Wrapper from '../components/general/Wrapper'
-import SEO from '../components/general/seo'
-import FindOutMore from '../components/general/FindOutMore'
+import Wrapper from '../components/shared/Wrapper'
+import SEO from '../components/shared/seo'
+import FindOutMore from '../components/shared/FindOutMore'
 import Stats from '../components/home/HomeStats'
-import Hero from '../components/general/Hero'
+import Hero from '../components/home/Hero'
 import SocialFranchise from '../components/home/SocialFranchise'
 import Letter from '../components/home/Letter'
 

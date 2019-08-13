@@ -1,8 +1,8 @@
 import React from 'react'
-import Box from '../standard/Box'
-import Text from '../standard/Text'
-import Flex from '../standard/Flex'
-import CenterSection from '../standard/CenterSection'
+import Box from '../general/Box'
+import Text from '../general/Text'
+import Flex from '../general/Flex'
+import CenterSection from '../general/CenterSection'
 import Animation from '../animations/ScrollAnimation'
 
 const Stats = () => (

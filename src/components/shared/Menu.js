@@ -1,8 +1,8 @@
 import React from 'react'
-import Box from '../standard/Box'
-import Flex from '../standard/Flex'
-import Text from '../standard/Text'
-import Link from '../standard/InternalLink'
+import Box from '../general/Box'
+import Flex from '../general/Flex'
+import Text from '../general/Text'
+import Link from '../general/InternalLink'
 import { useSpring, animated } from 'react-spring'
 
 const Menu = ({ open, navigationItems }) => {
