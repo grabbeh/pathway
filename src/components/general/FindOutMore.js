@@ -65,7 +65,7 @@ const FullButton = ({ text, to }, props) => (
     <Button width={1}>
       <Link {...props} to={to}>
         <Flex flexWrap='wrap'>
-          <Box style={{ flex: '1' }} bg='blue' p={2}>
+          <Box style={{ wordWrap: 'break-word' }} style={{ flex: '1' }} bg='blue' p={2}>
             <Text
               fontSize={4}
               textAlign='center'
