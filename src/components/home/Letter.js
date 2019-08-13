@@ -12,12 +12,12 @@ const query = graphql`
     allContentfulHomePage {
       edges {
         node {
-          childContentfulHomePageIntroTaglineTextNode {
+          introTagline {
             childMarkdownRemark {
               html
             }
           }
-          childContentfulHomePageIntroductionTextNode {
+          introduction {
             childMarkdownRemark {
               html
             }
@@ -32,10 +32,7 @@ const Letter = () => {
   const data = useStaticQuery(query)
 
   let { node } = data.allContentfulHomePage.edges[0]
-  let {
-    childContentfulHomePageIntroductionTextNode,
-    childContentfulHomePageIntroTaglineTextNode
-  } = node
+  let { introduction, introTagline } = node
   return (
     <CenterSection>
       <Animation>
@@ -53,9 +50,7 @@ const Letter = () => {
               <Text
                 lineHeight='45px'
                 dangerouslySetInnerHTML={{
-                  __html:
-                    childContentfulHomePageIntroTaglineTextNode
-                      .childMarkdownRemark.html
+                  __html: introTagline.childMarkdownRemark.html
                 }}
                 textAlign={['center', 'right']}
                 color='blue'
@@ -69,10 +64,7 @@ const Letter = () => {
               <MarkdownText
                 lineHeight='25px'
                 fontSize={3}
-                html={
-                  childContentfulHomePageIntroductionTextNode
-                    .childMarkdownRemark.html
-                }
+                html={introduction.childMarkdownRemark.html}
               />
               <Box mt={3}>
                 <Text fontSize={3} fontWeight='bold' color='green'>

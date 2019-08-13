@@ -1,8 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Box from '../general/Box'
-import Text from '../general/Text'
-import Flex from '../general/Flex'
+import Section from '../general/StandardSection'
+import SectionTitle from '../general/SectionTitle'
+import BodyText from '../general/BodyText'
+import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
   query {
@@ -23,10 +24,19 @@ const query = graphql`
 
 const PathwayTeam = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWWDPage.edges[0]
+  let { node } = data.allContentfulWwdPage.edges[0]
   let { pathwayTeamTitle, hospitalTeamTable } = node
 
-  return <Box />
+  return (
+    <Section bg='lightGrey'>
+      <Animation>
+        <SectionTitle>{pathwayTeamTitle}</SectionTitle>
+      </Animation>
+      <Animation>
+        <BodyText html={hospitalTeamTable.childMarkdownRemark.html} />
+      </Animation>
+    </Section>
+  )
 }
 
 export default PathwayTeam

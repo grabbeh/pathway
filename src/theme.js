@@ -17,7 +17,7 @@ const theme = {
     heavy: 900
   },
   lineHeights: {
-    text: '22px',
+    text: '24px',
     subtitle: '30px',
     heavy: '90px'
   }

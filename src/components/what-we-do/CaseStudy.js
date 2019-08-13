@@ -1,7 +1,10 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import Section from '../general/WideSection'
 import Box from '../general/Box'
-import Text from '../general/Text'
+import Subtitle from '../general/Subtitle'
+import BodyText from '../general/BodyText'
+import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 
 const query = graphql`
@@ -9,12 +12,12 @@ const query = graphql`
     allContentfulWwdPage {
       edges {
         node {
-          childContentfulWwdPageWwdCaseStudySubtitleTextNode {
+          wwdCaseStudy {
             childMarkdownRemark {
               html
             }
           }
-          childContentfulWwdPageWwdCaseStudyTextNode {
+          wwdCaseStudySubtitle {
             childMarkdownRemark {
               html
             }
@@ -27,13 +30,37 @@ const query = graphql`
 
 const CaseStudy = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWWDPage.edges[0]
-  let {
-    childContentfulWwdPageWwdCaseStudySubtitleTextNode,
-    childContentfulWwdPageWwdCaseStudyTextNode
-  } = node
+  let { node } = data.allContentfulWwdPage.edges[0]
+  let { wwdCaseStudy, wwdCaseStudySubtitle } = node
 
-  return <Box />
+  return (
+    <Section bg='blue'>
+      <Animation>
+        <Flex flexWrap='wrap'>
+          <Box width={[1, 1 / 3]}>
+            <Flex height='100%' alignItems='center'>
+              <Box>
+                <Subtitle
+                  color='white'
+                  html={wwdCaseStudySubtitle.childMarkdownRemark.html}
+                />
+              </Box>
+            </Flex>
+          </Box>
+          <Box width={[1, 2 / 3]}>
+            <Flex justifyContent='center'>
+              <Box width={[1, 0.9]}>
+                <BodyText
+                  color='white'
+                  html={wwdCaseStudy.childMarkdownRemark.html}
+                />
+              </Box>
+            </Flex>
+          </Box>
+        </Flex>
+      </Animation>
+    </Section>
+  )
 }
 
 export default CaseStudy

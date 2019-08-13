@@ -1,8 +1,14 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
-import Text from '../general/Text'
+import Section from '../general/StandardSection'
+import SectionTitle from '../general/SectionTitle'
+import Subtitle from '../general/Subtitle'
+import BodyText from '../general/BodyText'
+import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
+import PathwayServicesList from '../what-we-do/PathwayServicesList'
+import KeyFact from '../what-we-do/KeyFact'
 
 const query = graphql`
   query {
@@ -10,17 +16,17 @@ const query = graphql`
       edges {
         node {
           pathwayModelTitle
-          childContentfulWwdPageWwdPathwayModelSubtitleTextNode {
+          wwdPathwayModel {
             childMarkdownRemark {
               html
             }
           }
-          childContentfulWwdPageWwdPathwayModelTextNode {
+          wwdPathwayModelPartTwo {
             childMarkdownRemark {
               html
             }
           }
-          childContentfulWwdPageWwdPathwayModelPartTwoTextNode {
+          wwdPathwayModelSubtitle {
             childMarkdownRemark {
               html
             }
@@ -33,15 +39,55 @@ const query = graphql`
 
 const PathwayModel = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWWDPage.edges[0]
+  let { node } = data.allContentfulWwdPage.edges[0]
   let {
     pathwayModelTitle,
-    childContentfulWwdPageWwdPathwayModelSubtitleTextNode,
-    childContentfulWwdPageWwdPathwayModelTextNode,
-    childContentfulWwdPageWwdPathwayModelPartTwoTextNode
+    wwdPathwayModelSubtitle,
+    wwdPathwayModel,
+    wwdPathwayModelPartTwo
   } = node
 
-  return <Box />
+  return (
+    <Box>
+      <Section>
+        <Animation>
+          <Box mb={3}>
+            <SectionTitle>{pathwayModelTitle}</SectionTitle>
+          </Box>
+        </Animation>
+        <Box>
+          <Animation>
+            <Subtitle
+              color='green'
+              html={wwdPathwayModelSubtitle.childMarkdownRemark.html}
+            />
+          </Animation>
+        </Box>
+        <Box>
+          <Animation>
+            <BodyText html={wwdPathwayModel.childMarkdownRemark.html} />
+          </Animation>
+        </Box>
+      </Section>
+      <Animation>
+        <Flex flexWrap='wrap'>
+          <Box width={[1, 1 / 2]}>
+            <PathwayServicesList />
+          </Box>
+          <Box width={[1, 1 / 2]}>
+            <KeyFact />
+          </Box>
+        </Flex>
+      </Animation>
+      <Section>
+        <Box>
+          <Animation>
+            <BodyText html={wwdPathwayModelPartTwo.childMarkdownRemark.html} />
+          </Animation>
+        </Box>
+      </Section>
+    </Box>
+  )
 }
 
 export default PathwayModel

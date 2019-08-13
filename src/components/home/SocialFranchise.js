@@ -11,7 +11,7 @@ const query = graphql`
     allContentfulHomePage {
       edges {
         node {
-          childContentfulHomePageWhatIsASocialFranchiseTextNode {
+          whatIsASocialFranchise {
             childMarkdownRemark {
               html
             }
@@ -25,7 +25,7 @@ const query = graphql`
 const SocialFranchise = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomePage.edges[0]
-  let { childContentfulHomePageWhatIsASocialFranchiseTextNode } = node
+  let { whatIsASocialFranchise } = node
 
   return (
     <Box bg='lightGrey'>
@@ -38,10 +38,7 @@ const SocialFranchise = () => {
           </Box>
           <Box width={[1, 1 / 2]}>
             <MarkdownText
-              html={
-                childContentfulHomePageWhatIsASocialFranchiseTextNode
-                  .childMarkdownRemark.html
-              }
+              html={whatIsASocialFranchise.childMarkdownRemark.html}
             />
           </Box>
         </Flex>

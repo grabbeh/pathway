@@ -3,6 +3,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
 import Text from '../general/Text'
 import Flex from '../general/Flex'
+import Section from '../general/StandardSection'
+import SectionTitle from '../general/SectionTitle'
+import Subtitle from '../general/Subtitle'
+import BodyText from '../general/BodyText'
+import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
   query {
@@ -10,7 +15,7 @@ const query = graphql`
       edges {
         node {
           pathwayTeamCostEffectivenessTitle
-          childContentfulWwdPageWwdCostEffectiveSectionTextNode {
+          wwdCostEffectiveSection {
             childMarkdownRemark {
               html
             }
@@ -18,9 +23,7 @@ const query = graphql`
           hospitalTeamBenefitsHolder {
             title
             childContentfulSectionMainContentTextNode {
-              childMarkdownRemark {
-                html
-              }
+              mainContent
             }
           }
         }
@@ -31,14 +34,44 @@ const query = graphql`
 
 const CostEffective = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWWDPage.edges[0]
+  let { node } = data.allContentfulWwdPage.edges[0]
   let {
     pathwayTeamCostEffectivenessTitle,
-    childContentfulWwdPageWwdCostEffectiveSectionTextNode,
+    wwdCostEffectiveSection,
     hospitalTeamBenefitsHolder
   } = node
 
-  return <Box />
+  return (
+    <Section>
+      <Animation>
+        <SectionTitle>{pathwayTeamCostEffectivenessTitle}</SectionTitle>
+        <BodyText html={wwdCostEffectiveSection.childMarkdownRemark.html} />
+        <Box mb={3}>
+          <Subtitle color='green'>Pathway hospital teams:</Subtitle>
+        </Box>
+      </Animation>
+      <Flex flexWrap='wrap'>
+        {hospitalTeamBenefitsHolder.map(
+          (
+            {
+              title,
+              childContentfulSectionMainContentTextNode: { mainContent }
+            },
+            i
+          ) => (
+            <Box mb={3} width={[1, 1 / 2]} key={i}>
+              <Animation>
+                <Box mr={4}>
+                  <Text.span fontWeight='bold'>{title}</Text.span>
+                  <Text.span> {mainContent}</Text.span>
+                </Box>
+              </Animation>
+            </Box>
+          )
+        )}
+      </Flex>
+    </Section>
+  )
 }
 
 export default CostEffective

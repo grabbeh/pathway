@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/general/StandardHero'
+import Hero from '../components/shared/StandardHero'
 import Wrapper from '../components/shared/Wrapper'
 import HomelessMainSection from '../components/homelessness/HomelessMainSection'
 import HomelessProgramme from '../components/homelessness/HomelessProgramme'

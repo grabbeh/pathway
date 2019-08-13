@@ -13,12 +13,12 @@ const query = graphql`
     allContentfulAboutPage {
       edges {
         node {
-          childContentfulAboutPageAboutDescriptionTextNode {
+          aboutDescription {
             childMarkdownRemark {
               html
             }
           }
-          childContentfulAboutPageAboutSubtitleTextNode {
+          aboutSubtitle {
             childMarkdownRemark {
               html
             }
@@ -33,10 +33,7 @@ const AboutSection = () => {
   const data = useStaticQuery(query)
 
   let { node } = data.allContentfulAboutPage.edges[0]
-  let {
-    childContentfulAboutPageAboutDescriptionTextNode,
-    childContentfulAboutPageAboutSubtitleTextNode
-  } = node
+  let { aboutDescription, aboutSubtitle } = node
 
   return (
     <Flex justifyContent='center'>
@@ -51,21 +48,13 @@ const AboutSection = () => {
           <Animation>
             <Subtitle
               color='green'
-              html={
-                childContentfulAboutPageAboutSubtitleTextNode
-                  .childMarkdownRemark.html
-              }
+              html={aboutSubtitle.childMarkdownRemark.html}
             />
           </Animation>
         </Box>
         <Box>
           <Animation>
-            <BodyText
-              html={
-                childContentfulAboutPageAboutDescriptionTextNode
-                  .childMarkdownRemark.html
-              }
-            />
+            <BodyText html={aboutDescription.childMarkdownRemark.html} />
           </Animation>
         </Box>
       </Box>

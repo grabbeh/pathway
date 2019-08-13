@@ -44,7 +44,7 @@ const Services = () => {
             console.log(i)
             return (
               <Box mb={3} width={[1, 1 / 2, 1 / 3]} key={i}>
-                <Animation delay={i * 250}>
+                <Animation>
                   <Box mr={4}>
                     <Box fontWeight='bold' fontSize={1}>
                       {name}:

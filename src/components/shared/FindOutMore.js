@@ -64,30 +64,31 @@ const FullButton = ({ text, to }, props) => (
   <Box mt={[3, 0]}>
     <Button width={1}>
       <Link {...props} to={to}>
-        <Flex flexWrap='wrap'>
-          <Box style={{ wordWrap: 'break-word' }} style={{ flex: '1' }} bg='blue' p={2}>
-            <Text
-              fontSize={4}
-              textAlign='center'
-              fontWeight='subtitle'
-              color='white'
-              style={{ wordWrap: 'break-word' }}
-            >
-              {text}
-            </Text>
-          </Box>
-          <Flex bg='turquoise' flex='0 0 50px'>
-            <Text
-              width={1}
-              mt={10}
-              fontSize={4}
-              textAlign='center'
-              color='white'
-            >
-              <FaAngleRight />
-            </Text>
+        <Box>
+          <Flex flexWrap='wrap'>
+            <Box width={0.8} bg='blue' p={2}>
+              <Text
+                fontSize={4}
+                textAlign='center'
+                fontWeight='subtitle'
+                color='white'
+              >
+                {text}
+              </Text>
+            </Box>
+            <Flex width={0.2} bg='turquoise'>
+              <Text
+                width={1}
+                mt={10}
+                fontSize={4}
+                textAlign='center'
+                color='white'
+              >
+                <FaAngleRight />
+              </Text>
+            </Flex>
           </Flex>
-        </Flex>
+        </Box>
       </Link>
     </Button>
   </Box>

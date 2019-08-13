@@ -1,8 +1,8 @@
 import React from 'react'
-import Box from './Box'
-import Flex from './Flex'
-import Heading from './Heading'
-import MarkdownText from './MarkdownText'
+import Box from '../general/Box'
+import Flex from '../general/Flex'
+import Heading from '../general/Heading'
+import MarkdownText from '../general/MarkdownText'
 import Animation from '../animations/InitialLoadAnimation'
 import useLoad from '../../hooks/useLoad'
 
@@ -32,12 +32,18 @@ const StandardHero = ({ title, html }) => {
           </Flex>
         ) : (
           <Box mx={[3, 6]}>
-            <Flex height={500} alignItems='center'>
-              <Animation load={load}>
-                <Box style={{ wordWrap: 'break-word' }} px={[3, 3, 0]} width={[1, 2 / 3]}>
-                  <Heading style={{ wordWrap: 'break-word' }} color='grey'>{title}</Heading>
-                </Box>
-              </Animation>
+            <Flex justifyContent='center' height={500} alignItems='center'>
+              <Box width={[1, 800]}>
+                <Animation load={load}>
+                  <Box
+                    style={{ wordWrap: 'break-word' }}
+                    px={[3, 3, 0]}
+                    width={[1, 2 / 3]}
+                  >
+                    <Heading color='grey'>{title}</Heading>
+                  </Box>
+                </Animation>
+              </Box>
             </Flex>
           </Box>
         )}

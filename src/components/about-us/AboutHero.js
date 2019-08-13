@@ -1,13 +1,13 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import StandardHero from '../general/StandardHero'
+import StandardHero from '../shared/StandardHero'
 
 const query = graphql`
   query {
     allContentfulAboutPage {
       edges {
         node {
-          childContentfulAboutPageAboutTaglineTextNode {
+          aboutTagline {
             childMarkdownRemark {
               html
             }
@@ -21,13 +21,14 @@ const query = graphql`
 const AboutHero = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulAboutPage.edges[0]
-  let {
-    childContentfulAboutPageAboutTaglineTextNode: {
-      childMarkdownRemark: { html }
-    }
-  } = node
+  let { aboutTagline } = node
 
-  return <StandardHero title='About us' html={html} />
+  return (
+    <StandardHero
+      title='About us'
+      html={aboutTagline.childMarkdownRemark.html}
+    />
+  )
 }
 
 export default AboutHero

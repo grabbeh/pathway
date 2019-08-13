@@ -1,13 +1,12 @@
+import React from 'react'
 import Text from './Text'
 
-const Heading = Text.withComponent('h1')
+const H1 = Text.withComponent('h1')
 
-Heading.defaultProps = {
-  fontSize: 7,
-  lineHeight: '68px',
-  m: 0,
-  color: 'green',
-  mb: 3
-}
+const Heading = ({ children, color = 'green' }) => (
+  <H1 fontSize={[6, 7]} lineHeight='68px' m={0} color={color} mb={3}>
+    {children}
+  </H1>
+)
 
 export default Heading

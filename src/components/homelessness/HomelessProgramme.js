@@ -12,7 +12,7 @@ const query = graphql`
     allContentfulHomelessnessPage {
       edges {
         node {
-          childContentfulHomelessnessPageProgrammeTextTextNode {
+          programmeText {
             childMarkdownRemark {
               html
             }
@@ -27,10 +27,7 @@ const query = graphql`
 const HomelessProgramme = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomelessnessPage.edges[0]
-  let {
-    childContentfulHomelessnessPageProgrammeTextTextNode,
-    programmeTitle
-  } = node
+  let { programmeText, programmeTitle } = node
   return (
     <Box>
       <Flex flexWrap='wrap'>
@@ -48,10 +45,7 @@ const HomelessProgramme = () => {
                   <Box>
                     <Subtitle
                       color='white'
-                      html={
-                        childContentfulHomelessnessPageProgrammeTextTextNode
-                          .childMarkdownRemark.html
-                      }
+                      html={programmeText.childMarkdownRemark.html}
                     />
                   </Box>
                 </Box>

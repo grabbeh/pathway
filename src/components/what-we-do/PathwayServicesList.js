@@ -1,8 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
-import Text from '../general/Text'
-import Flex from '../general/Flex'
+import Subtitle from '../general/Subtitle'
+import BodyText from '../general/BodyText'
 
 const query = graphql`
   query {
@@ -23,10 +23,15 @@ const query = graphql`
 
 const PathwayServicesList = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWWDPage.edges[0]
+  let { node } = data.allContentfulWwdPage.edges[0]
   let { pathwayServicesListTitle, pathwayServicesList } = node
 
-  return <Box />
+  return (
+    <Box px={[3, 5]}>
+      <Subtitle color='green'>{pathwayServicesListTitle}</Subtitle>
+      <BodyText html={pathwayServicesList.childMarkdownRemark.html} />
+    </Box>
+  )
 }
 
 export default PathwayServicesList

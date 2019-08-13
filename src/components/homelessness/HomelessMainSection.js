@@ -14,17 +14,17 @@ const query = graphql`
     allContentfulHomelessnessPage {
       edges {
         node {
-          childContentfulHomelessnessPageHomelessnessDescriptionPartOneTextNode {
+          homelessnessDescriptionPartOne {
             childMarkdownRemark {
               html
             }
           }
-          childContentfulHomelessnessPageHomelessnessDescriptionPartTwoTextNode {
+          homelessnessDescriptionPartTwo {
             childMarkdownRemark {
               html
             }
           }
-          childContentfulHomelessnessPageHomelessnessSubtitleTextNode {
+          homelessnessSubtitle {
             childMarkdownRemark {
               html
             }
@@ -39,9 +39,9 @@ const HomelessnessMainSection = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomelessnessPage.edges[0]
   let {
-    childContentfulHomelessnessPageHomelessnessDescriptionPartOneTextNode,
-    childContentfulHomelessnessPageHomelessnessDescriptionPartTwoTextNode,
-    childContentfulHomelessnessPageHomelessnessSubtitleTextNode
+    homelessnessDescriptionPartOne,
+    homelessnessDescriptionPartTwo,
+    homelessnessSubtitle
   } = node
 
   return (
@@ -56,20 +56,14 @@ const HomelessnessMainSection = () => {
         <Animation>
           <Subtitle
             color='blue'
-            html={
-              childContentfulHomelessnessPageHomelessnessSubtitleTextNode
-                .childMarkdownRemark.html
-            }
+            html={homelessnessSubtitle.childMarkdownRemark.html}
           />
         </Animation>
       </Box>
       <Box>
         <Animation>
           <BodyText
-            html={
-              childContentfulHomelessnessPageHomelessnessDescriptionPartOneTextNode
-                .childMarkdownRemark.html
-            }
+            html={homelessnessDescriptionPartOne.childMarkdownRemark.html}
           />
         </Animation>
       </Box>
@@ -77,10 +71,7 @@ const HomelessnessMainSection = () => {
       <Box>
         <Animation>
           <BodyText
-            html={
-              childContentfulHomelessnessPageHomelessnessDescriptionPartTwoTextNode
-                .childMarkdownRemark.html
-            }
+            html={homelessnessDescriptionPartTwo.childMarkdownRemark.html}
           />
         </Animation>
       </Box>

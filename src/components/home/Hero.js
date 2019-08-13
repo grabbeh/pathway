@@ -15,7 +15,7 @@ const Hero = () => {
       allContentfulHomePage {
         edges {
           node {
-            childContentfulHomePageHeroSubtitleTextNode {
+            heroSubtitle {
               childMarkdownRemark {
                 html
               }
@@ -27,7 +27,7 @@ const Hero = () => {
   `)
 
   let { node } = data.allContentfulHomePage.edges[0]
-  let { childContentfulHomePageHeroSubtitleTextNode } = node
+  let { heroSubtitle } = node
 
   return (
     <Flex flexWrap='wrap'>
@@ -44,10 +44,7 @@ const Hero = () => {
                     lineHeight='subtitle'
                     fontSize={4}
                     fontWeight='subtitle'
-                    html={
-                      childContentfulHomePageHeroSubtitleTextNode
-                        .childMarkdownRemark.html
-                    }
+                    html={heroSubtitle.childMarkdownRemark.html}
                   />
                 </LoadAnimation>
               </Box>

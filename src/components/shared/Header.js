@@ -46,7 +46,7 @@ const Header = () => {
               <Logo />
             </Link>
           </Box>
-          <Flex justifyContent='center' alignItems='center'>
+          <Flex alignItems='center'>
             <MenuHide>
               <Box width={900}>
                 <Flex justifyContent='space-between'>

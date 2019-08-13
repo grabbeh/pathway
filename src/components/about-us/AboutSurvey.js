@@ -8,17 +8,15 @@ import Circle from '../../svg/Circle'
 
 const query = graphql`
   query {
-    allContentfulAboutPageStudyTextTextNode {
+    allContentfulAboutPage {
       edges {
         node {
-          studyText
-        }
-      }
-    }
-    allContentfulAboutPageAboutStatisticTextNode {
-      edges {
-        node {
-          aboutStatistic
+          aboutStatistic {
+            aboutStatistic
+          }
+          studyText {
+            studyText
+          }
         }
       }
     }
@@ -26,10 +24,8 @@ const query = graphql`
 `
 const AboutSurvey = () => {
   const data = useStaticQuery(query)
-  let { studyText } = data.allContentfulAboutPageStudyTextTextNode.edges[0].node
-  let {
-    aboutStatistic
-  } = data.allContentfulAboutPageAboutStatisticTextNode.edges[0].node
+  let { node } = data.allContentfulAboutPage.edges[0]
+  let { aboutStatistic, studyText } = node
 
   return (
     <Box bg='green'>
@@ -42,10 +38,10 @@ const AboutSurvey = () => {
             <Box mx={[3, 6]} maxWidth={800} py={5}>
               <Animation>
                 <Text.span fontSize={4} fontWeight='bold' color='white'>
-                  {studyText}{' '}
+                  {studyText.studyText}{' '}
                 </Text.span>
                 <Text.span fontSize={4} fontWeight='bold' color='yellow'>
-                  {aboutStatistic}
+                  {aboutStatistic.aboutStatistic}
                 </Text.span>
               </Animation>
             </Box>
