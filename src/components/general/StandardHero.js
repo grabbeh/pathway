@@ -34,8 +34,8 @@ const StandardHero = ({ title, html }) => {
           <Box mx={[3, 6]}>
             <Flex height={500} alignItems='center'>
               <Animation load={load}>
-                <Box px={[3, 3, 0]} width={[1, 2 / 3]}>
-                  <Heading color='grey'>{title}</Heading>
+                <Box style={{ wordWrap: 'break-word' }} px={[3, 3, 0]} width={[1, 2 / 3]}>
+                  <Heading style={{ wordWrap: 'break-word' }} color='grey'>{title}</Heading>
                 </Box>
               </Animation>
             </Flex>
