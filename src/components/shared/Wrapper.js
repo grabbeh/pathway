@@ -9,6 +9,12 @@ import Header from './Header'
 import Footer from './Footer'
 import '../../index.css'
 import { useSpring, animated } from 'react-spring'
+//import { MDXProvider } from '@mdx-js/react'
+//import Table from '../general/Table'
+/*
+const components = {
+  table: Table
+}*/
 
 const Style = createGlobalStyle`
   * { box-sizing: border-box; }
@@ -63,6 +69,7 @@ const Wrapper = props => {
         <html lang='en' />
       </Helmet>
       <Style />
+      //<MDXProvider components={components}>
       <Context.Provider value={context}>
         <ThemeProvider theme={theme}>
           <Box>
@@ -76,6 +83,7 @@ const Wrapper = props => {
           </Box>
         </ThemeProvider>
       </Context.Provider>
+      //</MDXProvider>
     </Fragment>
   )
 }
