@@ -66,7 +66,7 @@ const FullButton = ({ text, to }, props) => (
       <Link {...props} to={to}>
         <Box>
           <Flex flexWrap='wrap'>
-            <Box width={0.8} bg='blue' p={2}>
+            <Box style={{ flex: '1' }}  bg='blue' p={2}>
               <Text
                 fontSize={4}
                 textAlign='center'
@@ -76,7 +76,7 @@ const FullButton = ({ text, to }, props) => (
                 {text}
               </Text>
             </Box>
-            <Flex width={0.2} bg='turquoise'>
+            <Flex flex='0 0 50px' bg='turquoise'>
               <Text
                 width={1}
                 mt={10}
