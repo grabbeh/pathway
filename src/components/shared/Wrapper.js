@@ -69,7 +69,6 @@ const Wrapper = props => {
         <html lang='en' />
       </Helmet>
       <Style />
-      //<MDXProvider components={components}>
       <Context.Provider value={context}>
         <ThemeProvider theme={theme}>
           <Box>
@@ -83,7 +82,6 @@ const Wrapper = props => {
           </Box>
         </ThemeProvider>
       </Context.Provider>
-      //</MDXProvider>
     </Fragment>
   )
 }
