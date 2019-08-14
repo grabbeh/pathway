@@ -9,7 +9,7 @@ import PathwayModel from '../components/what-we-do/PathwayModel'
 import ULCHStats from '../components/what-we-do/ULCHStats'
 import CostEffective from '../components/what-we-do/CostEffective'
 import PathwayTeamCosts from '../components/what-we-do/PathwayTeamCosts'
-import PathwayTeam from '../components/what-we-do/PathwayTeam';
+import PathwayTeam from '../components/what-we-do/PathwayTeam'
 
 const page = () => (
   <Wrapper>
@@ -20,9 +20,9 @@ const page = () => (
     <PathwayModel />
     <ULCHStats />
     <CostEffective />
-    <PathwayTeam/>
+    <PathwayTeam />
     <PathwayTeamCosts />
-    <FindOutMore howyoucanhelp homelessness />
+    <FindOutMore bg='lightGrey' howyoucanhelp homelessness />
   </Wrapper>
 )
 

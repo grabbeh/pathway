@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '../general/Box'
 import { graphql, useStaticQuery } from 'gatsby'
-import Flex from '../general/Flex'
+import Section from '../general/StandardSection'
 import Animation from '../animations/ScrollAnimation'
 import BodyText from '../general/BodyText'
 import Subtitle from '../general/Subtitle'
@@ -36,29 +36,27 @@ const AboutSection = () => {
   let { aboutDescription, aboutSubtitle } = node
 
   return (
-    <Flex justifyContent='center'>
-      <Box mx={[3, 6]} maxWidth={800} py={5}>
+    <Section>
+      <Animation>
+        <Box mb={3}>
+          <IntroTitle color='green'>About</IntroTitle>
+          <SectionTitle>Who is Pathway?</SectionTitle>
+        </Box>
+      </Animation>
+      <Box>
         <Animation>
-          <Box mb={3}>
-            <IntroTitle color='green'>About</IntroTitle>
-            <SectionTitle>Who is Pathway?</SectionTitle>
-          </Box>
+          <Subtitle
+            color='green'
+            html={aboutSubtitle.childMarkdownRemark.html}
+          />
         </Animation>
-        <Box>
-          <Animation>
-            <Subtitle
-              color='green'
-              html={aboutSubtitle.childMarkdownRemark.html}
-            />
-          </Animation>
-        </Box>
-        <Box>
-          <Animation>
-            <BodyText html={aboutDescription.childMarkdownRemark.html} />
-          </Animation>
-        </Box>
       </Box>
-    </Flex>
+      <Box>
+        <Animation>
+          <BodyText html={aboutDescription.childMarkdownRemark.html} />
+        </Animation>
+      </Box>
+    </Section>
   )
 }
 
