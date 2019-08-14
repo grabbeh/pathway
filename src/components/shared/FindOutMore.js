@@ -50,7 +50,7 @@ const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => (
 export default FindOutMore
 
 const SiteSection = ({ children, text, to }) => (
-  <Box minWidth={200} width={[1, 1 / 2, 1 / 3]}>
+  <Box width={[1, 1 / 2, 1 / 3]}>
     <Box mb={3}>
       <Box mb={3}>
         <Text textAlign='center'>{children}</Text>
