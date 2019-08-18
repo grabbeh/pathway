@@ -33,7 +33,7 @@ const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => (
             </SiteSection>
           )}
           {howyoucanhelp && (
-            <SiteSection text='How you can help' to='/franchise'>
+            <SiteSection text='How you can help' to='/what-you-can-do'>
               <Text textAlign='center'>
                 <Circle size={125} />
               </Text>

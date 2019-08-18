@@ -19,6 +19,30 @@ const Tab = props => {
   )
 }
 
+const StyledWord = styled(Box)`
+font-size: 22px;
+font-weight: bold;
+color: #4A4A4A;
+${props =>
+    props.color === 'green' &&
+  props.isActive &&
+  css`
+    color: #00a880;
+  `}
+  ${props =>
+    props.color === 'yellow' &&
+    props.isActive &&
+    css`
+      color: #f5a623;
+    `}
+    ${props =>
+    props.color === 'blue' &&
+      props.isActive &&
+      css`
+        color: #37aee3;
+      `}
+`
+
 const StyledNumber = styled(Box)`
   text-align: center;
   font-size: 22px;
