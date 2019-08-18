@@ -6,6 +6,7 @@ import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
+import MDXRenderer from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
@@ -14,8 +15,8 @@ const query = graphql`
         node {
           pathwayFranchiseeRequestsTitle
           pathwayFranchiseeRequestsList {
-            childMarkdownRemark {
-              html
+            childMdx {
+              body
             }
           }
           keyStatContent {
@@ -46,9 +47,9 @@ const PathwayFranchiseeRequests = () => {
             <Subtitle color='blue'>{pathwayFranchiseeRequestsTitle}</Subtitle>
           </Animation>
           <Animation>
-            <BodyText
-              html={pathwayFranchiseeRequestsList.childMarkdownRemark.html}
-            />
+            <MDXRenderer>
+              {pathwayFranchiseeRequestsList.childMdx.body}
+            </MDXRenderer>
           </Animation>
         </Box>
         <Box width={[1, 1 / 2]}>
@@ -56,8 +57,8 @@ const PathwayFranchiseeRequests = () => {
             ml={4}
             pt={100}
             px={4}
-            height={[1,450]}
-            width={[1,450]}
+            height={[1, 450]}
+            width={[1, 450]}
             bg='yellow'
             borderRadius={5}
           >
