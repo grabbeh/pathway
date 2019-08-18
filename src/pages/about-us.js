@@ -17,7 +17,7 @@ const AboutPage = () => {
       <Survey />
       <Services />
       <FindOutMore bg='lightGrey' homelessness howyoucanhelp whatwedo />
-      <Footer bg='lightGrey' />
+      <Footer />
     </Wrapper>
   )
 }
