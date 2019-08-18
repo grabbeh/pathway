@@ -5,7 +5,7 @@ import Box from '../general/Box'
 import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
-import MDXRenderer from 'gatsby-plugin-mdx'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
@@ -37,7 +37,6 @@ const PathwayFranchiseeRequests = () => {
     pathwayFranchiseeRequestsList,
     keyStatContent
   } = node
-
   return (
     <Section bg='lightGrey'>
       <Flex flexWrap='wrap'>
