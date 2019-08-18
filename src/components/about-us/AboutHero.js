@@ -1,15 +1,21 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import StandardHero from '../shared/StandardHero'
+import ImageHero from '../shared/ImageHero'
 
 const query = graphql`
   query {
     allContentfulAboutPage {
       edges {
         node {
-          aboutTagline {
+          heroSubtitle {
             childMarkdownRemark {
               html
+            }
+          }
+          heroTitle
+          heroImage {
+            fluid(maxWidth: 1200) {
+              ...GatsbyContentfulFluid
             }
           }
         }
@@ -17,18 +23,21 @@ const query = graphql`
     }
   }
 `
-
-const AboutHero = () => {
+const Hero = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulAboutPage.edges[0]
-  let { aboutTagline } = node
+  let { heroSubtitle, heroImage, heroTitle } = node
 
   return (
-    <StandardHero
-      title='About us'
-      html={aboutTagline.childMarkdownRemark.html}
+    <ImageHero
+      title={heroTitle}
+      subtitle={heroSubtitle.childMarkdownRemark.html}
+      imageData={heroImage.fluid}
+      bg='blue'
+      headerColor='green'
+      subtitleColor='white'
     />
   )
 }
 
-export default AboutHero
+export default Hero

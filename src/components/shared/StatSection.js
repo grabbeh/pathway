@@ -13,19 +13,21 @@ const StatSection = ({ stats, title, bg }) => (
       <Circle />
     </Box>
     <Section>
-      <Animation>
-        <SectionTitle color='white'>{title}</SectionTitle>
-      </Animation>
-      <Box mt={4}>
+      <Box mt={[5, 0]}>
         <Animation>
-          <Flex justifyContent='space-around' flexWrap='wrap'>
-            {stats.map(({ figure, text, subtitle }, i) => (
-              <Box key={i} width={[1, 1 / 3]}>
-                <Stat subtitle={subtitle} figure={figure} text={text.text} />
-              </Box>
-            ))}
-          </Flex>
+          <SectionTitle color='white'>{title}</SectionTitle>
         </Animation>
+        <Box mt={4}>
+          <Animation>
+            <Flex justifyContent='space-around' flexWrap='wrap'>
+              {stats.map(({ figure, text, subtitle }, i) => (
+                <Box mb={[4, 0]} key={i} width={[1, 1 / 3]}>
+                  <Stat subtitle={subtitle} figure={figure} text={text.text} />
+                </Box>
+              ))}
+            </Flex>
+          </Animation>
+        </Box>
       </Box>
     </Section>
   </Box>

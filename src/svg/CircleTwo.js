@@ -14,7 +14,10 @@ const Circle = ({ size = 100 }) => (
     xmlSpace='preserve'
   >
     <defs>
-      <path id='circlePath' d='M 165 165 180 260' />
+      <path
+        id='circlePath'
+        d='M-100,150a100,100 0 1,0 200,0a100,100 0 1,0 -200,0'
+      />
     </defs>
     <circle cx='150' cy='150' r='150' fill='#F5A623' />
     <g>

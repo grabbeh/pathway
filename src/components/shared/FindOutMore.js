@@ -26,7 +26,7 @@ const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => {
   // let { node } = data.allContentfulNavigationContainer.edges[0]
   return (
     <Box bg={bg}>
-      <Box py={5} mx={[3, 6]} width={[1, 800, 1000]}>
+      <Box py={5} mx={[3, 6]}>
         <SectionTitle>Find out more...</SectionTitle>
         <Text>
           Below you can find more information on homelessness, how Pathway
@@ -66,7 +66,7 @@ export default FindOutMore
 
 const SiteSection = ({ children, text, to }) => (
   <Box width={[1, 1 / 2, 1 / 3]}>
-    <Box mr={4} mb={3}>
+    <Box mr={[0, 4]} mb={3}>
       <Box mb={3}>
         <Text textAlign='center'>{children}</Text>
       </Box>

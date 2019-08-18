@@ -52,7 +52,7 @@ const Header = () => {
             <Flex>
               {node.navigationItem.map(({ url, title, subtitle }, i) => {
                 return (
-                  <Box mr={4} key={i}>
+                  <Box pr={4} key={i}>
                     <Link to={`/${url}`}>
                       <Text fontSize={2}>{title}</Text>
                       <Text color='blue' fontSize={0}>

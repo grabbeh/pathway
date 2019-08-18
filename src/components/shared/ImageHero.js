@@ -21,7 +21,7 @@ const ImageHero = ({
       <Flex bg={bg} flex='0 0 20px' />
       <BackgroundImage imageData={imageData} style={{ flex: '1' }}>
         <Flex justifyContent='center'>
-          <Box maxWidth={800}>
+          <Box width={[1, 800]} maxWidth={800}>
             <Flex alignItems='center' width={[1, 3 / 4, 1 / 2]} height={500}>
               <Box px={[3, 3, 0]}>
                 <LoadAnimation load={load}>

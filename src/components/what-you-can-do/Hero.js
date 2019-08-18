@@ -4,14 +4,9 @@ import ImageHero from '../shared/ImageHero'
 
 const query = graphql`
   query {
-    allContentfulHomePage {
+    allContentfulWhatYouCanDoPage {
       edges {
         node {
-          heroSubtitle {
-            childMarkdownRemark {
-              html
-            }
-          }
           heroTitle
           heroImage {
             fluid(maxWidth: 1200) {
@@ -25,17 +20,15 @@ const query = graphql`
 `
 const Hero = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulHomePage.edges[0]
-  let { heroSubtitle, heroImage, heroTitle } = node
+  let { node } = data.allContentfulWhatYouCanDoPage.edges[0]
+  let { heroImage, heroTitle } = node
 
   return (
     <ImageHero
       title={heroTitle}
-      subtitle={heroSubtitle.childMarkdownRemark.html}
       imageData={heroImage.fluid}
-      bg='green'
-      headerColor='blue'
-      subtitleColor='white'
+      bg='blue'
+      headerColor='yellow'
     />
   )
 }

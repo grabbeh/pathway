@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/shared/StandardHero'
+import Hero from '../components/what-we-do/Hero'
 import Wrapper from '../components/shared/Wrapper'
 import FindOutMore from '../components/shared/FindOutMore'
 import SEO from '../components/shared/seo'
@@ -15,7 +15,7 @@ import Footer from '../components/shared/Footer'
 const page = () => (
   <Wrapper>
     <SEO title='What we do' />
-    <Hero title='What we do' />
+    <Hero  />
     <MainSection />
     <CaseStudy />
     <PathwayModel />

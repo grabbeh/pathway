@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/shared/StandardHero'
+import Hero from '../components/homelessness/Hero'
 import Wrapper from '../components/shared/Wrapper'
 import HomelessMainSection from '../components/homelessness/HomelessMainSection'
 import HomelessProgramme from '../components/homelessness/HomelessProgramme'
@@ -8,7 +8,7 @@ import Footer from '../components/shared/Footer'
 
 const Homelessness = () => (
   <Wrapper>
-    <Hero title='Homelessness' />
+    <Hero  />
     <HomelessMainSection />
     <HomelessProgramme />
     <FindOutMore howyoucanhelp whatwedo />
