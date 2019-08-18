@@ -39,7 +39,7 @@ const AboutSurvey = () => {
               <Text.span fontSize={4} fontWeight='bold' color='white'>
                 {studyText.studyText}{' '}
               </Text.span>
-              <Text.span fontSize={4} fontWeight='bold' color='yellow'>
+              <Text.span fontSize={4} fontWeight='bold' color='grey'>
                 {aboutStatistic.aboutStatistic}
               </Text.span>
             </Animation>

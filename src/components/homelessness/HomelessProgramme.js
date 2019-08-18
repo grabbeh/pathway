@@ -6,12 +6,18 @@ import IntroTitle from '../typography/IntroTitle'
 import Flex from '../general/Flex'
 import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
+import BackgroundImage from '../general/BackgroundImage'
 
 const query = graphql`
   query {
     allContentfulHomelessnessPage {
       edges {
         node {
+          programmeImage {
+            fluid(maxWidth: 1200) {
+              ...GatsbyContentfulFluid
+            }
+          }
           programmeText {
             childMarkdownRemark {
               html
@@ -27,12 +33,20 @@ const query = graphql`
 const HomelessProgramme = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomelessnessPage.edges[0]
-  let { programmeText, programmeTitle } = node
+  let { programmeText, programmeTitle, programmeImage } = node
+  console.log(programmeImage)
   return (
     <Box>
       <Flex flexWrap='wrap'>
-        <Box bg='greyer' width={[1, 1 / 3]}>
-          <Circle />
+        <Box position='relative' bg='greyer' width={[1, 1 / 3]}>
+          <BackgroundImage
+            style={{ height: '100vh' }}
+            imageData={programmeImage.fluid}
+          >
+            <Box position='absolute' top={20} left={20}>
+              <Circle />
+            </Box>
+          </BackgroundImage>
         </Box>
         <Box py={5} bg='green' width={[1, 2 / 3]}>
           <Animation>
