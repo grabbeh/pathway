@@ -59,7 +59,9 @@ const Footer = ({ bg }) => {
                 <Flex height='100%' alignItems='flex-end'>
                   <Box>
                     <Text fontSize={3}>Terms and conditions</Text>
-                    <Text fontSize={3}>Privacy policy</Text>
+                    <Text fontSize={3}>
+                      <Link to='/privacy-policy'>Privacy policy</Link>
+                    </Text>
                   </Box>
                 </Flex>
               </Box>
