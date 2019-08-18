@@ -54,18 +54,18 @@ const Footer = ({ bg }) => {
         <Flex flexWrap='wrap'>
           <Box p={[3, 5]} width={[1, 2 / 3]}>
             <Flex flexWrap='wrap'>
-              <Box height={155} width={[1, 1 / 3]}>
-                <Logo />
-                <Flex height='100%' alignItems='flex-end'>
-                  <Box>
-                    <Text fontSize={3}>Terms and conditions</Text>
-                    <Text fontSize={3}>
-                      <Link to='/privacy-policy'>Privacy policy</Link>
-                    </Text>
-                  </Box>
-                </Flex>
+              <Box width={[1, 1 / 3]}>
+                <Box width={225}>
+                  <Logo />
+                </Box>
+                <Box>
+                  <Text fontSize={3}>Terms and conditions</Text>
+                  <Text fontSize={3}>
+                    <Link to='/privacy-policy'>Privacy policy</Link>
+                  </Text>
+                </Box>
               </Box>
-              <Box mt={3} px={3} width={[1, 1 / 3]}>
+              <Box mt={3} width={[1, 1 / 3]}>
                 <Subtitle color='green'>Quick links</Subtitle>
                 <List>
                   {navigation.navigationItem.map(({ url, title }, i) => {
