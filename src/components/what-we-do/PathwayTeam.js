@@ -1,8 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Section from '../general/StandardSection'
-import SectionTitle from '../general/SectionTitle'
-import BodyText from '../general/BodyText'
+import SectionTitle from '../typography/SectionTitle'
+import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
@@ -26,6 +26,7 @@ const PathwayTeam = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulWwdPage.edges[0]
   let { pathwayTeamTitle, hospitalTeamTable } = node
+  console.log(data)
 
   return (
     <Section bg='lightGrey'>

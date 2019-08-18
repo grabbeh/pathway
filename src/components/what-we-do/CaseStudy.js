@@ -2,8 +2,8 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Section from '../general/WideSection'
 import Box from '../general/Box'
-import Subtitle from '../general/Subtitle'
-import BodyText from '../general/BodyText'
+import Tagline from '../typography/Tagline'
+import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 
@@ -40,8 +40,8 @@ const CaseStudy = () => {
           <Box width={[1, 1 / 3]}>
             <Flex height='100%' alignItems='center'>
               <Box>
-                <Subtitle
-                  color='white'
+                <Tagline
+                  color='grey'
                   html={wwdCaseStudySubtitle.childMarkdownRemark.html}
                 />
               </Box>

@@ -10,6 +10,7 @@ import ULCHStats from '../components/what-we-do/ULCHStats'
 import CostEffective from '../components/what-we-do/CostEffective'
 import PathwayTeamCosts from '../components/what-we-do/PathwayTeamCosts'
 import PathwayTeam from '../components/what-we-do/PathwayTeam'
+import Footer from '../components/shared/Footer'
 
 const page = () => (
   <Wrapper>
@@ -23,6 +24,7 @@ const page = () => (
     <PathwayTeam />
     <PathwayTeamCosts />
     <FindOutMore bg='lightGrey' howyoucanhelp homelessness />
+    <Footer />
   </Wrapper>
 )
 

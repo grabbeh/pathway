@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '../general/Box'
 import Flex from '../general/Flex'
-import Text from '../general/Text'
+import Text from '../typography/Text'
 import Link from '../general/InternalLink'
 import { useSpring, animated } from 'react-spring'
 

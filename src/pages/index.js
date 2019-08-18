@@ -6,6 +6,7 @@ import Stats from '../components/home/HomeStats'
 import Hero from '../components/home/Hero'
 import SocialFranchise from '../components/home/SocialFranchise'
 import Letter from '../components/home/Letter'
+import Footer from '../components/shared/Footer'
 
 const IndexPage = () => {
   return (
@@ -16,6 +17,7 @@ const IndexPage = () => {
       <Letter />
       <Stats />
       <FindOutMore homelessness howyoucanhelp whatwedo />
+      <Footer bg='lightGrey' />
     </Wrapper>
   )
 }

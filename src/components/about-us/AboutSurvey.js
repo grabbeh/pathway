@@ -1,10 +1,10 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
-import Text from '../general/Text'
-import Flex from '../general/Flex'
+import Text from '../typography/Text'
 import Animation from '../animations/ScrollAnimation'
 import Circle from '../../svg/Circle'
+import Section from '../general/StandardSection'
 
 const query = graphql`
   query {
@@ -34,18 +34,16 @@ const AboutSurvey = () => {
           <Circle size={75} />
         </Box>
         <Box pt={[5, 0]}>
-          <Flex justifyContent='center'>
-            <Box mx={[3, 6]} maxWidth={800} py={5}>
-              <Animation>
-                <Text.span fontSize={4} fontWeight='bold' color='white'>
-                  {studyText.studyText}{' '}
-                </Text.span>
-                <Text.span fontSize={4} fontWeight='bold' color='yellow'>
-                  {aboutStatistic.aboutStatistic}
-                </Text.span>
-              </Animation>
-            </Box>
-          </Flex>
+          <Section>
+            <Animation>
+              <Text.span fontSize={4} fontWeight='bold' color='white'>
+                {studyText.studyText}{' '}
+              </Text.span>
+              <Text.span fontSize={4} fontWeight='bold' color='yellow'>
+                {aboutStatistic.aboutStatistic}
+              </Text.span>
+            </Animation>
+          </Section>
         </Box>
       </Box>
     </Box>

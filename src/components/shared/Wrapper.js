@@ -6,15 +6,14 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../../theme.js'
 import Box from '../general/Box'
 import Header from './Header'
-import Footer from './Footer'
 import '../../index.css'
 import { useSpring, animated } from 'react-spring'
-//import { MDXProvider } from '@mdx-js/react'
-//import Table from '../general/Table'
-/*
+import { MDXProvider } from '@mdx-js/react'
+import Table from '../general/Table'
+
 const components = {
   table: Table
-}*/
+}
 
 const Style = createGlobalStyle`
   * { box-sizing: border-box; }
@@ -69,19 +68,20 @@ const Wrapper = props => {
         <html lang='en' />
       </Helmet>
       <Style />
-      <Context.Provider value={context}>
-        <ThemeProvider theme={theme}>
-          <Box>
-            <Header />
-            <animated.div style={animProps}>
-              <Box aria-hidden={!!open} zIndex={open ? -1 : 9999}>
-                {props.children}
-              </Box>
-            </animated.div>
-            <Footer />
-          </Box>
-        </ThemeProvider>
-      </Context.Provider>
+      <MDXProvider components={components}>
+        <Context.Provider value={context}>
+          <ThemeProvider theme={theme}>
+            <Box>
+              <Header />
+              <animated.div style={animProps}>
+                <Box aria-hidden={!!open} zIndex={open ? -1 : 9999}>
+                  {props.children}
+                </Box>
+              </animated.div>
+            </Box>
+          </ThemeProvider>
+        </Context.Provider>
+      </MDXProvider>
     </Fragment>
   )
 }

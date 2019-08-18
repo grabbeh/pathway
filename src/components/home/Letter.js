@@ -1,23 +1,28 @@
 import React from 'react'
 import CenterSection from '../general/CenterSection'
-import Text from '../general/Text'
+import Text from '../typography/Text'
 import Box from '../general/Box'
 import Flex from '../general/Flex'
 import { useStaticQuery, graphql } from 'gatsby'
 import Animation from '../animations/ScrollAnimation'
-import MarkdownText from '../general/MarkdownText'
+import IntroTitle from '../typography/IntroTitle'
+import SectionTitle from '../typography/SectionTitle'
+import Tagline from '../typography/Tagline'
+import BodyText from '../typography/BodyText'
 
 const query = graphql`
   query {
     allContentfulHomePage {
       edges {
         node {
-          introTagline {
+          letterIntroTitle
+          letterTitle
+          letterTagline {
             childMarkdownRemark {
               html
             }
           }
-          introduction {
+          letterContent {
             childMarkdownRemark {
               html
             }
@@ -32,40 +37,29 @@ const Letter = () => {
   const data = useStaticQuery(query)
 
   let { node } = data.allContentfulHomePage.edges[0]
-  let { introduction, introTagline } = node
+  let { letterIntroTitle, letterTitle, letterTagline, letterContent } = node
   return (
     <CenterSection>
       <Animation>
         <Box mb={4}>
-          <Text textAlign='center' fontSize={3} color='blue'>
-            Welcome
-          </Text>
-          <Text textAlign='center' fontWeight='bold' fontSize={5} color='grey'>
-            Letter from our Chief Executive
-          </Text>
+          <IntroTitle textAlign='center' color='blue'>
+            {letterIntroTitle}
+          </IntroTitle>
+          <SectionTitle textAlign='center'>{letterTitle}</SectionTitle>
         </Box>
         <Flex justifyContent='space-between' flexWrap='wrap'>
           <Box width={[1, 1 / 2]}>
             <Box mt={-4} mr={[0, 4]}>
-              <Text
-                lineHeight='45px'
-                dangerouslySetInnerHTML={{
-                  __html: introTagline.childMarkdownRemark.html
-                }}
-                textAlign={['center', 'right']}
+              <Tagline
+                html={letterTagline.childMarkdownRemark.html}
                 color='blue'
-                fontWeight='bold'
-                fontSize={5}
+                textAlign={['center', 'right']}
               />
             </Box>
           </Box>
           <Box width={[1, 1 / 2]}>
             <Box ml={[0, 4]}>
-              <MarkdownText
-                lineHeight='25px'
-                fontSize={3}
-                html={introduction.childMarkdownRemark.html}
-              />
+              <BodyText html={letterContent.childMarkdownRemark.html} />
               <Box mt={3}>
                 <Text fontSize={3} fontWeight='bold' color='green'>
                   Alex Bax,

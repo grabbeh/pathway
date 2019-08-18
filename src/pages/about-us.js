@@ -6,6 +6,7 @@ import Hero from '../components/about-us/AboutHero'
 import FindOutMore from '../components/shared/FindOutMore'
 import Survey from '../components/about-us/AboutSurvey'
 import Services from '../components/about-us/Services'
+import Footer from '../components/shared/Footer'
 
 const AboutPage = () => {
   return (
@@ -16,6 +17,7 @@ const AboutPage = () => {
       <Survey />
       <Services />
       <FindOutMore bg='lightGrey' homelessness howyoucanhelp whatwedo />
+      <Footer bg='lightGrey' />
     </Wrapper>
   )
 }

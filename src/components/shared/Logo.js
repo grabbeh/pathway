@@ -8,7 +8,7 @@ const query = graphql`
       edges {
         node {
           logoImage {
-            fluid(maxWidth: 1200) {
+            fluid(maxWidth: 225) {
               ...GatsbyContentfulFluid
             }
           }

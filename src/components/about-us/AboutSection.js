@@ -3,10 +3,10 @@ import Box from '../general/Box'
 import { graphql, useStaticQuery } from 'gatsby'
 import Section from '../general/StandardSection'
 import Animation from '../animations/ScrollAnimation'
-import BodyText from '../general/BodyText'
-import Subtitle from '../general/Subtitle'
-import IntroTitle from '../general/IntroTitle'
-import SectionTitle from '../general/SectionTitle'
+import BodyText from '../typography/BodyText'
+import Subtitle from '../typography/Subtitle'
+import IntroTitle from '../typography/IntroTitle'
+import SectionTitle from '../typography/SectionTitle'
 
 const query = graphql`
   query {

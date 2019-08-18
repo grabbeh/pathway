@@ -1,7 +1,7 @@
 import React from 'react'
-import Text from '../general/Text'
+import Text from '../typography/Text'
 import MarkdownText from '../general/MarkdownText'
-import CenterSection from '../general/CenterSection'
+import Section from '../general/StandardSection'
 import Box from '../general/Box'
 import { useStaticQuery, graphql } from 'gatsby'
 import Flex from '../general/Flex'
@@ -11,7 +11,7 @@ const query = graphql`
     allContentfulHomePage {
       edges {
         node {
-          whatIsASocialFranchise {
+          socialFranchiseDescription {
             childMarkdownRemark {
               html
             }
@@ -25,11 +25,11 @@ const query = graphql`
 const SocialFranchise = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomePage.edges[0]
-  let { whatIsASocialFranchise } = node
+  let { socialFranchiseDescription } = node
 
   return (
     <Box bg='lightGrey'>
-      <CenterSection>
+      <Section>
         <Flex alignItems='center' flexWrap='wrap'>
           <Box width={[1, 1 / 2]}>
             <Text fontWeight='subtitle' fontSize={3} color='green'>
@@ -38,11 +38,11 @@ const SocialFranchise = () => {
           </Box>
           <Box width={[1, 1 / 2]}>
             <MarkdownText
-              html={whatIsASocialFranchise.childMarkdownRemark.html}
+              html={socialFranchiseDescription.childMarkdownRemark.html}
             />
           </Box>
         </Flex>
-      </CenterSection>
+      </Section>
     </Box>
   )
 }

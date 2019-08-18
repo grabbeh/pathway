@@ -1,12 +1,13 @@
 import React from 'react'
-import MarkdownText from './MarkdownText'
+import MarkdownText from '../general/MarkdownText'
 import Box from '../general/Box'
-import Text from '../general/Text'
+import Text from './Text'
 
-const Subtitle = ({ html, color, children }) => (
+const Subtitle = ({ html, color, children }, props) => (
   <Box>
     {html ? (
       <MarkdownText
+        {...props}
         fontSize={4}
         fontWeight='subtitle'
         color={color}

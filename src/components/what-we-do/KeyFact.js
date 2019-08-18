@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
-import Subtitle from '../general/Subtitle'
+import Subtitle from '../typography/Subtitle'
 import Circle from '../../svg/Circle'
 
 const query = graphql`

@@ -2,9 +2,9 @@ import React from 'react'
 import Box from '../general/Box'
 import { useStaticQuery, graphql } from 'gatsby'
 import Circle from '../../svg/Circle'
-import IntroTitle from '../general/IntroTitle'
+import IntroTitle from '../typography/IntroTitle'
 import Flex from '../general/Flex'
-import Subtitle from '../general/Subtitle'
+import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`

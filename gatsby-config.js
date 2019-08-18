@@ -9,6 +9,13 @@ module.exports = {
     author: `John Doe`
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.md', '.mdx'],
+        plugins: []
+      }
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
