@@ -9,10 +9,14 @@ import Header from './Header'
 import '../../index.css'
 import { useSpring, animated } from 'react-spring'
 import { MDXProvider } from '@mdx-js/react'
-import Table from '../general/Table'
+import Table from '../mdx/Table'
+import List from '../mdx/List'
+import ListItem from '../mdx/ListItem'
 
 const components = {
-  table: Table
+  table: Table,
+  ul: List,
+  li: ListItem
 }
 
 const Style = createGlobalStyle`

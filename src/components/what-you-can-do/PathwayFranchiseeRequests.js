@@ -56,8 +56,8 @@ const PathwayFranchiseeRequests = () => {
             ml={4}
             pt={100}
             px={4}
-            height={450}
-            width={450}
+            height={[1,450]}
+            width={[1,450]}
             bg='yellow'
             borderRadius={5}
           >

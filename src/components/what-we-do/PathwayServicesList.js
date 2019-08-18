@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
 import Subtitle from '../typography/Subtitle'
-import BodyText from '../typography/BodyText'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
@@ -11,8 +11,8 @@ const query = graphql`
         node {
           pathwayServicesListTitle
           pathwayServicesList {
-            childMarkdownRemark {
-              html
+            childMdx {
+              body
             }
           }
         }
@@ -29,7 +29,7 @@ const PathwayServicesList = () => {
   return (
     <Box px={[3, 5]}>
       <Subtitle color='green'>{pathwayServicesListTitle}</Subtitle>
-      <BodyText html={pathwayServicesList.childMarkdownRemark.html} />
+      <MDXRenderer>{pathwayServicesList.childMdx.body}</MDXRenderer>
     </Box>
   )
 }

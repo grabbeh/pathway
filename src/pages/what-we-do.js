@@ -15,7 +15,7 @@ import Footer from '../components/shared/Footer'
 const page = () => (
   <Wrapper>
     <SEO title='What we do' />
-    <Hero  />
+    <Hero />
     <MainSection />
     <CaseStudy />
     <PathwayModel />
@@ -23,7 +23,7 @@ const page = () => (
     <CostEffective />
     <PathwayTeam />
     <PathwayTeamCosts />
-    <FindOutMore bg='lightGrey' howyoucanhelp homelessness />
+    <FindOutMore howyoucanhelp homelessness />
     <Footer />
   </Wrapper>
 )

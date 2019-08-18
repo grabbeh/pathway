@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Section from '../general/StandardSection'
 import SectionTitle from '../typography/SectionTitle'
-import BodyText from '../typography/BodyText'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
@@ -12,8 +12,8 @@ const query = graphql`
         node {
           pathwayTeamTitle
           hospitalTeamTable {
-            childMarkdownRemark {
-              html
+            childMdx {
+              body
             }
           }
         }
@@ -34,7 +34,7 @@ const PathwayTeam = () => {
         <SectionTitle>{pathwayTeamTitle}</SectionTitle>
       </Animation>
       <Animation>
-        <BodyText html={hospitalTeamTable.childMarkdownRemark.html} />
+        <MDXRenderer>{hospitalTeamTable.childMdx.body}</MDXRenderer>
       </Animation>
     </Section>
   )
