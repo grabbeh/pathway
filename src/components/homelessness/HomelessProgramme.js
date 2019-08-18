@@ -34,7 +34,6 @@ const HomelessProgramme = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomelessnessPage.edges[0]
   let { programmeText, programmeTitle, programmeImage } = node
-  console.log(programmeImage)
   return (
     <Box>
       <Flex flexWrap='wrap'>
