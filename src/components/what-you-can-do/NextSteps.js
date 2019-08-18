@@ -42,7 +42,6 @@ const query = graphql`
 
 const PathwayFranchiseeRequests = () => {
   const data = useStaticQuery(query)
-  console.log(data)
   const {
     nextStepsTitle,
     nextStepsSubtitle,

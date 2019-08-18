@@ -3,22 +3,19 @@ import Box from './Box'
 import Flex from './Flex'
 import styled, { css } from 'styled-components'
 
-const Tab = props => {
-  console.log(props)
-  return (
-    <Box
-      onClick={props.isDisabled ? null : props.onSelect}
-      onMouseEnter={props.isDisabled ? null : props.onSelect}
-      onMouseLeave={props.isDisabled ? props.onSelect : null}
-      style={{ pointer: 'cursor' }}
-    >
-      <Flex>
-        <StyledNumber {...props}>{props.number + 1}</StyledNumber>
-        <StyledWord {...props}>{props.phase}</StyledWord>
-      </Flex>
-    </Box>
-  )
-}
+const Tab = props => (
+  <Box
+    onClick={props.isDisabled ? null : props.onSelect}
+    onMouseEnter={props.isDisabled ? null : props.onSelect}
+    onMouseLeave={props.isDisabled ? props.onSelect : null}
+    style={{ pointer: 'cursor' }}
+  >
+    <Flex>
+      <StyledNumber {...props}>{props.number + 1}</StyledNumber>
+      <StyledWord {...props}>{props.phase}</StyledWord>
+    </Flex>
+  </Box>
+)
 
 const StyledWord = styled(Box)`
 cursor: pointer;
