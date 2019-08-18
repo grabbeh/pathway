@@ -5,7 +5,7 @@ import Text from '../typography/Text'
 import Link from '../general/InternalLink'
 import { useSpring, animated } from 'react-spring'
 
-const Menu = ({ open, navigationItems }) => {
+const Menu = ({ open, toggleOpen, navigationItems }) => {
   const props = useSpring({
     config: { duration: 300 },
     opacity: open ? 1 : 0
@@ -13,12 +13,13 @@ const Menu = ({ open, navigationItems }) => {
   return (
     <animated.div style={props}>
       <Box
+        onClick={toggleOpen}
         width='100%'
         ml={open ? 0 : '100%'}
         zIndex={open ? 9999 : -1}
         position='fixed'
         aria-hidden={!!open}
-        top={60}
+        top={65}
         left={0}
         bg='white'
         pt={[5, 6]}

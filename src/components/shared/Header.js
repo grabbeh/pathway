@@ -37,23 +37,22 @@ const Header = () => {
       <Menu
         navigationItems={node.navigationItem}
         open={state.open}
-        setOpen={state.toggleOpen}
+        toggleOpen={state.toggleOpen}
       />
-
       <Flex>
-        <Flex justifyContent='flex-start'>
+        <Flex flex='1'>
           <Box width={225}>
             <Link to='/'>
               <Logo />
             </Link>
           </Box>
         </Flex>
-        <Flex justifyContent='flex-end' alignItems='center'>
+        <Flex flex='4' justifyContent='flex-end' alignItems='center'>
           <MenuHide>
             <Flex>
               {node.navigationItem.map(({ url, title, subtitle }, i) => {
                 return (
-                  <Box ml={4} key={i}>
+                  <Box mr={4} key={i}>
                     <Link to={`/${url}`}>
                       <Text fontSize={2}>{title}</Text>
                       <Text color='blue' fontSize={0}>
