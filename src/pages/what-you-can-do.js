@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Wrapper from '../components/shared/Wrapper'
 import Footer from '../components/shared/Footer'
 import FindOutMore from '../components/shared/FindOutMore'
@@ -26,8 +25,8 @@ const WhatYouCanDo = () => (
     <GuyStats />
     <FinancialInfo />
     <NextSteps />
-    <FindOutMore homelessness whatwedo />
-    <Footer bg='lightGrey' />
+    <FindOutMore bg='lightGrey' homelessness whatwedo />
+    <Footer />
   </Wrapper>
 )
 

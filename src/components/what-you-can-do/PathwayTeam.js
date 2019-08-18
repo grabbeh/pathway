@@ -61,8 +61,10 @@ const MainSection = () => {
           </Box>
           <Box width={[1, 1 / 2]}>
             <TabPanels>
-              {franchiseOfferPhases.map(({ content }, i) => (
+              {franchiseOfferPhases.map(({ phase, content, color}, i) => (
+
                 <Box key={i}>
+                  <Subtitle color={color} >{phase}</Subtitle>
                   <BodyText html={content.childMarkdownRemark.html} />
                 </Box>
               ))}

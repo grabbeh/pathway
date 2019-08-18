@@ -1,0 +1,19 @@
+import React from 'react'
+import Wrapper from '../components/shared/Wrapper'
+import Footer from '../components/shared/Footer'
+import FindOutMore from '../components/shared/FindOutMore'
+import Hero from '../components/shared/StandardHero'
+import SEO from '../components/shared/seo'
+import MainSection from '../components/online-manual/MainSection'
+
+const OnlineManual = () => (
+  <Wrapper>
+    <SEO title='What you can do' />
+    <Hero title='Online manual' />
+    <MainSection />
+    <FindOutMore bg='lightGrey' homelessness whatwedo howyoucanhelp />
+    <Footer />
+  </Wrapper>
+)
+
+export default OnlineManual

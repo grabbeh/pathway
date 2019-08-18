@@ -40,7 +40,7 @@ const PathwayFranchiseeRequests = () => {
 
   return (
     <Section bg='lightGrey'>
-      <Flex>
+      <Flex flexWrap='wrap'>
         <Box width={[1, 1 / 2]}>
           <Animation>
             <Subtitle color='blue'>{pathwayFranchiseeRequestsTitle}</Subtitle>
@@ -51,8 +51,9 @@ const PathwayFranchiseeRequests = () => {
             />
           </Animation>
         </Box>
-        <Box ml={4} width={[1, 1 / 2]}>
+        <Box width={[1, 1 / 2]}>
           <Box
+            ml={4}
             pt={100}
             px={4}
             height={450}

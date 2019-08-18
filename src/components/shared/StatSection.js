@@ -5,9 +5,13 @@ import Flex from '../general/Flex'
 import Section from '../general/StandardSection'
 import Animation from '../animations/ScrollAnimation'
 import SectionTitle from '../typography/SectionTitle'
+import Circle from '../../svg/Circle'
 
 const StatSection = ({ stats, title, bg }) => (
-  <Box bg={bg}>
+  <Box position='relative' bg={bg}>
+    <Box position='absolute' top={20} left={20}>
+      <Circle />
+    </Box>
     <Section>
       <Animation>
         <SectionTitle color='white'>{title}</SectionTitle>

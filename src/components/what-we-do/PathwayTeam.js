@@ -24,10 +24,10 @@ const query = graphql`
 
 const PathwayTeam = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWwdPage.edges[0]
-  let { pathwayTeamTitle, hospitalTeamTable } = node
-  console.log(data)
-
+  let {
+    pathwayTeamTitle,
+    hospitalTeamTable
+  } = data.allContentfulWwdPage.edges[0].node
   return (
     <Section bg='lightGrey'>
       <Animation>

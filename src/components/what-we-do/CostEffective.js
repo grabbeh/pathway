@@ -8,6 +8,7 @@ import SectionTitle from '../typography/SectionTitle'
 import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
+import Circle from '../../svg/Circle'
 
 const query = graphql`
   query {
@@ -62,8 +63,11 @@ const CostEffective = () => {
             <Box mb={3} width={[1, 1 / 2]} key={i}>
               <Animation>
                 <Box mr={4}>
-                  <Text.span fontWeight='bold'>{title}</Text.span>
-                  <Text.span> {mainContent}</Text.span>
+                  <Circle size={60} />
+                  <Box>
+                    <Text.span fontWeight='bold'>{title}</Text.span>
+                    <Text.span> {mainContent}</Text.span>
+                  </Box>
                 </Box>
               </Animation>
             </Box>

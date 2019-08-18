@@ -1,7 +1,6 @@
 import React from 'react'
 import Box from './Box'
 import Flex from './Flex'
-import Text from '../typography/Text'
 import styled, { css } from 'styled-components'
 
 const Tab = props => {
@@ -9,20 +8,24 @@ const Tab = props => {
   return (
     <Box
       onClick={props.isDisabled ? null : props.onSelect}
+      onMouseEnter={props.isDisabled ? null : props.onSelect}
+      onMouseLeave={props.isDisabled ? props.onSelect : null}
       style={{ pointer: 'cursor' }}
     >
-      <Flex flexWrap='wrap'>
+      <Flex>
         <StyledNumber {...props}>{props.number + 1}</StyledNumber>
-        <Text fontSize={4}>{props.phase}</Text>
+        <StyledWord {...props}>{props.phase}</StyledWord>
       </Flex>
     </Box>
   )
 }
 
 const StyledWord = styled(Box)`
+cursor: pointer;
 font-size: 22px;
 font-weight: bold;
 color: #4A4A4A;
+padding-top: 3px;
 ${props =>
     props.color === 'green' &&
   props.isActive &&
@@ -41,6 +44,7 @@ ${props =>
       css`
         color: #37aee3;
       `}
+      
 `
 
 const StyledNumber = styled(Box)`
@@ -58,18 +62,24 @@ const StyledNumber = styled(Box)`
   ${props =>
     props.color === 'green' &&
     css`
-      border: 1px solid #00a880;
+      border: 2px solid #00a880;
     `}
     ${props =>
     props.color === 'yellow' &&
       css`
-        border: 1px solid #f5a623;
+        border: 2px solid #f5a623;
       `}
       ${props =>
     props.color === 'blue' &&
         css`
           border: 1px solid #37aee3;
         `}
+          ${props =>
+    props.isActive &&
+            css`
+              color: white;
+            `}
+       
   
   ${props =>
     props.color === 'green' &&
