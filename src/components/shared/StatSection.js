@@ -6,7 +6,6 @@ import Section from '../general/StandardSection'
 import Animation from '../animations/ScrollAnimation'
 import SectionTitle from '../typography/SectionTitle'
 import Circle from '../../svg/Circle'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const StatSection = ({ stats, title, markdown, bg }) => (
   <Box position='relative' bg={bg}>
@@ -16,8 +15,7 @@ const StatSection = ({ stats, title, markdown, bg }) => (
     <Section>
       <Box mt={[5, 0]}>
         <Animation>
-          {markdown ? <SectionTitle color='white'><MDXRenderer>{markdown}</MDXRenderer></SectionTitle>
-          : <SectionTitle color='white'>{title}</SectionTitle>}
+         <SectionTitle color='white'>{title}</SectionTitle>
         </Animation>
         <Box mt={4}>
           <Animation>
