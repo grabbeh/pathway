@@ -16,7 +16,7 @@ const StatSection = ({ stats, title, markdown, bg }) => (
     <Section>
       <Box mt={[5, 0]}>
         <Animation>
-          {markdown ? <SectionTitle color='white'>{markdown}</SectionTitle>
+          {markdown ? <SectionTitle color='white'><MDXRenderer>{markdown}</MDXRenderer></SectionTitle>
           : <SectionTitle color='white'>{title}</SectionTitle>}
         </Animation>
         <Box mt={4}>
