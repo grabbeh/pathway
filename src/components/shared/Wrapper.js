@@ -12,11 +12,13 @@ import { MDXProvider } from '@mdx-js/react'
 import Table from '../mdx/Table'
 import List from '../mdx/List'
 import ListItem from '../mdx/ListItem'
+import Paragraph from '../mdx/Paragraph'
 
 const components = {
   table: Table,
   ul: List,
-  li: ListItem
+  li: ListItem,
+  p: Paragraph
 }
 
 const Style = createGlobalStyle`
