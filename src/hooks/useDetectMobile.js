@@ -4,9 +4,13 @@ function useDetectMobile () {
   const [width, setWidth] = useState(window.innerWidth)
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize)
+    }
+    if (typeof window !== 'undefined') {
+      return () => {
+        window.removeEventListener('resize', handleResize)
+      }
     }
   }, [])
   let mobile = false

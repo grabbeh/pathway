@@ -86,6 +86,7 @@ const Header = () => {
         <Box position='absolute' top={3} right={3}>
           <BurgerShow>
             <Box
+              aria-expanded={state.open}
               style={{ cursor: 'pointer' }}
               onClick={() => {
                 state.toggleOpen(!state.open)
