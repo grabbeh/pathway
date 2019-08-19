@@ -22,7 +22,7 @@ Text.propTypes = {
 
 Text.defaultProps = {
   color: 'grey',
-  fontSize: 2,
+  fontSize: 3,
   fontWeight: 'normal'
 }
 
