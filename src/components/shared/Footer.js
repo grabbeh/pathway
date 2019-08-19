@@ -54,8 +54,8 @@ const Footer = ({ bg }) => {
         <Flex flexWrap='wrap'>
           <Box p={[3, 5]} width={[1, 2 / 3]}>
             <Flex flexWrap='wrap'>
-              <Box width={[1, 1 / 3]}>
-                <Box width={225}>
+              <Box width={[1, 1 / 2, 1 / 3]}>
+                <Box width={[1 / 2, 1]}>
                   <Logo />
                 </Box>
                 <Box>
@@ -65,7 +65,7 @@ const Footer = ({ bg }) => {
                   </Text>
                 </Box>
               </Box>
-              <Box mt={3} width={[1, 1 / 3]}>
+              <Box mt={3} width={[1, 1 / 2, 1 / 3]}>
                 <Subtitle color='green'>Quick links</Subtitle>
                 <List>
                   {navigation.navigationItem.map(({ url, title }, i) => {
@@ -81,7 +81,7 @@ const Footer = ({ bg }) => {
                   })}
                 </List>
               </Box>
-              <Box mt={3} width={[1, 1 / 3]}>
+              <Box mt={3} width={[1, 1 / 2, 1 / 3]}>
                 <Subtitle color='green'>Contact</Subtitle>
                 <BodyText html={contactDetails.childMarkdownRemark.html} />
               </Box>

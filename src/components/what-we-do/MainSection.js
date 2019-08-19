@@ -5,7 +5,6 @@ import Box from '../general/Box'
 import IntroTitle from '../typography/IntroTitle'
 import SectionTitle from '../typography/SectionTitle'
 import Subtitle from '../typography/Subtitle'
-import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 

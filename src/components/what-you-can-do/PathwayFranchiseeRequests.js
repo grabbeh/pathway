@@ -6,6 +6,7 @@ import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import KeyFactCircle from '../shared/KeyStatCircle'
 
 const query = graphql`
   query {
@@ -51,23 +52,9 @@ const PathwayFranchiseeRequests = () => {
           </Animation>
         </Box>
         <Box width={[1, 1 / 2]}>
-          <Box
-            ml={4}
-            pt={100}
-            px={4}
-            height={[1, 450]}
-            width={[1, 450]}
-            bg='yellow'
-            borderRadius={5}
-          >
-            <Animation>
-              <Subtitle
-                textAlign='center'
-                color='white'
-                html={keyStatContent.childMarkdownRemark.html}
-              />
-            </Animation>
-          </Box>
+          <KeyFactCircle
+            mainContent={keyStatContent.childMarkdownRemark.html}
+          />
         </Box>
       </Flex>
     </Section>

@@ -30,6 +30,7 @@ const Hero = () => {
 
   return (
     <ImageHero
+      mobileBg='black'
       title={heroTitle}
       subtitle={heroSubtitle.childMarkdownRemark.html}
       imageData={heroImage.fluid}

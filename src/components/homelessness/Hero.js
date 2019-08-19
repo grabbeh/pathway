@@ -25,6 +25,7 @@ const Hero = () => {
 
   return (
     <ImageHero
+      mobileBg='black'
       title={heroTitle}
       imageData={heroImage.fluid}
       bg='yellow'

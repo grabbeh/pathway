@@ -4,7 +4,6 @@ import Section from '../general/WideSection'
 import Box from '../general/Box'
 import Tagline from '../typography/Tagline'
 import Subtitle from '../typography/Subtitle'
-import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 

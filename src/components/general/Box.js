@@ -1,13 +1,5 @@
 import styled from 'styled-components'
-import {
-  layout,
-  space,
-  shadow,
-  position,
-  color,
-  border,
-  typography
-} from 'styled-system'
+import { layout, space, shadow, position, color, border } from 'styled-system'
 import * as React from 'react'
 import propTypes from '@styled-system/prop-types'
 import PropTypes from 'prop-types'
@@ -20,7 +12,6 @@ const StyledBox = styled('div')(
   space,
   shadow,
   layout,
-  typography,
   color,
   border,
   position
@@ -40,11 +31,9 @@ const numberStringOrArray = PropTypes.oneOfType([
 ])
 
 Box.propTypes = {
-  skew: PropTypes.number,
   ...propTypes.space,
   ...propTypes.border,
   ...propTypes.color,
-  ...propTypes.typography,
   ...propTypes.layout,
   ...propTypes.position,
   borderColor: numberStringOrArray,

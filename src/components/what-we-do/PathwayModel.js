@@ -72,10 +72,10 @@ const PathwayModel = () => {
       <Animation>
         <Flex flexWrap='wrap'>
           <Box width={[1, 1 / 2]}>
-            <PathwayServicesList />
+            <KeyFact />
           </Box>
           <Box width={[1, 1 / 2]}>
-            <KeyFact />
+            <PathwayServicesList />
           </Box>
         </Flex>
       </Animation>

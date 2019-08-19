@@ -7,6 +7,7 @@ import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
+import Text from '../typography/Text'
 
 const query = graphql`
   query {
@@ -67,9 +68,9 @@ const MainSection = () => {
             <Box mb={3} width={[1, 1 / 2, 1 / 3]} key={i}>
               <Animation>
                 <Box mr={4}>
-                  <Box fontWeight='bold' fontSize={2}>
+                  <Text fontWeight='bold' fontSize={2}>
                     {name}
-                  </Box>
+                  </Text>
                   <Box>
                     <BodyText html={description.childMarkdownRemark.html} />
                   </Box>

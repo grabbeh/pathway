@@ -25,17 +25,17 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
         pt={[5, 6]}
       >
         <Box>
-          <Flex height='100vh' justifyContent='center'>
-            <Box>
+          <Flex height='100vh' justifyContent={['flex-start', 'center']}>
+            <Box ml={[3, 0]}>
               {navigationItems.map(({ url, title }, i) => {
                 return (
                   <Box mb={3} key={i}>
                     <Link to={`/${url}`}>
                       <Text
-                        textAlign='center'
+                        textAlign={['left', 'center']}
                         color='grey'
                         fontWeight='bold'
-                        fontSize={5}
+                        fontSize={[4, 5]}
                       >
                         {title}
                       </Text>

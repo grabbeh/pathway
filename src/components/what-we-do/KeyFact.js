@@ -1,14 +1,13 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Box from '../general/Box'
-import Subtitle from '../typography/Subtitle'
-import Circle from '../../svg/Circle'
+import KeyFactCircle from '../shared/KeyStatCircle'
 
 const query = graphql`
   query {
     allContentfulWwdPage {
       edges {
         node {
+          keyFactIntro
           wwgKeyFact {
             childMarkdownRemark {
               html
@@ -20,16 +19,16 @@ const query = graphql`
   }
 `
 
-const KeyFacts = () => {
+const KeyFacts = ({ width = '82%' }) => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulWwdPage.edges[0]
-  let { wwgKeyFact } = node
+  let { wwgKeyFact, keyFactIntro } = node
 
   return (
-    <Box mt={5} p={[3, 5]} bg='blue'>
-      <Circle />
-      <Subtitle color='white' html={wwgKeyFact.childMarkdownRemark.html} />
-    </Box>
+    <KeyFactCircle
+      intro={keyFactIntro}
+      mainContent={wwgKeyFact.childMarkdownRemark.html}
+    />
   )
 }
 

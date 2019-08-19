@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import React from 'react'
+import ListItem from '../general/ListItem'
 
-export const List = styled('li')`
-  margin: 0;
-  padding: 0;
-  padding-bottom: 10px;
-  font-size: 18px;
-`
+export const List = props => (
+  <ListItem fontWeight='normal' pb={2} fontSize={3} color='grey'>
+    {props.children}
+  </ListItem>
+)
 
 export default List
