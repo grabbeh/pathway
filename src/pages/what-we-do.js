@@ -24,7 +24,7 @@ const page = () => (
     <PathwayTeam />
     <PathwayTeamCosts />
     <FindOutMore howyoucanhelp homelessness />
-    <Footer />
+    <Footer bg='lightGrey' />
   </Wrapper>
 )
 
