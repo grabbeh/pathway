@@ -6,7 +6,7 @@ import Section from '../general/StandardSection'
 import Animation from '../animations/ScrollAnimation'
 import SectionTitle from '../typography/SectionTitle'
 import Circle from '../../svg/Circle'
-import { MDXRenderer } from 'gatsby-mdx-plugin'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const StatSection = ({ stats, title, markdown, bg }) => (
   <Box position='relative' bg={bg}>
