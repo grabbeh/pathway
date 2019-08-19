@@ -11,10 +11,11 @@ const Tagline = props => (
         fontSize={5}
         fontWeight='subtitle'
         color={props.color}
+        lineHeight='tagline'
         html={props.html}
       />
     ) : (
-      <Text {...props} fontWeight='bold' color={props.color} fontSize={5}>
+      <Text {...props} fontWeight='subtitle' lineHeight='tagline' color={props.color} fontSize={5}>
         {props.children}
       </Text>
     )}
