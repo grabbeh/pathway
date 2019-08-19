@@ -7,6 +7,7 @@ import SectionTitle from '../typography/SectionTitle'
 import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
@@ -21,8 +22,8 @@ const query = graphql`
             }
           }
           wwdMainSection {
-            childMarkdownRemark {
-              html
+            childMdx {
+              body
             }
           }
         }
@@ -58,7 +59,7 @@ const MainSection = () => {
       </Box>
       <Box>
         <Animation>
-          <BodyText html={wwdMainSection.childMarkdownRemark.html} />
+          <MDXRenderer>{wwdMainSection.childMdx.body}</MDXRenderer>
         </Animation>
       </Box>
     </Section>
