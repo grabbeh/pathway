@@ -1,13 +1,11 @@
 import styled from 'styled-components'
+import Text from '../typography/Text'
 
 
 
-export const Paragraph = styled('p')`
-  font-size: 18px;
-  line-height: 24px;
-  margin: 0;
-
-`
+export const Paragraph = () => (
+  <Text.p fontSize={3} lineHeight='text' />
+)
 
 
 
