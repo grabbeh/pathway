@@ -20,7 +20,6 @@ const query = graphql`
             }
           }
           franchiseeProfileSubtitle
-
           franchiseeProfileContent {
             childMdx {
               body
