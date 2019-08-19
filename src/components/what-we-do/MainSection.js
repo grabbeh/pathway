@@ -41,6 +41,7 @@ const MainSection = () => {
     wwdMainSectionSubtitle,
     wwdMainSection
   } = node
+  console.log(wwdMainSection)
   return (
     <Section>
       <Animation>
