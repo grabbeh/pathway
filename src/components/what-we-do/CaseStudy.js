@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Section from '../general/WideSection'
 import Box from '../general/Box'
 import Tagline from '../typography/Tagline'
+import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
@@ -50,7 +51,7 @@ const CaseStudy = () => {
           <Box width={[1, 2 / 3]}>
             <Flex justifyContent='center'>
               <Box width={[1, 0.9]}>
-                <BodyText
+                <Subtitle
                   color='white'
                   html={wwdCaseStudy.childMarkdownRemark.html}
                 />
