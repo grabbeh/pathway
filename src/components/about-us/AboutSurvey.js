@@ -36,10 +36,10 @@ const AboutSurvey = () => {
         <Box pt={[5, 0]}>
           <Section>
             <Animation>
-              <Text.span fontSize={4} fontWeight='bold' color='white'>
+              <Text.span fontSize={5} fontWeight='bold' color='white'>
                 {studyText.studyText}{' '}
               </Text.span>
-              <Text.span fontSize={4} fontWeight='bold' color='grey'>
+              <Text.span fontSize={5} fontWeight='bold' color='grey'>
                 {aboutStatistic.aboutStatistic}
               </Text.span>
             </Animation>
