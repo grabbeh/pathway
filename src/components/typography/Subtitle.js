@@ -9,12 +9,13 @@ const Subtitle = ({ html, color, children }, props) => (
       <MarkdownText
         {...props}
         fontSize={4}
+        lineHeight='subtitle'
         fontWeight='subtitle'
         color={color}
         html={html}
       />
     ) : (
-      <Text fontSize={4} fontWeight='subtitle' color={color}>
+      <Text fontSize={4} lineHeight='subtitle' fontWeight='subtitle' color={color}>
         {children}
       </Text>
     )}
