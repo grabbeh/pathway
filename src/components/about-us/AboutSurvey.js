@@ -29,7 +29,7 @@ const AboutSurvey = () => {
 
   return (
     <Box bg='green'>
-      <Box maxWidth={1200}>
+      <Box maxWidth={[null, 800, 1000]}>
         <Box>
           <Circle size={75} />
         </Box>
