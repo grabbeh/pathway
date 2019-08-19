@@ -24,7 +24,7 @@ const Stats = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomePage.edges[0]
   let { statsHolder, statsSubtitle } = node
-  return <StatsSection bg='green' stats={statsHolder} markdown={statsSubtitle} />
+  return <StatsSection bg='green' stats={statsHolder} title={statsSubtitle} />
 }
 
 export default Stats
