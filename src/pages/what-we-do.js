@@ -12,7 +12,7 @@ import PathwayTeamCosts from '../components/what-we-do/PathwayTeamCosts'
 import PathwayTeam from '../components/what-we-do/PathwayTeam'
 import Footer from '../components/shared/Footer'
 
-const page = () => (
+const page = ({ location }) => (
   <Wrapper>
     <SEO title='What we do' />
     <Hero />
@@ -23,7 +23,7 @@ const page = () => (
     <CostEffective />
     <PathwayTeam />
     <PathwayTeamCosts />
-    <FindOutMore howyoucanhelp homelessness />
+    <FindOutMore currentPath={location.pathname} />
     <Footer bg='lightGrey' />
   </Wrapper>
 )

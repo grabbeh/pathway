@@ -6,12 +6,12 @@ import HomelessProgramme from '../components/homelessness/HomelessProgramme'
 import FindOutMore from '../components/shared/FindOutMore'
 import Footer from '../components/shared/Footer'
 
-const Homelessness = () => (
+const Homelessness = props => (
   <Wrapper>
-    <Hero  />
+    <Hero />
     <HomelessMainSection />
     <HomelessProgramme />
-    <FindOutMore howyoucanhelp whatwedo />
+    <FindOutMore currentPath={props.location.pathname} />
     <Footer bg='lightGrey' />
   </Wrapper>
 )

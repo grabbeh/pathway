@@ -33,14 +33,13 @@ const query = graphql`
 
 const MainSection = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWwdPage.edges[0]
-  let {
+  const { node } = data.allContentfulWwdPage.edges[0]
+  const {
     wwdIntro,
     wwdMainSectionTitle,
     wwdMainSectionSubtitle,
     wwdMainSection
   } = node
-  console.log(wwdMainSection)
   return (
     <Section>
       <Animation>

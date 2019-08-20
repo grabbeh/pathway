@@ -13,7 +13,7 @@ import GuyStats from '../components/what-you-can-do/GuyStats'
 import FinancialInfo from '../components/what-you-can-do/FranchiseeFinancialInfo'
 import NextSteps from '../components/what-you-can-do/NextSteps'
 
-const WhatYouCanDo = () => (
+const WhatYouCanDo = ({ location }) => (
   <Wrapper>
     <SEO title='What you can do' />
     <Hero />
@@ -25,7 +25,7 @@ const WhatYouCanDo = () => (
     <GuyStats />
     <FinancialInfo />
     <NextSteps />
-    <FindOutMore bg='lightGrey' homelessness whatwedo />
+    <FindOutMore currentPath={location.pathname} bg='lightGrey' />
     <Footer />
   </Wrapper>
 )

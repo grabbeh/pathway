@@ -5,56 +5,50 @@ import Flex from '../general/Flex'
 import Circle from '../../svg/Circle'
 import SectionTitle from '../typography/SectionTitle'
 import FullButton from './FullButton'
-/*
+import BodyText from '../general/MarkdownText'
+import { graphql, useStaticQuery } from 'gatsby'
+
 const query = graphql`
   query {
-    allContentfulNavigationContainer {
+    allContentfulFindOutMore {
       edges {
         node {
-          navigationItem {
+          title
+          links {
             title
             url
+          }
+          content {
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
     }
   }
 `
-*/
-const FindOutMore = ({ bg, homelessness, whatwedo, howyoucanhelp }) => {
-  // const data = useStaticQuery(query)
-  // let { node } = data.allContentfulNavigationContainer.edges[0]
+
+const FindOutMore = ({ bg, currentPath }) => {
+  const data = useStaticQuery(query)
+  const { title, content, links } = data.allContentfulFindOutMore.edges[0].node
+  const nonCurrent = links.filter(l => {
+    return `/${l.url}` !== currentPath
+  })
   return (
     <Box bg={bg}>
       <Box py={5} mx={[3, 6]}>
-        <SectionTitle>Find out more...</SectionTitle>
-        <Text>
-          Below you can find more information on homelessness, how Pathway
-          helps, and how you can get involved
-        </Text>
+        <SectionTitle>{title}</SectionTitle>
+        <BodyText html={content.childMarkdownRemark.html} />
         <Box mt={3}>
           <Flex flexWrap='wrap'>
-            {homelessness && (
-              <SiteSection text='Homelessness' to='/homelessness'>
+            {nonCurrent.map(({ title, url }) => (
+              <SiteSection key={title} text={title} to={`/${url}`}>
                 <Text textAlign='center'>
                   <Circle size={125} />
                 </Text>
               </SiteSection>
-            )}
-            {whatwedo && (
-              <SiteSection text='What we do' to='/what-we-do'>
-                <Text textAlign='center'>
-                  <Circle size={125} />
-                </Text>
-              </SiteSection>
-            )}
-            {howyoucanhelp && (
-              <SiteSection text='How you can help' to='/what-you-can-do'>
-                <Text textAlign='center'>
-                  <Circle size={125} />
-                </Text>
-              </SiteSection>
-            )}
+            ))}
           </Flex>
         </Box>
       </Box>
@@ -70,7 +64,9 @@ const SiteSection = ({ children, text, to }) => (
       <Box mb={3}>
         <Text textAlign='center'>{children}</Text>
       </Box>
-      <FullButton text={text} to={to} />
+      <Box mt={[3, 0]}>
+        <FullButton text={text} to={to} />
+      </Box>
     </Box>
   </Box>
 )
