@@ -34,6 +34,15 @@ const Header = () => {
   let state = useAppContext()
   return (
     <Box py={2}>
+      <Menu
+
+        navigationItems={node.navigationItem}
+
+        open={state.open}
+
+        toggleOpen={state.toggleOpen}
+
+      />
       <Flex>
         <Flex flex='1'>
           <Box width={225}>
