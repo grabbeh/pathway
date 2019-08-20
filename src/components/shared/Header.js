@@ -51,7 +51,7 @@ const Header = () => {
             </Link>
           </Box>
         </Flex>
-        <Flex flex='4' justifyContent='flex-end' alignItems='center'>
+        <Flex aria-hidden={open} flex='4' justifyContent='flex-end' alignItems='center'>
           <MenuHide>
             <nav>
             <Flex>
