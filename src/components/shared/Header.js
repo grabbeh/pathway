@@ -37,7 +37,7 @@ const Header = () => {
       <Flex>
         <Flex flex='1'>
           <Box width={225}>
-            <Link to='/'>
+            <Link tabIndex='1' to='/'>
               <Logo />
             </Link>
           </Box>
