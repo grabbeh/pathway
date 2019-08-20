@@ -30,7 +30,7 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
               <Box ml={[3, 0]}>
                 {navigationItems.map(({ url, title }, i) => {
                   return (
-                    <Box mb={3} key={i}>
+                    <Box tabIndex={open ? i : -1} mb={3} key={i}>
                       <Link to={`/${url}`}>
                         <Text
                           textAlign={['left', 'center']}
