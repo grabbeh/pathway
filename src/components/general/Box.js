@@ -35,12 +35,7 @@ Box.propTypes = {
   ...propTypes.border,
   ...propTypes.color,
   ...propTypes.layout,
-  ...propTypes.position,
-  borderColor: numberStringOrArray,
-  boxShadow: numberStringOrArray,
-  fontWeight: numberStringOrArray,
-  height: numberStringOrArray,
-  borderRadius: PropTypes.number
+  ...propTypes.position
 }
 
 export default Box

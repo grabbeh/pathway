@@ -8,6 +8,8 @@ import styled from 'styled-components'
 import Logo from './Logo'
 import Menu from './Menu'
 import Link from '../general/InternalLink'
+import List from '../general/List'
+import ListItem from '../general/ListItem'
 import { MdClose } from 'react-icons/md'
 import { useAppContext } from './Wrapper'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -50,20 +52,20 @@ const Header = () => {
         >
           <MenuHide>
             <nav role='menu'>
-              <Flex>
-                {node.navigationItem.map(({ url, title, subtitle }, i) => {
-                  return (
-                    <Box pr={4} key={i}>
+              <List>
+                <Flex>
+                  {node.navigationItem.map(({ url, title, subtitle }, i) => (
+                    <ListItem pr={4} key={i}>
                       <Link to={`/${url}`}>
                         <Text fontSize={2}>{title}</Text>
                         <Text color='blue' fontSize={0}>
                           {subtitle}
                         </Text>
                       </Link>
-                    </Box>
-                  )
-                })}
-              </Flex>
+                    </ListItem>
+                  ))}
+                </Flex>
+              </List>
             </nav>
           </MenuHide>
         </Flex>

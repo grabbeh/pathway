@@ -3,6 +3,8 @@ import Box from '../general/Box'
 import Flex from '../general/Flex'
 import Text from '../typography/Text'
 import Link from '../general/InternalLink'
+import List from '../general/List'
+import ListItem from '../general/ListItem'
 import { useSpring, animated } from 'react-spring'
 
 const Menu = ({ open, toggleOpen, navigationItems }) => {
@@ -29,20 +31,22 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
             <Flex height='100vh' justifyContent={['flex-start', 'center']}>
               <Box ml={[3, 0]}>
                 <nav role='menu'>
-                  {navigationItems.map(({ url, title }, i) => (
-                    <Box tabIndex={open ? i + 1 : -1} mb={3} key={i}>
-                      <Link role='menuitem' to={`/${url}`}>
-                        <Text
-                          textAlign={['left', 'center']}
-                          color='grey'
-                          fontWeight='bold'
-                          fontSize={[4, 5]}
-                        >
-                          {title}
-                        </Text>
-                      </Link>
-                    </Box>
-                  ))}
+                  <List>
+                    {navigationItems.map(({ url, title }, i) => (
+                      <ListItem tabIndex={open ? i + 1 : -1} mb={3} key={i}>
+                        <Link role='menuitem' to={`/${url}`}>
+                          <Text
+                            textAlign={['left', 'center']}
+                            color='grey'
+                            fontWeight='bold'
+                            fontSize={[4, 5]}
+                          >
+                            {title}
+                          </Text>
+                        </Link>
+                      </ListItem>
+                    ))}
+                  </List>
                 </nav>
               </Box>
             </Flex>
