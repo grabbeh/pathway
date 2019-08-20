@@ -42,7 +42,7 @@ const Header = () => {
             </Link>
           </Box>
         </Flex>
-        <Flex aria-hidden={open} flex='4' justifyContent='flex-end' alignItems='center'>
+        <Flex aria-hidden={state.open} flex='4' justifyContent='flex-end' alignItems='center'>
           <MenuHide>
             <nav>
             <Flex>
