@@ -1,6 +1,5 @@
 import React from 'react'
 import Box from '../general/Box'
-import Button from '../general/Button'
 import Link from '../general/InternalLink'
 import Flex from '../general/Flex'
 import Text from '../typography/Text'
@@ -8,7 +7,7 @@ import { FaAngleRight } from 'react-icons/fa'
 
 const FullButton = ({ text, to }, props) => (
   <Box mt={[3, 0]}>
-    <Button width={1}>
+    <Box width={1}>
       <Link {...props} to={to}>
         <Box>
           <Flex flexWrap='wrap'>
@@ -36,7 +35,7 @@ const FullButton = ({ text, to }, props) => (
           </Flex>
         </Box>
       </Link>
-    </Button>
+    </Box>
   </Box>
 )
 

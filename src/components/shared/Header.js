@@ -37,70 +37,68 @@ const Header = () => {
       <Flex>
         <Flex flex='1'>
           <Box width={225}>
-            <Link tabIndex='1' to='/'>
+            <Link tabIndex='0' to='/'>
               <Logo />
             </Link>
           </Box>
         </Flex>
-        <Flex aria-hidden={state.open} flex='4' justifyContent='flex-end' alignItems='center'>
+        <Flex
+          aria-hidden={state.open}
+          flex='4'
+          justifyContent='flex-end'
+          alignItems='center'
+        >
           <MenuHide>
-            <nav>
-            <Flex>
-              
-              {node.navigationItem.map(({ url, title, subtitle }, i) => {
-                return (
-                  <Box pr={4} key={i}>
-                    <Link to={`/${url}`}>
-                      <Text fontSize={2}>{title}</Text>
-                      <Text color='blue' fontSize={0}>
-                        {subtitle}
-                      </Text>
-                    </Link>
-                  </Box>
-                )
-              })}
-            </Flex>
+            <nav role='menu'>
+              <Flex>
+                {node.navigationItem.map(({ url, title, subtitle }, i) => {
+                  return (
+                    <Box pr={4} key={i}>
+                      <Link to={`/${url}`}>
+                        <Text fontSize={2}>{title}</Text>
+                        <Text color='blue' fontSize={0}>
+                          {subtitle}
+                        </Text>
+                      </Link>
+                    </Box>
+                  )
+                })}
+              </Flex>
             </nav>
           </MenuHide>
         </Flex>
       </Flex>
-      {state.open ? (
-        <Box
-          style={{ cursor: 'pointer' }}
-          onClick={() => {
-            state.toggleOpen(!state.open)
-          }}
-          position='absolute'
-          top={3}
-          right={3}
-          mt={-10}
-          mr={-10}
-        >
+
+      <Box
+        style={{ cursor: 'pointer' }}
+        onClick={() => {
+          state.toggleOpen(!state.open)
+        }}
+        position='absolute'
+        top={3}
+        right={3}
+        aria-expanded={state.open}
+        aria-haspopup
+      >
+        {state.open ? (
           <Text fontSize={5} fontWeight='bold' color='grey'>
             <MdClose />
           </Text>
-        </Box>
-      ) : (
-        <Box position='absolute' top={3} right={3}>
-          <BurgerShow>
-            <Box
-              aria-expanded={state.open}
-              style={{ cursor: 'pointer' }}
-              onClick={() => {
-                state.toggleOpen(!state.open)
-              }}
-            >
-              <Burger
+        ) : (
+          <Box position='absolute' top={2} right={2}>
+            <BurgerShow>
+              <Box
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
                   state.toggleOpen(!state.open)
                 }}
-              />
-  
-            </Box>
-          </BurgerShow>
-        </Box>
-      )}
+              >
+                <Burger />
+              </Box>
+            </BurgerShow>
+          </Box>
+        )}
+      </Box>
       <Menu
         navigationItems={node.navigationItem}
         open={state.open}

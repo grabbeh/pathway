@@ -28,10 +28,10 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
           <Box>
             <Flex height='100vh' justifyContent={['flex-start', 'center']}>
               <Box ml={[3, 0]}>
-                {navigationItems.map(({ url, title }, i) => {
-                  return (
-                    <Box tabIndex={open ? i : -1} mb={3} key={i}>
-                      <Link to={`/${url}`}>
+                <nav role='menu'>
+                  {navigationItems.map(({ url, title }, i) => (
+                    <Box tabIndex={open ? i + 1 : -1} mb={3} key={i}>
+                      <Link role='menuitem' to={`/${url}`}>
                         <Text
                           textAlign={['left', 'center']}
                           color='grey'
@@ -42,8 +42,8 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
                         </Text>
                       </Link>
                     </Box>
-                  )
-                })}
+                  ))}
+                </nav>
               </Box>
             </Flex>
           </Box>

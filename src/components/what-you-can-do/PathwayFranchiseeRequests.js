@@ -7,6 +7,7 @@ import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import KeyFactCircle from '../shared/KeyStatCircle'
+import CircleText from '../../svg/CircleText.js'
 
 const query = graphql`
   query {
@@ -52,9 +53,9 @@ const PathwayFranchiseeRequests = () => {
           </Animation>
         </Box>
         <Box width={[1, 1 / 2]}>
-          <KeyFactCircle
-            mainContent={keyStatContent.childMarkdownRemark.html}
-          />
+          <Box mx={4}>
+            <CircleText />
+          </Box>
         </Box>
       </Flex>
     </Section>
