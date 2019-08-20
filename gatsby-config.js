@@ -25,14 +25,6 @@ module.exports = {
         accessToken: `${process.env.ACCESS_TOKEN}`
       }
     },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Poppins', 'Poppins:bold']
-        }
-      }
-    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-theme-ui`
   ]
