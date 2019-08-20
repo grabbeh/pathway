@@ -6,6 +6,7 @@ import Circle from '../../svg/Circle'
 import SectionTitle from '../typography/SectionTitle'
 import FullButton from './FullButton'
 import BodyText from '../general/MarkdownText'
+import List from '../general/List'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const query = graphql`
@@ -40,7 +41,7 @@ const FindOutMore = ({ bg, currentPath }) => {
       <Box py={5} mx={[3, 6]}>
         <SectionTitle>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
-        <Box mt={3}>
+        <List mt={3}>
           <Flex flexWrap='wrap'>
             {nonCurrent.map(({ title, url }) => (
               <SiteSection key={title} text={title} to={`/${url}`}>
@@ -50,7 +51,7 @@ const FindOutMore = ({ bg, currentPath }) => {
               </SiteSection>
             ))}
           </Flex>
-        </Box>
+        </List>
       </Box>
     </Box>
   )

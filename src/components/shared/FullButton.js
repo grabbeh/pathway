@@ -4,9 +4,10 @@ import Link from '../general/InternalLink'
 import Flex from '../general/Flex'
 import Text from '../typography/Text'
 import { FaAngleRight } from 'react-icons/fa'
+import ListItem from '../general/ListItem'
 
 const FullButton = ({ text, to }, props) => (
-  <Box width={1}>
+  <ListItem width={1}>
     <Link {...props} to={to}>
       <Box>
         <Flex flexWrap='wrap'>
@@ -34,7 +35,7 @@ const FullButton = ({ text, to }, props) => (
         </Flex>
       </Box>
     </Link>
-  </Box>
+  </ListItem>
 )
 
 export default FullButton
