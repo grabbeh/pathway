@@ -53,7 +53,9 @@ const Header = () => {
         </Flex>
         <Flex flex='4' justifyContent='flex-end' alignItems='center'>
           <MenuHide>
+            <nav>
             <Flex>
+              
               {node.navigationItem.map(({ url, title, subtitle }, i) => {
                 return (
                   <Box pr={4} key={i}>
@@ -67,6 +69,7 @@ const Header = () => {
                 )
               })}
             </Flex>
+            </nav>
           </MenuHide>
         </Flex>
       </Flex>
