@@ -11,19 +11,19 @@ const Subtitle = ({ html, color, children }, props) => (
         fontSize={4}
         lineHeight='subtitle'
         fontWeight='subtitle'
-        color={color}
+        color={color || 'grey'}
         html={html}
       />
     ) : (
-      <Text
+      <Text.h2
         {...props}
         fontSize={4}
         lineHeight='subtitle'
         fontWeight='subtitle'
-        color={color}
+        color={color || 'grey'}
       >
         {children}
-      </Text>
+      </Text.h2>
     )}
   </Box>
 )

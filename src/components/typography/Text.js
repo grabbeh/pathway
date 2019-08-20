@@ -29,5 +29,8 @@ Text.defaultProps = {
 Text.span = Text.withComponent('span')
 Text.p = Text.withComponent('p')
 Text.s = Text.withComponent('s')
+Text.h1 = Text.withComponent('h1')
+Text.h2 = Text.withComponent('h2')
+Text.h3 = Text.withComponent('h3')
 
 export default Text

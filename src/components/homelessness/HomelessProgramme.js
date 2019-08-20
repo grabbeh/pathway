@@ -37,7 +37,7 @@ const HomelessProgramme = () => {
   return (
     <Box>
       <Flex flexWrap='wrap'>
-        <Box position='relative' bg='greyer' width={[1, 1 / 3]}>
+        <Box position='relative' width={[1, 1 / 3]}>
           <BackgroundImage
             style={{ height: '100vh' }}
             imageData={programmeImage.fluid}

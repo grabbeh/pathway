@@ -1,12 +1,11 @@
 const theme = {
-  breakpoints: ['40em', '56em', '64em' ],
+  breakpoints: ['40em', '56em', '64em'],
   colors: {
     blue: '#37AEE3',
     green: '#00A880',
     grey: '#4A4A4A',
     lightGrey: '#F9F9F9',
     midGrey: '#BBBBBB',
-    greyer: '#D8D8D8',
     yellow: '#F5A623',
     turquoise: '#518399'
   },
