@@ -6,7 +6,6 @@ import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import KeyFactCircle from '../shared/KeyStatCircle'
 import CircleText from '../../svg/CircleText.js'
 
 const query = graphql`
@@ -34,11 +33,7 @@ const query = graphql`
 const PathwayFranchiseeRequests = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulWhatYouCanDoPage.edges[0]
-  let {
-    pathwayFranchiseeRequestsTitle,
-    pathwayFranchiseeRequestsList,
-    keyStatContent
-  } = node
+  let { pathwayFranchiseeRequestsTitle, pathwayFranchiseeRequestsList } = node
   return (
     <Section bg='lightGrey'>
       <Flex flexWrap='wrap'>

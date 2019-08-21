@@ -58,30 +58,30 @@ const Footer = ({ bg }) => {
                 <Box width={[1 / 2, 1]}>
                   <Logo />
                 </Box>
-                <Box>
-                  <Text fontSize={3}>Terms and conditions</Text>
-                  <Text fontSize={3}>
-                    <Link to='/privacy-policy'>Privacy policy</Link>
-                  </Text>
-                </Box>
               </Box>
-              <Box mt={3} width={[1, 1 / 2, 1 / 3]}>
+              <Box width={[1, 1 / 2, 1 / 3]}>
                 <Subtitle color='green'>Quick links</Subtitle>
                 <List>
-                  {navigation.navigationItem.map(({ url, title }, i) => {
-                    return (
-                      <ListItem key={i}>
-                        <Link to={`/${url}`}>
-                          <Box py={1}>
-                            <Text fontSize={3}>{title}</Text>
-                          </Box>
-                        </Link>
-                      </ListItem>
-                    )
-                  })}
+                  {navigation.navigationItem.map(({ url, title }, i) => (
+                    <ListItem py={1} key={i}>
+                      <Link to={`/${url}`}>
+                        <Text fontSize={3}>{title}</Text>
+                      </Link>
+                    </ListItem>
+                  ))}
+                  <ListItem py={1}>
+                    <Text fontSize={3}>
+                      <Link to='/'>Terms and conditions</Link>
+                    </Text>
+                  </ListItem>
+                  <ListItem py={1}>
+                    <Text fontSize={3}>
+                      <Link to='/privacy-policy'>Privacy policy</Link>
+                    </Text>
+                  </ListItem>
                 </List>
               </Box>
-              <Box mt={3} width={[1, 1 / 2, 1 / 3]}>
+              <Box width={[1, 1 / 2, 1 / 3]}>
                 <Subtitle color='green'>Contact</Subtitle>
                 <BodyText html={contactDetails.childMarkdownRemark.html} />
               </Box>

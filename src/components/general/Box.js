@@ -2,12 +2,10 @@ import styled from 'styled-components'
 import { layout, space, shadow, position, color, border } from 'styled-system'
 import * as React from 'react'
 import propTypes from '@styled-system/prop-types'
-import PropTypes from 'prop-types'
 
 const StyledBox = styled('div')(
   {
-    boxSizing: 'border-box',
-    transformOrigin: 0
+    boxSizing: 'border-box'
   },
   space,
   shadow,
@@ -23,12 +21,6 @@ const Box = props => {
 }
 
 Box.displayName = 'Box'
-
-const numberStringOrArray = PropTypes.oneOfType([
-  PropTypes.number,
-  PropTypes.string,
-  PropTypes.array
-])
 
 Box.propTypes = {
   ...propTypes.space,

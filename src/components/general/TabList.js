@@ -1,6 +1,6 @@
 import React, { Children, cloneElement, Component } from 'react'
 import * as PropTypes from 'prop-types'
-import Box from './Box'
+import Flex from './Flex'
 
 class TabList extends Component {
   static contextTypes = {
@@ -15,7 +15,14 @@ class TabList extends Component {
         onSelect: () => this.context.onSelectTab(index)
       })
     })
-    return <Box>{children}</Box>
+    return (
+      <Flex
+        justifyContent={['center', 'flex-start', 'flex-start']}
+        flexWrap={['wrap', 'none', 'none']}
+      >
+        {children}
+      </Flex>
+    )
   }
 }
 

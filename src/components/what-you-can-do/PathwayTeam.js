@@ -54,17 +54,16 @@ const MainSection = () => {
         <Flex flexWrap='wrap'>
           <Box width={[1, 1 / 2]}>
             <TabList>
-              {franchiseOfferPhases.map(({ phase, color }, i) => {
-                return <Tab key={i} number={i} phase={phase} color={color} />
-              })}
+              {franchiseOfferPhases.map(({ phase, color }, i) => (
+                <Tab key={i} number={i} phase={phase} color={color} />
+              ))}
             </TabList>
           </Box>
           <Box width={[1, 1 / 2]}>
             <TabPanels>
-              {franchiseOfferPhases.map(({ phase, content, color}, i) => (
-
+              {franchiseOfferPhases.map(({ phase, content, color }, i) => (
                 <Box key={i}>
-                  <Subtitle color={color} >{phase}</Subtitle>
+                  <Subtitle color={color}>{phase}</Subtitle>
                   <BodyText html={content.childMarkdownRemark.html} />
                 </Box>
               ))}
