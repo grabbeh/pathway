@@ -13,15 +13,15 @@ const StatSection = ({ stats, title, markdown, bg }) => (
       <Circle />
     </Box>
     <Section>
-      <Box mt={[5, 0]}>
+      <Box mt={[5, 5, 0]}>
         <Animation>
-         <SectionTitle color='white'>{title}</SectionTitle>
+          <SectionTitle color='white'>{title}</SectionTitle>
         </Animation>
         <Box mt={4}>
           <Animation>
             <Flex justifyContent='space-around' flexWrap='wrap'>
               {stats.map(({ figure, text, subtitle }, i) => (
-                <Box mb={[4, 0]} key={i} width={[1, 1 / 3]}>
+                <Box mb={[4, 4, 0]} key={i} width={[1, 1, 1 / 3]}>
                   <Stat subtitle={subtitle} figure={figure} text={text.text} />
                 </Box>
               ))}

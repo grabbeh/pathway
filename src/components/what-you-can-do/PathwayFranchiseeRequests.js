@@ -32,12 +32,14 @@ const query = graphql`
 
 const PathwayFranchiseeRequests = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWhatYouCanDoPage.edges[0]
-  let { pathwayFranchiseeRequestsTitle, pathwayFranchiseeRequestsList } = node
+  const {
+    pathwayFranchiseeRequestsTitle,
+    pathwayFranchiseeRequestsList
+  } = data.allContentfulWhatYouCanDoPage.edges[0].node
   return (
     <Section bg='lightGrey'>
       <Flex flexWrap='wrap'>
-        <Box width={[1, 1 / 2]}>
+        <Box width={[1, 1, 1 / 2]}>
           <Animation>
             <Subtitle color='blue'>{pathwayFranchiseeRequestsTitle}</Subtitle>
           </Animation>
@@ -47,8 +49,8 @@ const PathwayFranchiseeRequests = () => {
             </MDXRenderer>
           </Animation>
         </Box>
-        <Box width={[1, 1 / 2]}>
-          <Box mx={4}>
+        <Box width={[1, 1, 1 / 2]}>
+          <Box pl={[2, 4]}>
             <CircleText />
           </Box>
         </Box>
