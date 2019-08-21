@@ -5,7 +5,7 @@ import propTypes from '@styled-system/prop-types'
 
 const StyledListItem = styled('li')(
   {
-    boxSizing: 'border-box'
+    listStyle: 'none'
   },
   space,
   layout,
