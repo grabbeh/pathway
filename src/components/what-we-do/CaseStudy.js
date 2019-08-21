@@ -6,6 +6,7 @@ import Tagline from '../typography/Tagline'
 import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
+import HideOnMobile from '../shared/HideOnMobile'
 
 const query = graphql`
   query {
@@ -37,19 +38,21 @@ const CaseStudy = () => {
     <Section bg='blue'>
       <Animation>
         <Flex flexWrap='wrap'>
-          <Box width={[1, 1 / 3]}>
-            <Flex height='100%' alignItems='center'>
-              <Box>
-                <Tagline
-                  color='grey'
-                  html={wwdCaseStudySubtitle.childMarkdownRemark.html}
-                />
-              </Box>
-            </Flex>
+          <Box width={[1, 1, 1 / 3]}>
+            <HideOnMobile>
+              <Flex height='100%' alignItems='center'>
+                <Box>
+                  <Tagline
+                    color='grey'
+                    html={wwdCaseStudySubtitle.childMarkdownRemark.html}
+                  />
+                </Box>
+              </Flex>
+            </HideOnMobile>
           </Box>
-          <Box width={[1, 2 / 3]}>
+          <Box width={[1, 1, 2 / 3]}>
             <Flex justifyContent='center'>
-              <Box width={[1, 0.9]}>
+              <Box width={[1, 1, 0.9]}>
                 <Subtitle
                   color='white'
                   html={wwdCaseStudy.childMarkdownRemark.html}

@@ -31,12 +31,12 @@ const SocialFranchise = () => {
     <Box bg='lightGrey'>
       <Section>
         <Flex alignItems='center' flexWrap='wrap'>
-          <Box width={[1, 1 / 2]}>
+          <Box width={[1, 1, 1 / 2]}>
             <Text fontWeight='subtitle' fontSize={3} color='green'>
               What is a social franchise?
             </Text>
           </Box>
-          <Box width={[1, 1 / 2]}>
+          <Box width={[1, 1, 1 / 2]}>
             <MarkdownText
               html={socialFranchiseDescription.childMarkdownRemark.html}
             />

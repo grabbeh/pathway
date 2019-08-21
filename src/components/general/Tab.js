@@ -25,7 +25,7 @@ font-size: 22px;
 font-weight: bold;
 color: #4A4A4A;
 padding-top: 3px;
-@media (max-width: 800px) {
+@media (max-width: 896px) {
   display: none;
 } 
 ${props =>
