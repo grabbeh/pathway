@@ -13,6 +13,7 @@ import ListItem from '../general/ListItem'
 import { MdClose } from 'react-icons/md'
 import { useAppContext } from './Wrapper'
 import { useStaticQuery, graphql } from 'gatsby'
+import Button from '../general/Button'
 
 const query = graphql`
   query {
@@ -89,14 +90,14 @@ const Header = () => {
         ) : (
           <Box position='absolute' top={2} right={2}>
             <BurgerShow>
-              <Box
+              <Button
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
                   state.toggleOpen(!state.open)
                 }}
               >
                 <Burger />
-              </Box>
+              </Button>
             </BurgerShow>
           </Box>
         )}

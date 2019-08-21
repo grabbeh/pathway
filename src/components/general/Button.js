@@ -35,7 +35,8 @@ Button.displayName = 'Box'
 
 Button.defaultProps = {
   p: 0,
-  m: 0
+  m: 0,
+  bg: 'white'
 }
 
 const numberStringOrArray = PropTypes.oneOfType([
