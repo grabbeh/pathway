@@ -16,6 +16,7 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
     <animated.div style={props}>
       <nav>
         <Box
+          hidden={!open}
           onClick={toggleOpen}
           width='100%'
           ml={open ? 0 : '100%'}
