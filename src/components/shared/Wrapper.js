@@ -80,7 +80,7 @@ const Wrapper = props => {
             <Box>
               <Header />
               <animated.div style={animProps}>
-                <Box aria-hidden={open} zIndex={open ? -1 : 9999}>
+                <Box aria-hidden={open} hidden={open} zIndex={open ? -1 : 9999}>
                   {props.children}
                 </Box>
               </animated.div>
