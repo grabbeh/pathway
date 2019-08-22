@@ -7,7 +7,7 @@ const SectionTitle = props => (
     lineTitle='tagline'
     fontWeight='bold'
     color={props.color || 'grey'}
-    fontSize={6}
+    fontSize={[5,6]}
     my={0}
   >
     {props.children}
