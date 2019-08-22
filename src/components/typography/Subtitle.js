@@ -8,7 +8,7 @@ const Subtitle = ({ html, color, children }, props) => (
     {html ? (
       <MarkdownText
         {...props}
-        fontSize={4}
+        fontSize={[2,4]}
         lineHeight='subtitle'
         fontWeight='subtitle'
         color={color || 'grey'}
@@ -17,7 +17,7 @@ const Subtitle = ({ html, color, children }, props) => (
     ) : (
       <Text.h2
         {...props}
-        fontSize={4}
+        fontSize={[2,4]}
         lineHeight='subtitle'
         fontWeight='subtitle'
         color={color || 'grey'}
