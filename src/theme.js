@@ -22,6 +22,7 @@ const theme = {
     subtitle: '30px',
     medium: '36px',
     tagline: '46px',
+    heading: '68px',
     heavy: '90px'
   }
 }
