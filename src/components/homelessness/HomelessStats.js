@@ -38,7 +38,7 @@ const HomelessStats = () => {
                 <Flex flexWrap='wrap'>
                   <Flex flex='0 1'>
                     <Box mr={2}>
-                      <Text color='blue' fontSize={7} fontWeight='heavy'>
+                      <Text color='blue' fontSize={8} fontWeight='heavy'>
                         {figure}
                       </Text>
                     </Box>
