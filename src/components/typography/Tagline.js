@@ -8,7 +8,7 @@ const Tagline = props => (
     {props.html ? (
       <MarkdownText
         {...props}
-        fontSize={6}
+        fontSize={[5,6]}
         fontWeight='subtitle'
         color={props.color}
         lineHeight='tagline'
