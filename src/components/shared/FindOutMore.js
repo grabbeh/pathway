@@ -38,7 +38,7 @@ const FindOutMore = ({ bg, currentPath }) => {
   })
   return (
     <Box bg={bg}>
-      <Box py={5} mx={[3, 6]}>
+      <Box py={5} mx={[3, 3, 6]}>
         <SectionTitle>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
         <List mt={3}>
