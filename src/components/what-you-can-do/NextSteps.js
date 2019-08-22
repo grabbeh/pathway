@@ -72,7 +72,7 @@ const PathwayFranchiseeRequests = () => {
       </Box>
       <Flex flexWrap='wrap'>
         <Box width={[1, 1, 1 / 2]}>
-          <Box pr={4} ml={[3, 3, 6]}>
+          <Box pr={4} ml={[0, 0, 6]}>
             <Animation>
               {nextSteps.map((step, i) => (
                 <Box key={i} mb={4}>
