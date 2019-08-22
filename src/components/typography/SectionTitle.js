@@ -4,7 +4,7 @@ import Text from './Text'
 const SectionTitle = props => (
   <Text.h1
     {...props}
-    lineTitle='tagline'
+    lineHeight={['medium','tagline']}
     fontWeight='bold'
     color={props.color || 'grey'}
     fontSize={[5,6]}
