@@ -40,7 +40,7 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
                             textAlign={['left', 'center']}
                             color='grey'
                             fontWeight='bold'
-                            fontSize={[4, 5]}
+                            fontSize={[4, 6]}
                           >
                             {title}
                           </Text>
