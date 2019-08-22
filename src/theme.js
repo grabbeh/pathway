@@ -10,7 +10,7 @@ const theme = {
     turquoise: '#518399'
   },
   radii: [0, 2, 4, 16, 9999, '100%'],
-  fontSizes: [12, 14, 16, 18, 22, 36, 48, 60, 72, 100],
+  fontSizes: [12, 14, 16, 18, 22, 26, 36, 48, 60, 72, 100],
   fontWeights: {
     normal: 300,
     subtitle: 600,
