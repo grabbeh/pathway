@@ -37,10 +37,10 @@ export default StatSection
 
 const Stat = ({ figure, text, subtitle }) => (
   <Box>
-    <Text lineHeight='75px' fontSize={8} color='white' fontWeight='heavy'>
+    <Text lineHeight='75px' fontSize={9} color='white' fontWeight='heavy'>
       {figure}%
     </Text>
-    <Text mr={2} fontWeight='subtitle' fontSize={5} color='yellow'>
+    <Text mr={2} fontWeight='subtitle' fontSize={6} color='yellow'>
       {subtitle}
     </Text>
     <Text fontWeight='subtitle' fontSize={3} color='white'>
