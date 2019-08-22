@@ -57,7 +57,7 @@ const PathwayFranchiseeRequests = () => {
   } = data.allContentfulContactDetails.edges[0].node
   return (
     <Box>
-      <Box mx={[3, 6]} maxWidth={[null, 800, 1000]}>
+      <Box mx={[3, 3, 6]} maxWidth={[null, 800, 1000]}>
         <Animation>
           <SectionTitle>{nextStepsTitle}</SectionTitle>
         </Animation>
