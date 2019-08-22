@@ -71,7 +71,7 @@ const PathwayFranchiseeRequests = () => {
         </Box>
       </Box>
       <Flex flexWrap='wrap'>
-        <Box width={[1, 1 / 2]}>
+        <Box width={[1, 1, 1 / 2]}>
           <Box pr={4} ml={[3, 6]}>
             <Animation>
               {nextSteps.map((step, i) => (
@@ -85,7 +85,7 @@ const PathwayFranchiseeRequests = () => {
             </Animation>
           </Box>
         </Box>
-        <Box bg='green' p={[3, 5]} width={[1, 1 / 2]}>
+        <Box bg='green' p={[3, 5]} width={[1, 1, 1 / 2]}>
           <Animation>
             <Box mb={4}>
               <Subtitle color='white'>{queriesTitle}</Subtitle>
