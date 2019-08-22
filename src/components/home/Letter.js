@@ -48,7 +48,7 @@ const Letter = () => {
           <SectionTitle textAlign='center'>{letterTitle}</SectionTitle>
         </Box>
         <Flex justifyContent='space-between' flexWrap='wrap'>
-          <Box width={[1, 1 / 2]}>
+          <Box width={[1, 1, 1 / 2]}>
             <Box mt={-4} mr={[0, 4]}>
               <Tagline
                 html={letterTagline.childMarkdownRemark.html}
@@ -57,7 +57,7 @@ const Letter = () => {
               />
             </Box>
           </Box>
-          <Box width={[1, 1 / 2]}>
+          <Box width={[1, 1, 1 / 2]}>
             <Box ml={[0, 4]}>
               <BodyText html={letterContent.childMarkdownRemark.html} />
               <Box mt={3}>

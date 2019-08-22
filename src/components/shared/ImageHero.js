@@ -26,15 +26,15 @@ const ImageHero = props => {
 }
 
 const Hero = props => {
-  let { load, headerColor, title, subtitle, subtitleColor } = props
+  let { load, mobileColor, headerColor, title, subtitle, subtitleColor } = props
 
   return (
     <Flex justifyContent='center'>
-      <Box width={[1, 800]} maxWidth={800}>
+      <Box mx={[0, 5]} width={[1, 800, 1000]}>
         <Flex alignItems='center' width={[1, 3 / 4, 1 / 2]} height={500}>
           <Box px={[3, 3, 0]}>
             <LoadAnimation load={load}>
-              <Heading color={headerColor}>{title}</Heading>
+              <Heading color={[mobileColor, headerColor]}>{title}</Heading>
               <Subtitle color={subtitleColor} html={subtitle} />
             </LoadAnimation>
           </Box>

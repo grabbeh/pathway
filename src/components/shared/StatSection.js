@@ -13,15 +13,15 @@ const StatSection = ({ stats, title, markdown, bg }) => (
       <Circle />
     </Box>
     <Section>
-      <Box mt={[5, 5, 0]}>
+      <Box px={[4, 0]} mt={[6, 6, 0]}>
         <Animation>
           <SectionTitle color='white'>{title}</SectionTitle>
         </Animation>
         <Box mt={4}>
           <Animation>
-            <Flex justifyContent='space-around' flexWrap='wrap'>
+            <Flex flexWrap='wrap'>
               {stats.map(({ figure, text, subtitle }, i) => (
-                <Box mb={[4, 4, 0]} key={i} width={[1, 1, 1 / 3]}>
+                <Box mb={[4, 4, 0]} key={i} width={[1, 1 / 3, 1 / 3]}>
                   <Stat subtitle={subtitle} figure={figure} text={text.text} />
                 </Box>
               ))}
@@ -37,7 +37,7 @@ export default StatSection
 
 const Stat = ({ figure, text, subtitle }) => (
   <Box>
-    <Text lineHeight='75px' fontSize={9} color='white' fontWeight='heavy'>
+    <Text lineHeight='heading' fontSize={9} color='white' fontWeight='heavy'>
       {figure}%
     </Text>
     <Text mr={2} fontWeight='subtitle' fontSize={6} color='yellow'>

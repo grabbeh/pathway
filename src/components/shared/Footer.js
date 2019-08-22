@@ -12,14 +12,19 @@ import ListItem from '../general/ListItem'
 
 const query = graphql`
   query {
+    allContentfulContactDetails {
+      edges {
+        node {
+          name
+          title
+          emailAddress
+          phoneNumber
+        }
+      }
+    }
     allContentfulFooter {
       edges {
         node {
-          contactDetails {
-            childMarkdownRemark {
-              html
-            }
-          }
           companyDetails {
             childMarkdownRemark {
               html
@@ -44,46 +49,79 @@ const query = graphql`
 
 const Footer = ({ bg }) => {
   const data = useStaticQuery(query)
-  const { allContentfulNavigationContainer, allContentfulFooter } = data
+  const {
+    allContentfulNavigationContainer,
+    allContentfulFooter,
+    allContentfulContactDetails
+  } = data
   const navigation = allContentfulNavigationContainer.edges[0].node
-  const { companyDetails, contactDetails } = allContentfulFooter.edges[0].node
+  const { companyDetails } = allContentfulFooter.edges[0].node
+  const {
+    name,
+    title,
+    emailAddress,
+    phoneNumber
+  } = allContentfulContactDetails.edges[0].node
 
   return (
     <footer>
       <Box bg={bg}>
         <Flex flexWrap='wrap'>
-          <Box p={[3, 5]} width={[1, 2 / 3]}>
+          <Box p={[3, 4]} width={[1, 2 / 3]}>
             <Flex flexWrap='wrap'>
-              <Box width={[1, 1 / 2, 1 / 3]}>
+              <Box width={[1, 1 / 3]}>
                 <Box width={[1 / 2, 1]}>
                   <Logo />
                 </Box>
               </Box>
-              <Box width={[1, 1 / 2, 1 / 3]}>
-                <Subtitle color='green'>Quick links</Subtitle>
-                <List>
-                  {navigation.navigationItem.map(({ url, title }, i) => (
-                    <ListItem py={1} key={i}>
-                      <Link to={`/${url}`}>
-                        <Text fontSize={3}>{title}</Text>
-                      </Link>
-                    </ListItem>
-                  ))}
-                  <ListItem py={1}>
-                    <Text fontSize={3}>
-                      <Link to='/'>Terms and conditions</Link>
+              <Box width={[1, 2 / 3]}>
+                <Flex flexWrap='wrap'>
+                  <Box width={[1, 1 / 2, 1 / 2]}>
+                    <Subtitle color='green'>Quick links</Subtitle>
+                    <List>
+                      {navigation.navigationItem.map(({ url, title }, i) => (
+                        <ListItem key={i}>
+                          <Link to={`/${url}`}>
+                            <Text fontSize={3}>{title}</Text>
+                          </Link>
+                        </ListItem>
+                      ))}
+                      <ListItem py={1}>
+                        <Text fontSize={3}>
+                          <Link to='/'>Terms and conditions</Link>
+                        </Text>
+                      </ListItem>
+                      <ListItem py={1}>
+                        <Text fontSize={3}>
+                          <Link to='/privacy-policy'>Privacy policy</Link>
+                        </Text>
+                      </ListItem>
+                    </List>
+                  </Box>
+                  <Box width={[1, 1 / 2, 1 / 2]}>
+                    <Subtitle color='green'>Contact</Subtitle>
+                    <Text fontWeight='bold' fontSize={3}>
+                      {name}
                     </Text>
-                  </ListItem>
-                  <ListItem py={1}>
-                    <Text fontSize={3}>
-                      <Link to='/privacy-policy'>Privacy policy</Link>
-                    </Text>
-                  </ListItem>
-                </List>
-              </Box>
-              <Box width={[1, 1 / 2, 1 / 3]}>
-                <Subtitle color='green'>Contact</Subtitle>
-                <BodyText html={contactDetails.childMarkdownRemark.html} />
+                    <Text fontSize={3}>{title}</Text>
+                    <Box>
+                      <Text.span color='grey' fontWeight='bold' fontSize={3}>
+                        Email:{' '}
+                      </Text.span>
+                      <Text.span color='grey' fontSize={3}>
+                        {emailAddress}
+                      </Text.span>
+                    </Box>
+                    <Box>
+                      <Text.span color='grey' fontWeight='bold' fontSize={3}>
+                        M:{' '}
+                      </Text.span>
+                      <Text.span color='grey' fontSize={3}>
+                        {phoneNumber}
+                      </Text.span>
+                    </Box>
+                  </Box>
+                </Flex>
               </Box>
             </Flex>
           </Box>

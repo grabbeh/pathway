@@ -47,7 +47,7 @@ const HomelessProgramme = () => {
             </Box>
           </BackgroundImage>
         </Box>
-        <Box py={5} bg='green' width={[1, 2 / 3]}>
+        <Box py={[4, 5]} bg='green' width={[1, 2 / 3]}>
           <Animation>
             <Flex justifyContent='center'>
               <Box p={[3, 0]} width={[1, 0.7]}>

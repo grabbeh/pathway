@@ -38,10 +38,10 @@ const FindOutMore = ({ bg, currentPath }) => {
   })
   return (
     <Box bg={bg}>
-      <Box py={5} mx={[3, 3, 6]}>
+      <Box py={[4, 5]} mx={[3, 3, 6]}>
         <SectionTitle>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
-        <List mt={3}>
+        <List px={[4, 0]} mt={3}>
           <Flex flexWrap='wrap'>
             {nonCurrent.map(({ title, url }) => (
               <SiteSection key={title} text={title} to={`/${url}`}>
@@ -60,7 +60,7 @@ const FindOutMore = ({ bg, currentPath }) => {
 export default FindOutMore
 
 const SiteSection = ({ children, text, to }) => (
-  <Box width={[1, 1 / 2, 1 / 3]}>
+  <Box width={[1, 1, 1 / 3]}>
     <Box mr={[0, 4]} mb={3}>
       <Box mb={3}>
         <Text textAlign='center'>{children}</Text>

@@ -39,16 +39,16 @@ const CaseStudy = () => {
       <Animation>
         <Flex flexWrap='wrap'>
           <Box width={[1, 1, 1 / 3]}>
-            <HideOnMobile>
-              <Flex height='100%' alignItems='center'>
+            <Flex height='100%' alignItems='center'>
+              <HideOnMobile>
                 <Box>
                   <Tagline
                     color='grey'
                     html={wwdCaseStudySubtitle.childMarkdownRemark.html}
                   />
                 </Box>
-              </Flex>
-            </HideOnMobile>
+              </HideOnMobile>
+            </Flex>
           </Box>
           <Box width={[1, 1, 2 / 3]}>
             <Flex justifyContent='center'>

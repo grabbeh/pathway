@@ -6,7 +6,7 @@ const StandardSection = ({ children, bg }) => (
   <section>
     <Box bg={bg}>
       <Flex justifyContent='center'>
-        <Box mx={[3, 3, 6]} maxWidth={[null, 800, 1000]} py={5}>
+        <Box mx={[3, 3, 6]} maxWidth={[null, 800, 1000]} py={[4, 5]}>
           {children}
         </Box>
       </Flex>
