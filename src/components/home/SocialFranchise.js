@@ -32,7 +32,7 @@ const SocialFranchise = () => {
       <Section>
         <Flex alignItems='center' flexWrap='wrap'>
           <Box width={[1, 1, 1 / 2]}>
-            <Text fontWeight='subtitle' fontSize={3} color='green'>
+            <Text fontWeight='subtitle' fontSize={[1,3]} color='green'>
               What is a social franchise?
             </Text>
           </Box>
