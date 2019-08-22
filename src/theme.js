@@ -20,6 +20,7 @@ const theme = {
   lineHeights: {
     text: '24px',
     subtitle: '30px',
+    medium: '36px',
     tagline: '46px',
     heavy: '90px'
   }
