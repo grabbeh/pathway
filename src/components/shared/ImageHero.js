@@ -35,7 +35,7 @@ const Hero = props => {
           <Box px={[3, 3, 0]}>
             <LoadAnimation load={load}>
               <Heading color={[mobileColor, headerColor]}>{title}</Heading>
-              <Subtitle color={subtitleColor} html={subtitle} />
+              <Subtitle color={subtitleColor}>{subtitle}</Subtitle>
             </LoadAnimation>
           </Box>
         </Flex>

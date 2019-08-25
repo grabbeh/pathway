@@ -11,6 +11,7 @@ const query = graphql`
     allContentfulHomePage {
       edges {
         node {
+          socialFranchiseSubtitle
           socialFranchiseDescription {
             childMarkdownRemark {
               html
@@ -25,14 +26,14 @@ const query = graphql`
 const SocialFranchise = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomePage.edges[0]
-  let { socialFranchiseDescription } = node
+  let { socialFranchiseDescription, socialFranchiseSubtitle } = node
 
   return (
     <Box bg='lightGrey'>
       <Section>
         <Flex alignItems='center' flexWrap='wrap'>
           <Box width={[1, 1, 1 / 2]}>
-            <Subtitle color='green'>What is a social franchise?</Subtitle>
+            <Subtitle color='green'>{socialFranchiseSubtitle}</Subtitle>
           </Box>
           <Box width={[1, 1, 1 / 2]}>
             <BodyText

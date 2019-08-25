@@ -7,11 +7,7 @@ const query = graphql`
     allContentfulHomePage {
       edges {
         node {
-          heroSubtitle {
-            childMarkdownRemark {
-              html
-            }
-          }
+          heroSubtitle
           heroTitle
           heroImage {
             fluid(maxWidth: 1200) {
@@ -32,7 +28,7 @@ const Hero = () => {
     <ImageHero
       mobileBg='grey'
       title={heroTitle}
-      subtitle={heroSubtitle.childMarkdownRemark.html}
+      subtitle={heroSubtitle}
       imageData={heroImage.fluid}
       bg='green'
       headerColor='blue'
