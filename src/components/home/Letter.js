@@ -53,7 +53,7 @@ const Letter = () => {
               <Tagline
                 html={letterTagline.childMarkdownRemark.html}
                 color='blue'
-                textAlign={['center', 'right']}
+                textAlign={['center', 'center', 'right']}
               />
             </Box>
           </Box>
