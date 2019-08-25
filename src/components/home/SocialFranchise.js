@@ -1,6 +1,6 @@
 import React from 'react'
 import Subtitle from '../typography/Subtitle'
-import MarkdownText from '../general/MarkdownText'
+import BodyText from '../typography/BodyText'
 import Section from '../general/StandardSection'
 import Box from '../general/Box'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -35,7 +35,7 @@ const SocialFranchise = () => {
             <Subtitle color='green'>What is a social franchise?</Subtitle>
           </Box>
           <Box width={[1, 1, 1 / 2]}>
-            <MarkdownText
+            <BodyText
               html={socialFranchiseDescription.childMarkdownRemark.html}
             />
           </Box>
