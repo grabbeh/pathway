@@ -9,6 +9,7 @@ const SectionTitle = props => (
     color={props.color || 'grey'}
     fontSize={[5, 6]}
     my={0}
+    mb={3}
   >
     {props.children}
   </Text.h1>

@@ -51,9 +51,7 @@ const PathwayModel = () => {
     <Box>
       <Section>
         <Animation>
-          <Box mb={3}>
-            <SectionTitle>{pathwayModelTitle}</SectionTitle>
-          </Box>
+          <SectionTitle>{pathwayModelTitle}</SectionTitle>
         </Animation>
         <Box>
           <Animation>

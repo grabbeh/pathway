@@ -39,11 +39,9 @@ const MainSection = () => {
   let { node } = data.allContentfulWhatYouCanDoPage.edges[0]
   let { pathwayTeamTitle, pathwayTeamSubtitle, franchiseOfferPhases } = node
   return (
-    <Section>
+    <Section bg='lightGrey'>
       <Animation>
-        <Box mb={3}>
-          <SectionTitle>{pathwayTeamTitle}</SectionTitle>
-        </Box>
+        <SectionTitle>{pathwayTeamTitle}</SectionTitle>
       </Animation>
       <Box mb={4}>
         <Animation>
@@ -59,7 +57,7 @@ const MainSection = () => {
               ))}
             </TabList>
           </Box>
-          <Box mt={-15} width={[1, 1, 1 / 2]}>
+          <Box mt={[0, -15]} width={[1, 1, 1 / 2]}>
             <TabPanels>
               {franchiseOfferPhases.map(({ phase, content, color }, i) => (
                 <Box key={i}>

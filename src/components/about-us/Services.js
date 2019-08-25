@@ -1,5 +1,4 @@
 import React from 'react'
-import Box from '../general/Box'
 import { useStaticQuery, graphql } from 'gatsby'
 import Section from '../general/StandardSection'
 import Subtitle from '../typography/Subtitle'
@@ -32,9 +31,7 @@ const AboutServices = () => {
   } = data.allContentfulAboutPage.edges[0]
   return (
     <Section>
-      <Box mb={3}>
-        <Subtitle color='blue'>{servicesSubtitle}</Subtitle>
-      </Box>
+      <Subtitle color='blue'>{servicesSubtitle}</Subtitle>
       <Services services={servicesHolder} />
     </Section>
   )

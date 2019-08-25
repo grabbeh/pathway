@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Section from '../general/StandardSection'
-import Box from '../general/Box'
 import SectionTitle from '../typography/SectionTitle'
 import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
@@ -43,25 +42,17 @@ const MainSection = () => {
   return (
     <Section>
       <Animation>
-        <Box mb={3}>
-          <SectionTitle>{franchiseeProfileTitle}</SectionTitle>
-        </Box>
+        <SectionTitle>{franchiseeProfileTitle}</SectionTitle>
       </Animation>
-      <Box>
-        <Animation>
-          <BodyText html={franchiseeProfileIntro.childMarkdownRemark.html} />
-        </Animation>
-      </Box>
-      <Box>
-        <Animation>
-          <Subtitle color='green'>{franchiseeProfileSubtitle}</Subtitle>
-        </Animation>
-      </Box>
-      <Box>
-        <Animation>
-          <MDXRenderer>{franchiseeProfileContent.childMdx.body}</MDXRenderer>
-        </Animation>
-      </Box>
+      <Animation>
+        <BodyText html={franchiseeProfileIntro.childMarkdownRemark.html} />
+      </Animation>
+      <Animation>
+        <Subtitle color='green'>{franchiseeProfileSubtitle}</Subtitle>
+      </Animation>
+      <Animation>
+        <MDXRenderer>{franchiseeProfileContent.childMdx.body}</MDXRenderer>
+      </Animation>
     </Section>
   )
 }

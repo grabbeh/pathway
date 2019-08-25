@@ -47,9 +47,7 @@ const CostEffective = () => {
       <Animation>
         <SectionTitle>{pathwayTeamCostEffectivenessTitle}</SectionTitle>
         <BodyText html={wwdCostEffectiveSection.childMarkdownRemark.html} />
-        <Box mb={3}>
-          <Subtitle color='green'>Pathway hospital teams:</Subtitle>
-        </Box>
+        <Subtitle color='green'>Pathway hospital teams:</Subtitle>
       </Animation>
       <Flex flexWrap='wrap'>
         {hospitalTeamBenefitsHolder.map(

@@ -38,10 +38,8 @@ const AboutSection = () => {
   return (
     <Section>
       <Animation>
-        <Box mb={3}>
-          <IntroTitle color='green'>About</IntroTitle>
-          <SectionTitle>Who is Pathway?</SectionTitle>
-        </Box>
+        <IntroTitle color='green'>About</IntroTitle>
+        <SectionTitle>Who is Pathway?</SectionTitle>
       </Animation>
       <Box>
         <Animation>

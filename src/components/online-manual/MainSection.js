@@ -34,9 +34,7 @@ const MainSection = () => {
   return (
     <Section>
       <Animation>
-        <Box mb={3}>
-          <SectionTitle>{title}</SectionTitle>
-        </Box>
+        <SectionTitle>{title}</SectionTitle>
       </Animation>
       <Box>
         <Animation>

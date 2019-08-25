@@ -43,10 +43,8 @@ const MainSection = () => {
   return (
     <Section>
       <Animation>
-        <Box mb={3}>
-          <IntroTitle color='green'>{wwdIntro}</IntroTitle>
-          <SectionTitle>{wwdMainSectionTitle}</SectionTitle>
-        </Box>
+        <IntroTitle color='green'>{wwdIntro}</IntroTitle>
+        <SectionTitle>{wwdMainSectionTitle}</SectionTitle>
       </Animation>
       <Box>
         <Animation>

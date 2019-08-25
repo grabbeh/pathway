@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Section from '../general/StandardSection'
-import Box from '../general/Box'
 import SectionTitle from '../typography/SectionTitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
@@ -30,17 +29,13 @@ const MainSection = () => {
   return (
     <Section>
       <Animation>
-        <Box mb={3}>
-          <SectionTitle>{franchiseeFinancialInfoTitle}</SectionTitle>
-        </Box>
+        <SectionTitle>{franchiseeFinancialInfoTitle}</SectionTitle>
       </Animation>
-      <Box>
-        <Animation>
-          <BodyText
-            html={franchiseeFinancialInfoContent.childMarkdownRemark.html}
-          />
-        </Animation>
-      </Box>
+      <Animation>
+        <BodyText
+          html={franchiseeFinancialInfoContent.childMarkdownRemark.html}
+        />
+      </Animation>
     </Section>
   )
 }

@@ -6,8 +6,7 @@ import SectionTitle from '../typography/SectionTitle'
 import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
-import Flex from '../general/Flex'
-import Text from '../typography/Text'
+import Services from '../shared/Services'
 
 const query = graphql`
   query {
@@ -47,38 +46,17 @@ const MainSection = () => {
   return (
     <Section>
       <Animation>
-        <Box mb={3}>
-          <SectionTitle>{franchiseSectionTitle}</SectionTitle>
-        </Box>
+        <SectionTitle>{franchiseSectionTitle}</SectionTitle>
       </Animation>
-      <Box>
-        <Animation>
-          <BodyText html={franchiseSectionContent.childMarkdownRemark.html} />
-        </Animation>
-      </Box>
+      <Animation>
+        <BodyText html={franchiseSectionContent.childMarkdownRemark.html} />
+      </Animation>
       <Box mb={3}>
         <Animation>
           <Subtitle color='green'>{franchiseBenefitsTitle}</Subtitle>
         </Animation>
       </Box>
-      <Flex flexWrap='wrap'>
-        {pathwayFranchiseBenefits.map(({ name, description }, i) => {
-          return (
-            <Box mb={3} width={[1, 1 / 2, 1 / 3]} key={i}>
-              <Animation>
-                <Box mr={4}>
-                  <Text fontWeight='bold' fontSize={2}>
-                    {name}
-                  </Text>
-                  <Box>
-                    <BodyText html={description.childMarkdownRemark.html} />
-                  </Box>
-                </Box>
-              </Animation>
-            </Box>
-          )
-        })}
-      </Flex>
+      <Services services={pathwayFranchiseBenefits} />
     </Section>
   )
 }
