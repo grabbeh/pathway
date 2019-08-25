@@ -67,16 +67,18 @@ const Footer = ({ bg }) => {
     <footer>
       <Box bg={bg}>
         <Flex flexWrap='wrap'>
-          <Box p={[3, 4]} width={[1, 1, 2 / 3]}>
+          <Box p={[3, 4]} width={[1, 2 / 3]}>
             <Flex flexWrap='wrap'>
               <Box width={[1, 1, 1 / 3]}>
                 <Box width={[1 / 2, 1]}>
-                  <Logo />
+                  <Box mr={3}>
+                    <Logo />
+                  </Box>
                 </Box>
               </Box>
               <Box width={[1, 1, 2 / 3]}>
                 <Flex flexWrap='wrap'>
-                  <Box width={[1, 1 / 2, 1 / 2]}>
+                  <Box width={[1, 1 / 2]}>
                     <Subtitle color='green'>Quick links</Subtitle>
                     <List>
                       {navigation.navigationItem.map(({ url, title }, i) => (
@@ -98,7 +100,7 @@ const Footer = ({ bg }) => {
                       </ListItem>
                     </List>
                   </Box>
-                  <Box width={[1, 1 / 2, 1 / 2]}>
+                  <Box width={[1, 1 / 2]}>
                     <Subtitle color='green'>Contact</Subtitle>
                     <Text fontWeight='bold' fontSize={3}>
                       {name}
