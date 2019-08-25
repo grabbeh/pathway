@@ -28,24 +28,32 @@ const AboutSurvey = () => {
   let { aboutStatistic, studyText } = node
 
   return (
-    <Box bg='green'>
-      <Box>
-        <Box>
-          <Circle size={75} />
-        </Box>
-        <Box pt={[5, 0]}>
-          <Section>
-            <Animation>
-              <Text.span lineHeight='tagline' fontSize={6} fontWeight='bold' color='white'>
-                {studyText.studyText}{' '}
-              </Text.span>
-              <Text.span lineHeight='tagline' fontSize={6} fontWeight='bold' color='grey'>
-                {aboutStatistic.aboutStatistic}
-              </Text.span>
-            </Animation>
-          </Section>
-        </Box>
+    <Box position='relative' bg='green'>
+      <Box position='absolute' top={[40, 40, 75]} left={20}>
+        <Circle />
       </Box>
+      <Section>
+        <Box mt={[6, 100, 0]}>
+          <Animation>
+            <Text.span
+              lineHeight='tagline'
+              fontSize={6}
+              fontWeight='bold'
+              color='white'
+            >
+              {studyText.studyText}{' '}
+            </Text.span>
+            <Text.span
+              lineHeight='tagline'
+              fontSize={6}
+              fontWeight='bold'
+              color='grey'
+            >
+              {aboutStatistic.aboutStatistic}
+            </Text.span>
+          </Animation>
+        </Box>
+      </Section>
     </Box>
   )
 }
