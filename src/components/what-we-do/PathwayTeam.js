@@ -7,6 +7,8 @@ import styled from 'styled-components'
 import Flex from '../general/Flex'
 import Text from '../typography/Text'
 import Box from '../general/Box'
+import PathwayTeamMobile from './PathwayTeamMobile'
+import useDetectMobile from '../../hooks/useDetectMobile'
 
 const query = graphql`
   query {
@@ -18,7 +20,15 @@ const query = graphql`
               text
               values
             }
-            headers
+            headers {
+              text
+              volume
+            }
+            mobile {
+              oneToThirty
+              thirtyToTwoHundred
+              twoHundredPlus
+            }
           }
           pathwayTeamTitle
         }
@@ -28,25 +38,38 @@ const query = graphql`
 `
 
 const PathwayTeam = () => {
+  const isMobile = useDetectMobile()
   const data = useStaticQuery(query)
-  let {
+  const {
     pathwayTeamTitle,
     hospitalTeamData
   } = data.allContentfulWwdPage.edges[0].node
-
+  const { mobile, headers, rows } = hospitalTeamData
+  const first = headers.slice(0, 1)
+  const mainHeaders = headers.slice(1, headers.length)
   const tableHeaders = (
     <thead>
       <Tr>
-        {hospitalTeamData.headers.map((header, i) => (
+        <Th>
+          <Text color='blue' textAlign='center' fontWeight='bold' fontSize={4}>
+            {first[0].text}
+          </Text>
+        </Th>
+        {mainHeaders.map((header, i) => (
           <Td key={i}>
-            <Text fontWeight='bold'>{header}</Text>
+            <Text.span color='blue' fontWeight='bold'>
+              {header.volume}{' '}
+            </Text.span>
+            <Text.span color='grey' fontWeight='bold'>
+              {header.text}
+            </Text.span>
           </Td>
         ))}
       </Tr>
     </thead>
   )
 
-  const tableBody = hospitalTeamData.rows.map((row, i) => {
+  const tableBody = rows.map((row, i) => {
     return (
       <Fragment key={i}>
         <Tr>
@@ -76,18 +99,53 @@ const PathwayTeam = () => {
   })
 
   return (
-    <Section bg='lightGrey'>
-      <Animation>
-        <SectionTitle>{pathwayTeamTitle}</SectionTitle>
-      </Animation>
-      <Animation />
-      <Box my={3}>
-        <Table>
-          {tableHeaders}
-          <tbody>{tableBody}</tbody>
-        </Table>
-      </Box>
-    </Section>
+    <Box>
+      {isMobile ? (
+        <Box bg='lightGrey'>
+          <Animation>
+            <Box px={3} pt={3}>
+              <SectionTitle>{pathwayTeamTitle}</SectionTitle>
+            </Box>
+          </Animation>
+          <Animation>
+            <PathwayTeamMobile
+              patientRange='1 to 30'
+              dotLength={10}
+              firstStat
+              requirements={mobile.oneToThirty}
+            />
+          </Animation>
+          <Animation>
+            <PathwayTeamMobile
+              patientRange='30 to 200'
+              dotLength={30}
+              requirements={mobile.thirtyToTwoHundred}
+            />
+          </Animation>
+          <Animation>
+            <PathwayTeamMobile
+              patientRange='200 plus'
+              dotLength={50}
+              requirements={mobile.twoHundredPlus}
+            />
+          </Animation>
+        </Box>
+      ) : (
+        <Section bg='lightGrey'>
+          <Animation>
+            <SectionTitle>{pathwayTeamTitle}</SectionTitle>
+          </Animation>
+          <Animation>
+            <Box my={3}>
+              <Table>
+                {tableHeaders}
+                <tbody>{tableBody}</tbody>
+              </Table>
+            </Box>
+          </Animation>
+        </Section>
+      )}
+    </Box>
   )
 }
 
@@ -101,12 +159,11 @@ const Table = styled('table')`
   table-layout: fixed;
   border-collapse: collapse;
 `
-/*
+
 const Th = styled('th')`
-padding: 10px;
-width: 100px;
-` */
+  width: 250px;
+`
 
 const Td = styled('td')`
-  padding: 5px;
+  padding: 10px;
 `

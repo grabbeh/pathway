@@ -30,8 +30,4 @@ ListItem.propTypes = {
   ...propTypes.position
 }
 
-ListItem.defaultProps = {
-  m: 0
-}
-
 export default ListItem

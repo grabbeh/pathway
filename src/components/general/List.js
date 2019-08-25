@@ -5,10 +5,8 @@ import propTypes from '@styled-system/prop-types'
 
 const StyledList = styled('ul')(
   {
-    boxSizing: 'border-box',
     margin: 0,
-    padding: 0,
-    listStyle: 'none'
+    padding: 0
   },
   space,
   shadow,

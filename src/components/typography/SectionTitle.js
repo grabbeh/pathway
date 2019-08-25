@@ -4,10 +4,10 @@ import Text from './Text'
 const SectionTitle = props => (
   <Text.h1
     {...props}
-    lineHeight={['medium','tagline']}
+    lineHeight={['medium', 'tagline']}
     fontWeight='bold'
     color={props.color || 'grey'}
-    fontSize={[5,6]}
+    fontSize={[5, 6]}
     my={0}
   >
     {props.children}

@@ -6,7 +6,7 @@ export const List = props => (
     style={{ listStyleType: 'circle' }}
     fontWeight='normal'
     pb={2}
-    fontSize={[1,3]}
+    fontSize={[2, 3]}
     color='grey'
   >
     {props.children}

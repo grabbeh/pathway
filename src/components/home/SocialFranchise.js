@@ -1,5 +1,5 @@
 import React from 'react'
-import Text from '../typography/Text'
+import Subtitle from '../typography/Subtitle'
 import MarkdownText from '../general/MarkdownText'
 import Section from '../general/StandardSection'
 import Box from '../general/Box'
@@ -32,9 +32,7 @@ const SocialFranchise = () => {
       <Section>
         <Flex alignItems='center' flexWrap='wrap'>
           <Box width={[1, 1, 1 / 2]}>
-            <Text fontWeight='subtitle' fontSize={[1,3]} color='green'>
-              What is a social franchise?
-            </Text>
+            <Subtitle color='green'>What is a social franchise?</Subtitle>
           </Box>
           <Box width={[1, 1, 1 / 2]}>
             <MarkdownText
