@@ -45,7 +45,7 @@ const MainSection = () => {
           <SectionTitle>{pathwayTeamTitle}</SectionTitle>
         </Box>
       </Animation>
-      <Box mb={3}>
+      <Box mb={4}>
         <Animation>
           <Subtitle color='green'>{pathwayTeamSubtitle}</Subtitle>
         </Animation>
@@ -59,7 +59,7 @@ const MainSection = () => {
               ))}
             </TabList>
           </Box>
-          <Box width={[1, 1, 1 / 2]}>
+          <Box mt={-15} width={[1, 1, 1 / 2]}>
             <TabPanels>
               {franchiseOfferPhases.map(({ phase, content, color }, i) => (
                 <Box key={i}>

@@ -70,7 +70,7 @@ const Footer = ({ bg }) => {
           <Box p={[3, 4]} width={[1, 2 / 3]}>
             <Flex flexWrap='wrap'>
               <Box width={[1, 1, 1 / 3]}>
-                <Box width={[1 / 2, 1]}>
+                <Box width={[1 / 2, 1 / 2, 1]}>
                   <Box mr={3}>
                     <Logo />
                   </Box>
@@ -88,12 +88,12 @@ const Footer = ({ bg }) => {
                           </Link>
                         </ListItem>
                       ))}
-                      <ListItem py={1}>
+                      <ListItem>
                         <Text fontSize={3}>
                           <Link to='/'>Terms and conditions</Link>
                         </Text>
                       </ListItem>
-                      <ListItem py={1}>
+                      <ListItem>
                         <Text fontSize={3}>
                           <Link to='/privacy-policy'>Privacy policy</Link>
                         </Text>

@@ -4,9 +4,9 @@ import ListItem from '../general/ListItem'
 export const List = props => (
   <ListItem
     style={{ listStyleType: 'circle' }}
-    fontWeight='normal'
     pb={2}
     fontSize={[2, 3]}
+    lineHeight='text'
     color='grey'
   >
     {props.children}

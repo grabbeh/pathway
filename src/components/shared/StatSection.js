@@ -7,13 +7,13 @@ import Animation from '../animations/ScrollAnimation'
 import SectionTitle from '../typography/SectionTitle'
 import Circle from '../../svg/Circle'
 
-const StatSection = ({ stats, title, markdown, bg }) => (
+const StatSection = ({ stats, title, bg }) => (
   <Box position='relative' bg={bg}>
-    <Box position='absolute' top={20} left={20}>
+    <Box position='absolute' top={[40, 40, 75]} left={[40, 40, 30]}>
       <Circle />
     </Box>
     <Section>
-      <Box px={[4, 0]} mt={[6, 6, 0]}>
+      <Box px={4} mt={[6, 100, 0]}>
         <Animation>
           <SectionTitle color='white'>{title}</SectionTitle>
         </Animation>
@@ -40,7 +40,7 @@ const Stat = ({ figure, text, subtitle }) => (
     <Text lineHeight='heading' fontSize={9} color='white' fontWeight='heavy'>
       {figure}%
     </Text>
-    <Text mr={2} fontWeight='subtitle' fontSize={6} color='yellow'>
+    <Text mr={2} fontWeight='subtitle' fontSize={6} color='white'>
       {subtitle}
     </Text>
     <Text fontWeight='subtitle' fontSize={3} color='white'>

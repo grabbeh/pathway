@@ -2,7 +2,7 @@ import React from 'react'
 import Text from '../typography/Text'
 
 export const Paragraph = props => (
-  <Text.p color='grey' fontSize={[2, 3]} fontWeight='normal' lineHeight='text'>
+  <Text.p color='grey' fontSize={[2, 3]} lineHeight='text'>
     {props.children}
   </Text.p>
 )

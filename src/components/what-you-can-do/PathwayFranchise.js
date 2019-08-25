@@ -51,7 +51,6 @@ const MainSection = () => {
           <SectionTitle>{franchiseSectionTitle}</SectionTitle>
         </Box>
       </Animation>
-
       <Box>
         <Animation>
           <BodyText html={franchiseSectionContent.childMarkdownRemark.html} />

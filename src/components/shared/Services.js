@@ -1,8 +1,10 @@
 import React from 'react'
 import Box from '../general/Box'
-import BodySubText from '../typography/BodySubText'
+import BodyText from '../typography/BodyText'
 import Flex from '../general/Flex'
 import Animation from '../animations/ScrollAnimation'
+import Text from '../typography/Text'
+import Circle from '../../svg/Circle'
 
 const Services = ({ services }) => (
   <Flex flexWrap='wrap'>
@@ -11,11 +13,12 @@ const Services = ({ services }) => (
         <Box mb={3} width={[1, 1 / 2, 1 / 3]} key={i}>
           <Animation>
             <Box mr={4}>
-              <Box fontWeight='bold' fontSize={1}>
+              <Circle size={60} />
+              <Text fontWeight='bold' fontSize={3}>
                 {name}:
-              </Box>
+              </Text>
               <Box>
-                <BodySubText html={description.childMarkdownRemark.html} />
+                <BodyText html={description.childMarkdownRemark.html} />
               </Box>
             </Box>
           </Animation>

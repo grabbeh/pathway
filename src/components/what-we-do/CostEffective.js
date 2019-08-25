@@ -65,10 +65,10 @@ const CostEffective = () => {
                 <Box mr={4}>
                   <Circle size={60} />
                   <Box>
-                    <Text.span fontSize={[1, 3]} color='grey' fontWeight='bold'>
-                      {title}
+                    <Text.span fontSize={[2, 3]} color='grey' fontWeight='bold'>
+                      {title}{' '}
                     </Text.span>
-                    <Text.span fontSize={[1, 3]} color='grey'>
+                    <Text.span fontSize={[2, 3]} color='grey'>
                       {mainContent}
                     </Text.span>
                   </Box>

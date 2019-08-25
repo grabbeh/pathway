@@ -45,7 +45,7 @@ const Letter = () => {
         </Box>
         <Flex justifyContent='space-between' flexWrap='wrap'>
           <Box width={[1, 1, 1 / 2]}>
-            <Box mt={-4} mr={[0, 4]}>
+            <Box mt={-3} mr={[0, 4]}>
               <Tagline color='blue' textAlign={['center', 'center', 'right']}>
                 {letterTagline}
               </Tagline>
