@@ -9,7 +9,7 @@ import Circle from '../../svg/Circle'
 
 const StatSection = ({ stats, title, bg }) => (
   <Box position='relative' bg={bg}>
-    <Box position='absolute' top={[40, 40, 75]} left={[40, 40, 30]}>
+    <Box position='absolute' top={[40, 40, 75]} left={30}>
       <Circle />
     </Box>
     <Section>

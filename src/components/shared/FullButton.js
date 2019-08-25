@@ -10,7 +10,7 @@ const FullButton = ({ text, to }, props) => (
   <ListItem width={1}>
     <Link {...props} to={to}>
       <Box>
-        <Flex flexWrap='wrap'>
+        <Flex>
           <Box style={{ flex: '1' }} bg='blue' p={2}>
             <Text
               fontSize={4}
@@ -21,14 +21,8 @@ const FullButton = ({ text, to }, props) => (
               {text}
             </Text>
           </Box>
-          <Flex flex='0 0 50px' bg='turquoise'>
-            <Text
-              width={1}
-              mt={10}
-              fontSize={4}
-              textAlign='center'
-              color='white'
-            >
+          <Flex alignItems='center' flex='0 0 50px' bg='turquoise'>
+            <Text width={1} fontSize={4} textAlign='center' color='white'>
               <FaAngleRight />
             </Text>
           </Flex>

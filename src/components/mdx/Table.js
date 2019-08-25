@@ -10,6 +10,7 @@ export const Table = styled('table')`
     padding-left: 10px;
     padding-right: 10px;
     text-align: right;
+    color: #4a4a4a;
   }
 
   & tbody td {
@@ -19,6 +20,7 @@ export const Table = styled('table')`
     padding-left: 10px;
     padding-right: 10px;
     text-align: right;
+    color: #4a4a4a;
   }
 
   & tbody > tr {
