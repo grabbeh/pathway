@@ -8,18 +8,16 @@ import Survey from '../components/about-us/AboutSurvey'
 import Services from '../components/about-us/Services'
 import Footer from '../components/shared/Footer'
 
-const AboutPage = () => {
-  return (
-    <Wrapper>
-      <SEO title='About' />
-      <Hero />
-      <AboutSection />
-      <Survey />
-      <Services />
-      <FindOutMore bg='lightGrey' homelessness howyoucanhelp whatwedo />
-      <Footer />
-    </Wrapper>
-  )
-}
+const AboutPage = () => (
+  <Wrapper>
+    <SEO title='About' />
+    <Hero />
+    <AboutSection />
+    <Survey />
+    <Services />
+    <FindOutMore bg='lightGrey' />
+    <Footer />
+  </Wrapper>
+)
 
 export default AboutPage

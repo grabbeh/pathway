@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 
-function useDetectMobile () {
+function useDetectWidth () {
   if (typeof window !== 'undefined') {
     const [width, setWidth] = useState(window.innerWidth)
-
     useEffect(() => {
       const handleResize = () => setWidth(window.innerWidth)
       window.addEventListener('resize', handleResize)
@@ -11,11 +10,12 @@ function useDetectMobile () {
         window.removeEventListener('resize', handleResize)
       }
     }, [])
-
-    let mobile = false
-    if (width < 640) mobile = true
-    return mobile
+    let isMobile = false
+    let isWideDesktop = false
+    if (width < 640) isMobile = true
+    if (width > 1400) isWideDesktop = true
+    return { isMobile, isWideDesktop }
   }
 }
 
-export default useDetectMobile
+export default useDetectWidth

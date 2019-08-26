@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useSpring, animated } from 'react-spring'
+import { useAppContext } from '../shared/Wrapper'
 
-const ScrollAnimation = ({ children, duration = 500 }) => {
-  const [ref, inView] = useInView({
+const ScrollAnimation = ({ children, duration = 500, id }) => {
+  const [ref, inView, entry] = useInView({
     threshold: 0,
     triggerOnce: true
+  })
+
+  let state = useAppContext()
+
+  useEffect(() => {
+    if (inView && entry.target.id) {
+      state.addId(entry.target.id)
+    }
   })
 
   const props = useSpring({
@@ -15,7 +24,7 @@ const ScrollAnimation = ({ children, duration = 500 }) => {
   })
 
   return (
-    <animated.div ref={ref} style={props}>
+    <animated.div id={id} ref={ref} style={props}>
       {children}
     </animated.div>
   )

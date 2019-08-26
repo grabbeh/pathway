@@ -9,6 +9,7 @@ import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import Circle from '../../svg/Circle'
+import changeCase from 'change-case'
 
 const query = graphql`
   query {
@@ -41,10 +42,11 @@ const CostEffective = () => {
     wwdCostEffectiveSection,
     hospitalTeamBenefitsHolder
   } = node
+  let url = changeCase.hyphenCase(pathwayTeamCostEffectivenessTitle)
 
   return (
     <Section>
-      <Animation>
+      <Animation id={url}>
         <SectionTitle>{pathwayTeamCostEffectivenessTitle}</SectionTitle>
         <BodyText html={wwdCostEffectiveSection.childMarkdownRemark.html} />
         <Subtitle color='green'>Pathway hospital teams:</Subtitle>

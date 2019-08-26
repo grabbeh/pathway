@@ -5,6 +5,7 @@ import SectionTitle from '../typography/SectionTitle'
 import Animation from '../animations/ScrollAnimation'
 import Box from '../general/Box'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import changeCase from 'change-case'
 
 const query = graphql`
   query {
@@ -28,13 +29,14 @@ const query = graphql`
 
 const PathwayTeamCosts = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWwdPage.edges[0]
-  let { hospitalTeamCostsTitle, hospitalTeamCostsTable } = node
+  const { node } = data.allContentfulWwdPage.edges[0]
+  const { hospitalTeamCostsTitle, hospitalTeamCostsTable } = node
+  const url = changeCase.hyphenCase(hospitalTeamCostsTitle)
 
   return (
     <Box bg='lightGrey'>
       <Section>
-        <Animation>
+        <Animation id={url}>
           <SectionTitle>{hospitalTeamCostsTitle}</SectionTitle>
         </Animation>
         <Animation>

@@ -27,7 +27,6 @@ const SocialFranchise = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomePage.edges[0]
   let { socialFranchiseDescription, socialFranchiseSubtitle } = node
-
   return (
     <Box bg='lightGrey'>
       <Section>

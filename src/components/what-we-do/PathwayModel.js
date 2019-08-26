@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
 import Section from '../general/StandardSection'
@@ -48,24 +48,20 @@ const PathwayModel = () => {
   } = node
 
   return (
-    <Box>
+    <Fragment>
       <Section>
         <Animation>
           <SectionTitle>{pathwayModelTitle}</SectionTitle>
         </Animation>
-        <Box>
-          <Animation>
-            <Subtitle
-              color='green'
-              html={wwdPathwayModelSubtitle.childMarkdownRemark.html}
-            />
-          </Animation>
-        </Box>
-        <Box>
-          <Animation>
-            <BodyText html={wwdPathwayModel.childMarkdownRemark.html} />
-          </Animation>
-        </Box>
+        <Animation>
+          <Subtitle
+            color='green'
+            html={wwdPathwayModelSubtitle.childMarkdownRemark.html}
+          />
+        </Animation>
+        <Animation>
+          <BodyText html={wwdPathwayModel.childMarkdownRemark.html} />
+        </Animation>
       </Section>
       <Animation>
         <Flex flexWrap='wrap'>
@@ -78,13 +74,11 @@ const PathwayModel = () => {
         </Flex>
       </Animation>
       <Section>
-        <Box>
-          <Animation>
-            <BodyText html={wwdPathwayModelPartTwo.childMarkdownRemark.html} />
-          </Animation>
-        </Box>
+        <Animation>
+          <BodyText html={wwdPathwayModelPartTwo.childMarkdownRemark.html} />
+        </Animation>
       </Section>
-    </Box>
+    </Fragment>
   )
 }
 

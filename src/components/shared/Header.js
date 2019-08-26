@@ -71,7 +71,6 @@ const Header = () => {
           </MenuHide>
         </Flex>
       </Flex>
-
       <Box
         style={{ cursor: 'pointer' }}
         onClick={() => {

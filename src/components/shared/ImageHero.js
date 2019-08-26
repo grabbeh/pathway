@@ -6,15 +6,15 @@ import Subtitle from '../typography/Subtitle'
 import BackgroundImage from '../general/BackgroundImage'
 import LoadAnimation from '../animations/InitialLoadAnimation'
 import useLoad from '../../hooks/useLoad'
-import useDetectMobile from '../../hooks/useDetectMobile'
+import useDetectWidth from '../../hooks/useDetectWidth'
 
 const ImageHero = props => {
-  let mobile = useDetectMobile()
-  let load = useLoad()
+  const { isMobile } = useDetectWidth()
+  const load = useLoad()
   return (
     <Flex bg={props.mobileBg} flexWrap='wrap'>
       <Flex bg={props.bg} flex='0 0 20px' />
-      {mobile ? (
+      {isMobile ? (
         <Hero load={load} {...props} />
       ) : (
         <BackgroundImage imageData={props.imageData} style={{ flex: '1' }}>

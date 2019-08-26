@@ -8,7 +8,8 @@ import Flex from '../general/Flex'
 import Text from '../typography/Text'
 import Box from '../general/Box'
 import PathwayTeamMobile from './PathwayTeamMobile'
-import useDetectMobile from '../../hooks/useDetectMobile'
+import useDetectWidth from '../../hooks/useDetectWidth'
+import changeCase from 'change-case'
 
 const query = graphql`
   query {
@@ -38,7 +39,7 @@ const query = graphql`
 `
 
 const PathwayTeam = () => {
-  const isMobile = useDetectMobile()
+  const { isMobile } = useDetectWidth()
   const data = useStaticQuery(query)
   const {
     pathwayTeamTitle,
@@ -47,6 +48,8 @@ const PathwayTeam = () => {
   const { mobile, headers, rows } = hospitalTeamData
   const first = headers.slice(0, 1)
   const mainHeaders = headers.slice(1, headers.length)
+  let url = changeCase.hyphenCase(pathwayTeamTitle)
+
   const tableHeaders = (
     <thead>
       <Tr>
@@ -102,7 +105,7 @@ const PathwayTeam = () => {
     <Box>
       {isMobile ? (
         <Box bg='lightGrey'>
-          <Animation>
+          <Animation id={url}>
             <Box px={3} pt={3}>
               <SectionTitle>{pathwayTeamTitle}</SectionTitle>
             </Box>

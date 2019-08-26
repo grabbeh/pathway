@@ -11,7 +11,7 @@ const OnlineManual = () => (
     <SEO title='What you can do' />
     <Hero />
     <MainSection />
-    <FindOutMore bg='lightGrey' homelessness whatwedo howyoucanhelp />
+    <FindOutMore bg='lightGrey' />
     <Footer />
   </Wrapper>
 )

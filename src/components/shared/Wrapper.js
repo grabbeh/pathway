@@ -7,7 +7,7 @@ import theme from '../../theme.js'
 import Box from '../general/Box'
 import Header from './Header'
 import '../../index.css'
-import { useSpring, animated } from 'react-spring'
+
 import { MDXProvider } from '@mdx-js/react'
 import Table from '../mdx/Table'
 import List from '../mdx/List'
@@ -44,16 +44,14 @@ const query = graphql`
 const Wrapper = props => {
   const data = useStaticQuery(query)
   const [open, setOpen] = useState(false)
+  const [viewId, setInViewId] = useState()
   const context = {
     open,
     setOpen,
-    toggleOpen: () => setOpen(!open)
+    viewId,
+    toggleOpen: () => setOpen(!open),
+    addId: id => setInViewId(id)
   }
-
-  const animProps = useSpring({
-    config: { duration: 300 },
-    opacity: open ? 0 : 1
-  })
 
   return (
     <Fragment>
@@ -79,11 +77,10 @@ const Wrapper = props => {
           <ThemeProvider theme={theme}>
             <Box>
               <Header />
-              <animated.div style={animProps}>
-                <Box aria-hidden={open} hidden={open} zIndex={open ? -1 : 9999}>
-                  {props.children}
-                </Box>
-              </animated.div>
+
+              <Box aria-hidden={open} hidden={open} zIndex={open ? -1 : 9999}>
+                {props.children}
+              </Box>
             </Box>
           </ThemeProvider>
         </Context.Provider>

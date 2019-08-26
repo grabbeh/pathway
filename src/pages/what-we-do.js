@@ -11,21 +11,44 @@ import CostEffective from '../components/what-we-do/CostEffective'
 import PathwayTeamCosts from '../components/what-we-do/PathwayTeamCosts'
 import PathwayTeam from '../components/what-we-do/PathwayTeam'
 import Footer from '../components/shared/Footer'
+import SideTopicList from '../components/shared/SideTopicList'
+import { graphql, useStaticQuery } from 'gatsby'
 
-const page = ({ location }) => (
-  <Wrapper>
-    <SEO title='What we do' />
-    <Hero />
-    <MainSection />
-    <CaseStudy />
-    <PathwayModel />
-    <ULCHStats />
-    <CostEffective />
-    <PathwayTeam />
-    <PathwayTeamCosts />
-    <FindOutMore currentPath={location.pathname} />
-    <Footer bg='lightGrey' />
-  </Wrapper>
-)
+const query = graphql`
+  query {
+    allContentfulWwdPage {
+      edges {
+        node {
+          wwdMainSectionTitle
+          pathwayModelTitle
+          pathwayTeamCostEffectivenessTitle
+          pathwayTeamTitle
+          hospitalTeamCostsTitle
+        }
+      }
+    }
+  }
+`
+
+const page = ({ location }) => {
+  const data = useStaticQuery(query)
+  let topics = Object.values(data.allContentfulWwdPage.edges[0].node)
+  return (
+    <Wrapper>
+      <SEO title='What we do' />
+      <SideTopicList topics={topics} />
+      <Hero />
+      <MainSection />
+      <CaseStudy />
+      <PathwayModel />
+      <ULCHStats />
+      <CostEffective />
+      <PathwayTeam />
+      <PathwayTeamCosts />
+      <FindOutMore currentPath={location.pathname} />
+      <Footer bg='lightGrey' />
+    </Wrapper>
+  )
+}
 
 export default page
