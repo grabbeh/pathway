@@ -74,7 +74,7 @@ const Header = () => {
       <Box
         style={{ cursor: 'pointer' }}
         onClick={() => {
-          state.toggleOpen(!state.open)
+          state.toggleOpen()
         }}
         position='absolute'
         top={3}

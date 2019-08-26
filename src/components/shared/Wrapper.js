@@ -77,7 +77,6 @@ const Wrapper = props => {
           <ThemeProvider theme={theme}>
             <Box>
               <Header />
-
               <Box aria-hidden={open} hidden={open} zIndex={open ? -1 : 9999}>
                 {props.children}
               </Box>
