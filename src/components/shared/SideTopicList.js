@@ -26,9 +26,7 @@ const SideTopicList = ({ topics }) => {
             {items.map(({ url, title }, i) => {
               return (
                 <TopicItem
-                  inViewId={state.viewId}
-                  setActiveIndex={setActiveIndex}
-                  active={active}
+                  inViewId={state.viewId}                 
                   url={url}
                   title={title}
                   key={i}
