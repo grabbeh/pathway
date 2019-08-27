@@ -29,7 +29,6 @@ const SideTopicList = ({ topics }) => {
                   inViewId={state.viewId}
                   setActiveIndex={setActiveIndex}
                   active={active}
-                  index={i}
                   url={url}
                   title={title}
                   key={i}
