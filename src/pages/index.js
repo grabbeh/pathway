@@ -12,7 +12,6 @@ import SideTopicList from '../components/shared/SideTopicList'
 const IndexPage = () => (
   <Wrapper>
     <SEO title='Home' />
-    <SideTopicList topics={['Hello','World']} />
     <Hero />
     <SocialFranchise />
     <Letter />
