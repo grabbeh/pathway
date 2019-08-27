@@ -112,11 +112,11 @@ const TopicItem = ({ setActiveIndex, inViewId, index, active, url, title }) => {
 
         <Text
 
-          // color={active === index && 'green'}
+          color={active === index && 'green' || 'grey'}
 
           fontWeight={(inViewId === url && 'bold') || 'normal'}
 
-          fontSize={0}
+          fontSize={1}
 
         >
 
