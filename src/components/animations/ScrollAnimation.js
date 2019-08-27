@@ -24,7 +24,7 @@ const ScrollAnimation = ({ children, duration = 500, id }) => {
   })
 
   return (
-    <animated.div id={id} ref={ref} style={props}>
+    <animated.div id={id} ref={ref}>
       {children}
     </animated.div>
   )
