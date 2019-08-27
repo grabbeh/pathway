@@ -9,7 +9,7 @@ function useDetectWidth () {
       return () => {
         window.removeEventListener('resize', handleResize)
       }
-    }, [])
+    })
     let isMobile = false
     let isWideDesktop = false
     if (width < 640) isMobile = true
@@ -18,6 +18,7 @@ function useDetectWidth () {
   }
   else {
     return {
+      console.log("No window")
       isMobile: false,
       isWideDesktop: false
     }
