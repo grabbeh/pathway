@@ -21,7 +21,7 @@ const SideTopicList = ({ topics }) => {
   return (
     <Fragment>
       {isWideDesktop && (
-        <Box bg='white' width={120} p={3} top={100} zIndex='999' left={0} position='fixed'>
+        <Box bg='white' width={120} p={3}>
           <List>
             {items.map(({ url, title }, i) => {
               return (
