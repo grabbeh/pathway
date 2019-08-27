@@ -16,6 +16,12 @@ function useDetectWidth () {
     if (width > 1400) isWideDesktop = true
     return { isMobile, isWideDesktop }
   }
+  else {
+    return {
+      isMobile: false,
+      isWideDesktop: false
+    }
+  }
 }
 
 export default useDetectWidth
