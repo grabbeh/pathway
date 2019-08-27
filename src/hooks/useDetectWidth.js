@@ -14,8 +14,6 @@ function useDetectWidth () {
     let isWideDesktop = false
     if (width < 640) isMobile = true
     if (width > 1400) isWideDesktop = true
-    console.log(isMobile)
-    console.log(isWideDesktop)
     return { isMobile, isWideDesktop }
   }
   else {
