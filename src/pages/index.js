@@ -7,10 +7,12 @@ import Hero from '../components/home/Hero'
 import SocialFranchise from '../components/home/SocialFranchise'
 import Letter from '../components/home/Letter'
 import Footer from '../components/shared/Footer'
+import SideTopicList from '../components/shared/SideTopicList'
 
 const IndexPage = () => (
   <Wrapper>
     <SEO title='Home' />
+    <SideTopicList topics={['Hello','World']} />
     <Hero />
     <SocialFranchise />
     <Letter />
