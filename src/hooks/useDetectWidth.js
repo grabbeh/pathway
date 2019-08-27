@@ -17,8 +17,9 @@ function useDetectWidth () {
     return { isMobile, isWideDesktop }
   }
   else {
+    console.log("No window")
     return {
-      console.log("No window")
+      
       isMobile: false,
       isWideDesktop: false
     }
