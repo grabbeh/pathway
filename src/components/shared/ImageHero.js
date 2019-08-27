@@ -9,6 +9,7 @@ import useLoad from '../../hooks/useLoad'
 import useDetectWidth from '../../hooks/useDetectWidth'
 
 const ImageHero = props => {
+  console.log(useDetectWidth())
   const { isMobile } = useDetectWidth()
   const load = useLoad()
   return (
