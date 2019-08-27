@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { useSpring, animated } from 'react-spring'
 import { useAppContext } from '../shared/Wrapper'
 
-const ScrollAnimation = ({ children, duration = 500 }) => {
+const ScrollAnimation = ({ children, duration = 500, id }) => {
   const [ref, inView, entry] = useInView({
     threshold: 0,
     triggerOnce: true
