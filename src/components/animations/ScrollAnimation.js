@@ -12,6 +12,7 @@ const ScrollAnimation = ({ children, duration = 500, id }) => {
   let state = useAppContext()
 
   useEffect(() => {
+    console.log(entry)
     if (inView && entry.target.id) {
       state.addId(entry.target.id)
     }
