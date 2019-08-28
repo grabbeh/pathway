@@ -7,6 +7,7 @@ import SectionTitle from '../typography/SectionTitle'
 import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import changeCase from 'change-case'
 
 const query = graphql`
   query {
@@ -40,9 +41,10 @@ const MainSection = () => {
     wwdMainSectionSubtitle,
     wwdMainSection
   } = node
+  const url = changeCase.hyphenCase(wwdMainSectionTitle)
   return (
     <Section>
-      <Animation>
+      <Animation id={url}>
         <IntroTitle color='green'>{wwdIntro}</IntroTitle>
         <SectionTitle>{wwdMainSectionTitle}</SectionTitle>
       </Animation>
