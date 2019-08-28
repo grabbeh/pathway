@@ -9,6 +9,7 @@ import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 import PathwayServicesList from '../what-we-do/PathwayServicesList'
 import KeyFact from '../what-we-do/KeyFact'
+import changeCase from 'change-case'
 
 const query = graphql`
   query {
@@ -46,11 +47,13 @@ const PathwayModel = () => {
     wwdPathwayModel,
     wwdPathwayModelPartTwo
   } = node
+  
+  const url = changeCase.hyphenCase(pathwayModelTitle)
 
   return (
     <Fragment>
       <Section>
-        <Animation>
+        <Animation id={url}>
           <SectionTitle>{pathwayModelTitle}</SectionTitle>
         </Animation>
         <Animation>
