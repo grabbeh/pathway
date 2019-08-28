@@ -37,8 +37,9 @@ const SideTopicList = ({ topics }) => {
               )
             })}
           </List>
-        }
+        
         </Box>
+    }
     </Fragment>
   )
 }
