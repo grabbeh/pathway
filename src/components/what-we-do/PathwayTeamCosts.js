@@ -34,16 +34,13 @@ const PathwayTeamCosts = () => {
   const url = changeCase.hyphenCase(hospitalTeamCostsTitle)
 
   return (
-    <Box bg='lightGrey'>
-      <Section>
-        <Animation id={url}>
+     <Animation id={url}>
+      <Section  bg='lightGrey'>
           <SectionTitle>{hospitalTeamCostsTitle}</SectionTitle>
-        </Animation>
-        <Animation>
           <MDXRenderer>{hospitalTeamCostsTable.childMdx.body}</MDXRenderer>
-        </Animation>
       </Section>
-    </Box>
+    </Animation>
+
   )
 }
 
