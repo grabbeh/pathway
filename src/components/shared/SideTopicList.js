@@ -20,6 +20,7 @@ const SideTopicList = ({ topics }) => {
   let state = useAppContext()
   return (
     <Fragment>
+    {state.viewId &&
         <Box width={120} p={3} top={600} zIndex='999' left={0} position='fixed'>
           <List>
             {items.map(({ url, title }, i) => {
@@ -36,6 +37,7 @@ const SideTopicList = ({ topics }) => {
               )
             })}
           </List>
+        }
         </Box>
     </Fragment>
   )
