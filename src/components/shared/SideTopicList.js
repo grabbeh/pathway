@@ -56,7 +56,7 @@ const TopicItem = ({ setActiveIndex, inViewId, index, active, url, title }) => {
     >
       <a href={`#${url}`}>
         <Text
-          color={active === index && 'green' || inViewId === url && 'green' || 'grey'}
+          color={active === index && 'black' || inViewId === url && 'black' || 'grey'}
           fontWeight={(inViewId === url && 'bold') || active === index && 'bold' || 'normal'}
           fontSize={1}
         >
