@@ -47,6 +47,8 @@ const SideTopicList = ({ topics }) => {
 export default SideTopicList
 
 const TopicItem = ({ setActiveIndex, inViewId, index, active, url, title }) => {
+  console.log(url)
+  console.log(inViewId)
   return (
     <ListItem
       onClick={() => {
