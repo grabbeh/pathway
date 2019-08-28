@@ -45,8 +45,8 @@ const CostEffective = () => {
   let url = changeCase.hyphenCase(pathwayTeamCostEffectivenessTitle)
 
   return (
+    <Animation id={url}>
     <Section>
-      <Animation id={url}>
         <SectionTitle>{pathwayTeamCostEffectivenessTitle}</SectionTitle>
         <BodyText html={wwdCostEffectiveSection.childMarkdownRemark.html} />
         <Subtitle color='green'>Pathway hospital teams:</Subtitle>
@@ -61,7 +61,7 @@ const CostEffective = () => {
             i
           ) => (
             <Box mb={3} width={[1, 1 / 2]} key={i}>
-              <Animation>
+
                 <Box mr={4}>
                   <Circle size={60} />
                   <Box>
@@ -73,12 +73,12 @@ const CostEffective = () => {
                     </Text.span>
                   </Box>
                 </Box>
-              </Animation>
             </Box>
           )
         )}
       </Flex>
     </Section>
+</Animation>
   )
 }
 
