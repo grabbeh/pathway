@@ -47,20 +47,12 @@ const MainSection = () => {
       <Animation id={url}>
         <IntroTitle color='green'>{wwdIntro}</IntroTitle>
         <SectionTitle>{wwdMainSectionTitle}</SectionTitle>
-      </Animation>
-      <Box>
-        <Animation>
           <Subtitle
             color='green'
             html={wwdMainSectionSubtitle.childMarkdownRemark.html}
           />
-        </Animation>
-      </Box>
-      <Box>
-        <Animation>
           <MDXRenderer>{wwdMainSection.childMdx.body}</MDXRenderer>
-        </Animation>
-      </Box>
+       </Animation>
     </Section>
   )
 }
