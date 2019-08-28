@@ -5,7 +5,7 @@ import { useAppContext } from '../shared/Wrapper'
 
 const ScrollAnimation = ({ children, duration = 500, id }) => {
   const [ref, inView, entry] = useInView({
-    threshold: 0,
+    threshold: 1,
     triggerOnce: true
   })
 
