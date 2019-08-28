@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import Box from '../general/Box'
 import Text from '../typography/Text'
 import List from '../general/List'
@@ -8,7 +8,6 @@ import useDetectWidth from '../../hooks/useDetectWidth'
 import { useAppContext } from '../shared/Wrapper'
 
 const SideTopicList = ({ topics }) => {
-  const [active, setActiveIndex] = useState()
   const { isWideDesktop } = useDetectWidth()
   const items = topics.map(topic => {
     return {
@@ -27,9 +26,6 @@ const SideTopicList = ({ topics }) => {
               return (
                 <TopicItem
                   inViewId={state.viewId}
-                  setActiveIndex={setActiveIndex}
-                  active={active}
-                  index={i}
                   url={url}
                   title={title}
                   key={i}
@@ -46,14 +42,9 @@ const SideTopicList = ({ topics }) => {
 
 export default SideTopicList
 
-const TopicItem = ({ setActiveIndex, inViewId, index, active, url, title }) => {
-  console.log(url)
-  console.log(inViewId)
+const TopicItem = ({ inViewId, url, title }) => {
   return (
     <ListItem
-      onClick={() => {
-        setActiveIndex(index)
-      }}
       pb={1}
     >
       <a href={`#${url}`}>
