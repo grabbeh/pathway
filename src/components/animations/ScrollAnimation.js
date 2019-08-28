@@ -15,9 +15,6 @@ const ScrollAnimation = ({ children, duration = 500, id }) => {
     if (inView && entry.target.id) {
       state.addId(entry.target.id)
     }
-    else {
-      state.addId(false)
-    }
   })
 
   const props = useSpring({
