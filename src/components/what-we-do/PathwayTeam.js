@@ -105,48 +105,42 @@ const PathwayTeam = () => {
     <Box>
       {isMobile ? (
         <Box bg='lightGrey'>
-          <Animation id={url}>
+      
             <Box px={3} pt={3}>
               <SectionTitle>{pathwayTeamTitle}</SectionTitle>
             </Box>
-          </Animation>
-          <Animation>
+     
             <PathwayTeamMobile
               patientRange='1 to 30'
               dotLength={10}
               firstStat
               requirements={mobile.oneToThirty}
             />
-          </Animation>
-          <Animation>
             <PathwayTeamMobile
               patientRange='30 to 200'
               dotLength={30}
               requirements={mobile.thirtyToTwoHundred}
             />
-          </Animation>
-          <Animation>
             <PathwayTeamMobile
               patientRange='200 plus'
               dotLength={50}
               requirements={mobile.twoHundredPlus}
             />
-          </Animation>
         </Box>
       ) : (
+        <Animation id={url}>
         <Section bg='lightGrey'>
-          <Animation>
             <SectionTitle>{pathwayTeamTitle}</SectionTitle>
-          </Animation>
-          <Animation>
+     
             <Box my={3}>
               <Table>
                 {tableHeaders}
                 <tbody>{tableBody}</tbody>
               </Table>
             </Box>
-          </Animation>
+     
         </Section>
+    </Animation>
       )}
     </Box>
   )
