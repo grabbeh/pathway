@@ -43,7 +43,6 @@ export default SideTopicList
 const TopicItem = ({ inViewId, url, title }) => {
   let match = false
   if (url === inViewId) {
-    console.log('Match', inViewId, url)
     match = true
   }
   return (
