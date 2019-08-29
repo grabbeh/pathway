@@ -38,7 +38,7 @@ const CaseStudy = () => {
   const url = convertTitle(caseStudyTitle)
   return (
     <Section bg='blue'>
-      <Animation  id={url}/>
+      <Animation  id={url}>
       <Flex flexWrap='wrap'>
         <Box width={[1, 1, 1 / 3]}>
           <Flex height='100%' alignItems='center'>
