@@ -46,7 +46,7 @@ const CostEffective = () => {
 
   return (
     <Section>
-      <Animation threshold={0.8} id={url}>
+      <Animation threshold={1} id={url}>
         <SectionTitle>{pathwayTeamCostEffectivenessTitle}</SectionTitle>
         <BodyText html={wwdCostEffectiveSection.childMarkdownRemark.html} />
         <Subtitle color='green'>Pathway hospital teams:</Subtitle>
