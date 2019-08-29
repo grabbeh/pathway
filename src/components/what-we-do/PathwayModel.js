@@ -9,7 +9,7 @@ import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 import PathwayServicesList from '../what-we-do/PathwayServicesList'
 import KeyFact from '../what-we-do/KeyFact'
-import changeCase from 'change-case'
+import convertTitle from '../../utils/convertTitle'
 
 const query = graphql`
   query {
@@ -47,27 +47,26 @@ const PathwayModel = () => {
     wwdPathwayModel,
     wwdPathwayModelPartTwo
   } = node
-  
-  const url = changeCase.hyphenCase(pathwayModelTitle)
+  const url = convertTitle(pathwayModelTitle)
 
   return (
-     <Animation id={url}>
+    <Animation threshold={0.3} id={url}>
       <Section>
-          <SectionTitle>{pathwayModelTitle}</SectionTitle>
-          <Subtitle
-            color='green'
-            html={wwdPathwayModelSubtitle.childMarkdownRemark.html}
-          />
-          <BodyText html={wwdPathwayModel.childMarkdownRemark.html} />
+        <SectionTitle>{pathwayModelTitle}</SectionTitle>
+        <Subtitle
+          color='green'
+          html={wwdPathwayModelSubtitle.childMarkdownRemark.html}
+        />
+        <BodyText html={wwdPathwayModel.childMarkdownRemark.html} />
       </Section>
-        <Flex flexWrap='wrap'>
-          <Box width={[1, 1 / 2]}>
-            <KeyFact />
-          </Box>
-          <Box width={[1, 1 / 2]}>
-            <PathwayServicesList />
-          </Box>
-        </Flex>
+      <Flex flexWrap='wrap'>
+        <Box width={[1, 1 / 2]}>
+          <KeyFact />
+        </Box>
+        <Box width={[1, 1 / 2]}>
+          <PathwayServicesList />
+        </Box>
+      </Flex>
       <Section>
         <BodyText html={wwdPathwayModelPartTwo.childMarkdownRemark.html} />
       </Section>

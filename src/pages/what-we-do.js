@@ -13,6 +13,7 @@ import PathwayTeam from '../components/what-we-do/PathwayTeam'
 import Footer from '../components/shared/Footer'
 import SideTopicList from '../components/shared/SideTopicList'
 import { graphql, useStaticQuery } from 'gatsby'
+import ShowOnDesktop from '../components/shared/ShowOnWideDesktop'
 
 const query = graphql`
   query {
@@ -20,7 +21,9 @@ const query = graphql`
       edges {
         node {
           wwdMainSectionTitle
+          caseStudyTitle
           pathwayModelTitle
+          ulchStatsId
           pathwayTeamCostEffectivenessTitle
           pathwayTeamTitle
           hospitalTeamCostsTitle
@@ -36,7 +39,9 @@ const page = ({ location }) => {
   return (
     <Wrapper>
       <SEO title='What we do' />
-      <SideTopicList topics={topics} />
+      <ShowOnDesktop>
+        <SideTopicList topics={topics} />
+      </ShowOnDesktop>
       <Hero />
       <MainSection />
       <CaseStudy />

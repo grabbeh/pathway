@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Box from '../general/Box'
 import Text from '../typography/Text'
 import List from '../general/List'
 import ListItem from '../general/ListItem'
 import changeCase from 'change-case'
-import useDetectWidth from '../../hooks/useDetectWidth'
 import { useAppContext } from '../shared/Wrapper'
+import ShowOnDesktop from './ShowOnWideDesktop'
 
 const SideTopicList = ({ topics }) => {
-  const { isWideDesktop } = useDetectWidth()
   const items = topics.map(topic => {
     return {
       url: changeCase.hyphenCase(topic),
@@ -18,8 +17,8 @@ const SideTopicList = ({ topics }) => {
 
   let state = useAppContext()
   return (
-    <Fragment>
-    {state.viewId &&
+    <ShowOnDesktop>
+      {state.viewId && (
         <Box width={120} p={3} top={100} zIndex='999' left={0} position='fixed'>
           <List>
             {items.map(({ url, title }, i) => {
@@ -33,26 +32,24 @@ const SideTopicList = ({ topics }) => {
               )
             })}
           </List>
-        
         </Box>
-    }
-    </Fragment>
+      )}
+    </ShowOnDesktop>
   )
 }
 
 export default SideTopicList
 
 const TopicItem = ({ inViewId, url, title }) => {
+  let match = false
+  if (url === inViewId) {
+    console.log('Match', inViewId, url)
+    match = true
+  }
   return (
-    <ListItem
-      pb={1}
-    >
+    <ListItem pb={1}>
       <a href={`#${url}`}>
-        <Text
-          color={inViewId === url && 'black' || 'grey'}
-          fontWeight={(inViewId === url && 'bold') && 'bold' || 'normal'}
-          fontSize={1}
-        >
+        <Text fontWeight={(match && 'bold') || 'normal'} fontSize={1}>
           {title}
         </Text>
       </a>

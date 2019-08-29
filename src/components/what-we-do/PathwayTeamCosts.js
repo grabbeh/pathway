@@ -3,9 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Section from '../general/StandardSection'
 import SectionTitle from '../typography/SectionTitle'
 import Animation from '../animations/ScrollAnimation'
-import Box from '../general/Box'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import changeCase from 'change-case'
+import convertTitle from '../../utils/convertTitle'
 
 const query = graphql`
   query {
@@ -31,16 +30,15 @@ const PathwayTeamCosts = () => {
   const data = useStaticQuery(query)
   const { node } = data.allContentfulWwdPage.edges[0]
   const { hospitalTeamCostsTitle, hospitalTeamCostsTable } = node
-  const url = changeCase.hyphenCase(hospitalTeamCostsTitle)
+  const url = convertTitle(hospitalTeamCostsTitle)
 
   return (
-     <Animation id={url}>
-      <Section  bg='lightGrey'>
-          <SectionTitle>{hospitalTeamCostsTitle}</SectionTitle>
-          <MDXRenderer>{hospitalTeamCostsTable.childMdx.body}</MDXRenderer>
-      </Section>
-    </Animation>
-
+    <Section bg='lightGrey'>
+      <Animation id={url}>
+        <SectionTitle>{hospitalTeamCostsTitle}</SectionTitle>
+        <MDXRenderer>{hospitalTeamCostsTable.childMdx.body}</MDXRenderer>
+      </Animation>
+    </Section>
   )
 }
 

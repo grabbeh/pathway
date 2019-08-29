@@ -9,7 +9,7 @@ import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import Circle from '../../svg/Circle'
-import changeCase from 'change-case'
+import convertTitle from '../../utils/convertTitle'
 
 const query = graphql`
   query {
@@ -42,26 +42,25 @@ const CostEffective = () => {
     wwdCostEffectiveSection,
     hospitalTeamBenefitsHolder
   } = node
-  let url = changeCase.hyphenCase(pathwayTeamCostEffectivenessTitle)
+  let url = convertTitle(pathwayTeamCostEffectivenessTitle)
 
   return (
-    <Animation id={url}>
     <Section>
+      <Animation id={url}>
+        {' '}
         <SectionTitle>{pathwayTeamCostEffectivenessTitle}</SectionTitle>
         <BodyText html={wwdCostEffectiveSection.childMarkdownRemark.html} />
         <Subtitle color='green'>Pathway hospital teams:</Subtitle>
-      </Animation>
-      <Flex flexWrap='wrap'>
-        {hospitalTeamBenefitsHolder.map(
-          (
-            {
-              title,
-              childContentfulSectionMainContentTextNode: { mainContent }
-            },
-            i
-          ) => (
-            <Box mb={3} width={[1, 1 / 2]} key={i}>
-
+        <Flex flexWrap='wrap'>
+          {hospitalTeamBenefitsHolder.map(
+            (
+              {
+                title,
+                childContentfulSectionMainContentTextNode: { mainContent }
+              },
+              i
+            ) => (
+              <Box mb={3} width={[1, 1 / 2]} key={i}>
                 <Box mr={4}>
                   <Circle size={60} />
                   <Box>
@@ -73,12 +72,12 @@ const CostEffective = () => {
                     </Text.span>
                   </Box>
                 </Box>
-            </Box>
-          )
-        )}
-      </Flex>
+              </Box>
+            )
+          )}
+        </Flex>{' '}
+      </Animation>
     </Section>
-</Animation>
   )
 }
 

@@ -9,7 +9,7 @@ import Text from '../typography/Text'
 import Box from '../general/Box'
 import PathwayTeamMobile from './PathwayTeamMobile'
 import useDetectWidth from '../../hooks/useDetectWidth'
-import changeCase from 'change-case'
+import convertTitle from '../../utils/convertTitle'
 
 const query = graphql`
   query {
@@ -48,7 +48,7 @@ const PathwayTeam = () => {
   const { mobile, headers, rows } = hospitalTeamData
   const first = headers.slice(0, 1)
   const mainHeaders = headers.slice(1, headers.length)
-  let url = changeCase.hyphenCase(pathwayTeamTitle)
+  let url = convertTitle(pathwayTeamTitle)
 
   const tableHeaders = (
     <thead>
@@ -105,42 +105,39 @@ const PathwayTeam = () => {
     <Box>
       {isMobile ? (
         <Box bg='lightGrey'>
-      
-            <Box px={3} pt={3}>
-              <SectionTitle>{pathwayTeamTitle}</SectionTitle>
-            </Box>
-     
-            <PathwayTeamMobile
-              patientRange='1 to 30'
-              dotLength={10}
-              firstStat
-              requirements={mobile.oneToThirty}
-            />
-            <PathwayTeamMobile
-              patientRange='30 to 200'
-              dotLength={30}
-              requirements={mobile.thirtyToTwoHundred}
-            />
-            <PathwayTeamMobile
-              patientRange='200 plus'
-              dotLength={50}
-              requirements={mobile.twoHundredPlus}
-            />
+          <Box px={3} pt={3}>
+            <SectionTitle>{pathwayTeamTitle}</SectionTitle>
+          </Box>
+
+          <PathwayTeamMobile
+            patientRange='1 to 30'
+            dotLength={10}
+            firstStat
+            requirements={mobile.oneToThirty}
+          />
+          <PathwayTeamMobile
+            patientRange='30 to 200'
+            dotLength={30}
+            requirements={mobile.thirtyToTwoHundred}
+          />
+          <PathwayTeamMobile
+            patientRange='200 plus'
+            dotLength={50}
+            requirements={mobile.twoHundredPlus}
+          />
         </Box>
       ) : (
-        <Animation id={url}>
         <Section bg='lightGrey'>
+          <Animation id={url}>
             <SectionTitle>{pathwayTeamTitle}</SectionTitle>
-     
             <Box my={3}>
               <Table>
                 {tableHeaders}
                 <tbody>{tableBody}</tbody>
               </Table>
             </Box>
-     
+          </Animation>
         </Section>
-    </Animation>
       )}
     </Box>
   )
