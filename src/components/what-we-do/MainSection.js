@@ -42,16 +42,17 @@ const MainSection = () => {
   } = node
   const url = convertTitle(wwdMainSectionTitle)
   return (
-    <Section>
+    <Section>    
+    <Animation id={url}>
       <IntroTitle color='green'>{wwdIntro}</IntroTitle>
-      <Animation id={url}>
+
         <SectionTitle>{wwdMainSectionTitle}</SectionTitle>
-      </Animation>
       <Subtitle
         color='green'
         html={wwdMainSectionSubtitle.childMarkdownRemark.html}
       />
       <MDXRenderer>{wwdMainSection.childMdx.body}</MDXRenderer>
+     </Animation>
     </Section>
   )
 }
