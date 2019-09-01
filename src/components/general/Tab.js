@@ -74,7 +74,7 @@ const StyledNumber = styled(Box)`
     ${props =>
     props.color === 'blue' &&
       css`
-        border: 1px solid #37aee3;
+        border: 2px solid #37aee3;
       `}
     ${props =>
     props.isActive &&

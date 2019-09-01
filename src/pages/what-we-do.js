@@ -11,10 +11,12 @@ import CostEffective from '../components/what-we-do/CostEffective'
 import PathwayTeamCosts from '../components/what-we-do/PathwayTeamCosts'
 import PathwayTeam from '../components/what-we-do/PathwayTeam'
 import Footer from '../components/shared/Footer'
-import SideTopicList from '../components/shared/SideTopicList'
-import { graphql, useStaticQuery } from 'gatsby'
-import ShowOnDesktop from '../components/shared/ShowOnWideDesktop'
+// import SideTopicList from '../components/shared/SideTopicList'
+// import { graphql, useStaticQuery } from 'gatsby'
+// import ShowOnDesktop from '../components/shared/ShowOnWideDesktop'
+// import RefCreator from '../components/shared/RefCreator'
 
+/*
 const query = graphql`
   query {
     allContentfulWwdPage {
@@ -31,17 +33,14 @@ const query = graphql`
       }
     }
   }
-`
+` */
 
 const page = ({ location }) => {
-  const data = useStaticQuery(query)
-  let topics = Object.values(data.allContentfulWwdPage.edges[0].node)
+  // const data = useStaticQuery(query)
+  // let topics = Object.values(data.allContentfulWwdPage.edges[0].node)
   return (
     <Wrapper>
       <SEO title='What we do' />
-      <ShowOnDesktop>
-        <SideTopicList topics={topics} />
-      </ShowOnDesktop>
       <Hero />
       <MainSection />
       <CaseStudy />

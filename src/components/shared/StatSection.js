@@ -5,24 +5,25 @@ import Flex from '../general/Flex'
 import Section from '../general/StandardSection'
 import SectionTitle from '../typography/SectionTitle'
 import Circle from '../../svg/Circle'
-import convertTitle from '../../utils/convertTitle'
 import Animation from '../animations/ScrollAnimation'
 
-const StatSection = ({ stats, title, id, bg }) => (
+const StatSection = ({ stats, title, bg }) => (
   <Box position='relative' bg={bg}>
     <Box position='absolute' top={[40, 40, 75]} left={30}>
       <Circle />
     </Box>
     <Section>
       <Box px={4} mt={[6, 100, 0]}>
-        <Animation id={convertTitle(id)}>
+        <Animation>
           <SectionTitle color='white'>{title}</SectionTitle>
         </Animation>
         <Box mt={4}>
           <Flex flexWrap='wrap'>
             {stats.map(({ figure, text, subtitle }, i) => (
               <Box mb={[4, 4, 0]} key={i} width={[1, 1 / 3, 1 / 3]}>
-                <Stat subtitle={subtitle} figure={figure} text={text.text} />
+                <Animation duration={i * 200}>
+                  <Stat subtitle={subtitle} figure={figure} text={text.text} />
+                </Animation>
               </Box>
             ))}
           </Flex>

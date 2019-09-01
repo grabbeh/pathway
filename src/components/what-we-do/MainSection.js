@@ -6,7 +6,6 @@ import SectionTitle from '../typography/SectionTitle'
 import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import convertTitle from '../../utils/convertTitle'
 
 const query = graphql`
   query {
@@ -40,19 +39,19 @@ const MainSection = () => {
     wwdMainSectionSubtitle,
     wwdMainSection
   } = node
-  const url = convertTitle(wwdMainSectionTitle)
+
   return (
-    <Section>    
-    <Animation id={url}>
-      <IntroTitle color='green'>{wwdIntro}</IntroTitle>
+    <Section>
+      <Animation>
+        <IntroTitle color='green'>{wwdIntro}</IntroTitle>
 
         <SectionTitle>{wwdMainSectionTitle}</SectionTitle>
-      <Subtitle
-        color='green'
-        html={wwdMainSectionSubtitle.childMarkdownRemark.html}
-      />
-      <MDXRenderer>{wwdMainSection.childMdx.body}</MDXRenderer>
-     </Animation>
+        <Subtitle
+          color='green'
+          html={wwdMainSectionSubtitle.childMarkdownRemark.html}
+        />
+        <MDXRenderer>{wwdMainSection.childMdx.body}</MDXRenderer>
+      </Animation>
     </Section>
   )
 }

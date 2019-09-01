@@ -13,12 +13,14 @@ const query = graphql`
     allContentfulAboutPage {
       edges {
         node {
-          aboutDescription {
+          aboutIntroTitle
+          aboutTitle
+          aboutSubtitle {
             childMarkdownRemark {
               html
             }
           }
-          aboutSubtitle {
+          aboutDescription {
             childMarkdownRemark {
               html
             }
@@ -33,13 +35,13 @@ const AboutSection = () => {
   const data = useStaticQuery(query)
 
   let { node } = data.allContentfulAboutPage.edges[0]
-  let { aboutDescription, aboutSubtitle } = node
+  let { aboutTitle, aboutIntroTitle, aboutDescription, aboutSubtitle } = node
 
   return (
     <Section>
       <Animation>
-        <IntroTitle color='green'>About</IntroTitle>
-        <SectionTitle>Who is Pathway?</SectionTitle>
+        <IntroTitle color='green'>{aboutIntroTitle}</IntroTitle>
+        <SectionTitle>{aboutTitle}</SectionTitle>
       </Animation>
       <Box>
         <Animation>

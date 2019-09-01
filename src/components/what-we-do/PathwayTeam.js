@@ -9,7 +9,6 @@ import Text from '../typography/Text'
 import Box from '../general/Box'
 import PathwayTeamMobile from './PathwayTeamMobile'
 import useDetectWidth from '../../hooks/useDetectWidth'
-import convertTitle from '../../utils/convertTitle'
 
 const query = graphql`
   query {
@@ -48,7 +47,6 @@ const PathwayTeam = () => {
   const { mobile, headers, rows } = hospitalTeamData
   const first = headers.slice(0, 1)
   const mainHeaders = headers.slice(1, headers.length)
-  let url = convertTitle(pathwayTeamTitle)
 
   const tableHeaders = (
     <thead>
@@ -108,7 +106,6 @@ const PathwayTeam = () => {
           <Box px={3} pt={3}>
             <SectionTitle>{pathwayTeamTitle}</SectionTitle>
           </Box>
-
           <PathwayTeamMobile
             patientRange='1 to 30'
             dotLength={10}
@@ -128,15 +125,17 @@ const PathwayTeam = () => {
         </Box>
       ) : (
         <Section bg='lightGrey'>
-          <Animation id={url}>
+          <Animation>
             <SectionTitle>{pathwayTeamTitle}</SectionTitle>
-            <Box my={3}>
+          </Animation>
+          <Box my={3}>
+            <Animation>
               <Table>
                 {tableHeaders}
                 <tbody>{tableBody}</tbody>
               </Table>
-            </Box>
-          </Animation>
+            </Animation>
+          </Box>
         </Section>
       )}
     </Box>

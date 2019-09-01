@@ -9,7 +9,6 @@ import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 import PathwayServicesList from '../what-we-do/PathwayServicesList'
 import KeyFact from '../what-we-do/KeyFact'
-import convertTitle from '../../utils/convertTitle'
 
 const query = graphql`
   query {
@@ -47,11 +46,10 @@ const PathwayModel = () => {
     wwdPathwayModel,
     wwdPathwayModelPartTwo
   } = node
-  const url = convertTitle(pathwayModelTitle)
 
   return (
-    <Animation threshold={0.3} id={url}>
-      <Section>
+    <Animation>
+      <Section pb={0}>
         <SectionTitle>{pathwayModelTitle}</SectionTitle>
         <Subtitle
           color='green'
@@ -67,7 +65,7 @@ const PathwayModel = () => {
           <PathwayServicesList />
         </Box>
       </Flex>
-      <Section>
+      <Section pt={0}>
         <BodyText html={wwdPathwayModelPartTwo.childMarkdownRemark.html} />
       </Section>
     </Animation>

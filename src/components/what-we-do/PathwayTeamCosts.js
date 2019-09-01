@@ -4,7 +4,6 @@ import Section from '../general/StandardSection'
 import SectionTitle from '../typography/SectionTitle'
 import Animation from '../animations/ScrollAnimation'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import convertTitle from '../../utils/convertTitle'
 
 const query = graphql`
   query {
@@ -30,11 +29,9 @@ const PathwayTeamCosts = () => {
   const data = useStaticQuery(query)
   const { node } = data.allContentfulWwdPage.edges[0]
   const { hospitalTeamCostsTitle, hospitalTeamCostsTable } = node
-  const url = convertTitle(hospitalTeamCostsTitle)
-
   return (
     <Section bg='lightGrey'>
-      <Animation id={url}>
+      <Animation>
         <SectionTitle>{hospitalTeamCostsTitle}</SectionTitle>
         <MDXRenderer>{hospitalTeamCostsTable.childMdx.body}</MDXRenderer>
       </Animation>

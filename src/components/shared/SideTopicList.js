@@ -16,6 +16,14 @@ const SideTopicList = ({ topics }) => {
   })
 
   let state = useAppContext()
+  /*
+  const handleClick = id => {
+    state.currentRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+*/
   return (
     <ShowOnDesktop>
       {state.viewId && (

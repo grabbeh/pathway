@@ -1,3 +1,3 @@
 exports.onInitialClientRender = () => {
-  require("typeface-poppins");
-};
+  require('typeface-poppins')
+}

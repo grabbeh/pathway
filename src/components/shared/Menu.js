@@ -26,7 +26,7 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
           top={65}
           left={0}
           bg='white'
-          pt={[5, 6]}
+          pt={[4, 5]}
         >
           <Box>
             <Flex height='100vh' justifyContent={['flex-start', 'center']}>
@@ -40,7 +40,7 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
                             textAlign={['left', 'center']}
                             color='grey'
                             fontWeight='bold'
-                            fontSize={[4, 7]}
+                            fontSize={[4, 5]}
                           >
                             {title}
                           </Text>

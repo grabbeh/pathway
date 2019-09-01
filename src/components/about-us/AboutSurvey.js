@@ -36,16 +36,16 @@ const AboutSurvey = () => {
         <Box mt={[6, 100, 0]}>
           <Animation>
             <Text.span
-              lineHeight='tagline'
-              fontSize={6}
+              lineHeight={['medium', 'tagline']}
+              fontSize={[4, 6]}
               fontWeight='bold'
               color='white'
             >
               {studyText.studyText}{' '}
             </Text.span>
             <Text.span
-              lineHeight='tagline'
-              fontSize={6}
+              lineHeight={['medium', 'tagline']}
+              fontSize={[4, 6]}
               fontWeight='bold'
               color='grey'
             >

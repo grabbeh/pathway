@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import * as PropTypes from 'prop-types'
+import TabSlide from '../animations/TabSlide'
 
 class TabPanels extends Component {
   static contextTypes = {
@@ -8,7 +9,8 @@ class TabPanels extends Component {
   render () {
     const { children } = this.props
     const { activeIndex } = this.context
-    return <div>{children[activeIndex]}</div>
+    console.log(activeIndex)
+    return <TabSlide active={activeIndex}>{children[activeIndex]}</TabSlide>
   }
 }
 

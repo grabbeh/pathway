@@ -1,5 +1,5 @@
 import React from 'react'
-import CenterSection from '../general/CenterSection'
+import Section from '../general/CenterSection'
 import Text from '../typography/Text'
 import Box from '../general/Box'
 import Flex from '../general/Flex'
@@ -9,6 +9,8 @@ import IntroTitle from '../typography/IntroTitle'
 import SectionTitle from '../typography/SectionTitle'
 import Tagline from '../typography/Tagline'
 import BodyText from '../typography/BodyText'
+import SlideLeft from '../animations/SlideLeft'
+import SlideRight from '../animations/SlideRight'
 
 const query = graphql`
   query {
@@ -31,28 +33,29 @@ const query = graphql`
 
 const Letter = () => {
   const data = useStaticQuery(query)
-
-  let { node } = data.allContentfulHomePage.edges[0]
-  let { letterIntroTitle, letterTitle, letterTagline, letterContent } = node
+  const { node } = data.allContentfulHomePage.edges[0]
+  const { letterIntroTitle, letterTitle, letterTagline, letterContent } = node
   return (
-    <CenterSection>
-      <Animation>
-        <Box mb={4}>
-          <IntroTitle textAlign='center' color='blue'>
-            {letterIntroTitle}
-          </IntroTitle>
+    <Section>
+      <Box mb={4}>
+        <IntroTitle textAlign='center' color='blue'>
+          {letterIntroTitle}
+        </IntroTitle>
+        <Animation>
           <SectionTitle textAlign='center'>{letterTitle}</SectionTitle>
-        </Box>
-        <Flex justifyContent='space-between' flexWrap='wrap'>
-          <Box width={[1, 1, 1 / 2]}>
-            <Box mt={-3} mr={[0, 4]}>
-              <Tagline color='blue' textAlign={['center', 'center', 'right']}>
-                {letterTagline}
-              </Tagline>
-            </Box>
+        </Animation>
+      </Box>
+      <Flex justifyContent='space-between' flexWrap='wrap'>
+        <Box width={[1, 1, 1 / 2]}>
+          <Box mt={-3} mr={[0, 4]}>
+            <Tagline color='blue' textAlign={['center', 'center', 'right']}>
+              <SlideLeft>{letterTagline}</SlideLeft>
+            </Tagline>
           </Box>
-          <Box width={[1, 1, 1 / 2]}>
-            <Box ml={[0, 4]}>
+        </Box>
+        <Box width={[1, 1, 1 / 2]}>
+          <Box ml={[0, 4]}>
+            <SlideRight>
               <BodyText html={letterContent.childMarkdownRemark.html} />
               <Box mt={3}>
                 <Text fontSize={3} fontWeight='bold' color='green'>
@@ -60,11 +63,11 @@ const Letter = () => {
                 </Text>
               </Box>
               <Text fontSize={3}>Chief Executive, Pathway</Text>
-            </Box>
+            </SlideRight>
           </Box>
-        </Flex>
-      </Animation>
-    </CenterSection>
+        </Box>
+      </Flex>
+    </Section>
   )
 }
 export default Letter
