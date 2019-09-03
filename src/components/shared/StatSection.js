@@ -6,8 +6,10 @@ import Section from '../general/StandardSection'
 import SectionTitle from '../typography/SectionTitle'
 import Circle from '../../svg/Circle'
 import Animation from '../animations/ScrollAnimation'
+import MarkdownText from '../general/MarkdownText'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-const StatSection = ({ stats, title, bg }) => (
+const StatSection = ({ stats, html, mdx, title, bg }) => (
   <Box position='relative' bg={bg}>
     <Box position='absolute' top={[40, 40, 75]} left={30}>
       <Circle />
@@ -15,7 +17,17 @@ const StatSection = ({ stats, title, bg }) => (
     <Section>
       <Box px={4} mt={[6, 100, 0]}>
         <Animation>
-          <SectionTitle color='white'>{title}</SectionTitle>
+          {html && (
+            <MarkdownText
+              fontSize={[4, 6]}
+              lineHeight={['medium', 'tagline']}
+              fontWeight='bold'
+              color='white'
+              html={html}
+            />
+          )}
+          {title && <SectionTitle color='white'>{title}</SectionTitle>}
+          {mdx && <MDXRenderer>{mdx}</MDXRenderer>}
         </Animation>
         <Box mt={4}>
           <Flex flexWrap='wrap'>
@@ -35,7 +47,7 @@ const StatSection = ({ stats, title, bg }) => (
 
 export default StatSection
 
-const Stat = ({ figure, text, subtitle }) => (
+const Stat = ({ figure, text, html, subtitle }) => (
   <Box>
     <Text
       lineHeight='heading'
@@ -45,9 +57,11 @@ const Stat = ({ figure, text, subtitle }) => (
     >
       {figure}%
     </Text>
+
     <Text mr={2} fontWeight='subtitle' fontSize={[4, 6]} color='white'>
       {subtitle}
     </Text>
+
     <Text fontWeight='subtitle' fontSize={[1, 3]} color='white'>
       {text}
     </Text>

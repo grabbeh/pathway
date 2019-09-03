@@ -13,12 +13,14 @@ import Table from '../mdx/Table'
 import List from '../mdx/List'
 import ListItem from '../mdx/ListItem'
 import Paragraph from '../mdx/Paragraph'
+import Sup from '../mdx/Sup'
 
 const components = {
   table: Table,
   ul: List,
   li: ListItem,
-  p: Paragraph
+  p: Paragraph,
+  sup: Sup
 }
 
 const Style = createGlobalStyle`

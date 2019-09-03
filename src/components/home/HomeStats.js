@@ -7,7 +7,11 @@ const query = graphql`
     allContentfulHomePage {
       edges {
         node {
-          statsSubtitle
+          statsSubtitle {
+            childMarkdownRemark {
+              html
+            }
+          }
           statsHolder {
             figure
             text {
@@ -24,7 +28,13 @@ const Stats = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomePage.edges[0]
   let { statsHolder, statsSubtitle } = node
-  return <StatsSection bg='green' stats={statsHolder} title={statsSubtitle} />
+  return (
+    <StatsSection
+      bg='green'
+      stats={statsHolder}
+      html={statsSubtitle.childMarkdownRemark.html}
+    />
+  )
 }
 
 export default Stats

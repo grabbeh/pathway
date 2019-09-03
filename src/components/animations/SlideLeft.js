@@ -1,6 +1,5 @@
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
-import { useSpring, animated } from 'react-spring'
 import styled from 'styled-components'
 
 const ScrollAnimation = ({ children, threshold = 0 }) => {
@@ -20,7 +19,8 @@ export default ScrollAnimation
 
 const AnimatedBox = styled('div')`
   overflow: hidden;
-  transform: translateX(${props => (props.inView ? '0px' : '-50px')});
+  transform: translateX(${props => (props.inView ? '0px' : '-50px')})
+    scale(${props => (props.inView ? 1 : 0.5)});
   opacity: ${props => (props.inView ? 1 : 0)};
   transition: all 1s ease;
 `

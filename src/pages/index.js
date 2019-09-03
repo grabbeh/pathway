@@ -7,6 +7,7 @@ import Hero from '../components/home/Hero'
 import SocialFranchise from '../components/home/SocialFranchise'
 import Letter from '../components/home/Letter'
 import Footer from '../components/shared/Footer'
+import Footnotes from '../components/home/HomeFootnotes'
 
 const IndexPage = () => (
   <Wrapper>
@@ -16,6 +17,7 @@ const IndexPage = () => (
     <Letter />
     <Stats />
     <FindOutMore />
+    <Footnotes />
     <Footer bg='lightGrey' />
   </Wrapper>
 )
