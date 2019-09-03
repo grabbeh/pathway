@@ -47,7 +47,6 @@ const AboutSurvey = () => {
               lineHeight={['medium', 'tagline']}
               fontSize={[4, 6]}
               fontWeight='bold'
-              color='grey'
             >
               {aboutStatistic.aboutStatistic}
             </Text.span>

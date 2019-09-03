@@ -46,7 +46,7 @@ const MainSection = () => {
           <BodyText html={content.childMarkdownRemark.html} />
         </Animation>
       </Box>
-      <Box px={[4, 0]} width={[1, 300]} mt={5}>
+      <Box px={[5, 0]} width={[1, 300]} mt={5}>
         <FullButton text='Online manual' to='/' />
       </Box>
     </Section>

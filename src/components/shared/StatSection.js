@@ -21,7 +21,7 @@ const StatSection = ({ stats, title, bg }) => (
           <Flex flexWrap='wrap'>
             {stats.map(({ figure, text, subtitle }, i) => (
               <Box mb={[4, 4, 0]} key={i} width={[1, 1 / 3, 1 / 3]}>
-                <Animation duration={i * 200}>
+                <Animation duration={i * 500}>
                   <Stat subtitle={subtitle} figure={figure} text={text.text} />
                 </Animation>
               </Box>

@@ -2,32 +2,28 @@ import React from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useSpring, animated } from 'react-spring'
 // import { useAppContext } from '../shared/Wrapper'
+import styled from 'styled-components'
 
-const ScrollAnimation = ({ children, duration = 500, threshold = 0 }) => {
+const ScrollAnimation = ({ children, threshold = 0 }) => {
   const [ref, inView] = useInView({
     threshold,
     triggerOnce: true
   })
 
-  // let state = useAppContext()
-  /*
-  useEffect(() => {
-    if (inView && entry.target.id) {
-      state.addId(entry.target.id)
-    }
-  })
-*/
-  const props = useSpring({
-    config: { duration },
-    opacity: inView ? 1 : 0,
-    marginTop: inView ? 0 : 100
-  })
-
   return (
-    <animated.div style={props} ref={ref}>
+    <AnimatedBox inView={inView} ref={ref}>
       {children}
-    </animated.div>
+    </AnimatedBox>
   )
 }
 
 export default ScrollAnimation
+
+const AnimatedBox = styled('div')`
+  overflow: hidden;
+  transform: translateY(${props => (props.inView ? '0px' : '100px')});
+  opacity: ${props => (props.inView ? 1 : 0)};
+  transition: all 1s ease;
+`
+
+//  transform: scale(${props => (props.inView ? 1 : 0.5)});
