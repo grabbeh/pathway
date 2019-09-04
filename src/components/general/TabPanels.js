@@ -10,7 +10,7 @@ class TabPanels extends Component {
     const { children } = this.props
     const { activeIndex } = this.context
     console.log(activeIndex)
-    return <TabSlide active={activeIndex}>{children[activeIndex]}</TabSlide>
+    return <div>{children[activeIndex]}</div>
   }
 }
 
