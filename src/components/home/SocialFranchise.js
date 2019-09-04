@@ -5,8 +5,7 @@ import Section from '../general/StandardSection'
 import Box from '../general/Box'
 import { useStaticQuery, graphql } from 'gatsby'
 import Flex from '../general/Flex'
-import SlideRight from '../animations/SlideRight'
-import SlideLeft from '../animations/SlideLeft'
+import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
   query {
@@ -32,20 +31,18 @@ const SocialFranchise = () => {
   return (
     <Box bg='lightGrey'>
       <Section>
-        <Flex alignItems='center' flexWrap='wrap'>
-          <Box width={[1, 1, 1 / 2]}>
-            <SlideLeft>
+        <Animation>
+          <Flex alignItems='center' flexWrap='wrap'>
+            <Box width={[1, 1, 1 / 2]}>
               <Subtitle color='green'>{socialFranchiseSubtitle}</Subtitle>
-            </SlideLeft>
-          </Box>
-          <Box width={[1, 1, 1 / 2]}>
-            <SlideRight>
+            </Box>
+            <Box width={[1, 1, 1 / 2]}>
               <BodyText
                 html={socialFranchiseDescription.childMarkdownRemark.html}
               />
-            </SlideRight>
-          </Box>
-        </Flex>
+            </Box>
+          </Flex>
+        </Animation>
       </Section>
     </Box>
   )

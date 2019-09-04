@@ -1,14 +1,15 @@
 import React from 'react'
-import { useSpring, animated } from 'react-spring'
+import styled from 'styled-components'
 
 const LoadAnimation = ({ children, load }) => {
-  const props = useSpring({
-    config: { duration: 500 },
-    opacity: load ? 1 : 0,
-    marginTop: load ? 0 : 100
-  })
-
-  return <animated.div style={props}>{children}</animated.div>
+  return <AnimatedBox load={load}>{children}</AnimatedBox>
 }
 
 export default LoadAnimation
+
+const AnimatedBox = styled('div')`
+  overflow: hidden;
+  transform: translateY(${props => (props.load ? '0px' : '100px')});
+  opacity: ${props => (props.load ? 1 : 0)};
+  transition: all 1s ease;
+`

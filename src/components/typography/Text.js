@@ -30,5 +30,6 @@ Text.s = Text.withComponent('s')
 Text.h1 = Text.withComponent('h1')
 Text.h2 = Text.withComponent('h2')
 Text.h3 = Text.withComponent('h3')
+Text.sup = Text.withComponent('sup')
 
 export default Text

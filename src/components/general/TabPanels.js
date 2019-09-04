@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import * as PropTypes from 'prop-types'
-import TabSlide from '../animations/TabSlide'
 
 class TabPanels extends Component {
   static contextTypes = {

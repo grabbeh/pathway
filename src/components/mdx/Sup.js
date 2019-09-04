@@ -2,9 +2,9 @@ import React from 'react'
 import Text from '../typography/Text'
 
 export const Sup = props => (
-  <Text fontSize={1} color='grey'>
+  <Text.sup fontSize={3} color='white'>
     {props.children}
-  </Text>
+  </Text.sup>
 )
 
 export default Sup

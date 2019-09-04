@@ -8,8 +8,8 @@ const query = graphql`
       edges {
         node {
           statsSubtitle {
-            childMarkdownRemark {
-              html
+            childMdx {
+              body
             }
           }
           statsHolder {
@@ -32,7 +32,7 @@ const Stats = () => {
     <StatsSection
       bg='green'
       stats={statsHolder}
-      html={statsSubtitle.childMarkdownRemark.html}
+      mdx={statsSubtitle.childMdx.body}
     />
   )
 }

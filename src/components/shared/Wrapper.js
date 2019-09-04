@@ -7,7 +7,6 @@ import theme from '../../theme.js'
 import Box from '../general/Box'
 import Header from './Header'
 import '../../index.css'
-
 import { MDXProvider } from '@mdx-js/react'
 import Table from '../mdx/Table'
 import List from '../mdx/List'

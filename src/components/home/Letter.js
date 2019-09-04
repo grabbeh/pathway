@@ -9,8 +9,6 @@ import IntroTitle from '../typography/IntroTitle'
 import SectionTitle from '../typography/SectionTitle'
 import Tagline from '../typography/Tagline'
 import BodyText from '../typography/BodyText'
-import SlideLeft from '../animations/SlideLeft'
-import SlideRight from '../animations/SlideRight'
 
 const query = graphql`
   query {
@@ -47,15 +45,17 @@ const Letter = () => {
       </Box>
       <Flex justifyContent='space-between' flexWrap='wrap'>
         <Box width={[1, 1, 1 / 2]}>
-          <Box mt={-3} mr={[0, 4]}>
-            <Tagline color='blue' textAlign={['center', 'center', 'right']}>
-              <SlideLeft>{letterTagline}</SlideLeft>
-            </Tagline>
-          </Box>
+          <Animation>
+            <Box mt={-3} mr={[0, 4]}>
+              <Tagline color='blue' textAlign={['center', 'center', 'right']}>
+                {letterTagline}
+              </Tagline>
+            </Box>
+          </Animation>
         </Box>
         <Box width={[1, 1, 1 / 2]}>
-          <Box ml={[0, 4]}>
-            <SlideRight>
+          <Animation>
+            <Box ml={[0, 4]}>
               <BodyText html={letterContent.childMarkdownRemark.html} />
               <Box mt={3}>
                 <Text fontSize={3} fontWeight='bold' color='green'>
@@ -63,8 +63,8 @@ const Letter = () => {
                 </Text>
               </Box>
               <Text fontSize={3}>Chief Executive, Pathway</Text>
-            </SlideRight>
-          </Box>
+            </Box>
+          </Animation>
         </Box>
       </Flex>
     </Section>
