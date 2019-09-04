@@ -5,15 +5,11 @@ import Text from '../typography/Text'
 import Link from '../general/InternalLink'
 import List from '../general/List'
 import ListItem from '../general/ListItem'
-import { useSpring, animated } from 'react-spring'
+import styled from 'styled-components'
 
 const Menu = ({ open, toggleOpen, navigationItems }) => {
-  const props = useSpring({
-    config: { duration: 300 },
-    opacity: open ? 1 : 0
-  })
   return (
-    <animated.div style={props}>
+    <AnimatedBox open={open}>
       <nav>
         <Box
           hidden={!open}
@@ -54,8 +50,13 @@ const Menu = ({ open, toggleOpen, navigationItems }) => {
           </Box>
         </Box>
       </nav>
-    </animated.div>
+    </AnimatedBox>
   )
 }
 
 export default Menu
+
+const AnimatedBox = styled('div')`
+  opacity: ${props => (props.open ? 1 : 0)};
+  transition: all 0.3s ease;
+`
