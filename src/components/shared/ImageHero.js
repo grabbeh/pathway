@@ -30,7 +30,7 @@ const Hero = props => {
   return (
     <Flex justifyContent='center'>
       <Box mx={[0, 5]} width={1}>
-        <Flex alignItems='center' height={500}>
+        <Flex justifyContent={[null, null, 'center']} alignItems='center' height={500}>
           <Box width={[1,3/4, 1000]} px={[3, 3, 0]}>
            <Box width={[1,1, 1/3]}>
             <LoadAnimation load={load}>
