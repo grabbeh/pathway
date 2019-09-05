@@ -34,7 +34,9 @@ const Hero = props => {
           <Box width={[1,3/4, 1000]} px={[3, 3, 0]}>
             <LoadAnimation load={load}>
               <Heading color={[mobileColor, headerColor]}>{title}</Heading>
+              <Box width={[1,1,1/3]}>
               <Subtitle html={subtitle} color={subtitleColor} />
+              </Box>
             </LoadAnimation>
           </Box>
         </Flex>
