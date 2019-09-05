@@ -3,6 +3,7 @@ import Box from '../general/Box'
 import Text from '../typography/Text'
 import Flex from '../general/Flex'
 import Circle from '../../svg/Circle'
+import Section from '../general/SharedSection'
 import SectionTitle from '../typography/SectionTitle'
 import FullButton from './FullButton'
 import BodyText from '../general/MarkdownText'
@@ -37,7 +38,8 @@ const FindOutMore = ({ bg, currentPath }) => {
     return `/${l.url}` !== currentPath
   })
   return (
-      <Box bg={bg} maxWidth={[null, 800, 1000]} py={[4, 5]} mx={[3, 5, 6]}>
+      <Section bg={bg}>
+    // maxWidth={[null, 800, 1000]} py={[4, 5]} mx={[3, 5, 6]}>
         <SectionTitle>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
         <List px={[4, 0]} mt={3}>
@@ -51,7 +53,7 @@ const FindOutMore = ({ bg, currentPath }) => {
             ))}
           </Flex>
         </List>
-      </Box>
+      </Section>
   )
 }
 
