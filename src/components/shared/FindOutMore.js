@@ -37,8 +37,7 @@ const FindOutMore = ({ bg, currentPath }) => {
     return `/${l.url}` !== currentPath
   })
   return (
-    <Box bg={bg}>
-      <Box py={[4, 5]} mx={[3, 5, 6]}>
+      <Box bg={bg} maxWidth={[null, 800, 1000]} py={[4, 5]} mx={[3, 5, 6]}>
         <SectionTitle>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
         <List px={[4, 0]} mt={3}>
@@ -53,7 +52,6 @@ const FindOutMore = ({ bg, currentPath }) => {
           </Flex>
         </List>
       </Box>
-    </Box>
   )
 }
 
