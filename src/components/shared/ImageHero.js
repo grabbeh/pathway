@@ -30,7 +30,7 @@ const Hero = props => {
   return (
     <Flex justifyContent='center'>
       <Box mx={[0, 5]} width={1}>
-        <Flex alignItems='center' width={[1, 3 / 4, 1/3]} height={500}>
+        <Flex alignItems='center' height={500}>
           <Box px={[3, 3, 0]}>
             <LoadAnimation load={load}>
               <Heading color={[mobileColor, headerColor]}>{title}</Heading>
