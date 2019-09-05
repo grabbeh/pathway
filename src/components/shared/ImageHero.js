@@ -32,10 +32,12 @@ const Hero = props => {
       <Box mx={[0, 5]} width={1}>
         <Flex alignItems='center' height={500}>
           <Box width={[1,3/4, 1000}] px={[3, 3, 0]}>
+           <Box widht={[1,1, 1/3]}>
             <LoadAnimation load={load}>
               <Heading color={[mobileColor, headerColor]}>{title}</Heading>
               <Subtitle html={subtitle} color={subtitleColor} />
             </LoadAnimation>
+          </Box>
           </Box>
         </Flex>
       </Box>
