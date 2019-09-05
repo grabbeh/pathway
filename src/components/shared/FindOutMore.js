@@ -41,7 +41,7 @@ const FindOutMore = ({ bg, currentPath }) => {
       <Section bg={bg}>
         <SectionTitle>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
-        <List px={[4, 0]} mt={3}>
+        <List mt={3}>
           <Flex flexWrap='wrap'>
             {nonCurrent.map(({ title, url }) => (
               <SiteSection key={title} text={title} to={`/${url}`}>
