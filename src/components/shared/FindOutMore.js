@@ -38,7 +38,7 @@ const FindOutMore = ({ bg, currentPath }) => {
   })
   return (
     <Flex justifyContent='center'>
-      <Box maxWidth={[null, 800, 1000]} py={[4, 5]} mx={[3, 5, 6]} bg={bg}>
+      <Box maxWidth={[null, 800, 1000]} py={[4, 5]} mx={3} bg={bg}>
         <SectionTitle>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
         <List mt={3}>
