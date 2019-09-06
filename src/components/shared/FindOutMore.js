@@ -38,24 +38,29 @@ const FindOutMore = ({ bg, currentPath }) => {
   })
   return (
     <Box bg={bg}>
-    <Flex justifyContent='center'>
-      <Box width={[null, null, 1000]} maxWidth={[null, 800, 1000]} py={[4, 5]} mx={3}>
-        <SectionTitle>{title}</SectionTitle>
-        <BodyText html={content.childMarkdownRemark.html} />
-        <List mt={3}>
-          <Flex flexWrap='wrap'>
-            {nonCurrent.map(({ title, url }) => (
-              <SiteSection key={title} text={title} to={`/${url}`}>
-                <Text textAlign='center'>
-                  <Circle size={125} />
-                </Text>
-              </SiteSection>
-            ))}
-          </Flex>
-        </List>
-      </Box>
-</Flex>
-</Box>
+      <Flex justifyContent='center'>
+        <Box
+          width={[null, null, 1000]}
+          maxWidth={[null, 800, 1000]}
+          py={[4, 5]}
+          mx={3}
+        >
+          <SectionTitle>{title}</SectionTitle>
+          <BodyText html={content.childMarkdownRemark.html} />
+          <List mt={3}>
+            <Flex flexWrap='wrap'>
+              {nonCurrent.map(({ title, url }) => (
+                <SiteSection key={title} text={title} to={`/${url}`}>
+                  <Text textAlign='center'>
+                    <Circle size={125} />
+                  </Text>
+                </SiteSection>
+              ))}
+            </Flex>
+          </List>
+        </Box>
+      </Flex>
+    </Box>
   )
 }
 

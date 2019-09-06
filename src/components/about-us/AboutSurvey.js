@@ -4,7 +4,8 @@ import Box from '../general/Box'
 import Text from '../typography/Text'
 import Animation from '../animations/ScrollAnimation'
 import Circle from '../../svg/Circle'
-import Section from '../general/StandardSection'
+import Section from '../general/WideSection'
+import Flex from '../general/Flex'
 
 const query = graphql`
   query {
@@ -28,12 +29,12 @@ const AboutSurvey = () => {
   let { aboutStatistic, studyText } = node
 
   return (
-    <Box position='relative' bg='blue'>
-      <Box position='absolute' top={[40, 40, 40]} left={20}>
-        <Circle />
-      </Box>
-      <Section>
-        <Box px={[0, 4, 4]} mt={[6, 100, 5]}>
+    <Section bg='blue'>
+      <Flex flexWrap='wrap'>
+        <Box width={[1, 0.15]}>
+          <Circle />
+        </Box>
+        <Box width={[1, 0.85]} px={[0, 4, 4]}>
           <Animation>
             <Text.span
               lineHeight={['medium', 'tagline']}
@@ -53,8 +54,8 @@ const AboutSurvey = () => {
             </Text.span>
           </Animation>
         </Box>
-      </Section>
-    </Box>
+      </Flex>
+    </Section>
   )
 }
 

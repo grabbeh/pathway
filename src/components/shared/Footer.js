@@ -78,49 +78,47 @@ const Footer = ({ bg }) => {
               </Box>
               <Box width={[1, 1, 2 / 3]}>
                 <Flex flexWrap='wrap'>
-                  <Box width={[1, 1 / 2]}>
-                    <Subtitle color='green'>Quick links</Subtitle>
-                    <List>
-                      {navigation.navigationItem.map(({ url, title }, i) => (
-                        <ListItem key={i}>
-                          <Link to={`/${url}`}>
-                            <Text fontSize={3}>{title}</Text>
-                          </Link>
-                        </ListItem>
-                      ))}
-                      <ListItem>
-                        <Text fontSize={3}>
+                  <Box width={[1, 1, 1 / 2]}>
+                    <Box mr={3}>
+                      <Subtitle color='green'>Quick links</Subtitle>
+                      <List>
+                        {navigation.navigationItem.map(({ url, title }, i) => (
+                          <ListItem mb={2} key={i}>
+                            <Link to={`/${url}`}>{title}</Link>
+                          </ListItem>
+                        ))}
+                        <ListItem mb={2}>
                           <Link to='/'>Terms and conditions</Link>
-                        </Text>
-                      </ListItem>
-                      <ListItem>
-                        <Text fontSize={3}>
+                        </ListItem>
+                        <ListItem>
                           <Link to='/privacy-policy'>Privacy policy</Link>
-                        </Text>
-                      </ListItem>
-                    </List>
-                  </Box>
-                  <Box width={[1, 1 / 2]}>
-                    <Subtitle color='green'>Contact</Subtitle>
-                    <Text fontWeight='bold' fontSize={3}>
-                      {name}
-                    </Text>
-                    <Text fontSize={3}>{title}</Text>
-                    <Box>
-                      <Text.span color='grey' fontWeight='bold' fontSize={3}>
-                        Email:{' '}
-                      </Text.span>
-                      <Text.span color='grey' fontSize={3}>
-                        {emailAddress}
-                      </Text.span>
+                        </ListItem>
+                      </List>
                     </Box>
-                    <Box>
-                      <Text.span color='grey' fontWeight='bold' fontSize={3}>
-                        M:{' '}
-                      </Text.span>
-                      <Text.span color='grey' fontSize={3}>
-                        {phoneNumber}
-                      </Text.span>
+                  </Box>
+                  <Box width={[1, 1, 1 / 2]}>
+                    <Box mr={3}>
+                      <Subtitle color='green'>Contact</Subtitle>
+                      <Text fontWeight='bold' fontSize={3}>
+                        {name}
+                      </Text>
+                      <Text fontSize={3}>{title}</Text>
+                      <Box>
+                        <Text.span color='grey' fontWeight='bold' fontSize={3}>
+                          Email:{' '}
+                        </Text.span>
+                        <Text.span color='grey' fontSize={3}>
+                          {emailAddress}
+                        </Text.span>
+                      </Box>
+                      <Box>
+                        <Text.span color='grey' fontWeight='bold' fontSize={3}>
+                          M:{' '}
+                        </Text.span>
+                        <Text.span color='grey' fontSize={3}>
+                          {phoneNumber}
+                        </Text.span>
+                      </Box>
                     </Box>
                   </Box>
                 </Flex>
