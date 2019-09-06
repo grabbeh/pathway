@@ -49,6 +49,7 @@ const MainSection = () => {
         </Animation>
       </Box>
       <Tabs>
+        <Animation>
         <Flex flexWrap='wrap'>
           <Box width={[1, 1, 1 / 2]}>
             <TabList>
@@ -68,6 +69,7 @@ const MainSection = () => {
             </TabPanels>
           </Box>
         </Flex>
+        </Animation>
       </Tabs>
     </Section>
   )
