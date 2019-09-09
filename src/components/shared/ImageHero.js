@@ -17,9 +17,11 @@ const ImageHero = props => {
       {isMobile ? (
         <Hero style={{ flex: '1' }} load={load} {...props} />
       ) : (
-        <BackgroundImage imageData={props.imageData} style={{ flex: '1' }}>
-          <Hero load={load} {...props} />
-        </BackgroundImage>
+        <Box width={1} style={{ flex: '1' }}>
+          <BackgroundImage imageData={props.imageData}>
+            <Hero load={load} {...props} />
+          </BackgroundImage>
+        </Box>
       )}
     </Flex>
   )
@@ -35,14 +37,10 @@ const Hero = props => {
     subtitleColor
   } = props
   return (
-    <Flex justifyContent='center'>
-      <Box mx={[0, 5]} width={1}>
-        <Flex
-          justifyContent={[null, null, 'center']}
-          alignItems='center'
-          height={500}
-        >
-          <Box width={[1, 3 / 4, 1000]} px={[3, 3, 0]}>
+    <Flex>
+      <Box ml={[0, 3, 5, null, 6]} width={1}>
+        <Flex alignItems='center' height={500}>
+          <Box width={[1, 3 / 4]} px={[3, 3, 0]}>
             <LoadAnimation load={load}>
               <Box width={[1, 1, 0.6]}>
                 <Heading color={[mobileColor, headerColor]}>{title}</Heading>
