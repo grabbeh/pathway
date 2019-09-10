@@ -7,6 +7,7 @@ import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 import HideOnMobile from '../shared/HideOnMobile'
+import CaseStudyStamp from '../../svg/CaseStudyStamp'
 
 const query = graphql`
   query {
@@ -38,11 +39,13 @@ const CaseStudy = () => {
       <Animation>
         <Flex flexWrap='wrap'>
           <Box width={[1, 1, 1 / 3]}>
+            <CaseStudyStamp />
             <Flex height='100%' alignItems='center'>
               <HideOnMobile>
-                <Box>
+                <Box mt={-7}>
                   <Tagline
                     color='grey'
+                    textAlign='right'
                     html={wwdCaseStudySubtitle.childMarkdownRemark.html}
                   />
                 </Box>

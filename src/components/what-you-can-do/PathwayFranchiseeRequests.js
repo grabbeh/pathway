@@ -6,7 +6,7 @@ import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import CircleText from '../../svg/CircleText.js'
+import WhatYouCanDoFact from '../../svg/WhatYouCanDoFact.js'
 
 const query = graphql`
   query {
@@ -51,7 +51,9 @@ const PathwayFranchiseeRequests = () => {
         </Box>
         <Box width={[1, 1, 1 / 2]}>
           <Box pl={[2, 4]}>
-            <CircleText />
+            <Animation>
+              <WhatYouCanDoFact />
+            </Animation>
           </Box>
         </Box>
       </Flex>

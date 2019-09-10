@@ -4,9 +4,9 @@ import Text from '../typography/Text'
 import Flex from '../general/Flex'
 import Section from '../general/WideSection'
 import SectionTitle from '../typography/SectionTitle'
-import Circle from '../../svg/Circle'
 import Animation from '../animations/ScrollAnimation'
 import MarkdownText from '../general/MarkdownText'
+import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
@@ -23,10 +23,9 @@ const StatSection = ({ stats, html, mdx, title, bg }) => (
         <Flex flexWrap='wrap'>
           <Box width={[1, 0.15]}>
             <Box>
-              <Circle />
+              <KeyStatsStamp />
             </Box>
           </Box>
-
           <Box width={[1, 0.85]} mt={[3, 0, 0]}>
             <Animation>
               {html && (

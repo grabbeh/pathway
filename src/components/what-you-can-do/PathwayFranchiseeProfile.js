@@ -32,13 +32,12 @@ const query = graphql`
 
 const MainSection = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWhatYouCanDoPage.edges[0]
-  let {
+  const {
     franchiseeProfileTitle,
     franchiseeProfileIntro,
     franchiseeProfileSubtitle,
     franchiseeProfileContent
-  } = node
+  } = data.allContentfulWhatYouCanDoPage.edges[0].node
   return (
     <Section>
       <Animation>

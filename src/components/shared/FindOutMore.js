@@ -2,12 +2,12 @@ import React from 'react'
 import Box from '../general/Box'
 import Text from '../typography/Text'
 import Flex from '../general/Flex'
-import Circle from '../../svg/Circle'
 import SectionTitle from '../typography/SectionTitle'
 import FullButton from './FullButton'
 import BodyText from '../general/MarkdownText'
 import List from '../general/List'
 import { graphql, useStaticQuery } from 'gatsby'
+import ReactSVG from 'react-svg'
 
 const query = graphql`
   query {
@@ -18,6 +18,11 @@ const query = graphql`
           links {
             title
             url
+            icon {
+              file {
+                url
+              }
+            }
           }
           content {
             childMarkdownRemark {
@@ -36,6 +41,7 @@ const FindOutMore = ({ bg, currentPath }) => {
   const nonCurrent = links.filter(l => {
     return `/${l.url}` !== currentPath
   })
+
   return (
     <Box bg={bg}>
       <Flex justifyContent='center'>
@@ -49,11 +55,9 @@ const FindOutMore = ({ bg, currentPath }) => {
           <BodyText html={content.childMarkdownRemark.html} />
           <List mt={3}>
             <Flex flexWrap='wrap'>
-              {nonCurrent.map(({ title, url }) => (
+              {nonCurrent.map(({ title, url, icon }) => (
                 <SiteSection key={title} text={title} to={`/${url}`}>
-                  <Text textAlign='center'>
-                    <Circle size={125} />
-                  </Text>
+                  <ReactSVG src={icon.file.url} />
                 </SiteSection>
               ))}
             </Flex>

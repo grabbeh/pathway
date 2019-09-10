@@ -11,6 +11,7 @@ const theme = {
   radii: [0, 2, 4, 16, 9999, '100%'],
   fontSizes: [12, 14, 16, 18, 22, 26, 36, 48, 60, 72, 100],
   fontWeights: {
+    light: 200,
     normal: 300,
     subtitle: 600,
     bold: 700,

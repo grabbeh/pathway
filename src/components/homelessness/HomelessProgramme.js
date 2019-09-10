@@ -1,12 +1,12 @@
 import React from 'react'
 import Box from '../general/Box'
 import { useStaticQuery, graphql } from 'gatsby'
-import Circle from '../../svg/Circle'
 import IntroTitle from '../typography/IntroTitle'
 import Flex from '../general/Flex'
 import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
 import BackgroundImage from '../general/BackgroundImage'
+import CaseStudyStamp from '../../svg/CaseStudyStamp'
 
 const query = graphql`
   query {
@@ -43,7 +43,7 @@ const HomelessProgramme = () => {
             imageData={programmeImage.fluid}
           >
             <Box position='absolute' top={20} left={20}>
-              <Circle />
+              <CaseStudyStamp />
             </Box>
           </BackgroundImage>
         </Box>

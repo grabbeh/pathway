@@ -8,7 +8,7 @@ import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import Flex from '../general/Flex'
 import PathwayServicesList from '../what-we-do/PathwayServicesList'
-import KeyFact from '../what-we-do/KeyFact'
+import WhatWeDoFact from '../../svg/WhatWeDoFact'
 
 const query = graphql`
   query {
@@ -58,10 +58,12 @@ const PathwayModel = () => {
         <BodyText html={wwdPathwayModel.childMarkdownRemark.html} />
       </Section>
       <Flex flexWrap='wrap'>
-        <Box width={[1, 1 / 2]}>
-          <KeyFact />
+        <Box pl={4} width={[1, 0.4]}>
+          <Flex justifyContent='center' alignItems='center'>
+            <WhatWeDoFact />
+          </Flex>
         </Box>
-        <Box width={[1, 1 / 2]}>
+        <Box width={[1, 0.6]}>
           <PathwayServicesList />
         </Box>
       </Flex>

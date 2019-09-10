@@ -8,7 +8,6 @@ class TabPanels extends Component {
   render () {
     const { children } = this.props
     const { activeIndex } = this.context
-    console.log(activeIndex)
     return <div>{children[activeIndex]}</div>
   }
 }

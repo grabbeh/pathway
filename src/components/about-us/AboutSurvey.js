@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
 import Text from '../typography/Text'
 import Animation from '../animations/ScrollAnimation'
-import Circle from '../../svg/Circle'
 import Section from '../general/WideSection'
 import Flex from '../general/Flex'
+import KeyStatsStamp from '../../svg/KeyStatsStamp'
 
 const query = graphql`
   query {
@@ -25,16 +25,18 @@ const query = graphql`
 `
 const AboutSurvey = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulAboutPage.edges[0]
-  let { aboutStatistic, studyText } = node
+  const {
+    aboutStatistic,
+    studyText
+  } = data.allContentfulAboutPage.edges[0].node
 
   return (
     <Section bg='blue'>
       <Flex flexWrap='wrap'>
         <Box width={[1, 0.15]}>
-          <Circle />
+          <KeyStatsStamp />
         </Box>
-        <Box width={[1, 0.85]} px={[0, 4, 4]}>
+        <Box my={5} width={[1, 0.85]}>
           <Animation>
             <Text.span
               lineHeight={['medium', 'tagline']}

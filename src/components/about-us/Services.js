@@ -17,6 +17,11 @@ const query = graphql`
               }
             }
             name
+            icon {
+              file {
+                url
+              }
+            }
           }
         }
       }

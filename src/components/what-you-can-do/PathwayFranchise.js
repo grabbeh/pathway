@@ -21,6 +21,11 @@ const query = graphql`
           }
           franchiseBenefitsTitle
           pathwayFranchiseBenefits {
+            icon {
+              file {
+                url
+              }
+            }
             name
             description {
               childMarkdownRemark {

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const ScrollAnimation = ({ children, threshold = 0 }) => {
   const [ref, inView] = useInView({
-    threshold,
+    rootMargin: '-100px',
     triggerOnce: true
   })
 

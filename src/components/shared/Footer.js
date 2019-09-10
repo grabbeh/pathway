@@ -99,23 +99,23 @@ const Footer = ({ bg }) => {
                   <Box width={[1, 1, 1 / 2]}>
                     <Box mr={3}>
                       <Subtitle color='green'>Contact</Subtitle>
-                      <Text fontWeight='bold' fontSize={3}>
+                      <Text fontWeight='bold' fontSize={2}>
                         {name}
                       </Text>
-                      <Text fontSize={3}>{title}</Text>
+                      <Text fontSize={2}>{title}</Text>
                       <Box>
-                        <Text.span color='grey' fontWeight='bold' fontSize={3}>
+                        <Text.span color='grey' fontWeight='bold' fontSize={2}>
                           Email:{' '}
                         </Text.span>
-                        <Text.span color='grey' fontSize={3}>
+                        <Text.span color='grey' fontSize={2}>
                           {emailAddress}
                         </Text.span>
                       </Box>
                       <Box>
-                        <Text.span color='grey' fontWeight='bold' fontSize={3}>
+                        <Text.span color='grey' fontWeight='bold' fontSize={2}>
                           M:{' '}
                         </Text.span>
-                        <Text.span color='grey' fontSize={3}>
+                        <Text.span color='grey' fontSize={2}>
                           {phoneNumber}
                         </Text.span>
                       </Box>

@@ -8,7 +8,7 @@ import SectionTitle from '../typography/SectionTitle'
 import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
-import Circle from '../../svg/Circle'
+import ReactSVG from 'react-svg'
 
 const query = graphql`
   query {
@@ -25,6 +25,11 @@ const query = graphql`
             title
             childContentfulSectionMainContentTextNode {
               mainContent
+            }
+            icon {
+              file {
+                url
+              }
             }
           }
         }
@@ -57,6 +62,7 @@ const CostEffective = () => {
           (
             {
               title,
+              icon,
               childContentfulSectionMainContentTextNode: { mainContent }
             },
             i
@@ -64,7 +70,7 @@ const CostEffective = () => {
             <Box mb={3} width={[1, 1 / 2]} key={i}>
               <Animation>
                 <Box mr={4}>
-                  <Circle size={60} />
+                  <ReactSVG src={icon.file.url} />
                   <Box>
                     <Text.span fontSize={[2, 3]} color='grey' fontWeight='bold'>
                       {title}{' '}
