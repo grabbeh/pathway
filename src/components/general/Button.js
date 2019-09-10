@@ -8,11 +8,10 @@ import {
   border,
   typography
 } from 'styled-system'
-import * as React from 'react'
 import PropTypes from 'prop-types'
 import propTypes from '@styled-system/prop-types'
 
-const StyledButton = styled('button')(
+const Button = styled('button')(
   {
     outline: '1px solid transparent',
     cursor: 'pointer',
@@ -27,11 +26,7 @@ const StyledButton = styled('button')(
   position
 )
 
-const Button = ({ children, ...props }) => (
-  <StyledButton {...props}>{children}</StyledButton>
-)
-
-Button.displayName = 'Box'
+Button.displayName = 'Button'
 
 Button.defaultProps = {
   p: 0,

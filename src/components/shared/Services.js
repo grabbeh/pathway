@@ -12,7 +12,9 @@ const Services = ({ services }) => (
       <Box mb={3} width={[1, 1 / 2, 1 / 3]} key={i}>
         <Animation>
           <Box mr={4}>
-            <ReactSVG src={icon.file.url} />
+            <Box height={75}>
+              <ReactSVG src={icon.file.url} />
+            </Box>
             <Text fontWeight='bold' fontSize={3}>
               {name}:
             </Text>

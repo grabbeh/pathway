@@ -9,7 +9,7 @@ const InternalLink = styled(props => <Link {...props} />)`
   transition: all ease 0.3s;
   &:hover {
     color: black;
-    border-bottom: 3px #00a880 solid;
+    border-bottom: 2px #00a880 solid;
   }
 `
 

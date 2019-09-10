@@ -70,7 +70,11 @@ const CostEffective = () => {
             <Box mb={3} width={[1, 1 / 2]} key={i}>
               <Animation>
                 <Box mr={4}>
-                  <ReactSVG src={icon.file.url} />
+                  <Box height={65}>
+                    {' '}
+                    <ReactSVG src={icon.file.url} />
+                  </Box>
+
                   <Box>
                     <Text.span fontSize={[2, 3]} color='grey' fontWeight='bold'>
                       {title}{' '}
