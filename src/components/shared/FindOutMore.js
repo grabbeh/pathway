@@ -73,14 +73,16 @@ const FindOutMore = ({ bg, currentPath }) => {
 export default FindOutMore
 
 const SiteSection = ({ children, text, to }) => (
-  <Box mb={[4, 4, 0]} minWidth={[0.7, 250, 250]} width={[0.7, 1 / 2, 1 / 3]}>
-    <Box mr={[0, 4]} mb={3}>
-      <Box mb={3}>
-        <Text textAlign='center'>{children}</Text>
-      </Box>
-      <Box mt={[3, 0]}>
-        <FullButton text={text} to={to} />
+  <Flex justifyContent={['center', null]}>
+    <Box mb={[4, 4, 0]} minWidth={[0.9, 250, 250]} width={[0.7, 1 / 2, 1 / 3]}>
+      <Box mr={[0, 4]} mb={3}>
+        <Box mb={3}>
+          <Text textAlign='center'>{children}</Text>
+        </Box>
+        <Box mt={[3, 0]}>
+          <FullButton text={text} to={to} />
+        </Box>
       </Box>
     </Box>
-  </Box>
+  </Flex>
 )
