@@ -73,7 +73,7 @@ const FindOutMore = ({ bg, currentPath }) => {
 export default FindOutMore
 
 const SiteSection = ({ children, text, to }) => (
-  <Flex justifyContent={['center', null]}>
+ 
     <Box mb={[4, 4, 0]} minWidth={[1, 250, 250]} width={[1, 1 / 2, 1 / 3]}>
       <Box mr={[0, 4]} mb={3}>
         <Box mb={3}>
@@ -84,5 +84,5 @@ const SiteSection = ({ children, text, to }) => (
         </Box>
       </Box>
     </Box>
-  </Flex>
+  
 )
