@@ -24,9 +24,7 @@ const StatSection = ({ stats, html, mdx, title, bg }) => (
       <Section>
         <Flex flexWrap='wrap'>
           <Box width={[1, 1, 0.15]}>
-            <Box>
-              <KeyStatsStamp />
-            </Box>
+            <KeyStatsStamp />
           </Box>
           <Box width={[1, 1, 0.85]} mt={[3, 0, 0]}>
             <Animation>
