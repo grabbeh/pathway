@@ -13,6 +13,11 @@ const query = graphql`
               ...GatsbyContentfulFluid
             }
           }
+          mobileHeroBackgroundImage {
+            fluid(maxWidth: 400) {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
@@ -21,15 +26,16 @@ const query = graphql`
 const Hero = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulHomelessnessPage.edges[0]
-  let { heroImage, heroTitle } = node
+  let { heroImage, mobileHeroBackgroundImage, heroTitle } = node
 
   return (
     <ImageHero
+      bg='yellow'
       mobileBg='black'
       mobileColor='white'
       title={heroTitle}
       imageData={heroImage.fluid}
-      bg='yellow'
+      mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
       headerColor='white'
     />
   )

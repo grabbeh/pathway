@@ -15,7 +15,14 @@ const ImageHero = props => {
     <Flex bg={props.mobileBg} flexWrap='wrap'>
       <Flex bg={props.bg} flex='0 0 20px' />
       {isMobile ? (
-        <Hero style={{ flex: '1' }} load={load} {...props} />
+        <Box width={1} style={{ flex: '1' }}>
+          <BackgroundImage
+            backgroundColor={props.mobileBg}
+            imageData={props.mobileBackgroundImage}
+          >
+            <Hero load={load} {...props} />
+          </BackgroundImage>
+        </Box>
       ) : (
         <Box width={1} style={{ flex: '1' }}>
           <BackgroundImage imageData={props.imageData}>

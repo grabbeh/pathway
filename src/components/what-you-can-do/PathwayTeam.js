@@ -22,6 +22,11 @@ const query = graphql`
           franchiseOfferPhases {
             phase
             color
+            steps {
+              childMarkdownRemark {
+                html
+              }
+            }
             content {
               childMarkdownRemark {
                 html
@@ -50,25 +55,33 @@ const MainSection = () => {
       </Box>
       <Tabs>
         <Animation>
-        <Flex flexWrap='wrap'>
-          <Box width={[1, 1, 1 / 2]}>
-            <TabList>
-              {franchiseOfferPhases.map(({ phase, color }, i) => (
-                <Tab key={i} number={i} phase={phase} color={color} />
-              ))}
-            </TabList>
-          </Box>
-          <Box mt={[0, -15]} width={[1, 1, 1 / 2]}>
-            <TabPanels>
-              {franchiseOfferPhases.map(({ phase, content, color }, i) => (
-                <Box key={i}>
-                  <Subtitle color={color}>{phase}</Subtitle>
-                  <BodyText html={content.childMarkdownRemark.html} />
-                </Box>
-              ))}
-            </TabPanels>
-          </Box>
-        </Flex>
+          <Flex flexWrap='wrap'>
+            <Box width={[1, 1, 1 / 2]}>
+              <TabList>
+                {franchiseOfferPhases.map(({ phase, color }, i) => (
+                  <Tab key={i} number={i} phase={phase} color={color} />
+                ))}
+              </TabList>
+            </Box>
+            <Box mt={[0, -15]} width={[1, 1, 1 / 2]}>
+              <TabPanels>
+                {franchiseOfferPhases.map(
+                  ({ phase, steps, content, color }, i) => (
+                    <Box key={i}>
+                      <Subtitle color={color}>{phase}</Subtitle>
+                      <BodyText html={content.childMarkdownRemark.html} />
+                      {steps && (
+                        <Subtitle
+                          color={color}
+                          html={steps.childMarkdownRemark.html}
+                        />
+                      )}
+                    </Box>
+                  )
+                )}
+              </TabPanels>
+            </Box>
+          </Flex>
         </Animation>
       </Tabs>
     </Section>

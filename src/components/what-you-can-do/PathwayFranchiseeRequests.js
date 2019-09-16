@@ -37,7 +37,7 @@ const PathwayFranchiseeRequests = () => {
     pathwayFranchiseeRequestsList
   } = data.allContentfulWhatYouCanDoPage.edges[0].node
   return (
-    <Section bg='lightGrey'>
+    <Section>
       <Flex flexWrap='wrap'>
         <Box width={[1, 1, 1 / 2]}>
           <Animation>

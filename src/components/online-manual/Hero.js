@@ -13,6 +13,11 @@ const query = graphql`
               ...GatsbyContentfulFluid
             }
           }
+          mobileHeroBackgroundImage {
+            fluid(maxWidth: 400) {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
@@ -21,14 +26,16 @@ const query = graphql`
 const Hero = () => {
   const data = useStaticQuery(query)
   let { node } = data.allContentfulOnlineManualPage.edges[0]
-  let { heroImage, heroTitle } = node
+  let { heroImage, mobileHeroBackgroundImage, heroTitle } = node
 
   return (
     <ImageHero
       title={heroTitle}
       imageData={heroImage.fluid}
-      bg='green'
+      mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
+      bg='blue'
       headerColor='blue'
+      mobileBg='#00A880'
     />
   )
 }
