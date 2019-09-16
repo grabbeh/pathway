@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const List = styled('ul')`
+export const OrderedList = styled('ol')`
   margin: 0;
   padding: 0;
   margin-left: 15px;
@@ -9,4 +9,4 @@ export const List = styled('ul')`
   margin-top: 10px;
 `
 
-export default List
+export default OrderedList

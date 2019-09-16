@@ -36,7 +36,7 @@ const AboutSurvey = () => {
         <Box width={[1, 0.15]}>
           <KeyStatsStamp />
         </Box>
-        <Box my={5} width={[1, 0.85]}>
+        <Box my={[0, 5]} width={[1, 0.85]}>
           <Animation>
             <Text.span
               lineHeight={['medium', 'tagline']}

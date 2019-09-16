@@ -31,9 +31,10 @@ const query = graphql`
 
 const AboutServices = () => {
   const data = useStaticQuery(query)
-  let {
-    node: { servicesHolder, servicesSubtitle }
-  } = data.allContentfulAboutPage.edges[0]
+  const {
+    servicesHolder,
+    servicesSubtitle
+  } = data.allContentfulAboutPage.edges[0].node
   return (
     <Section>
       <Subtitle color='blue'>{servicesSubtitle}</Subtitle>

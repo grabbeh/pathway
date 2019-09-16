@@ -31,14 +31,21 @@ const query = graphql`
 
 const Letter = () => {
   const data = useStaticQuery(query)
-  const { node } = data.allContentfulHomePage.edges[0]
-  const { letterIntroTitle, letterTitle, letterTagline, letterContent } = node
+  const {
+    letterIntroTitle,
+    letterTitle,
+    letterTagline,
+    letterContent
+  } = data.allContentfulHomePage.edges[0].node
   return (
     <Section>
       <Box mb={4}>
-        <IntroTitle textAlign='center' color='blue'>
-          {letterIntroTitle}
-        </IntroTitle>
+        <Animation>
+          <IntroTitle textAlign='center' color='blue'>
+            {letterIntroTitle}
+          </IntroTitle>
+        </Animation>
+
         <Animation>
           <SectionTitle textAlign='center'>{letterTitle}</SectionTitle>
         </Animation>

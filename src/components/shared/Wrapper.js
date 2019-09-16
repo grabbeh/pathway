@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useContext } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../../theme.js'
 import Box from '../general/Box'
@@ -13,8 +13,11 @@ import List from '../mdx/List'
 import ListItem from '../mdx/ListItem'
 import Paragraph from '../mdx/Paragraph'
 import Sup from '../mdx/Sup'
+import OrderedList from '../mdx/OrderedList'
 
 const components = {
+  a: Link,
+  ol: OrderedList,
   table: Table,
   ul: List,
   li: ListItem,

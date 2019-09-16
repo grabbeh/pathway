@@ -20,8 +20,7 @@ const query = graphql`
 
 const HomeFootnotes = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulHomePage.edges[0]
-  let { footnotes } = node
+  const { footnotes } = data.allContentfulHomePage.edges[0].node
   return <Footnotes footnotes={footnotes.childMarkdownRemark.html} />
 }
 

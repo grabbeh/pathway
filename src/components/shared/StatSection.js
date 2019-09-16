@@ -9,11 +9,13 @@ import MarkdownText from '../general/MarkdownText'
 import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
+import Link from '../mdx/Link'
 
 const H1 = props => <SectionTitle color='white'>{props.children}</SectionTitle>
 
 const components = {
-  h1: H1
+  h1: H1,
+  a: Link
 }
 
 const StatSection = ({ stats, html, mdx, title, bg }) => (
@@ -21,12 +23,12 @@ const StatSection = ({ stats, html, mdx, title, bg }) => (
     <Box bg={bg}>
       <Section>
         <Flex flexWrap='wrap'>
-          <Box width={[1, 0.15]}>
+          <Box width={[1, 1, 0.15]}>
             <Box>
               <KeyStatsStamp />
             </Box>
           </Box>
-          <Box width={[1, 0.85]} mt={[3, 0, 0]}>
+          <Box width={[1, 1, 0.85]} mt={[3, 0, 0]}>
             <Animation>
               {html && (
                 <MarkdownText
