@@ -39,13 +39,12 @@ const query = graphql`
 
 const PathwayModel = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWwdPage.edges[0]
-  let {
+  const {
     pathwayModelTitle,
     wwdPathwayModelSubtitle,
     wwdPathwayModel,
     wwdPathwayModelPartTwo
-  } = node
+  } = data.allContentfulWwdPage.edges[0].node
 
   return (
     <Animation>

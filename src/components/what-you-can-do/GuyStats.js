@@ -23,8 +23,7 @@ const query = graphql`
 
 const GuyStats = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWhatYouCanDoPage.edges[0]
-  let { statsTitle, stats } = node
+  const { statsTitle, stats } = data.allContentfulWhatYouCanDoPage.edges[0].node
   return <StatsSection bg='blue' title={statsTitle} stats={stats} />
 }
 

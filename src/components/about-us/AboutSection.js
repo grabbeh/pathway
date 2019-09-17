@@ -33,10 +33,12 @@ const query = graphql`
 
 const AboutSection = () => {
   const data = useStaticQuery(query)
-
-  let { node } = data.allContentfulAboutPage.edges[0]
-  let { aboutTitle, aboutIntroTitle, aboutDescription, aboutSubtitle } = node
-
+  const {
+    aboutTitle,
+    aboutIntroTitle,
+    aboutDescription,
+    aboutSubtitle
+  } = data.allContentfulAboutPage.edges[0].node
   return (
     <Section>
       <Animation>

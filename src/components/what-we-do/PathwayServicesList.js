@@ -23,9 +23,10 @@ const query = graphql`
 
 const PathwayServicesList = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWwdPage.edges[0]
-  let { pathwayServicesListTitle, pathwayServicesList } = node
-
+  const {
+    pathwayServicesListTitle,
+    pathwayServicesList
+  } = data.allContentfulWwdPage.edges[0].node
   return (
     <Box px={[3, 5]}>
       <Subtitle color='green'>{pathwayServicesListTitle}</Subtitle>

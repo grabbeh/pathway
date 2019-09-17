@@ -37,13 +37,11 @@ const query = graphql`
 
 const HomelessnessMainSection = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulHomelessnessPage.edges[0]
-  let {
+  const {
     homelessnessDescriptionPartOne,
     homelessnessDescriptionPartTwo,
     homelessnessSubtitle
-  } = node
-
+  } = data.allContentfulHomelessnessPage.edges[0].node
   return (
     <Section>
       <Animation>

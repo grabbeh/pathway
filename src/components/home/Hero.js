@@ -26,9 +26,12 @@ const query = graphql`
 `
 const Hero = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulHomePage.edges[0]
-  let { heroSubtitle, heroImage, mobileHeroBackgroundImage, heroTitle } = node
-
+  const {
+    heroSubtitle,
+    heroImage,
+    mobileHeroBackgroundImage,
+    heroTitle
+  } = data.allContentfulHomePage.edges[0].node
   return (
     <ImageHero
       mobileBg='#4A4A4A'

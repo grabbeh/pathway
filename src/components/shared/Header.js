@@ -33,8 +33,8 @@ const query = graphql`
 
 const Header = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulNavigationContainer.edges[0]
-  let state = useAppContext()
+  const { navigationItem } = data.allContentfulNavigationContainer.edges[0].node
+  const state = useAppContext()
   return (
     <Box py={2}>
       <Flex>
@@ -55,7 +55,7 @@ const Header = () => {
             <nav role='menu'>
               <List>
                 <Flex>
-                  {node.navigationItem.map(({ url, title, subtitle }, i) => (
+                  {navigationItem.map(({ url, title, subtitle }, i) => (
                     <ListItem pr={4} key={i}>
                       <Link to={`/${url}`}>
                         <Text fontSize={2}>{title}</Text>
@@ -102,7 +102,7 @@ const Header = () => {
         )}
       </Box>
       <Menu
-        navigationItems={node.navigationItem}
+        navigationItems={navigationItem}
         open={state.open}
         toggleOpen={state.toggleOpen}
       />

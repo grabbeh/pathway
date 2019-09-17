@@ -23,8 +23,8 @@ const query = graphql`
 
 const UCLHStats = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWwdPage.edges[0]
-  let { ulchStatsTitle, ulchStats } = node
+  const { ulchStatsTitle, ulchStats } = data.allContentfulWwdPage.edges[0].node
+
   return <StatsSection bg='green' title={ulchStatsTitle} stats={ulchStats} />
 }
 

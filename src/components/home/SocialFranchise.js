@@ -26,8 +26,10 @@ const query = graphql`
 
 const SocialFranchise = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulHomePage.edges[0]
-  let { socialFranchiseDescription, socialFranchiseSubtitle } = node
+  const {
+    socialFranchiseDescription,
+    socialFranchiseSubtitle
+  } = data.allContentfulHomePage.edges[0].node
   return (
     <Box bg='lightGrey'>
       <Section>

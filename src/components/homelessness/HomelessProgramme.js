@@ -32,8 +32,11 @@ const query = graphql`
 
 const HomelessProgramme = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulHomelessnessPage.edges[0]
-  let { programmeText, programmeTitle, programmeImage } = node
+  const {
+    programmeText,
+    programmeTitle,
+    programmeImage
+  } = data.allContentfulHomelessnessPage.edges[0].node
   return (
     <Box>
       <Flex flexWrap='wrap'>

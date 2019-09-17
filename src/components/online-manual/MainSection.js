@@ -28,8 +28,8 @@ const query = graphql`
 
 const MainSection = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulOnlineManualPage.edges[0]
-  let { title, subtitle, content } = node
+  const { node } = data.allContentfulOnlineManualPage.edges[0]
+  const { title, subtitle, content } = node
 
   return (
     <Section>

@@ -25,10 +25,7 @@ const query = graphql`
 
 const PrivacyPolicy = () => {
   const data = useStaticQuery(query)
-  let {
-    node: { content, title }
-  } = data.allContentfulLegalDocument.edges[0]
-
+  const { content, title } = data.allContentfulLegalDocument.edges[0].node
   return (
     <Wrapper>
       <StandardSection>

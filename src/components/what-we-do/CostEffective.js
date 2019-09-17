@@ -40,12 +40,11 @@ const query = graphql`
 
 const CostEffective = () => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWwdPage.edges[0]
-  let {
+  const {
     pathwayTeamCostEffectivenessTitle,
     wwdCostEffectiveSection,
     hospitalTeamBenefitsHolder
-  } = node
+  } = data.allContentfulWwdPage.edges[0].node
   return (
     <Section>
       <Animation>

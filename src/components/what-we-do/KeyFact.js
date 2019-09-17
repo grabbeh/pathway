@@ -21,9 +21,7 @@ const query = graphql`
 
 const KeyFacts = ({ width = '82%' }) => {
   const data = useStaticQuery(query)
-  let { node } = data.allContentfulWwdPage.edges[0]
-  let { wwgKeyFact, keyFactIntro } = node
-
+  const { wwgKeyFact, keyFactIntro } = data.allContentfulWwdPage.edges[0].node
   return (
     <KeyFactCircle
       intro={keyFactIntro}
