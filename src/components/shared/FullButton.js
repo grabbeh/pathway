@@ -45,4 +45,7 @@ const StyledArrow = styled('div')`
   ${StyledBox}:hover & {
     padding-left: 20px;
   }
+  ${StyledBox}:click & {
+    padding-left: 20px;
+  }
 `

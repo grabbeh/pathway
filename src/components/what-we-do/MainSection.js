@@ -32,19 +32,16 @@ const query = graphql`
 
 const MainSection = () => {
   const data = useStaticQuery(query)
-  const { node } = data.allContentfulWwdPage.edges[0]
   const {
     wwdIntro,
     wwdMainSectionTitle,
     wwdMainSectionSubtitle,
     wwdMainSection
-  } = node
-
+  } = data.allContentfulWwdPage.edges[0].node
   return (
     <Section>
       <Animation>
         <IntroTitle color='green'>{wwdIntro}</IntroTitle>
-
         <SectionTitle>{wwdMainSectionTitle}</SectionTitle>
         <Subtitle
           color='green'

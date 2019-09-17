@@ -57,7 +57,7 @@ const PathwayModel = () => {
         <BodyText html={wwdPathwayModel.childMarkdownRemark.html} />
       </Section>
       <Flex flexWrap='wrap'>
-        <Box pl={4} width={[1, 0.4]}>
+        <Box pl={[2, 4]} width={[1, 0.4]}>
           <Flex justifyContent='center' alignItems='center'>
             <WhatWeDoFact />
           </Flex>

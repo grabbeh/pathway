@@ -30,7 +30,7 @@ const MainSection = () => {
     mainSectionTitle,
     mainSectionSubtitle,
     mainSectionContent
-  } = data.allContentfulWhatYouCanDoPage.edges[0]
+  } = data.allContentfulWhatYouCanDoPage.edges[0].node
   return (
     <Section>
       <Animation>

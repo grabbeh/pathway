@@ -57,7 +57,7 @@ const PathwayFranchiseeRequests = () => {
   } = data.allContentfulContactDetails.edges[0].node
   return (
     <Box>
-      <Box mx={[3, 6]} maxWidth={[null, 800, 1000]}>
+      <Box mx={[3, 3, 6]} maxWidth={[null, 800, 1000]}>
         <Animation>
           <SectionTitle>{nextStepsTitle}</SectionTitle>
         </Animation>
@@ -72,20 +72,20 @@ const PathwayFranchiseeRequests = () => {
       </Box>
       <Flex flexWrap='wrap'>
         <Box width={[1, 1, 1 / 2]}>
-          <Box pr={4} ml={[3, 6]}>
+          <Box pr={4} ml={[3, 3, 6]}>
             <Animation>
               {nextSteps.map((step, i) => (
                 <Box key={i} mb={4}>
                   <Text fontSize={3} color='green'>
                     Step {i + 1}
                   </Text>
-                  <Subtitle>{step.step}</Subtitle>
+                  <Subtitle mt={0}>{step.step}</Subtitle>
                 </Box>
               ))}
             </Animation>
           </Box>
         </Box>
-        <Box bg='green' p={[3, 5]} width={[1, 1, 1 / 2]}>
+        <Box bg='green' p={[3, 3, 5]} width={[1, 1, 1 / 2]}>
           <Animation>
             <ContactDetails
               name={name}
@@ -114,25 +114,25 @@ const ContactDetails = ({
     <Box mb={4}>
       <Subtitle color='white'>{queriesTitle}</Subtitle>
     </Box>
-    <Text fontSize={4} fontWeight='bold' color='yellow'>
+    <Text fontSize={[2, 4]} fontWeight='bold' color='yellow'>
       {name}
     </Text>
-    <Text mb={3} fontSize={4} color='white'>
+    <Text mb={3} fontSize={[2, 4]} color='white'>
       {title}
     </Text>
     <Box mb={3}>
-      <Text.span fontSize={4} color='white' fontWeight='bold'>
+      <Text.span fontSize={[2, 4]} color='white' fontWeight='bold'>
         Email:
       </Text.span>{' '}
-      <Text.span fontSize={4} color='white'>
+      <Text.span fontSize={[2, 4]} color='white'>
         {emailAddress}
       </Text.span>
     </Box>
     <Box>
-      <Text.span fontSize={4} color='white' fontWeight='bold'>
+      <Text.span fontSize={[2, 4]} color='white' fontWeight='bold'>
         M:
       </Text.span>
-      <Text.span fontSize={4} color='white'>
+      <Text.span fontSize={[2, 4]} color='white'>
         {phoneNumber}
       </Text.span>
     </Box>
