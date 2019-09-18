@@ -23,8 +23,10 @@ const query = graphql`
           }
           hospitalTeamBenefitsHolder {
             title
-            childContentfulSectionMainContentTextNode {
-              mainContent
+            mainContent {
+              childMarkdownRemark {
+                html
+              }
             }
             icon {
               file {
@@ -62,7 +64,9 @@ const CostEffective = () => {
             {
               title,
               icon,
-              childContentfulSectionMainContentTextNode: { mainContent }
+              mainContent: {
+                childMarkdownRemark: { html }
+              }
             },
             i
           ) => (
@@ -78,9 +82,7 @@ const CostEffective = () => {
                     <Text.span fontSize={[2, 3]} color='grey' fontWeight='bold'>
                       {title}{' '}
                     </Text.span>
-                    <Text.span fontSize={[2, 3]} color='grey'>
-                      {mainContent}
-                    </Text.span>
+                    <BodyText html={html} />
                   </Box>
                 </Box>
               </Animation>

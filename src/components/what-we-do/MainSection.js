@@ -38,6 +38,7 @@ const MainSection = () => {
     wwdMainSectionSubtitle,
     wwdMainSection
   } = data.allContentfulWwdPage.edges[0].node
+
   return (
     <Section>
       <Animation>

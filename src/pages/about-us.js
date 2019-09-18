@@ -6,6 +6,7 @@ import Hero from '../components/about-us/AboutHero'
 import FindOutMore from '../components/shared/FindOutMore'
 import Survey from '../components/about-us/AboutSurvey'
 import Services from '../components/about-us/Services'
+import Footnotes from '../components/about-us/Footnotes'
 import Footer from '../components/shared/Footer'
 
 const AboutPage = () => (
@@ -15,6 +16,7 @@ const AboutPage = () => (
     <AboutSection />
     <Survey />
     <Services />
+    <Footnotes />
     <FindOutMore bg='lightGrey' />
     <Footer />
   </Wrapper>

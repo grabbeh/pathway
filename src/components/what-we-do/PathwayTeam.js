@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Section from '../general/StandardSection'
 import SectionTitle from '../typography/SectionTitle'
+import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import styled from 'styled-components'
 import Flex from '../general/Flex'
@@ -31,6 +32,11 @@ const query = graphql`
             }
           }
           pathwayTeamTitle
+          hospitalTeamTableSubtitle {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
       }
     }
@@ -42,7 +48,8 @@ const PathwayTeam = () => {
   const data = useStaticQuery(query)
   const {
     pathwayTeamTitle,
-    hospitalTeamData
+    hospitalTeamData,
+    hospitalTeamTableSubtitle
   } = data.allContentfulWwdPage.edges[0].node
   const { mobile, headers, rows } = hospitalTeamData
   const first = headers.slice(0, 1)
@@ -122,6 +129,11 @@ const PathwayTeam = () => {
             dotLength={50}
             requirements={mobile.twoHundredPlus}
           />
+          <Box>
+            <BodyText
+              html={hospitalTeamTableSubtitle.childMarkdownRemark.html}
+            />
+          </Box>
         </Box>
       ) : (
         <Section bg='lightGrey'>
@@ -135,6 +147,11 @@ const PathwayTeam = () => {
                 <tbody>{tableBody}</tbody>
               </Table>
             </Animation>
+          </Box>
+          <Box>
+            <BodyText
+              html={hospitalTeamTableSubtitle.childMarkdownRemark.html}
+            />
           </Box>
         </Section>
       )}

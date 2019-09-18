@@ -33,3 +33,12 @@
     margin-top: 10px;
     margin-left: 10px;
  }
+
+ .footnotes a {
+   color:#37AEE3;
+  
+ }
+ .footnotes a:hover {
+    border-bottom: 1px #37AEE3 solid;
+ }
+

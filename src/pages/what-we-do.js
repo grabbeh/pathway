@@ -11,6 +11,7 @@ import CostEffective from '../components/what-we-do/CostEffective'
 import PathwayTeamCosts from '../components/what-we-do/PathwayTeamCosts'
 import PathwayTeam from '../components/what-we-do/PathwayTeam'
 import Footer from '../components/shared/Footer'
+import Footnotes from '../components/what-we-do/Footnotes'
 
 const page = ({ location }) => {
   return (
@@ -25,6 +26,7 @@ const page = ({ location }) => {
       <PathwayTeam />
       <PathwayTeamCosts />
       <FindOutMore currentPath={location.pathname} />
+      <Footnotes />
       <Footer bg='lightGrey' />
     </Wrapper>
   )

@@ -7,7 +7,7 @@ import Hero from '../components/home/Hero'
 import SocialFranchise from '../components/home/SocialFranchise'
 import Letter from '../components/home/Letter'
 import Footer from '../components/shared/Footer'
-import Footnotes from '../components/home/HomeFootnotes'
+import Footnotes from '../components/home/Footnotes'
 
 const IndexPage = () => (
   <Wrapper>

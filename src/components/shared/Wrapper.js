@@ -16,7 +16,6 @@ import Sup from '../mdx/Sup'
 import OrderedList from '../mdx/OrderedList'
 
 const components = {
-  a: Link,
   ol: OrderedList,
   table: Table,
   ul: List,
