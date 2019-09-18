@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
-import Text from '../typography/Text'
 import Flex from '../general/Flex'
 import Section from '../general/StandardSection'
 import SectionTitle from '../typography/SectionTitle'
@@ -22,7 +21,6 @@ const query = graphql`
             }
           }
           hospitalTeamBenefitsHolder {
-            title
             mainContent {
               childMarkdownRemark {
                 html
@@ -59,36 +57,20 @@ const CostEffective = () => {
         <Subtitle color='green'>Pathway hospital teams:</Subtitle>
       </Animation>
       <Flex flexWrap='wrap'>
-        {hospitalTeamBenefitsHolder.map(
-          (
-            {
-              title,
-              icon,
-              mainContent: {
-                childMarkdownRemark: { html }
-              }
-            },
-            i
-          ) => (
-            <Box mb={3} width={[1, 1 / 2]} key={i}>
-              <Animation>
-                <Box mr={4}>
-                  <Box height={65}>
-                    {' '}
-                    <ReactSVG src={icon.file.url} />
-                  </Box>
-
-                  <Box>
-                    <Text.span fontSize={[2, 3]} color='grey' fontWeight='bold'>
-                      {title}{' '}
-                    </Text.span>
-                    <BodyText html={html} />
-                  </Box>
+        {hospitalTeamBenefitsHolder.map(({ icon, mainContent }, i) => (
+          <Box mb={3} width={[1, 1 / 2]} key={i}>
+            <Animation>
+              <Box mr={4}>
+                <Box height={50}>
+                  <ReactSVG src={icon.file.url} />
                 </Box>
-              </Animation>
-            </Box>
-          )
-        )}
+                <Box>
+                  <BodyText html={mainContent.childMarkdownRemark.html} />
+                </Box>
+              </Box>
+            </Animation>
+          </Box>
+        ))}
       </Flex>
     </Section>
   )
