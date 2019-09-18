@@ -12,6 +12,7 @@ import PathwayFranchiseeProfile from '../components/what-you-can-do/PathwayFranc
 import GuyStats from '../components/what-you-can-do/GuyStats'
 import FinancialInfo from '../components/what-you-can-do/FranchiseeFinancialInfo'
 import NextSteps from '../components/what-you-can-do/NextSteps'
+import Footnotes from '../components/what-you-can-do/Footnotes'
 
 const WhatYouCanDo = ({ location }) => (
   <Wrapper>
@@ -26,6 +27,7 @@ const WhatYouCanDo = ({ location }) => (
     <FinancialInfo />
     <NextSteps />
     <FindOutMore currentPath={location.pathname} bg='lightGrey' />
+    <Footnotes />
     <Footer />
   </Wrapper>
 )

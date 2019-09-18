@@ -7,11 +7,17 @@ const query = graphql`
     allContentfulWwdPage {
       edges {
         node {
-          ulchStatsTitle
+          ulchStatsTitle {
+            childMdx {
+              body
+            }
+          }
           ulchStats {
             figure
             text {
-              text
+              childMarkdownRemark {
+                html
+              }
             }
             subtitle
           }
@@ -25,7 +31,13 @@ const UCLHStats = () => {
   const data = useStaticQuery(query)
   const { ulchStatsTitle, ulchStats } = data.allContentfulWwdPage.edges[0].node
 
-  return <StatsSection bg='green' title={ulchStatsTitle} stats={ulchStats} />
+  return (
+    <StatsSection
+      bg='green'
+      mdx={ulchStatsTitle.childMdx.body}
+      stats={ulchStats}
+    />
+  )
 }
 
 export default UCLHStats

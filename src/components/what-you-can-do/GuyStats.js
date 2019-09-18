@@ -7,7 +7,11 @@ const query = graphql`
     allContentfulWhatYouCanDoPage {
       edges {
         node {
-          statsTitle
+          statsTitle {
+            childMdx {
+              body
+            }
+          }
           stats {
             figure
             subtitle
@@ -24,7 +28,7 @@ const query = graphql`
 const GuyStats = () => {
   const data = useStaticQuery(query)
   const { statsTitle, stats } = data.allContentfulWhatYouCanDoPage.edges[0].node
-  return <StatsSection bg='blue' title={statsTitle} stats={stats} />
+  return <StatsSection bg='blue' mdx={statsTitle.childMdx.body} stats={stats} />
 }
 
 export default GuyStats

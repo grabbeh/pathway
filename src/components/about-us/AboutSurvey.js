@@ -1,22 +1,34 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
-import Text from '../typography/Text'
 import Animation from '../animations/ScrollAnimation'
 import Section from '../general/WideSection'
 import Flex from '../general/Flex'
 import KeyStatsStamp from '../../svg/KeyStatsStamp'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXProvider } from '@mdx-js/react'
+import Tagline from '../typography/Tagline'
+import Link from '../mdx/Link'
+import Text from '../typography/Text'
+
+const Bold = props => <Text.span color='grey'>{props.children}</Text.span>
+const H1 = props => <Tagline color='white'>{props.children}</Tagline>
+
+const components = {
+  h1: H1,
+  strong: Bold,
+  a: Link
+}
 
 const query = graphql`
   query {
     allContentfulAboutPage {
       edges {
         node {
-          aboutStatistic {
-            aboutStatistic
-          }
           studyText {
-            studyText
+            childMdx {
+              body
+            }
           }
         }
       }
@@ -25,39 +37,22 @@ const query = graphql`
 `
 const AboutSurvey = () => {
   const data = useStaticQuery(query)
-  const {
-    aboutStatistic,
-    studyText
-  } = data.allContentfulAboutPage.edges[0].node
-
+  const { studyText } = data.allContentfulAboutPage.edges[0].node
   return (
-    <Section bg='blue'>
-      <Flex flexWrap='wrap'>
-        <Box width={[1, 0.15]}>
-          <KeyStatsStamp />
-        </Box>
-        <Box my={[0, 5]} width={[1, 0.85]}>
-          <Animation>
-            <Text.span
-              lineHeight={['medium', 'tagline']}
-              fontSize={[4, 6]}
-              fontWeight='bold'
-              color='white'
-            >
-              {studyText.studyText}{' '}
-            </Text.span>
-            <Text.span
-              color='grey'
-              lineHeight={['medium', 'tagline']}
-              fontSize={[4, 6]}
-              fontWeight='bold'
-            >
-              {aboutStatistic.aboutStatistic}
-            </Text.span>
-          </Animation>
-        </Box>
-      </Flex>
-    </Section>
+    <MDXProvider components={components}>
+      <Section bg='blue'>
+        <Flex flexWrap='wrap'>
+          <Box width={[1, 0.15]}>
+            <KeyStatsStamp />
+          </Box>
+          <Box my={[0, 5]} width={[1, 0.85]}>
+            <Animation>
+              <MDXRenderer>{studyText.childMdx.body}</MDXRenderer>
+            </Animation>
+          </Box>
+        </Flex>
+      </Section>
+    </MDXProvider>
   )
 }
 
