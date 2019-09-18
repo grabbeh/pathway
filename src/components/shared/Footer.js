@@ -103,7 +103,7 @@ const Footer = ({ bg }) => {
                         {name}
                       </Text>
                       <Text fontSize={2}>{title}</Text>
-                      <Box>
+                      <Box mt={3}>
                         <Text.span color='grey' fontWeight='bold' fontSize={2}>
                           Email:{' '}
                         </Text.span>
