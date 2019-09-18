@@ -42,3 +42,19 @@
     border-bottom: 1px #37AEE3 solid;
  }
 
+p sup {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+h1 sup {
+  vertical-align: baseline;
+  position: relative;
+  top: -1em;
+}
+
+sup a {
+  color:#37AEE3;
+}
+
