@@ -2,7 +2,7 @@ import React from 'react'
 import Box from './Box'
 import Flex from './Flex'
 
-const StandardSection = ({ children, bg }) => (
+const StandardSection = ({ bg, children }) => (
   <section>
     <Box bg={bg}>
       <Flex justifyContent='center'>

@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useContext } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../../theme.js'
 import Box from '../general/Box'
