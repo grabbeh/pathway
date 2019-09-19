@@ -49,7 +49,8 @@ const FindOutMore = ({ bg, currentPath }) => {
         <Box
           width={[null, null, 1000]}
           maxWidth={[null, 800, 1000]}
-          py={[4, 5]}
+          pt={[4, 5]}
+          pb={4}
           mx={3}
         >
           <Animation>

@@ -15,7 +15,6 @@
  a:active, a:focus, a:visited {
    -moz-outline-style: none;
    text-decoration: none;
-
  }
 
  .footnotes {
@@ -31,6 +30,10 @@
     padding: 0;
     margin-top: 10px;
     margin-left: 10px;
+ }
+
+ .footnotes li {
+  word-break: break-all;
  }
 
  .footnotes a {

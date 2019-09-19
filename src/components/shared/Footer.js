@@ -5,10 +5,10 @@ import Flex from '../general/Flex'
 import Logo from '../shared/Logo'
 import Subtitle from '../typography/Subtitle'
 import List from '../general/List'
-import Link from '../general/InternalLink'
+import Link from '../general/InternalHoverLink'
 import { graphql, useStaticQuery } from 'gatsby'
-import BodyText from '../typography/BodyText'
 import ListItem from '../general/ListItem'
+import Image from 'gatsby-image'
 
 const query = graphql`
   query {
@@ -25,9 +25,24 @@ const query = graphql`
     allContentfulFooter {
       edges {
         node {
-          companyDetails {
-            childMarkdownRemark {
-              html
+          companyNumber
+          charityNumber
+          companyLogo {
+            fixed(width: 150) {
+              ...GatsbyContentfulFixed
+            }
+          }
+          regulatorLogo {
+            fixed(width: 150) {
+              ...GatsbyContentfulFixed
+            }
+          }
+          socialMediaIcons {
+            url
+            icon {
+              fixed(width: 40) {
+                ...GatsbyContentfulFixed
+              }
             }
           }
         }
@@ -55,7 +70,13 @@ const Footer = ({ bg }) => {
     allContentfulContactDetails
   } = data
   const navigation = allContentfulNavigationContainer.edges[0].node
-  const { companyDetails } = allContentfulFooter.edges[0].node
+  const {
+    charityNumber,
+    companyNumber,
+    companyLogo,
+    regulatorLogo,
+    socialMediaIcons
+  } = allContentfulFooter.edges[0].node
   const {
     name,
     title,
@@ -70,10 +91,8 @@ const Footer = ({ bg }) => {
           <Box p={[3, 4]} width={[1, 2 / 3]}>
             <Flex flexWrap='wrap'>
               <Box width={[1, 1, 1 / 3]}>
-                <Box width={[1 / 2, 1 / 2, 1]}>
-                  <Box mr={3}>
-                    <Logo />
-                  </Box>
+                <Box mr={3}>
+                  <Logo />
                 </Box>
               </Box>
               <Box width={[1, 1, 2 / 3]}>
@@ -83,14 +102,14 @@ const Footer = ({ bg }) => {
                       <Subtitle color='green'>Quick links</Subtitle>
                       <List>
                         {navigation.navigationItem.map(({ url, title }, i) => (
-                          <ListItem mb={2} key={i}>
+                          <ListItem fontSize={1} mb={2} key={i}>
                             <Link to={`/${url}`}>{title}</Link>
                           </ListItem>
                         ))}
-                        <ListItem mb={2}>
+                        <ListItem fontSize={1} mb={2}>
                           <Link to='/'>Terms and conditions</Link>
                         </ListItem>
-                        <ListItem>
+                        <ListItem fontSize={1}>
                           <Link to='/privacy-policy'>Privacy policy</Link>
                         </ListItem>
                       </List>
@@ -99,23 +118,23 @@ const Footer = ({ bg }) => {
                   <Box width={[1, 1, 1 / 2]}>
                     <Box mr={3}>
                       <Subtitle color='green'>Contact</Subtitle>
-                      <Text fontWeight='bold' fontSize={2}>
+                      <Text fontWeight='bold' fontSize={1}>
                         {name}
                       </Text>
-                      <Text fontSize={2}>{title}</Text>
+                      <Text fontSize={1}>{title}</Text>
                       <Box mt={3}>
-                        <Text.span color='grey' fontWeight='bold' fontSize={2}>
+                        <Text.span color='grey' fontWeight='bold' fontSize={1}>
                           Email:{' '}
                         </Text.span>
-                        <Text.span color='grey' fontSize={2}>
+                        <Text.span color='grey' fontSize={1}>
                           {emailAddress}
                         </Text.span>
                       </Box>
                       <Box>
-                        <Text.span color='grey' fontWeight='bold' fontSize={2}>
+                        <Text.span color='grey' fontWeight='bold' fontSize={1}>
                           M:{' '}
                         </Text.span>
-                        <Text.span color='grey' fontSize={2}>
+                        <Text.span color='grey' fontSize={1}>
                           {phoneNumber}
                         </Text.span>
                       </Box>
@@ -125,16 +144,44 @@ const Footer = ({ bg }) => {
               </Box>
             </Flex>
           </Box>
-          <Box bg='grey' p={[3, 5]} width={[1, 1 / 3]}>
-            <Box>
-              <Text fontSize={5} color='white' fontWeight='bold'>
-                pathway
-              </Text>
-              <BodyText
-                color='white'
-                html={companyDetails.childMarkdownRemark.html}
-              />
-            </Box>
+          <Box bg='grey' p={[3, 4]} width={[1, 1, 1 / 3]}>
+            <Flex flexWrap='wrap'>
+              <Box width={[1, 1, 1 / 2]}>
+                <Box mb={4}>
+                  <Box mb={3}>
+                    <Image fixed={companyLogo.fixed} />
+                  </Box>
+                  <Text fontSize={1} color='white'>
+                    {companyNumber}
+                  </Text>
+                  <Text fontSize={1} color='white'>
+                    {charityNumber}
+                  </Text>
+                </Box>
+                <Flex>
+                  {socialMediaIcons.map(({ icon, url }) => (
+                    <Box key={url}>
+                      <Box mr={3}>
+                        <a href={url}>
+                          <Image fixed={icon.fixed} />
+                        </a>
+                      </Box>
+                    </Box>
+                  ))}
+                </Flex>
+              </Box>
+              <Box mt={[3, 0]} width={[1, 1, 1 / 2]}>
+                <Flex
+                  height='100%'
+                  justifyContent={['flex-start', 'flex-start', 'flex-end']}
+                  alignItems='flex-end'
+                >
+                  <Box>
+                    <Image fixed={regulatorLogo.fixed} />
+                  </Box>
+                </Flex>
+              </Box>
+            </Flex>
           </Box>
         </Flex>
       </Box>
