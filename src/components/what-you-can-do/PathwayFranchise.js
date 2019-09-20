@@ -48,7 +48,7 @@ const MainSection = () => {
     pathwayFranchiseBenefits
   } = data.allContentfulWhatYouCanDoPage.edges[0].node
   return (
-    <Section>
+    <Section pt={0}>
       <Animation>
         <SectionTitle>{franchiseSectionTitle}</SectionTitle>
       </Animation>

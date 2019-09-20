@@ -39,13 +39,12 @@ const Letter = () => {
   } = data.allContentfulHomePage.edges[0].node
   return (
     <Section>
-      <Box mb={4}>
+      <Box>
         <Animation>
           <IntroTitle textAlign='center' color='blue'>
             {letterIntroTitle}
           </IntroTitle>
         </Animation>
-
         <Animation>
           <SectionTitle textAlign='center'>{letterTitle}</SectionTitle>
         </Animation>

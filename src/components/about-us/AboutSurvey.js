@@ -8,11 +8,15 @@ import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import Tagline from '../typography/Tagline'
-import Link from '../mdx/Link'
 import Text from '../typography/Text'
 
 const Bold = props => <Text.span color='grey'>{props.children}</Text.span>
 const H1 = props => <Tagline color='white'>{props.children}</Tagline>
+const Link = props => (
+  <a style={{ color: '#4A4A4A' }} {...props}>
+    {props.children}
+  </a>
+)
 
 const components = {
   h1: H1,
@@ -45,7 +49,7 @@ const AboutSurvey = () => {
           <Box width={[1, 0.15]}>
             <KeyStatsStamp />
           </Box>
-          <Box my={[0, 5]} width={[1, 0.85]}>
+          <Box width={[1, 0.85]}>
             <Animation>
               <MDXRenderer>{studyText.childMdx.body}</MDXRenderer>
             </Animation>

@@ -62,17 +62,17 @@ const PathwayFranchiseeRequests = () => {
           <SectionTitle>{nextStepsTitle}</SectionTitle>
         </Animation>
         <Animation>
-          <BodyText html={nextStepsContent.childMarkdownRemark.html} />
+          <Box mb={4}>
+            <BodyText html={nextStepsContent.childMarkdownRemark.html} />
+          </Box>
         </Animation>
-        <Box mb={3}>
-          <Animation>
-            <Subtitle color='blue'>{nextStepsSubtitle}</Subtitle>
-          </Animation>
-        </Box>
       </Box>
       <Flex flexWrap='wrap'>
         <Box width={[1, 1, 1 / 2]}>
           <Box pr={4} ml={[3, 3, 6]}>
+            <Animation>
+              <Subtitle color='blue'>{nextStepsSubtitle}</Subtitle>
+            </Animation>
             <Animation>
               {nextSteps.map((step, i) => (
                 <Box key={i} mb={4}>
@@ -85,7 +85,13 @@ const PathwayFranchiseeRequests = () => {
             </Animation>
           </Box>
         </Box>
-        <Box bg='green' p={[3, 3, 5]} width={[1, 1, 1 / 2]}>
+        <Flex
+          alignItems='center'
+          bg='green'
+          pt={5}
+          p={[3, 3, 5]}
+          width={[1, 1, 1 / 2]}
+        >
           <Animation>
             <ContactDetails
               name={name}
@@ -95,7 +101,7 @@ const PathwayFranchiseeRequests = () => {
               queriesTitle={queriesTitle}
             />
           </Animation>
-        </Box>
+        </Flex>
       </Flex>
     </Box>
   )

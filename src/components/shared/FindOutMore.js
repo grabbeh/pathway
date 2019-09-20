@@ -8,7 +8,6 @@ import BodyText from '../general/MarkdownText'
 import List from '../general/List'
 import { graphql, useStaticQuery } from 'gatsby'
 import ReactSVG from 'react-svg'
-import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
   query {
@@ -49,28 +48,21 @@ const FindOutMore = ({ bg, currentPath }) => {
         <Box
           width={[null, null, 1000]}
           maxWidth={[null, 800, 1000]}
-          pt={[4, 5]}
-          pb={4}
+          py={[4, 5]}
           mx={3}
         >
-          <Animation>
-            <SectionTitle>{title}</SectionTitle>
-          </Animation>
-          <Animation>
-            <BodyText html={content.childMarkdownRemark.html} />
-          </Animation>
+          <SectionTitle>{title}</SectionTitle>
+          <BodyText html={content.childMarkdownRemark.html} />
           <List mt={4}>
-            <Animation>
-              <Flex flexWrap='wrap'>
-                {nonCurrent.map(({ title, url, icon }) => (
-                  <SiteSection key={title} text={title} to={`/${url}`}>
-                    <Box height={200}>
-                      <ReactSVG src={icon.file.url} />
-                    </Box>
-                  </SiteSection>
-                ))}
-              </Flex>
-            </Animation>
+            <Flex flexWrap='wrap'>
+              {nonCurrent.map(({ title, url, icon }) => (
+                <SiteSection key={title} text={title} to={`/${url}`}>
+                  <Box height={200}>
+                    <ReactSVG src={icon.file.url} />
+                  </Box>
+                </SiteSection>
+              ))}
+            </Flex>
           </List>
         </Box>
       </Flex>

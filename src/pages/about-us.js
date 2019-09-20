@@ -16,8 +16,8 @@ const AboutPage = () => (
     <AboutSection />
     <Survey />
     <Services />
-    <Footnotes />
     <FindOutMore bg='lightGrey' />
+    <Footnotes />
     <Footer />
   </Wrapper>
 )

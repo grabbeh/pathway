@@ -40,6 +40,7 @@ const Hero = () => {
       imageData={heroImage.fluid}
       mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
       bg='green'
+      mobileColor='blue'
       headerColor='blue'
       subtitleColor='white'
     />
