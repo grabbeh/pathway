@@ -1,6 +1,6 @@
 import React from 'react'
 import Subtitle from '../typography/Subtitle'
-import Section from '../general/StandardSection'
+import Section from '../general/WideSection'
 import Box from '../general/Box'
 import { useStaticQuery, graphql } from 'gatsby'
 import Flex from '../general/Flex'
@@ -40,22 +40,23 @@ const SocialFranchise = () => {
   } = data.allContentfulHomePage.edges[0].node
   return (
     <MDXProvider components={components}>
-      <Box bg='lightGrey'>
-        <Section>
-          <Animation>
-            <Flex alignItems='center' flexWrap='wrap'>
-              <Box width={[1, 1, 1 / 2]}>
-                <Subtitle color='green'>{socialFranchiseSubtitle}</Subtitle>
-              </Box>
-              <Box width={[1, 1, 1 / 2]}>
+      <Section pt={3} pb={3} bg='lightGrey'>
+        <Animation>
+          <Flex alignItems='center' flexWrap='wrap'>
+            <Box width={[1, 1, 1 / 3]}>
+              <Subtitle color='green'>{socialFranchiseSubtitle}</Subtitle>
+            </Box>
+            <Box width={[1, 1, 2 / 3]}>
+              <Box>
+                {' '}
                 <MDXRenderer>
                   {socialFranchiseDescription.childMdx.body}
                 </MDXRenderer>
               </Box>
-            </Flex>
-          </Animation>
-        </Section>
-      </Box>
+            </Box>
+          </Flex>
+        </Animation>
+      </Section>
     </MDXProvider>
   )
 }
