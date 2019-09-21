@@ -8,6 +8,7 @@ import BodyText from '../general/MarkdownText'
 import List from '../general/List'
 import { graphql, useStaticQuery } from 'gatsby'
 import ReactSVG from 'react-svg'
+import Section from '../general/StandardSection'
 
 const query = graphql`
   query {
@@ -44,29 +45,21 @@ const FindOutMore = ({ bg, currentPath }) => {
 
   return (
     <Box bg={bg}>
-      <Flex justifyContent='center'>
-        <Box
-          width={[null, null, 1000]}
-          maxWidth={[null, null, 1000]}
-          pt={[4, 5]}
-          px={[3, 0]}
-          pb={0}
-        >
-          <SectionTitle>{title}</SectionTitle>
-          <BodyText html={content.childMarkdownRemark.html} />
-          <List mt={4}>
-            <Flex flexWrap='wrap'>
-              {nonCurrent.map(({ title, url, icon }) => (
-                <SiteSection key={title} text={title} to={`/${url}`}>
-                  <Box height={200}>
-                    <ReactSVG src={icon.file.url} />
-                  </Box>
-                </SiteSection>
-              ))}
-            </Flex>
-          </List>
-        </Box>
-      </Flex>
+      <Section pb={0} px={0}>
+        <SectionTitle>{title}</SectionTitle>
+        <BodyText html={content.childMarkdownRemark.html} />
+        <List mt={4}>
+          <Flex flexWrap='wrap'>
+            {nonCurrent.map(({ title, url, icon }) => (
+              <SiteSection key={title} text={title} to={`/${url}`}>
+                <Box height={200}>
+                  <ReactSVG src={icon.file.url} />
+                </Box>
+              </SiteSection>
+            ))}
+          </Flex>
+        </List>
+      </Section>
     </Box>
   )
 }
@@ -74,7 +67,7 @@ const FindOutMore = ({ bg, currentPath }) => {
 export default FindOutMore
 
 const SiteSection = ({ children, text, to }) => (
-  <Box mb={[4, 4, 0]} minWidth={[1, 250, 250]} width={[1, 1 / 2, 1 / 3]}>
+  <Box mb={[4, 4, 0]} minWidth={[1, 220, 220]} width={[1, 1 / 2, 1 / 3]}>
     <Box mr={[0, 4]} mb={3}>
       <Box mb={3}>
         <Text textAlign='center'>{children}</Text>
