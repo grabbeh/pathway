@@ -6,7 +6,12 @@ import Subtitle from '../typography/Subtitle'
 
 const Footnotes = ({ footnotes }) => (
   <Flex justifyContent='center'>
-    <Box maxWidth={[null, null, 1000]} px={[3, 0]} pb={[4, 5]}>
+    <Box
+      width={[null, null, 1000]}
+      maxWidth={[null, null, 1000]}
+      px={[3, 0]}
+      pb={[4, 5]}
+    >
       <Subtitle>Footnotes</Subtitle>
       <MarkdownText html={footnotes} />
     </Box>
