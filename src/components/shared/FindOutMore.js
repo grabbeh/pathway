@@ -47,9 +47,10 @@ const FindOutMore = ({ bg, currentPath }) => {
       <Flex justifyContent='center'>
         <Box
           width={[null, null, 1000]}
-          maxWidth={[null, 800, 1000]}
-          py={[4, 5]}
-          mx={3}
+          maxWidth={[null, null, 1000]}
+          pt={[4, 5]}
+          px={[3, 0]}
+          pb={0}
         >
           <SectionTitle>{title}</SectionTitle>
           <BodyText html={content.childMarkdownRemark.html} />

@@ -21,7 +21,9 @@ const query = graphql`
 const WWDFootnotes = () => {
   const data = useStaticQuery(query)
   const { footnotes } = data.allContentfulWwdPage.edges[0].node
-  return <Footnotes footnotes={footnotes.childMarkdownRemark.html} />
+  return (
+    <Footnotes bg='lightGrey' footnotes={footnotes.childMarkdownRemark.html} />
+  )
 }
 
 export default WWDFootnotes

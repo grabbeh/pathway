@@ -26,7 +26,7 @@ const page = ({ location }) => {
       <PathwayTeam />
       <PathwayTeamCosts />
       <FindOutMore bg='lightGrey' currentPath={location.pathname} />
-      <Footnotes />
+      <Footnotes bg='lightGrey' />
       <Footer />
     </Wrapper>
   )

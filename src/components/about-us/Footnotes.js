@@ -21,7 +21,9 @@ const query = graphql`
 const AboutFootnotes = () => {
   const data = useStaticQuery(query)
   const { footnotes } = data.allContentfulAboutPage.edges[0].node
-  return <Footnotes footnotes={footnotes.childMarkdownRemark.html} />
+  return (
+    <Footnotes bg='lightGrey' footnotes={footnotes.childMarkdownRemark.html} />
+  )
 }
 
 export default AboutFootnotes
