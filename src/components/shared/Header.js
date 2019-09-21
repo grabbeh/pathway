@@ -39,7 +39,7 @@ const Header = () => {
     <Box>
       <Flex>
         <Flex flex='1'>
-          <Box>
+          <Box pl={3} pt={2}>
             <Link tabIndex='0' to='/'>
               <Logo />
             </Link>

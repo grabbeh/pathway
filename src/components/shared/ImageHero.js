@@ -44,10 +44,10 @@ const Hero = props => {
     subtitleColor
   } = props
   return (
-    <Flex>
-      <Box ml={[0, 3, 5, null, 6]} width={1}>
+    <Flex justifyContent='center'>
+      <Box width={[1, 1, 1200]}>
         <Flex alignItems='center' height={500}>
-          <Box width={[1, 3 / 4]} px={[3, 3, 0]}>
+          <Box width={[1, 3 / 4, 1 / 2]} px={[3, 3, 0]}>
             <LoadAnimation load={load}>
               <Box width={[1, 1, 0.6]}>
                 <Heading color={[mobileColor, headerColor]}>{title}</Heading>
