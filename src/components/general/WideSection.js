@@ -2,11 +2,11 @@ import React from 'react'
 import Box from './Box'
 import Flex from './Flex'
 
-const WideSection = ({ id, children, bg }) => (
-  <section id={id}>
+const WideSection = ({ children, bg, pt = [4, 5], pb = [4, 5] }) => (
+  <section>
     <Box bg={bg}>
       <Flex justifyContent='center'>
-        <Box mx={3} maxWidth={1200} py={5}>
+        <Box mx={3} width={[1, 800, 1200]} pb={pb} pt={pt}>
           {children}
         </Box>
       </Flex>
