@@ -67,7 +67,7 @@ const PathwayModel = () => {
             </Flex>
           </Box>
           <Box width={[1, 1, 0.6]}>
-            <Box px={[3, 4]}>
+            <Box>
               <PathwayServicesList />
             </Box>
           </Box>
