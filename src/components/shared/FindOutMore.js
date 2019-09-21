@@ -45,7 +45,7 @@ const FindOutMore = ({ bg, currentPath }) => {
 
   return (
     <Box bg={bg}>
-      <Section pb={0} px={0}>
+      <Section pb={3} px={0}>
         <SectionTitle>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
         <List mt={4}>
