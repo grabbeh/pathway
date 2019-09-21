@@ -1,9 +1,9 @@
 import React from 'react'
 
-const WhatWeDoFact = () => (
+const WhatWeDoFact = ({ size }) => (
   <svg
-    width='486'
-    height='505'
+    width={size}
+    height={size}
     viewBox='0 0 486 505'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'

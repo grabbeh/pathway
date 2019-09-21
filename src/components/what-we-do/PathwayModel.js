@@ -57,21 +57,23 @@ const PathwayModel = () => {
         />
         <BodyText html={wwdPathwayModel.childMarkdownRemark.html} />
       </Section>
-      <WideSection pb={0} pt={3}>
+      <WideSection pb={0} pt={[0, 3]}>
         <Flex flexWrap='wrap'>
-          <Box width={[1, 1, 0.4]}>
+          <Box px={3} width={[1, 1, 0.4]}>
             <Flex justifyContent='center'>
-              <WhatWeDoFact />
+              <Box width={1}>
+                <WhatWeDoFact />
+              </Box>
             </Flex>
           </Box>
           <Box width={[1, 1, 0.6]}>
-            <Box pl={[3, 5]}>
+            <Box px={[3, 4]}>
               <PathwayServicesList />
             </Box>
           </Box>
         </Flex>
       </WideSection>
-      <Section pt={0}>
+      <Section pt={3}>
         <BodyText html={wwdPathwayModelPartTwo.childMarkdownRemark.html} />
       </Section>
     </Animation>
