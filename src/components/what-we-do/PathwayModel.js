@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Box from '../general/Box'
 import Section from '../general/StandardSection'
+import WideSection from '../general/WideSection'
 import SectionTitle from '../typography/SectionTitle'
 import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
@@ -56,16 +57,20 @@ const PathwayModel = () => {
         />
         <BodyText html={wwdPathwayModel.childMarkdownRemark.html} />
       </Section>
-      <Flex flexWrap='wrap'>
-        <Box px={[2, 4]} width={[1, 0.4]}>
-          <Flex justifyContent='center' alignItems='center'>
-            <WhatWeDoFact />
-          </Flex>
-        </Box>
-        <Box width={[1, 0.6]}>
-          <PathwayServicesList />
-        </Box>
-      </Flex>
+      <WideSection>
+        <Flex flexWrap='wrap'>
+          <Box width={[1, 1, 0.4]}>
+            <Flex justifyContent='center' alignItems='center'>
+              <WhatWeDoFact />
+            </Flex>
+          </Box>
+          <Box width={[1, 1, 0.6]}>
+            <Box pl={[0, 5]}>
+              <PathwayServicesList />
+            </Box>
+          </Box>
+        </Flex>
+      </WideSection>
       <Section pt={0}>
         <BodyText html={wwdPathwayModelPartTwo.childMarkdownRemark.html} />
       </Section>

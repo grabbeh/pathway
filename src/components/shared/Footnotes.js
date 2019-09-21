@@ -9,7 +9,7 @@ const Footnotes = ({ footnotes }) => (
     <Box
       width={[1, 800, 1000]}
       maxWidth={[null, 800, 1000]}
-      px={[3, 0]}
+      px={[3, 3, 0]}
       pb={[4, 5]}
     >
       <Subtitle>Footnotes</Subtitle>

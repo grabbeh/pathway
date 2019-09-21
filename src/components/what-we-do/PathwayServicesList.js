@@ -28,7 +28,7 @@ const PathwayServicesList = () => {
     pathwayServicesList
   } = data.allContentfulWwdPage.edges[0].node
   return (
-    <Box px={[3, 5]}>
+    <Box>
       <Subtitle color='green'>{pathwayServicesListTitle}</Subtitle>
       <MDXRenderer>{pathwayServicesList.childMdx.body}</MDXRenderer>
     </Box>

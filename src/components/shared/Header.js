@@ -36,10 +36,10 @@ const Header = () => {
   const { navigationItem } = data.allContentfulNavigationContainer.edges[0].node
   const state = useAppContext()
   return (
-    <Box py={2}>
+    <Box>
       <Flex>
         <Flex flex='1'>
-          <Box width={225}>
+          <Box>
             <Link tabIndex='0' to='/'>
               <Logo />
             </Link>

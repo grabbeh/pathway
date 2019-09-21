@@ -58,7 +58,7 @@ const StyledNumber = styled(Box)`
   margin-right: 20px;
   height: 40px;
   border-radius: 100%;
-  width: 40px;
+  min-width: 40px;
   cursor: pointer;
   color: #4a4a4a;
   padding-top: 3px;

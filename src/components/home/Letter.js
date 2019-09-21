@@ -61,7 +61,7 @@ const Letter = () => {
         </Box>
         <Box width={[1, 1, 1 / 2]}>
           <Animation>
-            <Box ml={[0, 4]}>
+            <Box ml={[0, 3, 4]}>
               <BodyText html={letterContent.childMarkdownRemark.html} />
               <Box mt={3}>
                 <Text fontSize={3} fontWeight='bold' color='green'>

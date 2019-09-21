@@ -51,7 +51,7 @@ const MainSection = () => {
       <Animation>
         <SectionTitle>{pathwayTeamTitle}</SectionTitle>
       </Animation>
-      <Box mb={4}>
+      <Box mb={3}>
         <Animation>
           <Subtitle color='green'>{pathwayTeamSubtitle}</Subtitle>
         </Animation>

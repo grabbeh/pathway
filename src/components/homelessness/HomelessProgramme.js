@@ -40,7 +40,7 @@ const HomelessProgramme = () => {
   return (
     <Box>
       <Flex flexWrap='wrap'>
-        <Box position='relative' width={[1, 1, 1 / 3]}>
+        <Box position='relative' width={[1, 0.5, 1 / 3]}>
           <BackgroundImage
             style={{ height: '100vh' }}
             imageData={programmeImage.fluid}
@@ -50,7 +50,7 @@ const HomelessProgramme = () => {
             </Box>
           </BackgroundImage>
         </Box>
-        <Box py={[4, 5]} bg='green' width={[1, 1, 2 / 3]}>
+        <Box py={[4, 5]} bg='green' width={[1, 0.5, 2 / 3]}>
           <Animation>
             <Flex justifyContent='center'>
               <Box p={[3, 3, 0]} width={[1, 1, 0.7]}>
