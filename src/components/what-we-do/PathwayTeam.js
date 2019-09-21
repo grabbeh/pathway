@@ -136,7 +136,7 @@ const PathwayTeam = () => {
           </Box>
         </Box>
       ) : (
-        <Section bg='lightGrey'>
+        <Section pb={3} bg='lightGrey'>
           <Animation>
             <SectionTitle>{pathwayTeamTitle}</SectionTitle>
           </Animation>
@@ -148,7 +148,7 @@ const PathwayTeam = () => {
               </Table>
             </Animation>
           </Box>
-          <Box>
+          <Box pt={2}>
             <BodyText
               html={hospitalTeamTableSubtitle.childMarkdownRemark.html}
             />

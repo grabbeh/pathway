@@ -30,7 +30,7 @@ const PathwayTeamCosts = () => {
   const { node } = data.allContentfulWwdPage.edges[0]
   const { hospitalTeamCostsTitle, hospitalTeamCostsTable } = node
   return (
-    <Section bg='lightGrey'>
+    <Section>
       <Animation>
         <SectionTitle>{hospitalTeamCostsTitle}</SectionTitle>
         <MDXRenderer>{hospitalTeamCostsTable.childMdx.body}</MDXRenderer>

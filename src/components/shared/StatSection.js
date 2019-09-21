@@ -43,7 +43,7 @@ const StatSection = ({ stats, html, mdx, title, bg }) => (
               {title && <SectionTitle color='white'>{title}</SectionTitle>}
               {mdx && <MDXRenderer>{mdx}</MDXRenderer>}
             </Animation>
-            <Box mt={[0, 4]}>
+            <Box>
               <Flex flexWrap='wrap'>
                 {stats.map(({ figure, text, subtitle }, i) => (
                   <Box mb={[3, 3, 0]} key={i} width={[1, 1 / 3, 1 / 3]}>
@@ -77,7 +77,7 @@ const Stat = ({ figure, text, subtitle }) => (
     >
       {figure}%
     </Text>
-    <Text mr={2} fontWeight='subtitle' fontSize={[4, 6]} color='white'>
+    <Text fontWeight='subtitle' fontSize={[4, 6]} color='white'>
       {subtitle}
     </Text>
     <Text fontWeight='subtitle' fontSize={[1, 3]} color='white'>
