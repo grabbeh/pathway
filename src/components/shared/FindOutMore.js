@@ -45,7 +45,7 @@ const FindOutMore = ({ bg, currentPath }) => {
 
   return (
     <Box bg={bg}>
-      <Section pb={3} px={[3, 3, 0]}>
+      <Section px={0} pb={3}>
         <SectionTitle>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
         <List mt={4}>
@@ -67,7 +67,7 @@ const FindOutMore = ({ bg, currentPath }) => {
 export default FindOutMore
 
 const SiteSection = ({ children, text, to }) => (
-  <Box mb={[4, 4, 0]} minWidth={[1, 220, 220]} width={[1, 1 / 2, 1 / 3]}>
+  <Box mb={[4, 4, 0]} minWidth={[1, 250, 250]} width={[1, 1 / 2, 1 / 3]}>
     <Box mr={[0, 4]} mb={3}>
       <Box mb={3}>
         <Text textAlign='center'>{children}</Text>

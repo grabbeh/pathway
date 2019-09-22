@@ -12,7 +12,7 @@ const StandardSection = ({
   <section>
     <Box bg={bg}>
       <Flex justifyContent='center'>
-        <Box px={px} width={[null, 800, 1000]} pb={pb} pt={pt}>
+        <Box px={px} mx={3} width={[null, 800, 1000]} pb={pb} pt={pt}>
           {children}
         </Box>
       </Flex>
