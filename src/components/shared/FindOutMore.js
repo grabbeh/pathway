@@ -36,7 +36,7 @@ const query = graphql`
   }
 `
 
-const FindOutMore = ({ bg, currentPath }) => {
+const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
   const data = useStaticQuery(query)
   const { title, content, links } = data.allContentfulFindOutMore.edges[0].node
   const nonCurrent = links.filter(l => {
@@ -45,7 +45,7 @@ const FindOutMore = ({ bg, currentPath }) => {
   return (
     <section>
       <Box bg={bg}>
-        <Section px={0} pb={3}>
+        <Section px={0} pb={pb}>
           <SectionTitle>{title}</SectionTitle>
           <BodyText html={content.childMarkdownRemark.html} />
           <List mt={4}>

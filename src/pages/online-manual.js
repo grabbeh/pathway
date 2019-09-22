@@ -11,7 +11,7 @@ const OnlineManual = () => (
     <SEO title='What you can do' />
     <Hero />
     <MainSection />
-    <FindOutMore bg='lightGrey' />
+    <FindOutMore pb={[4, 5]} bg='lightGrey' />
     <Footer />
   </Wrapper>
 )
