@@ -31,7 +31,8 @@
     "styled-components": "^4.3.2",
     "styled-system": "^5.0.18",
     "theme-ui": "^0.2.31",
-    "typeface-poppins": "0.0.72"
+    "typeface-poppins": "0.0.72",
+    "universal-cookie": "^4.0.2"
   },
   "scripts": {
     "build": "gatsby build",

@@ -42,25 +42,26 @@ const FindOutMore = ({ bg, currentPath }) => {
   const nonCurrent = links.filter(l => {
     return `/${l.url}` !== currentPath
   })
-
   return (
-    <Box bg={bg}>
-      <Section px={0} pb={3}>
-        <SectionTitle>{title}</SectionTitle>
-        <BodyText html={content.childMarkdownRemark.html} />
-        <List mt={4}>
-          <Flex flexWrap='wrap'>
-            {nonCurrent.map(({ title, url, icon }) => (
-              <SiteSection key={title} text={title} to={`/${url}`}>
-                <Box height={200}>
-                  <ReactSVG src={icon.file.url} />
-                </Box>
-              </SiteSection>
-            ))}
-          </Flex>
-        </List>
-      </Section>
-    </Box>
+    <section>
+      <Box bg={bg}>
+        <Section px={0} pb={3}>
+          <SectionTitle>{title}</SectionTitle>
+          <BodyText html={content.childMarkdownRemark.html} />
+          <List mt={4}>
+            <Flex flexWrap='wrap'>
+              {nonCurrent.map(({ title, url, icon }) => (
+                <SiteSection key={title} text={title} to={`/${url}`}>
+                  <Box height={200}>
+                    <ReactSVG src={icon.file.url} />
+                  </Box>
+                </SiteSection>
+              ))}
+            </Flex>
+          </List>
+        </Section>
+      </Box>
+    </section>
   )
 }
 

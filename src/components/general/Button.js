@@ -29,8 +29,6 @@ const Button = styled('button')(
 Button.displayName = 'Button'
 
 Button.defaultProps = {
-  p: 0,
-  m: 0,
   bg: 'white'
 }
 

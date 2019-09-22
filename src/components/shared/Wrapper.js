@@ -14,6 +14,7 @@ import ListItem from '../mdx/ListItem'
 import Paragraph from '../mdx/Paragraph'
 import Sup from '../mdx/Sup'
 import OrderedList from '../mdx/OrderedList'
+import CookieBanner from '../shared/CookieBanner'
 
 const components = {
   ol: OrderedList,
@@ -47,13 +48,10 @@ const query = graphql`
 const Wrapper = props => {
   const data = useStaticQuery(query)
   const [open, setOpen] = useState(false)
-  const [viewId, setInViewId] = useState()
   const context = {
     open,
     setOpen,
-    viewId,
-    toggleOpen: () => setOpen(!open),
-    addId: id => setInViewId(id)
+    toggleOpen: () => setOpen(!open)
   }
 
   return (
@@ -83,6 +81,7 @@ const Wrapper = props => {
               <Box aria-hidden={open} hidden={open} zIndex={open ? -1 : 9999}>
                 {props.children}
               </Box>
+              <CookieBanner />
             </Box>
           </ThemeProvider>
         </Context.Provider>
