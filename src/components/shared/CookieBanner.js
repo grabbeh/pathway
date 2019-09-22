@@ -7,16 +7,16 @@ import Flex from '../general/Flex'
 const cookies = new Cookies()
 
 const CookieBanner = () => {
-  let [clickedAccept, setClickedAccept] = useState(false)
+  let [closedNotice, setClosedNotice] = useState(false)
   let [previouslyClicked, setPreviouslyClicked] = useState(false)
 
   const setCookie = () => {
-    cookies.set('userHasAcceptedCookies', true, { path: '/', maxAge: 2592000 })
-    setClickedAccept(true)
+    cookies.set('userHasClosedNotice', true, { path: '/', maxAge: 2592000 })
+    setClosedNotice(true)
   }
 
   useEffect(() => {
-    const existing = cookies.get('userHasAcceptedCookies')
+    const existing = cookies.get('userHasClosedNotice')
     if (existing) {
       setPreviouslyClicked(true)
     }
@@ -24,7 +24,7 @@ const CookieBanner = () => {
 
   return (
     <Box>
-      {!previouslyClicked && !clickedAccept && (
+      {!previouslyClicked && !closedNotice && (
         <Box
           bg='blue'
           zIndex={999}
