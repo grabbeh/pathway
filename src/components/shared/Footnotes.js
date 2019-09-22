@@ -5,12 +5,14 @@ import Section from '../general/StandardSection'
 import Subtitle from '../typography/Subtitle'
 
 const Footnotes = ({ footnotes, bg }) => (
-  <Box bg={bg}>
-    <Section pt={0} px={0}>
-      <Subtitle>Footnotes</Subtitle>
-      <MarkdownText html={footnotes} />
-    </Section>
-  </Box>
+  <section>
+    <Box bg={bg}>
+      <Section pt={0} px={[3, 0]}>
+        <Subtitle>Footnotes</Subtitle>
+        <MarkdownText html={footnotes} />
+      </Section>
+    </Box>
+  </section>
 )
 
 export default Footnotes
