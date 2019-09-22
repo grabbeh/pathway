@@ -28,8 +28,7 @@ const CookieBanner = () => {
         <Box
           bg='blue'
           zIndex={999}
-          px={3}
-          py={2}
+          p={2}
           position='fixed'
           bottom={0}
           left={0}
@@ -54,7 +53,7 @@ const CookieBanner = () => {
               <Box mt={[2, 2, 0]} ml={[0, 0, 3]}>
                 <Button
                   px={3}
-                  py={2}
+                  py={1}
                   onClick={() => {
                     setCookie()
                   }}
