@@ -7,7 +7,7 @@ import Subtitle from '../typography/Subtitle'
 const Footnotes = ({ footnotes, bg }) => (
   <section>
     <Box bg={bg}>
-      <Section pt={0} px={[3, 0]}>
+      <Section pt={0} px={[3, 3, 0]}>
         <Subtitle>Footnotes</Subtitle>
         <MarkdownText html={footnotes} />
       </Section>
