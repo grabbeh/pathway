@@ -50,7 +50,7 @@ const CookieBanner = () => {
               alignItems='flex-end'
               justifyContent={['flex-start', 'flex-end']}
             >
-              <Box mt={[2, 2, 0]} ml={[0, 0, 3]}>
+              <Box mt={[2, 2, 0]} ml={[0, 3, 3]}>
                 <Button
                   px={3}
                   py={1}
