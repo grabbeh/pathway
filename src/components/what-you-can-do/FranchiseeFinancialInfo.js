@@ -29,7 +29,7 @@ const MainSection = () => {
     franchiseeFinancialInfoContent
   } = data.allContentfulWhatYouCanDoPage.edges[0].node
   return (
-    <Section>
+    <Section pb={3}>
       <Animation>
         <SectionTitle>{franchiseeFinancialInfoTitle}</SectionTitle>
       </Animation>

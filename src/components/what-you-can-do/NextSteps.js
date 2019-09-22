@@ -7,6 +7,7 @@ import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import Text from '../typography/Text'
 import Flex from '../general/Flex'
+import Section from '../general/StandardSection'
 
 const query = graphql`
   query {
@@ -57,16 +58,16 @@ const PathwayFranchiseeRequests = () => {
   } = data.allContentfulContactDetails.edges[0].node
   return (
     <Box>
-      <Box mx={[3, 3, 6]} maxWidth={[null, 800, 1000]}>
+      <Section pt={0} pb={0}>
         <Animation>
           <SectionTitle>{nextStepsTitle}</SectionTitle>
         </Animation>
         <Animation>
-          <Box mb={4}>
+          <Box mb={[2, 3, 4]}>
             <BodyText html={nextStepsContent.childMarkdownRemark.html} />
           </Box>
         </Animation>
-      </Box>
+      </Section>
       <Flex flexWrap='wrap'>
         <Box width={[1, 1, 1 / 2]}>
           <Box pr={4} ml={[3, 3, 6]}>
