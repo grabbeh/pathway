@@ -28,14 +28,19 @@ const CookieBanner = () => {
         <Box
           bg='blue'
           zIndex={999}
-          p={3}
+          px={3}
+          py={2}
           position='fixed'
           bottom={0}
           left={0}
           width={1}
         >
           <Flex flexWrap='wrap'>
-            <Flex flex='1 1 600px' justifyContent='flex-start'>
+            <Flex
+              alignItems='center'
+              flex='1 1 600px'
+              justifyContent='flex-start'
+            >
               <Text color='white' fontSize={0}>
                 By using this website you agree to our cookie policy. We use
                 cookies to operate the site and for analytics (so we can
