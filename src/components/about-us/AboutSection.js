@@ -7,6 +7,7 @@ import BodyText from '../typography/BodyText'
 import Subtitle from '../typography/Subtitle'
 import IntroTitle from '../typography/IntroTitle'
 import SectionTitle from '../typography/SectionTitle'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
@@ -21,8 +22,8 @@ const query = graphql`
             }
           }
           aboutDescription {
-            childMarkdownRemark {
-              html
+            childMdx {
+              body
             }
           }
         }
@@ -55,7 +56,7 @@ const AboutSection = () => {
       </Box>
       <Box>
         <Animation>
-          <BodyText html={aboutDescription.childMarkdownRemark.html} />
+          <MDXRenderer>{aboutDescription.childMdx.body}</MDXRenderer>
         </Animation>
       </Box>
     </Section>
