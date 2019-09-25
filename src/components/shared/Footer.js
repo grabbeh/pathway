@@ -152,7 +152,7 @@ const Footer = ({ bg }) => {
             </Flex>
           </Box>
           <Box bg='grey' p={[3, 4]} width={[1, 1, 1 / 3]}>
-            <Flex flexWrap='wrap'>
+            <Flex flexDirection='column' flexWrap='wrap'>
               <Box width={[1, 1, 1 / 2]}>
                 <Box mb={4}>
                   <Box mb={3}>
@@ -182,6 +182,7 @@ const Footer = ({ bg }) => {
                   height='100%'
                   justifyContent={['flex-start', 'flex-start', 'flex-end']}
                   alignItems='flex-end'
+                  
                 >
                   <Box>
                     <Image fixed={regulatorLogo.fixed} />
