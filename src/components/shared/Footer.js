@@ -97,9 +97,11 @@ const Footer = ({ bg }) => {
               </Box>
               <Box width={[1, 1, 2 / 3]}>
                 <Flex flexWrap='wrap'>
-                  <nav>
+                  
                     <Box width={[1, 1, 1 / 2]}>
+                  
                       <Box mr={3}>
+                        <nav>
                         <Subtitle color='green'>Quick links</Subtitle>
                         <List>
                           {navigation.navigationItem.map(
@@ -116,9 +118,10 @@ const Footer = ({ bg }) => {
                             <Link to='/privacy-policy'>Privacy policy</Link>
                           </ListItem>
                         </List>
+                        </nav>
                       </Box>
                     </Box>
-                  </nav>
+                 
                   <Box width={[1, 1, 1 / 2]}>
                     <Box mr={3}>
                       <Subtitle color='green'>Contact</Subtitle>
