@@ -97,24 +97,28 @@ const Footer = ({ bg }) => {
               </Box>
               <Box width={[1, 1, 2 / 3]}>
                 <Flex flexWrap='wrap'>
-                  <Box width={[1, 1, 1 / 2]}>
-                    <Box mr={3}>
-                      <Subtitle color='green'>Quick links</Subtitle>
-                      <List>
-                        {navigation.navigationItem.map(({ url, title }, i) => (
-                          <ListItem fontSize={1} mb={2} key={i}>
-                            <Link to={`/${url}`}>{title}</Link>
+                  <nav>
+                    <Box width={[1, 1, 1 / 2]}>
+                      <Box mr={3}>
+                        <Subtitle color='green'>Quick links</Subtitle>
+                        <List>
+                          {navigation.navigationItem.map(
+                            ({ url, title }, i) => (
+                              <ListItem fontSize={1} mb={2} key={i}>
+                                <Link to={`/${url}`}>{title}</Link>
+                              </ListItem>
+                            )
+                          )}
+                          <ListItem fontSize={1} mb={2}>
+                            <Link to='/'>Terms and conditions</Link>
                           </ListItem>
-                        ))}
-                        <ListItem fontSize={1} mb={2}>
-                          <Link to='/'>Terms and conditions</Link>
-                        </ListItem>
-                        <ListItem fontSize={1}>
-                          <Link to='/privacy-policy'>Privacy policy</Link>
-                        </ListItem>
-                      </List>
+                          <ListItem fontSize={1}>
+                            <Link to='/privacy-policy'>Privacy policy</Link>
+                          </ListItem>
+                        </List>
+                      </Box>
                     </Box>
-                  </Box>
+                  </nav>
                   <Box width={[1, 1, 1 / 2]}>
                     <Box mr={3}>
                       <Subtitle color='green'>Contact</Subtitle>
