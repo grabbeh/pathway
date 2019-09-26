@@ -6,7 +6,7 @@ const SectionTitle = props => (
     {...props}
     lineHeight={['medium', 'tagline']}
     fontWeight='bold'
-    color={props.color || 'grey'}
+    color={props.color || 'black'}
     fontSize={[5, 6]}
     my={0}
     mb={3}
