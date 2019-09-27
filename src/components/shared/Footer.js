@@ -152,7 +152,7 @@ const Footer = ({ bg }) => {
             </Flex>
           </Box>
           <Box bg='grey' p={[3, 4]} width={[1, 1, 1 / 3]}>
-            <Flex flexDirection='column' flexWrap='wrap'>
+            <Flex flexDirection={['column','column', 'row']} flexWrap='wrap'>
               <Box width={[1, 1, 1 / 2]}>
                 <Box mb={4}>
                   <Box mb={3}>
