@@ -17,6 +17,12 @@ const theme = {
     bold: 700,
     heavy: 900
   },
+  fonts: {
+    body:
+      'Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+    heading:
+      'Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
+  },
   lineHeights: {
     text: '24px',
     subtitle: '30px',

@@ -11,7 +11,7 @@ const Tagline = props => (
         fontSize={[5, 6]}
         fontWeight='subtitle'
         lineHeight={['medium', 'tagline']}
-        color={props.color}
+        color={props.color || 'grey'}
         html={props.html}
       />
     ) : (
@@ -20,7 +20,7 @@ const Tagline = props => (
         fontSize={[5, 6]}
         fontWeight='subtitle'
         lineHeight={['medium', 'tagline']}
-        color={props.color}
+        color={props.color || 'grey'}
       >
         {props.children}
       </Text.h2>

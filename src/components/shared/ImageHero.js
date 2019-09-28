@@ -49,12 +49,8 @@ const Hero = props => {
         <Flex alignItems='center' height={500}>
           <Box width={[1, 3 / 4, 0.5]} px={[3, 4]}>
             <LoadAnimation load={load}>
-              <Box>
-                <Heading color={[mobileColor, headerColor]}>{title}</Heading>
-              </Box>
-              <Box>
-                <Subtitle html={subtitle} color={subtitleColor} />
-              </Box>
+              <Heading color={[mobileColor, headerColor]}>{title}</Heading>
+              <Subtitle color={subtitleColor} html={subtitle} />
             </LoadAnimation>
           </Box>
         </Flex>

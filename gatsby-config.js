@@ -18,6 +18,8 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-theme-ui',
+    'gatsby-theme-style-guide',
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -28,14 +30,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-43666889-3",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        trackingId: 'UA-43666889-3',
         head: false,
-        // Setting this parameter is optional
         anonymize: true,
-        // Setting this parameter is also optional
         respectDNT: true
-      },
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,

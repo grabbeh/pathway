@@ -7,7 +7,7 @@ import Subtitle from '../typography/Subtitle'
 import BodyText from '../typography/BodyText'
 import Animation from '../animations/ScrollAnimation'
 import { useStaticQuery, graphql } from 'gatsby'
-import HomelessStats from './HomelessStats'
+import HomelessStats from './Stats'
 
 const query = graphql`
   query {

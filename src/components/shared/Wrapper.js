@@ -27,8 +27,8 @@ const components = {
 
 const Style = createGlobalStyle`
   * { box-sizing: border-box; }
-  body{ margin:0; padding: 0;
-    font-family: Poppins, system-ui, sans-serif;
+  body { margin:0; padding: 0;
+    font-family: Poppins, Segoe UI, system-ui, sans-serif;
     line-height: 1.5;
   }
 `
@@ -73,9 +73,9 @@ const Wrapper = props => {
         <html lang='en' />
       </Helmet>
       <Style />
-      <MDXProvider components={components}>
-        <Context.Provider value={context}>
-          <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <MDXProvider components={components}>
+          <Context.Provider value={context}>
             <Box>
               <Header />
               <Box aria-hidden={open} hidden={open} zIndex={open ? -1 : 9999}>
@@ -83,9 +83,9 @@ const Wrapper = props => {
               </Box>
               <CookieBanner />
             </Box>
-          </ThemeProvider>
-        </Context.Provider>
-      </MDXProvider>
+          </Context.Provider>
+        </MDXProvider>
+      </ThemeProvider>
     </Fragment>
   )
 }

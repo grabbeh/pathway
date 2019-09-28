@@ -97,11 +97,9 @@ const Footer = ({ bg }) => {
               </Box>
               <Box width={[1, 1, 2 / 3]}>
                 <Flex flexWrap='wrap'>
-                  
-                    <Box width={[1, 1, 1 / 2]}>
-                  
-                      <Box mr={3}>
-                        <nav>
+                  <Box width={[1, 1, 1 / 2]}>
+                    <Box mr={3}>
+                      <nav>
                         <Subtitle color='green'>Quick links</Subtitle>
                         <List>
                           {navigation.navigationItem.map(
@@ -118,10 +116,10 @@ const Footer = ({ bg }) => {
                             <Link to='/privacy-policy'>Privacy policy</Link>
                           </ListItem>
                         </List>
-                        </nav>
-                      </Box>
+                      </nav>
                     </Box>
-                 
+                  </Box>
+
                   <Box width={[1, 1, 1 / 2]}>
                     <Box mr={3}>
                       <Subtitle color='green'>Contact</Subtitle>
@@ -152,7 +150,7 @@ const Footer = ({ bg }) => {
             </Flex>
           </Box>
           <Box bg='grey' p={[3, 4]} width={[1, 1, 1 / 3]}>
-            <Flex flexDirection={['column','column', 'row']} flexWrap='wrap'>
+            <Flex flexDirection={['column', 'column', 'row']} flexWrap='wrap'>
               <Box width={[1, 1, 1 / 2]}>
                 <Box mb={4}>
                   <Box mb={3}>
@@ -182,7 +180,6 @@ const Footer = ({ bg }) => {
                   height='100%'
                   justifyContent={['flex-start', 'flex-start', 'flex-end']}
                   alignItems='flex-end'
-                  
                 >
                   <Box>
                     <Image fixed={regulatorLogo.fixed} />

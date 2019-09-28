@@ -1,0 +1,125 @@
+import {SectionTitle, Subtitle, Tagline, IntroTitle, BodyText, Text} from '../components/typography/index'
+import Stats from '../components/what-we-do/ULCHStats'
+import Layout from '../components/shared/MDXWrapper'
+import FindOutMore from '../components/shared/FindOutMore'
+import Colors from '../design-system/Colors'
+import FontSizes from '../design-system/FontSizes'
+import FontWeights from '../design-system/FontWeights'
+import CaseStudyStamp from '../svg/CaseStudyStamp'
+import KeyStatsStamp from '../svg/KeyStatsStamp'
+import WhatWeDoFact from '../svg/WhatWeDoFact'
+import Footer from '../components/shared/Footer'
+import Header from '../components/shared/Header'
+import Hero from '../components/homelessness/Hero'
+import Letter from '../components/home/Letter'
+import Box from '../components/general/Box'
+import FullButton from '../components/shared/FullButton'
+import Footnotes from '../components/home/Footnotes'
+
+
+export default Layout
+
+# Pathway Design system
+
+This page gives details on the core design elements that form the Pathway site. It runs through from the basic typography and colors, through to core components and visual prompts.
+## Typography
+
+### SectionTitle 
+
+Used as main header for a new section 
+
+<SectionTitle>Section title</SectionTitle>
+
+### Tagline 
+
+Taglines are used as a supplement to the main content to draw out an important point for example
+
+<Tagline color='blue'>Tagline</Tagline>
+
+### Subtitle
+
+Used as subtext, often immediately below a section title element or as a sub-heading to highlight the content below.
+
+<Subtitle color='green'>Subtitle</Subtitle>
+
+### Body text 
+
+<Text>Sample text</Text>
+
+## Font sizes 
+
+A series of font sizes intended to provide a visual hierarchy
+
+<FontSizes />
+
+## Font weights 
+
+<FontWeights />
+
+## Colors
+
+<Colors />
+
+## Core components 
+
+Core components are a collection of various smaller components put together to provide drop-in components that will usually form part of pages.
+
+### Header
+
+<Header toggleOpen={() => { console.log("Clicked")}} open={false} />
+
+### Hero
+
+<Hero />
+
+Thie hero component is usually used as an introduction to a page and usually includes a photo
+
+### Find out more  
+
+This will be used at the bottom of a page to give links to other key pages
+
+<Box>
+<FindOutMore />
+</Box>
+
+### Footnotes
+
+Used to give additional references for content
+
+<Footnotes />
+
+### Footer
+
+<Footer />
+
+### Button 
+
+<Box width={300}>
+    <FullButton text='Click me'/>
+</Box>
+
+## Visual elements
+
+A range of tools to highlight key facts
+
+### Stats block
+
+Used to bring attention to a set of key statistics relevant to Pathway
+
+<Stats />
+
+### Fact bubbles
+
+<WhatWeDoFact size={400} />
+
+## Stamps
+
+Used as visual stamps to identify the relevant sections
+
+### Key stats 
+
+<KeyStatsStamp />
+
+### Case study 
+
+<CaseStudyStamp />
