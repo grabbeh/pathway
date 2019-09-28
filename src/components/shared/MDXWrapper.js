@@ -13,13 +13,20 @@ import Paragraph from '../mdx/Paragraph'
 import Sup from '../mdx/Sup'
 import OrderedList from '../mdx/OrderedList'
 
+const Code = props => (
+  <Box bg='grey' lineHeight={0} p={3}>
+    <code {...props} style={{ fontSize: '15px', color: 'white' }} />
+  </Box>
+)
+
 const components = {
   ol: OrderedList,
   table: Table,
   ul: List,
   li: ListItem,
   p: Paragraph,
-  sup: Sup
+  sup: Sup,
+  code: Code
 }
 
 const Style = createGlobalStyle`

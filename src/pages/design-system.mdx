@@ -1,4 +1,4 @@
-import {SectionTitle, Subtitle, Tagline, IntroTitle, BodyText, Text} from '../components/typography/index'
+import { SectionTitle, Subtitle, Tagline, IntroTitle, BodyText, Text } from '../components/typography/index'
 import Stats from '../components/what-we-do/ULCHStats'
 import Layout from '../components/shared/MDXWrapper'
 import FindOutMore from '../components/shared/FindOutMore'
@@ -15,13 +15,14 @@ import Letter from '../components/home/Letter'
 import Box from '../components/general/Box'
 import FullButton from '../components/shared/FullButton'
 import Footnotes from '../components/home/Footnotes'
-
+import Section from '../components/general/StandardSection'
 
 export default Layout
 
 # Pathway Design system
 
 This page gives details on the core design elements that form the Pathway site. It runs through from the basic typography and colors, through to core components and visual prompts.
+
 ## Typography
 
 ### SectionTitle 
@@ -95,7 +96,7 @@ Used to give additional references for content
 ### Button 
 
 <Box width={300}>
-    <FullButton text='Click me'/>
+    <FullButton to='/design-system' text='Click me'/>
 </Box>
 
 ## Visual elements
@@ -123,3 +124,29 @@ Used as visual stamps to identify the relevant sections
 ### Case study 
 
 <CaseStudyStamp />
+
+## Example
+
+<Section bg='lightGrey'>
+<SectionTitle>
+Title
+</SectionTitle>
+<Subtitle color='green'>
+  Subtitle
+</Subtitle>
+<Text>Lorem ipsum dolor sit amet, te ius detracto tacimates, eos senserit reprehendunt eu, id eirmod facilis his. Ex animal probatus quaerendum vix, melius deseruisse appellantur no sit. Dico assueverit ei vis. Eos animal prodesset id. No intellegat voluptatum definitionem his, cu has euripidis aliquando, mei tantas viderer in. Singulis tractatos honestatis ne eum.</Text>
+<Box mt={3} width={300}>
+<FullButton to='/design-system' text='Design system'/>
+</Box>
+</Section>
+
+```
+<Section bg='lightGrey'>
+  <SectionTitle>Title</SectionTitle>
+  <Subtitle color='green'>Subtitle</Subtitle>
+  <Text>...sample text</Text>
+  <Box width={300} mt={3}>
+    <FullButton to='/design-system' text='Design system'/>
+  </Box>
+</Section>
+```

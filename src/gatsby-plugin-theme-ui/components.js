@@ -1,5 +1,0 @@
-import React from 'react'
-
-export default {
-  h1: props => <h1 {...props}>{props.children}</h1>
-}

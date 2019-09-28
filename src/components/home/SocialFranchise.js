@@ -9,7 +9,7 @@ import Animation from '../animations/ScrollAnimation'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
-const Bold = props => <Text.span color='green'>{props.children}</Text.span>
+const Bold = props => <Text.span color='green' {...props} />
 
 const components = {
   strong: Bold

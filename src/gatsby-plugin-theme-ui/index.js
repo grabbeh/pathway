@@ -65,6 +65,11 @@ export default {
       color: 'grey',
       mt: 4,
       mb: 2
+    },
+    code: {
+      bg: 'black',
+      color: 'white',
+      p: 3
     }
   }
 }
