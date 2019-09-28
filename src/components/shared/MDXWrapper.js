@@ -12,10 +12,13 @@ import ListItem from '../mdx/ListItem'
 import Paragraph from '../mdx/Paragraph'
 import Sup from '../mdx/Sup'
 import OrderedList from '../mdx/OrderedList'
+import Text from '../typography/Text'
 
 const Code = props => (
-  <Box bg='grey' lineHeight={0} p={3}>
-    <code {...props} style={{ fontSize: '15px', color: 'white' }} />
+  <Box width={1} style={{ overflowX: 'scroll' }} bg='grey' lineHeight={0} p={3}>
+    <Text color='white' fontSize={2}>
+      <code {...props} />
+    </Text>
   </Box>
 )
 
