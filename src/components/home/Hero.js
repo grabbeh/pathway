@@ -42,7 +42,7 @@ const Hero = () => {
       bg='green'
       mobileColor='blue'
       headerColor='blue'
-      subtitleColor='black'
+      subtitleColor='white'
     />
   )
 }

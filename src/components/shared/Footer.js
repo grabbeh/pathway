@@ -150,19 +150,21 @@ const Footer = ({ bg }) => {
             </Flex>
           </Box>
           <Box bg='grey' p={[3, 4]} width={[1, 1, 1 / 3]}>
-            <Flex flexDirection={['column', 'column', 'row']} flexWrap='wrap'>
-              <Box width={[1, 1, 1 / 2]}>
-                <Box mb={4}>
-                  <Box mb={3}>
-                    <Image fixed={companyLogo.fixed} />
-                  </Box>
-                  <Text fontSize={1} color='white'>
-                    {companyNumber}
-                  </Text>
-                  <Text fontSize={1} color='white'>
-                    {charityNumber}
-                  </Text>
+            <Box width={[1, 1, 1, 1 / 2]}>
+              <Box mb={4}>
+                <Box mb={3}>
+                  <Image fixed={companyLogo.fixed} />
                 </Box>
+                <Text fontSize={1} color='white'>
+                  {companyNumber}
+                </Text>
+                <Text fontSize={1} color='white'>
+                  {charityNumber}
+                </Text>
+              </Box>
+            </Box>
+            <Flex justifyContent='space-between' flexWrap='wrap'>
+              <Box minWidth={150} width={[1, 1, 1 / 2]}>
                 <Flex>
                   {socialMediaIcons.map(({ icon, url }) => (
                     <Box key={url}>
@@ -175,16 +177,10 @@ const Footer = ({ bg }) => {
                   ))}
                 </Flex>
               </Box>
-              <Box mt={[3, 0]} width={[1, 1, 1 / 2]}>
-                <Flex
-                  height='100%'
-                  justifyContent={['flex-start', 'flex-start', 'flex-end']}
-                  alignItems='flex-end'
-                >
-                  <Box>
-                    <Image fixed={regulatorLogo.fixed} />
-                  </Box>
-                </Flex>
+              <Box width={[1, 1, 1 / 2]}>
+                <Box mt={[4, 4, 0]} minWidth={150}>
+                  <Image fixed={regulatorLogo.fixed} />
+                </Box>
               </Box>
             </Flex>
           </Box>
