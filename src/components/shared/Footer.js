@@ -120,7 +120,6 @@ const Footer = ({ bg }) => {
                       </nav>
                     </Box>
                   </Box>
-
                   <Box width={[1, 1, 1 / 2]}>
                     <Box mr={3}>
                       <Subtitle color='green'>Contact</Subtitle>
@@ -178,8 +177,8 @@ const Footer = ({ bg }) => {
                   ))}
                 </Flex>
               </Box>
-              <Box width={[1, 1, 1 / 2]}>
-                <Box mt={[4, 4, 0]} minWidth={150}>
+              <Box mt={[4, 4, 0]} width={[1, 1, 1 / 2]}>
+                <Box minWidth={150}>
                   <Image fixed={regulatorLogo.fixed} />
                 </Box>
               </Box>

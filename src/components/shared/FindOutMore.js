@@ -3,7 +3,7 @@ import {
   Box,
   Flex,
   MarkdownText as BodyText,
-  WideSection as Section
+  StandardSection as Section
 } from '../general/index'
 import { Text, SectionTitle } from '../typography/index'
 import FullButton from './FullButton'
