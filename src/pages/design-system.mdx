@@ -273,7 +273,7 @@ The Box takes a range of different attributes to build up an interface, includin
 ```
 ### Flex
 
-The flex component uses [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to build layouts. It's main use is to create responsive layouts so for example giving a two column structure on larger screen sizes, but flattening to one column on smaller screens.
+The flex component uses [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to build layouts. Its main use is to create responsive layouts so for example giving a two column structure on larger screen sizes, but flattening to one column on smaller screens.
 
 The below example means that on a larger screensize the two `Box` elements will sit side by side, and on a smaller screen, they'll shift to being one of top of the other.
 
@@ -284,8 +284,8 @@ The below example means that on a larger screensize the two `Box` elements will 
 
 ```jsx
 <Flex>
-  <Box height={100} bg='yellow' width={1/2} />
-  <Box height={100} bg='green' width={1/2} />
+  <Box height={100} bg='yellow' width={[1, 1/2]} />
+  <Box height={100} bg='green' width={1, 1/2]} />
 </Flex>
 ```
 
