@@ -361,6 +361,24 @@ As a general rule, the content in Contentful is simplified down to avoid giving 
 
 MDX comes into it because it's a way of giving more controls to the appearance of Markdown elements. For example `<ul>` elements are styled to give a transparent circle element rather a bullet point. 
 
+Here's an example. This markdown:
+
+```md
+# Title
+
+Paragraph one
+
+Paragraph two
+```
+
+translates to:
+
+```html
+<h1>Title</h1>
+<p>Paragraph one</p>
+<p>Paragraph two</p>
+```
+
 ## Example
 
 Putting it all together, here's an example section with corresponding code.
