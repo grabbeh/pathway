@@ -50,7 +50,7 @@ const PathwayModel = () => {
   return (
     <Animation>
       <Section pb={0}>
-        <SectionTitle>{pathwayModelTitle}</SectionTitle>
+        <SectionTitle text={pathwayModelTitle} />
         <Subtitle
           color='green'
           html={wwdPathwayModelSubtitle.childMarkdownRemark.html}

@@ -39,13 +39,13 @@ const MainSection = () => {
   return (
     <Section pt={[4, 3]}>
       <Animation>
-        <SectionTitle>{franchiseeProfileTitle}</SectionTitle>
+        <SectionTitle text={franchiseeProfileTitle} />
       </Animation>
       <Animation>
         <BodyText html={franchiseeProfileIntro.childMarkdownRemark.html} />
       </Animation>
       <Animation>
-        <Subtitle color='green'>{franchiseeProfileSubtitle}</Subtitle>
+        <Subtitle text={franchiseeProfileSubtitle} color='green' />
       </Animation>
       <Animation>
         <MDXRenderer>{franchiseeProfileContent.childMdx.body}</MDXRenderer>

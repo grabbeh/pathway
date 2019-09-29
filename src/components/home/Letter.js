@@ -41,12 +41,10 @@ const Letter = () => {
     <Section>
       <Box>
         <Animation>
-          <IntroTitle textAlign='center' color='blue'>
-            {letterIntroTitle}
-          </IntroTitle>
+          <IntroTitle text={letterIntroTitle} textAlign='center' color='blue' />
         </Animation>
         <Animation>
-          <SectionTitle textAlign='center'>{letterTitle}</SectionTitle>
+          <SectionTitle text={letterTitle} textAlign='center' />
         </Animation>
       </Box>
       <Flex justifyContent='space-between' flexWrap='wrap'>

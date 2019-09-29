@@ -32,10 +32,10 @@ const MainSection = () => {
   return (
     <Section>
       <Animation>
-        <SectionTitle>{mainSectionTitle}</SectionTitle>
+        <SectionTitle text={mainSectionTitle} />
       </Animation>
       <Animation>
-        <Subtitle color='blue'>{mainSectionSubtitle}</Subtitle>
+        <Subtitle text={mainSectionSubtitle} color='blue' />
       </Animation>
       <Animation>
         <BodyText html={mainSectionContent.childMarkdownRemark.html} />

@@ -30,7 +30,7 @@ const MainSection = () => {
   return (
     <Section pb={3}>
       <Animation>
-        <SectionTitle>{franchiseeFinancialInfoTitle}</SectionTitle>
+        <SectionTitle text={franchiseeFinancialInfoTitle} />
       </Animation>
       <Animation>
         <BodyText

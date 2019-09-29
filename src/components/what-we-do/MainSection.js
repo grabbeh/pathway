@@ -40,8 +40,8 @@ const MainSection = () => {
   return (
     <Section>
       <Animation>
-        <IntroTitle color='green'>{wwdIntro}</IntroTitle>
-        <SectionTitle>{wwdMainSectionTitle}</SectionTitle>
+        <IntroTitle text={wwdIntro} color='green' />
+        <SectionTitle text={wwdMainSectionTitle} />
         <Subtitle
           color='green'
           html={wwdMainSectionSubtitle.childMarkdownRemark.html}

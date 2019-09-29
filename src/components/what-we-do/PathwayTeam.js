@@ -107,7 +107,7 @@ const PathwayTeam = () => {
       {isMobile ? (
         <Box bg='lightGrey'>
           <Box px={3} pt={3}>
-            <SectionTitle>{pathwayTeamTitle}</SectionTitle>
+            <SectionTitle text={pathwayTeamTitle} />
           </Box>
           <PathwayTeamMobile
             patientRange='1 to 30'
@@ -134,7 +134,7 @@ const PathwayTeam = () => {
       ) : (
         <Section pb={3} bg='lightGrey'>
           <Animation>
-            <SectionTitle>{pathwayTeamTitle}</SectionTitle>
+            <SectionTitle text={pathwayTeamTitle} />
           </Animation>
           <Box my={3}>
             <Animation>

@@ -44,13 +44,13 @@ const CostEffective = () => {
   return (
     <Section>
       <Animation>
-        <SectionTitle>{pathwayTeamCostEffectivenessTitle}</SectionTitle>
+        <SectionTitle text={pathwayTeamCostEffectivenessTitle} />
       </Animation>
       <Animation>
         <BodyText html={wwdCostEffectiveSection.childMarkdownRemark.html} />
       </Animation>
       <Animation>
-        <Subtitle color='green'>Pathway hospital teams:</Subtitle>
+        <Subtitle text='Pathway hospital teams:' color='green' />
       </Animation>
       <Flex flexWrap='wrap'>
         {hospitalTeamBenefitsHolder.map(({ icon, mainContent }, i) => (

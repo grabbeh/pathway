@@ -39,8 +39,8 @@ const AboutSection = () => {
   return (
     <Section>
       <Animation>
-        <IntroTitle color='green'>{aboutIntroTitle}</IntroTitle>
-        <SectionTitle>{aboutTitle}</SectionTitle>
+        <IntroTitle text={aboutIntroTitle} color='green' />
+        <SectionTitle text={aboutTitle} />
       </Animation>
       <Box>
         <Animation>

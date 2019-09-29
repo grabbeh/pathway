@@ -41,7 +41,7 @@ const StatSection = ({ stats, html, mdx, title, bg }) => (
                   html={html}
                 />
               )}
-              {title && <SectionTitle color='white'>{title}</SectionTitle>}
+              {title && <SectionTitle text={title} color='white' />}
               {mdx && <MDXRenderer>{mdx}</MDXRenderer>}
             </Animation>
             <Box>

@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
   return (
     <Wrapper>
       <Section>
-        <SectionTitle color='green'>{title}</SectionTitle>
+        <SectionTitle color='green' text={title} />
         <BodyText html={content.childMarkdownRemark.html} />
       </Section>
       <Footer bg='lightGrey' />

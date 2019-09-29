@@ -101,7 +101,7 @@ const Footer = ({ bg }) => {
                   <Box width={[1, 1, 1 / 2]}>
                     <Box mr={3}>
                       <nav>
-                        <Subtitle color='green'>Quick links</Subtitle>
+                        <Subtitle text='Quick links' color='green' />
                         <List>
                           {navigation.navigationItem.map(
                             ({ url, title }, i) => (
@@ -122,7 +122,7 @@ const Footer = ({ bg }) => {
                   </Box>
                   <Box width={[1, 1, 1 / 2]}>
                     <Box mr={3}>
-                      <Subtitle color='green'>Contact</Subtitle>
+                      <Subtitle text='Contact' color='green' />
                       <Text fontWeight='bold' fontSize={1}>
                         {name}
                       </Text>

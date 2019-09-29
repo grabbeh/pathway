@@ -46,8 +46,8 @@ const HomelessnessMainSection = () => {
   return (
     <Section>
       <Animation>
-        <IntroTitle color='blue'>Homelessness</IntroTitle>
-        <SectionTitle>A major challenge to the NHS</SectionTitle>
+        <IntroTitle text='Homelessness' color='blue' />
+        <SectionTitle text='A major challenge to the NHS' />
       </Animation>
       <Box>
         <Animation>

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Text } from '../typography/index'
 
 const MarkdownText = props => (
@@ -9,5 +10,9 @@ const MarkdownText = props => (
     }}
   />
 )
+
+MarkdownText.propTypes = {
+  html: PropTypes.string.isRequired
+}
 
 export default MarkdownText

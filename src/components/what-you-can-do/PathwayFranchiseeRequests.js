@@ -39,7 +39,7 @@ const PathwayFranchiseeRequests = () => {
       <Flex flexWrap='wrap'>
         <Box pr={3} width={[1, 1, 1 / 2]}>
           <Animation>
-            <Subtitle color='blue'>{pathwayFranchiseeRequestsTitle}</Subtitle>
+            <Subtitle text={pathwayFranchiseeRequestsTitle} color='blue' />
           </Animation>
           <Animation>
             <MDXRenderer>

@@ -47,14 +47,14 @@ const MainSection = () => {
   return (
     <Section pt={0}>
       <Animation>
-        <SectionTitle>{franchiseSectionTitle}</SectionTitle>
+        <SectionTitle text={franchiseSectionTitle} />
       </Animation>
       <Animation>
         <BodyText html={franchiseSectionContent.childMarkdownRemark.html} />
       </Animation>
       <Box mb={3}>
         <Animation>
-          <Subtitle color='green'>{franchiseBenefitsTitle}</Subtitle>
+          <Subtitle text={franchiseBenefitsTitle} color='green' />
         </Animation>
       </Box>
       <Services services={pathwayFranchiseBenefits} />

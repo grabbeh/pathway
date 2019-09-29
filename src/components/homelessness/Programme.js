@@ -52,7 +52,7 @@ const HomelessProgramme = () => {
             <Flex justifyContent='center'>
               <Box p={[3, 3, 0]} width={[1, 1, 0.7]}>
                 <Box mb={3}>
-                  <IntroTitle color='white'>{programmeTitle}</IntroTitle>
+                  <IntroTitle text={programmeTitle} color='white' />
                 </Box>
                 <Box>
                   <Box>

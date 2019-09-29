@@ -38,10 +38,10 @@ Used as main header for a new section
 
 Used directly above `SectionTitle` to give some initial context
 
-<IntroTitle color='green'>Introduction</IntroTitle>
+<IntroTitle text='Introduction' color='green'/>
 
 ```jsx
-<IntroTitle>Introduction</IntroTitle>
+<IntroTitle text='Introduction' color='green'/>
 ```
 
 ### Tagline 
@@ -378,9 +378,7 @@ translates to:
 Putting it all together, here's an example section with corresponding code.
 
 <Section bg='lightGrey'>
-<IntroTitle color='green'>
-Intro
-</IntroTitle>
+<IntroTitle text='Intro' color='green'/>
 <SectionTitle>
 Title
 </SectionTitle>
@@ -395,7 +393,7 @@ Title
 
 ```jsx
 <Section bg='lightGrey'>
-  <IntroTitle color='green'>Intro</IntroTitle>
+  <IntroTitle color='green' text='Intro'/>
   <SectionTitle>Title</SectionTitle>
   <Subtitle color='blue'>Subtitle</Subtitle>
   <Text>...sample text</Text>

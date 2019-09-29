@@ -55,7 +55,7 @@ const PathwayFranchiseeRequests = () => {
     <Box>
       <Section pt={0} pb={0}>
         <Animation>
-          <SectionTitle>{nextStepsTitle}</SectionTitle>
+          <SectionTitle text={nextStepsTitle} />
         </Animation>
         <Animation>
           <Box mb={[2, 3, 4]}>
@@ -67,7 +67,7 @@ const PathwayFranchiseeRequests = () => {
         <Box width={[1, 1, 1 / 2]}>
           <Box pr={4} ml={[3, 3, 6]}>
             <Animation>
-              <Subtitle color='blue'>{nextStepsSubtitle}</Subtitle>
+              <Subtitle text={nextStepsSubtitle} color='blue' />
             </Animation>
             <Animation>
               {nextSteps.map((step, i) => (
@@ -75,7 +75,7 @@ const PathwayFranchiseeRequests = () => {
                   <Text fontSize={3} color='green'>
                     Step {i + 1}
                   </Text>
-                  <Subtitle mt={0}>{step.step}</Subtitle>
+                  <Subtitle text={step.step} mt={0} />
                 </Box>
               ))}
             </Animation>
@@ -114,7 +114,7 @@ const ContactDetails = ({
 }) => (
   <>
     <Box mb={4}>
-      <Subtitle color='white'>{queriesTitle}</Subtitle>
+      <Subtitle text={queriesTitle} color='white' />
     </Box>
     <Text fontSize={[2, 4]} fontWeight='bold' color='yellow'>
       {name}

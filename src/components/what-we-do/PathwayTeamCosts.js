@@ -32,7 +32,7 @@ const PathwayTeamCosts = () => {
   return (
     <Section>
       <Animation>
-        <SectionTitle>{hospitalTeamCostsTitle}</SectionTitle>
+        <SectionTitle text={hospitalTeamCostsTitle} />
         <MDXRenderer>{hospitalTeamCostsTable.childMdx.body}</MDXRenderer>
       </Animation>
     </Section>

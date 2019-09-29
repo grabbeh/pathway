@@ -49,11 +49,11 @@ const MainSection = () => {
   return (
     <Section bg='lightGrey'>
       <Animation>
-        <SectionTitle>{pathwayTeamTitle}</SectionTitle>
+        <SectionTitle text={pathwayTeamTitle} />
       </Animation>
       <Box mb={3}>
         <Animation>
-          <Subtitle color='green'>{pathwayTeamSubtitle}</Subtitle>
+          <Subtitle text={pathwayTeamSubtitle} color='green' />
         </Animation>
       </Box>
       <Tabs>
@@ -71,7 +71,7 @@ const MainSection = () => {
                 {franchiseOfferPhases.map(
                   ({ phase, steps, content, color }, i) => (
                     <Box key={i}>
-                      <Subtitle color={color}>{phase}</Subtitle>
+                      <Subtitle text={phase} color={color} />
                       <BodyText html={content.childMarkdownRemark.html} />
                       {steps && (
                         <Subtitle

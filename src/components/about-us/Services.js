@@ -37,7 +37,7 @@ const AboutServices = () => {
   } = data.allContentfulAboutPage.edges[0].node
   return (
     <Section>
-      <Subtitle color='blue'>{servicesSubtitle}</Subtitle>
+      <Subtitle color='blue' text={servicesSubtitle} />
       <Services services={servicesHolder} />
     </Section>
   )

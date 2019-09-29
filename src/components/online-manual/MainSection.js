@@ -34,11 +34,11 @@ const MainSection = () => {
   return (
     <Section>
       <Animation>
-        <SectionTitle>{title}</SectionTitle>
+        <SectionTitle text={title} />
       </Animation>
       <Box>
         <Animation>
-          <Subtitle color='blue'>{subtitle}</Subtitle>
+          <Subtitle color='blue' text={subtitle} />
         </Animation>
       </Box>
       <Box>

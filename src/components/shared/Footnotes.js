@@ -6,7 +6,7 @@ const Footnotes = ({ footnotes, bg }) => (
   <section>
     <Box bg={bg}>
       <Section pt={0}>
-        <Subtitle>Footnotes</Subtitle>
+        <Subtitle text='Footnotes' />
         <MarkdownText html={footnotes} />
       </Section>
     </Box>

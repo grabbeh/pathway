@@ -41,7 +41,7 @@ const SocialFranchise = () => {
         <Animation>
           <Flex alignItems='center' flexWrap='wrap'>
             <Box width={[1, 1, 1 / 3]}>
-              <Subtitle color='green'>{socialFranchiseSubtitle}</Subtitle>
+              <Subtitle color='green' text={socialFranchiseSubtitle} />
             </Box>
             <Box width={[1, 1, 2 / 3]}>
               <Box>
