@@ -1,9 +1,7 @@
 import React from 'react'
-import Box from '../general/Box'
-import BodyText from '../typography/BodyText'
-import Flex from '../general/Flex'
+import { Box, Flex } from '../general/index'
+import { BodyText, Text } from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
-import Text from '../typography/Text'
 import ReactSVG from 'react-svg'
 
 const Services = ({ services }) => (

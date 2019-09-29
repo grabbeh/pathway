@@ -1,11 +1,9 @@
 import React from 'react'
+import { FindOutMore, Footer, Wrapper } from '../components/shared/index'
 import Hero from '../components/homelessness/Hero'
-import Wrapper from '../components/shared/Wrapper'
 import MainSection from '../components/homelessness/MainSection'
 import Programme from '../components/homelessness/Programme'
 import Footnotes from '../components/homelessness/Footnotes'
-import FindOutMore from '../components/shared/FindOutMore'
-import Footer from '../components/shared/Footer'
 
 const Homelessness = props => (
   <Wrapper>

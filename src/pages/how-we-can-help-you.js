@@ -1,10 +1,12 @@
 import React from 'react'
-import Wrapper from '../components/shared/Wrapper'
-import Footer from '../components/shared/Footer'
-import FindOutMore from '../components/shared/FindOutMore'
+import {
+  FindOutMore,
+  seo as SEO,
+  Footer,
+  Wrapper
+} from '../components/shared/index'
 import MainSection from '../components/what-you-can-do/MainSection'
 import Hero from '../components/what-you-can-do/Hero'
-import SEO from '../components/shared/seo'
 import PathwayFranchise from '../components/what-you-can-do/PathwayFranchise'
 import PathwayTeam from '../components/what-you-can-do/PathwayTeam'
 import PathwayFranchiseeRequests from '../components/what-you-can-do/PathwayFranchiseeRequests'

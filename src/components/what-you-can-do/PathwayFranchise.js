@@ -1,12 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Section from '../general/StandardSection'
-import Box from '../general/Box'
-import SectionTitle from '../typography/SectionTitle'
-import Subtitle from '../typography/Subtitle'
-import BodyText from '../typography/BodyText'
+import { Box, StandardSection as Section } from '../general/index'
+import { BodyText, SectionTitle, Subtitle } from '../typography/index'
+import { Services } from '../shared/index'
 import Animation from '../animations/ScrollAnimation'
-import Services from '../shared/Services'
 
 const query = graphql`
   query {

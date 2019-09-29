@@ -1,19 +1,21 @@
 import React from 'react'
-import Box from '../general/Box'
-import Text from '../typography/Text'
-import Flex from '../general/Flex'
-import Burger from '../general/Burger'
+import {
+  Box,
+  Burger,
+  Button,
+  Flex,
+  InternalLink as Link,
+  List,
+  ListItem
+} from '../general/index'
+import { Text } from '../typography/Text'
 import { css } from 'theme-ui'
 import styled from 'styled-components'
 import Logo from './Logo'
 import Menu from './Menu'
-import Link from '../general/InternalLink'
-import List from '../general/List'
-import ListItem from '../general/ListItem'
 import { MdClose } from 'react-icons/md'
 import { useAppContext } from './Wrapper'
 import { useStaticQuery, graphql } from 'gatsby'
-import Button from '../general/Button'
 
 const query = graphql`
   query {

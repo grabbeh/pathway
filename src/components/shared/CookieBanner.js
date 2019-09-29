@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Cookies from 'universal-cookie'
-import Box from '../general/Box'
-import Button from '../general/Button'
-import Text from '../typography/Text'
-import Flex from '../general/Flex'
+import { Box, Button, Flex } from '../general/index'
+import { Text } from '../typography/index'
 const cookies = new Cookies()
 
 const CookieBanner = () => {

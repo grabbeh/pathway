@@ -1,12 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Section from '../general/WideSection'
-import Box from '../general/Box'
-import Tagline from '../typography/Tagline'
-import Subtitle from '../typography/Subtitle'
+import { Box, Flex, WideSection as Section } from '../general/index'
+import { Subtitle, Tagline } from '../typography/index'
+import { HideOnMobile } from '../shared/HideOnMobile'
 import Animation from '../animations/ScrollAnimation'
-import Flex from '../general/Flex'
-import HideOnMobile from '../shared/HideOnMobile'
 import CaseStudyStamp from '../../svg/CaseStudyStamp'
 
 const query = graphql`

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Section from '../general/StandardSection'
-import Subtitle from '../typography/Subtitle'
-import Services from '../shared/Services'
+import { StandardSection as Section } from '../general/index'
+import { Subtitle } from '../typography/Subtitle'
+import { Services } from '../shared/index'
 
 const query = graphql`
   query {

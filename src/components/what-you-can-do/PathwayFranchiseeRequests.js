@@ -1,10 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Section from '../general/StandardSection'
-import Box from '../general/Box'
-import Subtitle from '../typography/Subtitle'
+import { Box, Flex, StandardSection as Section } from '../general/index'
+import { Subtitle } from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
-import Flex from '../general/Flex'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import WhatYouCanDoFact from '../../svg/WhatYouCanDoFact.js'
 

@@ -1,13 +1,13 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Box from '../general/Box'
-import Section from '../general/StandardSection'
-import WideSection from '../general/WideSection'
-import SectionTitle from '../typography/SectionTitle'
-import Subtitle from '../typography/Subtitle'
-import BodyText from '../typography/BodyText'
+import {
+  Box,
+  Flex,
+  StandardSection as Section,
+  WideSection
+} from '../general/index'
+import { BodyText, SectionTitle, Subtitle } from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
-import Flex from '../general/Flex'
 import PathwayServicesList from '../what-we-do/PathwayServicesList'
 import WhatWeDoFact from '../../svg/WhatWeDoFact'
 

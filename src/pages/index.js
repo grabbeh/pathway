@@ -1,12 +1,14 @@
 import React from 'react'
-import Wrapper from '../components/shared/Wrapper'
-import SEO from '../components/shared/seo'
-import FindOutMore from '../components/shared/FindOutMore'
+import {
+  FindOutMore,
+  Footer,
+  seo as SEO,
+  Wrapper
+} from '../components/shared/index'
 import Stats from '../components/home/HomeStats'
 import Hero from '../components/home/Hero'
 import SocialFranchise from '../components/home/SocialFranchise'
 import Letter from '../components/home/Letter'
-import Footer from '../components/shared/Footer'
 import Footnotes from '../components/home/Footnotes'
 
 const IndexPage = () => (

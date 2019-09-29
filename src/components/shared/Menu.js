@@ -1,10 +1,6 @@
 import React from 'react'
-import Box from '../general/Box'
-import Flex from '../general/Flex'
-import Text from '../typography/Text'
-import Link from '../general/InternalLink'
-import List from '../general/List'
-import ListItem from '../general/ListItem'
+import { Box, Flex, Link, List, ListItem } from '../general/index'
+import { Text } from '../typography/index'
 import styled from 'styled-components'
 
 const Menu = ({ open, toggleOpen, navigationItems }) => {

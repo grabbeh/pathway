@@ -1,16 +1,17 @@
 import React from 'react'
-import Box from '../general/Box'
-import Text from '../typography/Text'
-import Flex from '../general/Flex'
-import Section from '../general/WideSection'
-import SectionTitle from '../typography/SectionTitle'
+import {
+  Box,
+  Flex,
+  MarkdownText,
+  WideSection as Section
+} from '../general/index'
+import { Text, SectionTitle } from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
-import MarkdownText from '../general/MarkdownText'
 import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
-const H1 = props => <SectionTitle color='white'>{props.children}</SectionTitle>
+const H1 = props => <SectionTitle color='white' {...props} />
 const Link = props => (
   <a {...props} style={{ color: 'white' }}>
     {props.children}

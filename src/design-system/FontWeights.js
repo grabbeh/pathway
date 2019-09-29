@@ -1,8 +1,7 @@
 import React from 'react'
 import theme from '../gatsby-plugin-theme-ui/index'
-import Box from '../components/general/Box'
-import Flex from '../components/general/Flex'
-import Text from '../components/typography/Text'
+import { Box, Flex } from '../components/general/index'
+import { Text } from '../components/typography/index'
 
 const FontWeights = () => {
   return (

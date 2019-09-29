@@ -1,8 +1,11 @@
 import React from 'react'
+import {
+  FindOutMore,
+  Footer,
+  seo as SEO,
+  Wrapper
+} from '../components/shared/index'
 import Hero from '../components/what-we-do/Hero'
-import Wrapper from '../components/shared/Wrapper'
-import FindOutMore from '../components/shared/FindOutMore'
-import SEO from '../components/shared/seo'
 import MainSection from '../components/what-we-do/MainSection'
 import CaseStudy from '../components/what-we-do/CaseStudy'
 import PathwayModel from '../components/what-we-do/PathwayModel'
@@ -10,7 +13,6 @@ import ULCHStats from '../components/what-we-do/ULCHStats'
 import CostEffective from '../components/what-we-do/CostEffective'
 import PathwayTeamCosts from '../components/what-we-do/PathwayTeamCosts'
 import PathwayTeam from '../components/what-we-do/PathwayTeam'
-import Footer from '../components/shared/Footer'
 import Footnotes from '../components/what-we-do/Footnotes'
 
 const page = ({ location }) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import MarkdownText from '../general/MarkdownText'
-import Box from '../general/Box'
+import { Box } from '../general/index'
 import Text from './Text'
 
 const Subtitle = props => {

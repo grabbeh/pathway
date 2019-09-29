@@ -1,10 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Box from '../general/Box'
-import Text from '../typography/Text'
-import Flex from '../general/Flex'
+import { Box, Flex } from '../general/index'
+import { Text, BodyText } from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
-import BodyText from '../typography/BodyText'
 
 const query = graphql`
   query {

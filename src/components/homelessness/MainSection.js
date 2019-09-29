@@ -1,10 +1,11 @@
 import React from 'react'
-import Section from '../general/StandardSection'
-import Box from '../general/Box'
-import IntroTitle from '../typography/IntroTitle'
-import SectionTitle from '../typography/SectionTitle'
-import Subtitle from '../typography/Subtitle'
-import BodyText from '../typography/BodyText'
+import { Box, StandardSection as Section } from '../general/index'
+import {
+  BodyText,
+  IntroTitle,
+  SectionTitle,
+  Subtitle
+} from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
 import { useStaticQuery, graphql } from 'gatsby'
 import HomelessStats from './Stats'

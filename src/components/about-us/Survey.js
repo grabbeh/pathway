@@ -1,14 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Box from '../general/Box'
+import { Box, Flex, WideSection as Section } from '../general/index'
+import { Tagline, Text } from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
-import Section from '../general/WideSection'
-import Flex from '../general/Flex'
 import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
-import Tagline from '../typography/Tagline'
-import Text from '../typography/Text'
 
 const Bold = props => <Text.span color='grey'>{props.children}</Text.span>
 const H1 = props => <Tagline color='white'>{props.children}</Tagline>

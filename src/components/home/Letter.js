@@ -1,14 +1,13 @@
 import React from 'react'
-import Section from '../general/CenterSection'
-import Text from '../typography/Text'
-import Box from '../general/Box'
-import Flex from '../general/Flex'
+import { Box, Flex, CenterSection as Section } from '../general/index'
+import {
+  BodyText,
+  IntroTitle,
+  SectionTitle,
+  Tagline
+} from '../typography/index'
 import { useStaticQuery, graphql } from 'gatsby'
 import Animation from '../animations/ScrollAnimation'
-import IntroTitle from '../typography/IntroTitle'
-import SectionTitle from '../typography/SectionTitle'
-import Tagline from '../typography/Tagline'
-import BodyText from '../typography/BodyText'
 
 const query = graphql`
   query {

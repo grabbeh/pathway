@@ -1,11 +1,8 @@
 import React from 'react'
-import Box from '../general/Box'
+import { Box, Flex, BackgroundImage } from '../general/index'
+import { IntroTitle, Subtitle } from '../typography/index'
 import { useStaticQuery, graphql } from 'gatsby'
-import IntroTitle from '../typography/IntroTitle'
-import Flex from '../general/Flex'
-import Subtitle from '../typography/Subtitle'
 import Animation from '../animations/ScrollAnimation'
-import BackgroundImage from '../general/BackgroundImage'
 import CaseStudyStamp from '../../svg/CaseStudyStamp'
 
 const query = graphql`

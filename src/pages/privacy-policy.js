@@ -1,10 +1,8 @@
 import React from 'react'
-import Wrapper from '../components/shared/Wrapper'
-import Footer from '../components/shared/Footer'
-import SectionTitle from '../components/typography/SectionTitle'
-import BodyText from '../components/typography/BodyText'
+import { Footer, Wrapper } from '../components/shared/index'
+import { BodyText, SectionTitle } from '../components/typography/index'
+import { StandardSection as Section } from '../components/general/StandardSection'
 import { graphql, useStaticQuery } from 'gatsby'
-import StandardSection from '../components/general/WideSection'
 
 const query = graphql`
   query {
@@ -28,10 +26,10 @@ const PrivacyPolicy = () => {
   const { content, title } = data.allContentfulLegalDocument.edges[0].node
   return (
     <Wrapper>
-      <StandardSection>
+      <Section>
         <SectionTitle color='green'>{title}</SectionTitle>
         <BodyText html={content.childMarkdownRemark.html} />
-      </StandardSection>
+      </Section>
       <Footer bg='lightGrey' />
     </Wrapper>
   )

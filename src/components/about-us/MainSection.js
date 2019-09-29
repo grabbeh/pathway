@@ -1,11 +1,8 @@
 import React from 'react'
-import Box from '../general/Box'
+import { Box, StandardSection as Section } from '../general/index'
+import { SectionTitle, Subtitle, IntroTitle } from '../typography/index'
 import { graphql, useStaticQuery } from 'gatsby'
-import Section from '../general/StandardSection'
 import Animation from '../animations/ScrollAnimation'
-import Subtitle from '../typography/Subtitle'
-import IntroTitle from '../typography/IntroTitle'
-import SectionTitle from '../typography/SectionTitle'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`

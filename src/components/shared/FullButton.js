@@ -1,10 +1,7 @@
 import React from 'react'
-import Box from '../general/Box'
-import Link from '../general/InternalLink'
-import Flex from '../general/Flex'
-import Text from '../typography/Text'
+import { Box, Flex, InternalLink as Link, ListItem } from '../general/index'
+import { Text } from '../typography/Text'
 import { FaAngleRight } from 'react-icons/fa'
-import ListItem from '../general/ListItem'
 import styled from 'styled-components'
 
 const FullButton = ({ text, to }, props) => (

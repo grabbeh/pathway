@@ -1,5 +1,5 @@
 import React from 'react'
-import Footnotes from '../shared/Footnotes'
+import { Footnotes } from '../shared/indexx'
 import { useStaticQuery, graphql } from 'gatsby'
 
 const query = graphql`

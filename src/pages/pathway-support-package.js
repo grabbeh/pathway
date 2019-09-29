@@ -1,9 +1,11 @@
 import React from 'react'
-import Wrapper from '../components/shared/Wrapper'
-import Footer from '../components/shared/Footer'
-import FindOutMore from '../components/shared/FindOutMore'
+import {
+  FindOutMore,
+  Footer,
+  seo as SEO,
+  Wrapper
+} from '../components/shared/index'
 import Hero from '../components/online-manual/Hero'
-import SEO from '../components/shared/seo'
 import MainSection from '../components/online-manual/MainSection'
 
 const OnlineManual = () => (

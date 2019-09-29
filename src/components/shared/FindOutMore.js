@@ -1,14 +1,15 @@
 import React from 'react'
-import Box from '../general/Box'
-import Text from '../typography/Text'
-import Flex from '../general/Flex'
-import SectionTitle from '../typography/SectionTitle'
+import {
+  Box,
+  Flex,
+  MarkdownText as BodyText,
+  StandardSection as Section
+} from '../general/index'
+import { Text, SectionTitle } from '../typography/index'
 import FullButton from './FullButton'
-import BodyText from '../general/MarkdownText'
 import List from '../general/List'
 import { graphql, useStaticQuery } from 'gatsby'
 import ReactSVG from 'react-svg'
-import Section from '../general/StandardSection'
 
 const query = graphql`
   query {

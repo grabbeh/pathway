@@ -1,13 +1,14 @@
 import React from 'react'
-import Box from '../general/Box'
-import Text from '../typography/Text'
-import Flex from '../general/Flex'
-import Logo from '../shared/Logo'
-import Subtitle from '../typography/Subtitle'
-import List from '../general/List'
-import Link from '../general/InternalHoverLink'
+import {
+  Box,
+  Flex,
+  InternalHoverLink as Link,
+  List,
+  ListItem
+} from '../general/index'
+import { Logo } from '../shared/index'
+import { Text, Subtitle } from '../typography/index'
 import { graphql, useStaticQuery } from 'gatsby'
-import ListItem from '../general/ListItem'
 import Image from 'gatsby-image'
 
 const query = graphql`

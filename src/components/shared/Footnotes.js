@@ -1,8 +1,6 @@
 import React from 'react'
-import MarkdownText from '../general/MarkdownText'
-import Box from '../general/Box'
-import Section from '../general/StandardSection'
-import Subtitle from '../typography/Subtitle'
+import { Box, MarkdownText, StandardSection as Section } from '../general/index'
+import { Subtitle } from '../typography/Subtitle'
 
 const Footnotes = ({ footnotes, bg }) => (
   <section>

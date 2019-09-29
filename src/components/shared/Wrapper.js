@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../../gatsby-plugin-theme-ui/index'
-import Box from '../general/Box'
+import { Box } from '../general/index'
 import Header from './Header'
 import '../../index.css'
 import { MDXProvider } from '@mdx-js/react'
@@ -14,7 +14,7 @@ import ListItem from '../mdx/ListItem'
 import Paragraph from '../mdx/Paragraph'
 import Sup from '../mdx/Sup'
 import OrderedList from '../mdx/OrderedList'
-import CookieBanner from '../shared/CookieBanner'
+import { CookieBanner } from '../shared/index'
 
 const components = {
   ol: OrderedList,

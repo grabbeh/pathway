@@ -1,6 +1,7 @@
 import BodySpan from './BodySpan'
 import BodySubText from './BodySubText'
 import BodyText from './BodyText'
+import Heading from './Heading'
 import IntroTitle from './IntroTitle'
 import SectionTitle from './SectionTitle'
 import Subtitle from './Subtitle'
@@ -12,6 +13,7 @@ export {
   BodySubText,
   BodyText,
   IntroTitle,
+  Heading,
   SectionTitle,
   Subtitle,
   Tagline,
