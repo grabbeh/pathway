@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Flex, InternalLink as Link, ListItem } from '../general/index'
-import { Text } from '../typography/Text'
+import { Text } from '../typography/index'
 import { FaAngleRight } from 'react-icons/fa'
 import styled from 'styled-components'
 

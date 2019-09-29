@@ -1,7 +1,7 @@
 import React from 'react'
 import { Footer, Wrapper } from '../components/shared/index'
 import { BodyText, SectionTitle } from '../components/typography/index'
-import { StandardSection as Section } from '../components/general/StandardSection'
+import { StandardSection as Section } from '../components/general/index'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const query = graphql`

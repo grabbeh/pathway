@@ -1,5 +1,11 @@
 import React from 'react'
-import { Box, Flex, Link, List, ListItem } from '../general/index'
+import {
+  Box,
+  Flex,
+  InternalLink as Link,
+  List,
+  ListItem
+} from '../general/index'
 import { Text } from '../typography/index'
 import styled from 'styled-components'
 

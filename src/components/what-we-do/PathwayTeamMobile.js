@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Flex, List, ListItem } from '../general/index'
-import { Text } from '../typography/Text'
+import { Text } from '../typography/index'
 import styled from 'styled-components'
 
 const MobileStatBox = ({

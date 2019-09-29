@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { StatsSection } from '../shared/index'
+import { StatSection } from '../shared/index'
 
 const query = graphql`
   query {
@@ -28,7 +28,7 @@ const query = graphql`
 const GuyStats = () => {
   const data = useStaticQuery(query)
   const { statsTitle, stats } = data.allContentfulWhatYouCanDoPage.edges[0].node
-  return <StatsSection bg='blue' mdx={statsTitle.childMdx.body} stats={stats} />
+  return <StatSection bg='blue' mdx={statsTitle.childMdx.body} stats={stats} />
 }
 
 export default GuyStats

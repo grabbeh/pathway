@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { StatsSection } from '../shared/index'
+import { StatSection } from '../shared/index'
 
 const query = graphql`
   query {
@@ -32,7 +32,7 @@ const UCLHStats = () => {
   const { ulchStatsTitle, ulchStats } = data.allContentfulWwdPage.edges[0].node
 
   return (
-    <StatsSection
+    <StatSection
       bg='green'
       mdx={ulchStatsTitle.childMdx.body}
       stats={ulchStats}

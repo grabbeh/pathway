@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatsSection } from '../shared/index'
+import { StatSection } from '../shared/index'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const query = graphql`
@@ -31,7 +31,7 @@ const Stats = () => {
     statsSubtitle
   } = data.allContentfulHomePage.edges[0].node
   return (
-    <StatsSection
+    <StatSection
       bg='green'
       stats={statsHolder}
       mdx={statsSubtitle.childMdx.body}

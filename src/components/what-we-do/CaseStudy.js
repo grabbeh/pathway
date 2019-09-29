@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Box, Flex, WideSection as Section } from '../general/index'
 import { Subtitle, Tagline } from '../typography/index'
-import { HideOnMobile } from '../shared/HideOnMobile'
+import { HideOnMobile } from '../shared/index'
 import Animation from '../animations/ScrollAnimation'
 import CaseStudyStamp from '../../svg/CaseStudyStamp'
 

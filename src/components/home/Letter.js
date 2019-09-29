@@ -4,7 +4,8 @@ import {
   BodyText,
   IntroTitle,
   SectionTitle,
-  Tagline
+  Tagline,
+  Text
 } from '../typography/index'
 import { useStaticQuery, graphql } from 'gatsby'
 import Animation from '../animations/ScrollAnimation'

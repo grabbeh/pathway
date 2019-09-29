@@ -2,6 +2,7 @@ import BackgroundImage from './BackgroundImage'
 import Box from './Box'
 import Burger from './Burger'
 import Button from './Button'
+import CenterSection from './CenterSection'
 import Flex from './Flex'
 import InternalHoverLink from './InternalHoverLink'
 import InternalLink from './InternalLink'
@@ -21,6 +22,7 @@ export {
   Box,
   Burger,
   Button,
+  CenterSection,
   Flex,
   InternalHoverLink,
   InternalLink,

@@ -8,7 +8,7 @@ import {
   List,
   ListItem
 } from '../general/index'
-import { Text } from '../typography/Text'
+import { Text } from '../typography/index'
 import { css } from 'theme-ui'
 import styled from 'styled-components'
 import Logo from './Logo'
