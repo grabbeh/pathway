@@ -36,7 +36,7 @@ const query = graphql`
 const Header = props => {
   const data = useStaticQuery(query)
   const { navigationItem } = data.allContentfulNavigationContainer.edges[0].node
-  const state = props || useAppContext()
+  const state = useAppContext() || props
   return (
     <Box position='relative'>
       <Flex>

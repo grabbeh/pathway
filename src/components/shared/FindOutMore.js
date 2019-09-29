@@ -3,7 +3,7 @@ import {
   Box,
   Flex,
   MarkdownText as BodyText,
-  StandardSection as Section
+  WideSection as Section
 } from '../general/index'
 import { Text, SectionTitle } from '../typography/index'
 import FullButton from './FullButton'
@@ -45,8 +45,8 @@ const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
   })
   return (
     <section>
-      <Box bg={bg}>
-        <Section px={0} pb={pb}>
+      <Box>
+        <Section bg={bg} pb={pb}>
           <SectionTitle>{title}</SectionTitle>
           <BodyText html={content.childMarkdownRemark.html} />
           <List mt={4}>

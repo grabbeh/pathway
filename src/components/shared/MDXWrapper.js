@@ -11,7 +11,7 @@ import ListItem from '../mdx/ListItem'
 import Paragraph from '../mdx/Paragraph'
 import Sup from '../mdx/Sup'
 import OrderedList from '../mdx/OrderedList'
-import StandardSection from '../general/StandardSection'
+import { Box, Flex } from '../general'
 
 const components = {
   ol: OrderedList,
@@ -49,7 +49,11 @@ const Wrapper = props => {
       <ThemeProvider theme={theme}>
         <MDXProvider components={components}>
           <Context.Provider value={context}>
-            <StandardSection px={[2, 3]}>{props.children}</StandardSection>
+            <Flex justifyContent='center'>
+              <Box maxWidth={1000} width={1} px={[2, 3]}>
+                {props.children}
+              </Box>
+            </Flex>
           </Context.Provider>
         </MDXProvider>
       </ThemeProvider>
