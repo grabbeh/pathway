@@ -2,7 +2,6 @@ import React, { Fragment, useContext, useState } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import { Box } from '../general/index'
 import theme from '../../gatsby-plugin-theme-ui/index'
 import '../../index.css'
 import { MDXProvider } from '@mdx-js/react'
@@ -50,9 +49,7 @@ const Wrapper = props => {
       <ThemeProvider theme={theme}>
         <MDXProvider components={components}>
           <Context.Provider value={context}>
-            <StandardSection>
-              <Box p={3}>{props.children}</Box>
-            </StandardSection>
+            <StandardSection px={[2, 3]}>{props.children}</StandardSection>
           </Context.Provider>
         </MDXProvider>
       </ThemeProvider>
