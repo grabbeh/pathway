@@ -1,9 +1,8 @@
 import React, { Fragment, useContext, useState } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import Box from '../general/Box'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import theme from '../../theme.js'
+import theme from '../../gatsby-plugin-theme-ui/index'
 import '../../index.css'
 import { MDXProvider } from '@mdx-js/react'
 import Table from '../mdx/Table'
@@ -12,15 +11,22 @@ import ListItem from '../mdx/ListItem'
 import Paragraph from '../mdx/Paragraph'
 import Sup from '../mdx/Sup'
 import OrderedList from '../mdx/OrderedList'
-import Text from '../typography/Text'
+import StandardSection from '../general/StandardSection'
 
+/*
 const Code = props => (
-  <Box width={1} style={{ overflowX: 'scroll' }} bg='grey' lineHeight={0} p={3}>
+  <Box
+    width={[1, 1 / 2]}
+    style={{ overflowX: 'auto' }}
+    bg='grey'
+    lineHeight={0}
+    p={3}
+  >
     <Text color='white' fontSize={2}>
       <code {...props} />
     </Text>
   </Box>
-)
+) */
 
 const components = {
   ol: OrderedList,
@@ -28,8 +34,7 @@ const components = {
   ul: List,
   li: ListItem,
   p: Paragraph,
-  sup: Sup,
-  code: Code
+  sup: Sup
 }
 
 const Style = createGlobalStyle`
@@ -52,26 +57,14 @@ const Wrapper = props => {
 
   return (
     <Fragment>
-      <Helmet
-        meta={[
-          {
-            name: 'description',
-            content: 'Pathway Social Franchise'
-          },
-          {
-            name: 'keywords',
-            content:
-              'Homelessness, franchises, charity, partnerships, hospitals'
-          }
-        ]}
-      >
+      <Helmet>
         <html lang='en' />
       </Helmet>
       <Style />
       <ThemeProvider theme={theme}>
         <MDXProvider components={components}>
           <Context.Provider value={context}>
-            <Box p={[2, 4]}>{props.children}</Box>
+            <StandardSection>{props.children}</StandardSection>
           </Context.Provider>
         </MDXProvider>
       </ThemeProvider>

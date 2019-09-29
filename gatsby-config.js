@@ -19,7 +19,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-theme-ui',
-    'gatsby-theme-style-guide',
     {
       resolve: `gatsby-source-contentful`,
       options: {

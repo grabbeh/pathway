@@ -15,8 +15,8 @@ const Colors = () => {
   return (
     <Flex flexWrap='wrap'>
       {Object.keys(colors).map((k, i) => (
-        <Box>
-          <Box key={i} mr={3} bg={colors[k]} height={120} width={120} />
+        <Box key={i}>
+          <Box mr={3} bg={colors[k]} height={120} width={120} />
           <Box>{colors[k]}</Box>
           <Box>{k}</Box>
         </Box>

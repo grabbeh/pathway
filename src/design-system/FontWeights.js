@@ -1,5 +1,5 @@
 import React from 'react'
-import theme from '../theme'
+import theme from '../gatsby-plugin-theme-ui/index'
 import Box from '../components/general/Box'
 import Flex from '../components/general/Flex'
 import Text from '../components/typography/Text'

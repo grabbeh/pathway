@@ -1,5 +1,16 @@
+import github from '@theme-ui/prism/presets/prism-coy.json'
+
+const Heading = {
+  fontFamily: 'heading',
+  fontWeight: 'bold',
+  color: 'grey',
+  mt: 4,
+  mb: 2
+}
+
 export default {
   breakpoints: ['40em', '56em', '64em'],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     blue: '#37AEE3',
     green: '#00A880',
@@ -39,37 +50,30 @@ export default {
     text: {
       color: 'grey'
     },
-    p: {
-      fontSize: 2
-    },
     h1: {
       fontSize: 8,
-      fontFamily: 'heading',
-      fontWeight: 'bold',
-      color: 'black',
-      mt: 4,
-      mb: 2
+      ...Heading
     },
     h2: {
       fontSize: 6,
-      fontFamily: 'heading',
-      fontWeight: 'bold',
-      color: 'grey',
-      mt: 4,
-      mb: 2
+      ...Heading
     },
     h3: {
       fontSize: 4,
-      fontFamily: 'heading',
-      fontWeight: 'bold',
-      color: 'grey',
-      mt: 4,
-      mb: 2
+      ...Heading
+    },
+    h4: {
+      ...Heading
     },
     code: {
-      bg: 'black',
-      color: 'white',
-      p: 3
+      p: 3,
+      fontSize: 3
+    },
+    pre: {
+      ...github
+    },
+    a: {
+      color: 'blue'
     }
   }
 }

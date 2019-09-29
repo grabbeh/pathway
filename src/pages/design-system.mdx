@@ -1,21 +1,24 @@
 import { SectionTitle, Subtitle, Tagline, IntroTitle, BodyText, Text } from '../components/typography/index'
-import Stats from '../components/what-we-do/ULCHStats'
 import Layout from '../components/shared/MDXWrapper'
-import FindOutMore from '../components/shared/FindOutMore'
 import Colors from '../design-system/Colors'
 import FontSizes from '../design-system/FontSizes'
 import FontWeights from '../design-system/FontWeights'
+import Spacing from '../design-system/Spacing'
+import Stats from '../components/what-we-do/ULCHStats'
+import FindOutMore from '../components/shared/FindOutMore'
 import CaseStudyStamp from '../svg/CaseStudyStamp'
 import KeyStatsStamp from '../svg/KeyStatsStamp'
 import WhatWeDoFact from '../svg/WhatWeDoFact'
 import Footer from '../components/shared/Footer'
 import Header from '../components/shared/Header'
-import Hero from '../components/homelessness/Hero'
+import HomelessnessHero from '../components/homelessness/Hero'
+import Section from '../components/general/StandardSection'
 import Letter from '../components/home/Letter'
 import Box from '../components/general/Box'
 import FullButton from '../components/shared/FullButton'
 import Footnotes from '../components/home/Footnotes'
-import Section from '../components/general/StandardSection'
+import Transform from '../design-system/transform'
+import Flex from '../components/general/Flex'
 
 export default Layout
 
@@ -23,13 +26,29 @@ export default Layout
 
 This page gives details on the core design elements that form the Pathway site. It runs through from the basic typography and colors, through to core components and visual prompts.
 
+We define the values for various attributes in a [theme](https://theme-ui.com/theme-spec). Defining values in one place can help to ensure consistency throughout the site.
+
 ## Typography
 
-### SectionTitle 
+### Section Title 
 
 Used as main header for a new section 
 
 <SectionTitle>Section title</SectionTitle>
+
+```jsx
+<SectionTitle>Section title</SectionTitle>
+```
+
+### Intro Title
+
+Used directly above `SectionTitle` to give some initial Context
+
+<IntroTitle>Introduction</IntroTitle>
+
+```jsx
+<IntroTitle>Introduction</IntroTitle>
+```
 
 ### Tagline 
 
@@ -37,15 +56,37 @@ Taglines are used as a supplement to the main content to draw out an important p
 
 <Tagline color='blue'>Tagline</Tagline>
 
+```jsx
+<Tagline color='blue'>Tagline</Tagline>
+```
+
 ### Subtitle
 
 Used as subtext, often immediately below a section title element or as a sub-heading to highlight the content below.
 
 <Subtitle color='green'>Subtitle</Subtitle>
 
+```jsx
+<Subtitle>Subtitle</Subtitle>
+```
+
 ### Body text 
 
 <Text>Sample text</Text>
+
+```jsx
+<Text>Sample text</Text>
+```
+
+### Examples
+
+This component makes use of `SectionTitle`, `Tagline`, `IntroTitle` and `Text`
+
+<Box mb={-400}>
+<Transform>
+<Letter />
+</Transform>
+</Box>
 
 ## Font sizes 
 
@@ -57,6 +98,29 @@ A series of font sizes intended to provide a visual hierarchy
 
 <FontWeights />
 
+### Example
+
+The components above should provide enough variety to put together a text flow with sufficient hierachy. However you can always use the `<Text>` component to apply whatever attributes you want that are still within the above scales.
+
+<Text fontSize={5} fontWeight='bold'>Example</Text>
+
+```jsx
+<Text fontSize={6} fontWeight='bold'>Example</Text>
+```
+
+## Spacing
+
+Spacing (margins, padding) is based on a scale defined in our theme. You can use values:
+
+- m (all margins)
+- my (vertical margin)
+- mx (horizontal margin)
+- ml, mt, mr, mb (left, top, right and bottom margins)
+
+Here's what it looks like to apply each of the spacing values in succession, as padding:
+
+<Spacing />
+
 ## Colors
 
 <Colors />
@@ -67,37 +131,84 @@ Core components are a collection of various smaller components put together to p
 
 ### Header
 
+Simple header that compacts menu items into standard hamburger on narrow screens. Relies on `React.Context` - see Wrapper below for more details.
+
 <Header toggleOpen={() => { console.log("Clicked")}} open={false} />
+
+```jsx
+<Header />
+```
 
 ### Hero
 
-<Hero />
+The hero component is usually used as an introduction to a page and includes a photo on desktop, which is automatically removed on mobile
 
-Thie hero component is usually used as an introduction to a page and usually includes a photo
+<Box mb={-250}>
+<Transform>
+<HomelessnessHero  />
+</Transform>
+</Box>
+
+```jsx
+<Hero 
+  bg='yellow'
+  mobileBg='black'
+  mobileColor='white'
+  title={heroTitle}
+  imageData={heroImage.fluid}
+  mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
+  headerColor='white'
+/>
+```
 
 ### Find out more  
 
-This will be used at the bottom of a page to give links to other key pages
+This will be used at the bottom of a page to give links to other key pages. The component automatically filters out the current page avoiding a link to the page the user is on.
 
-<Box>
-<FindOutMore />
+<Box mb={-250}>
+<Transform>
+<FindOutMore bg='lightGrey'/>
+</Transform>
 </Box>
+
+```jsx
+<FindOutMore />
+```
 
 ### Footnotes
 
-Used to give additional references for content
+Used to give additional references for content. It usually takes some markdown text.
 
+<Box mb={-50}>
 <Footnotes />
+</Box>
+
+```jsx
+<Footnotes footnotes={footnotes}/>
+```
 
 ### Footer
 
+<Box mb={-180}>
+<Transform>
 <Footer />
+</Transform>
+</Box>
+
+
+```jsx
+<Footer />
+```
 
 ### Button 
 
 <Box width={300}>
-    <FullButton to='/design-system' text='Click me'/>
+  <FullButton to='/design-system' text='Click me'/>
 </Box>
+
+```jsx
+<FullButton to='/design-system' text='Click me'/>
+```
 
 ## Visual elements
 
@@ -105,35 +216,163 @@ A range of tools to highlight key facts
 
 ### Stats block
 
-Used to bring attention to a set of key statistics relevant to Pathway
+Used to bring attention to a set of key statistics relevant to Pathway. 
 
+<Box mb={-150}>
+<Transform>
 <Stats />
+</Transform>
+</Box>
+
+The below builds on the generic components `StatsSection />` to add specific content. This means that changes to the underlying generic component will be reflected in all cases where the component is used. 
+
+Here's an example:
+
+```jsx
+const UCLHStats = () => {
+  const data = useStaticQuery(query)
+  const { ulchStatsTitle, ulchStats } = data.allContentfulWwdPage.edges[0].node
+  return (
+    <StatsSection
+      bg='green'
+      mdx={ulchStatsTitle.childMdx.body}
+      stats={ulchStats}
+    />
+  )
+}
+```
 
 ### Fact bubbles
 
-<WhatWeDoFact size={200} />
+<WhatWeDoFact size={400} />
 
-## Stamps
+### Stamps
 
-Used as visual stamps to identify the relevant sections
+Stamps are used to draw attention to sections and to create visual continuity between pages
 
-### Key stats 
+#### Key stats 
 
 <KeyStatsStamp />
 
-### Case study 
+#### Case study 
 
 <CaseStudyStamp />
+
+## Generic components
+
+The site uses a number of more generic components that are used as foundations for more complex components. These generic components are built using [Styled System](https://styled-system.com/) which provides an abstraction on top of CSS so rather than applying CSS styles, you can use values like `p` (padding) and `m` (margin).
+
+### Box
+
+The Box takes a range of different attributes to build up an interface, including spacing (`margin`, `padding`), layout (`width`) and colors (`bg`).
+
+<Box width={100} height={100} bg='green' />
+
+```jsx
+<Box width={100} height={100} bg='green' />
+```
+### Flex
+
+The flex component uses [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to build layouts. It's main use is to create responsive layouts so for example giving a two column structure on larger screen sizes, but flattening to one column on smaller screens.
+
+The below example means that on a larger screensize the two `Box` elements will sit side by side, and on a smaller screen, they'll shift to being one of top of the other.
+
+<Flex flexWrap='wrap'>
+<Box height={100} bg='blue' width={[1,1/2]} />
+<Box height={100} bg='turquoise' width={[1,1/2]} />
+</Flex>
+
+```jsx
+<Flex>
+  <Box height={100} bg='yellow' width={1/2} />
+  <Box height={100} bg='green' width={1/2} />
+</Flex>
+```
+
+### Section
+
+The `Section` component is used as a starting point for a section of a site, giving a standard responsive width and padding.
+
+<Section bg='lightGrey'/>
+
+```jsx
+<Section bg='lightGrey'/>
+```
+
+### Wrapper 
+
+The `Wrapper` component is used to provide a range of attributes to a page. Any page in the page directory should be wrapped in this element.
+
+```jsx
+<Wrapper>
+  {children}
+</Wrapper>
+```
+
+## Gatsby, Contentful and Netlify
+
+The site relies on a CMS called [Contentful](https://contentful.com) to host mainly the text content but also media like icons and images.
+
+It's built on top of [Gatsby](https://gatsbyjs.org), a static site generator that in turn uses a JavaScript framework called [React](https://reactjs.org). React is one 
+way to create re-usable blocks of code that you can see above.
+
+The site is hosted on Netlify and automatically redeploys following any change in content on Contentful or GitHub where the code is stored.
+
+## GraphQL
+
+Gatsby makes requests to Contentful using [GraphQL](https://graphql.org). GraphQL means you only need to request the data you need for a section. Here's a sample query:
+
+```graphql
+const query = graphql`
+  query {
+    allContentfulAboutPage {
+      edges {
+        node {
+          heroSubtitle {
+            childMarkdownRemark {
+              html
+            }
+          }
+          heroTitle
+          heroImage {
+            fluid(maxWidth: 1200) {
+              ...GatsbyContentfulFluid
+            }
+          }
+          mobileHeroBackgroundImage {
+            fluid(maxWidth: 400) {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
+```
+
+This query is getting data to populate the Hero component on the about-us page, grabbing both image and text data.
+
+## Markdown and MDX 
+
+[Markdown](https://en.wikipedia.org/wiki/Markdown) and [MDX](https://mdxjs.com/) are an important part of the site. They both mean that non-coders can write content more easily. Both convert to HTML as part of building the site, so there's no need for a non-coder to have to deal with HTML tags (like `<div>` or `<ul>`).
+
+As a general rule, the content in Contentful is simplified down to avoid giving non-coders a decision to make. In the first instance, use of simple text inputs is used (for example for titles and subtitles). After that Markdown is used where necessary. For example Markdown content will create paragraphs to give spacing to large text content. In other cases, fields which would otherwise be standard text fields, are Markdown text fields because we need to use certain Markdown features (for example adding in footnotes to title text).
+
+MDX comes into it because it's a way of giving more controls to the appearance of Markdown elements. For example `<ul>` elements are styled to give a transparent circle element rather a bullet point. 
 
 ## Example
 
 Putting it all together, here's an example section with corresponding code.
 
 <Section bg='lightGrey'>
+<IntroTitle color='green'>
+Intro
+</IntroTitle>
 <SectionTitle>
 Title
 </SectionTitle>
-<Subtitle color='green'>
+<Subtitle color='blue'>
   Subtitle
 </Subtitle>
 <Text>Lorem ipsum dolor sit amet, te ius detracto tacimates, eos senserit reprehendunt eu, id eirmod facilis his. Ex animal probatus quaerendum vix, melius deseruisse appellantur no sit. Dico assueverit ei vis. Eos animal prodesset id. No intellegat voluptatum definitionem his, cu has euripidis aliquando, mei tantas viderer in. Singulis tractatos honestatis ne eum.</Text>
@@ -142,13 +381,15 @@ Title
 </Box>
 </Section>
 
-```
+```jsx
 <Section bg='lightGrey'>
+  <IntroTitle color='green'>Intro</IntroTitle>
   <SectionTitle>Title</SectionTitle>
-  <Subtitle color='green'>Subtitle</Subtitle>
+  <Subtitle color='blue'>Subtitle</Subtitle>
   <Text>...sample text</Text>
   <Box width={[1,300]} mt={3}>
     <FullButton to='/design-system' text='Design system'/>
   </Box>
 </Section>
 ```
+
