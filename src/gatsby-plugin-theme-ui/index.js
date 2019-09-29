@@ -67,7 +67,8 @@ export default {
     },
     code: {
       p: 3,
-      fontSize: 3
+      fontSize: 3,
+      width: [1, 1 / 2]
     },
     pre: {
       ...github

@@ -13,21 +13,6 @@ import Sup from '../mdx/Sup'
 import OrderedList from '../mdx/OrderedList'
 import StandardSection from '../general/StandardSection'
 
-/*
-const Code = props => (
-  <Box
-    width={[1, 1 / 2]}
-    style={{ overflowX: 'auto' }}
-    bg='grey'
-    lineHeight={0}
-    p={3}
-  >
-    <Text color='white' fontSize={2}>
-      <code {...props} />
-    </Text>
-  </Box>
-) */
-
 const components = {
   ol: OrderedList,
   table: Table,

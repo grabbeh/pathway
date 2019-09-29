@@ -1,12 +1,12 @@
 import React from 'react'
 import Box from '../components/general/Box'
 
-const space = [0, 4, 8, 16, 32, 64, 128, 256]
-const FontSizes = () => (
+const space = [0, 4, 8, 16, 32, 64, 128]
+const Spacing = () => (
   <div>
     {space.map((s, i) => {
       return (
-        <div>
+        <div key={i}>
           <Box style={{ display: 'inline-block' }} bg='blue' p={i}>
             {i}
           </Box>
@@ -16,4 +16,4 @@ const FontSizes = () => (
   </div>
 )
 
-export default FontSizes
+export default Spacing
