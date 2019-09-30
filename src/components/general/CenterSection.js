@@ -5,7 +5,7 @@ import Box from './Box'
 const CenterSection = ({ children }) => (
   <section>
     <Flex justifyContent='center'>
-      <Box px={[3, 3, 0]} py={[4, 5]} maxWidth={[800, 1000]}>
+      <Box mx={3} py={[4, 5]} width={1} maxWidth={1024}>
         {children}
       </Box>
     </Flex>
