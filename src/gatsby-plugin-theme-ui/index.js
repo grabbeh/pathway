@@ -1,4 +1,4 @@
-import github from '@theme-ui/prism/presets/prism-coy.json'
+import github from '@theme-ui/prism/presets/prism-solarizedlight.json'
 
 const Heading = {
   fontFamily: 'heading',
