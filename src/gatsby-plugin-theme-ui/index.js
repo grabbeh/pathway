@@ -9,7 +9,7 @@ const Heading = {
 }
 
 export default {
-  breakpoints: ['32em', '48em', '64em'],
+  breakpoints: ['40em', '56em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     blue: '#37AEE3',
