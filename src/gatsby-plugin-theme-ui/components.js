@@ -3,14 +3,6 @@ import Prism from '@theme-ui/prism'
 import { Box } from '../components/general/index'
 
 export default {
-  pre: props => (
-    <Box
-      width={[1, 1, 3/4]}
-      overflowX='auto'
-      mt={3}
-    >
-      {props.children}
-    </Box>
-  ),
+  pre: props => props.children,
   code: Prism
 }
