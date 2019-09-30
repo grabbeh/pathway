@@ -76,7 +76,7 @@ Used as subtext, often immediately below a section title element or as a sub-hea
 
 This component makes use of `SectionTitle`, `Tagline`, `IntroTitle` and `Text`
 
-<Box mb={-400}>
+<Box mb={[0,0,-400]}>
 <Transform>
 <Letter />
 </Transform>
@@ -137,7 +137,7 @@ Simple header that compacts menu items into standard hamburger on narrow screens
 
 The hero component is usually used as an introduction to a page and includes a photo on desktop, which is automatically removed on mobile
 
-<Box mb={-250}>
+<Box mb={[0,0,-250]}>
 <Transform>
 <Hero  />
 </Transform>
@@ -159,7 +159,7 @@ The hero component is usually used as an introduction to a page and includes a p
 
 This will be used at the bottom of a page to give links to other key pages. The component automatically filters out the current page avoiding a link to the page the user is on.
 
-<Box mb={-250}>
+<Box mb={[0,0,-250]}>
 <Transform>
 <FindOutMore bg='lightGrey'/>
 </Transform>
@@ -183,7 +183,7 @@ Used to give additional references for content. It usually takes some markdown t
 
 ### Footer
 
-<Box mb={-180}>
+<Box mb={[0,0,-180]}>
 <Transform>
 <Footer />
 </Transform>
@@ -212,7 +212,7 @@ A range of tools to highlight key facts
 
 Used to bring attention to a set of key statistics relevant to Pathway. 
 
-<Box mb={-150}>
+<Box mb={[0,0,-150]}>
 <Transform>
 <Stats />
 </Transform>
@@ -379,12 +379,8 @@ Putting it all together, here's an example section with corresponding code.
 
 <Section bg='lightGrey'>
 <IntroTitle text='Intro' color='green'/>
-<SectionTitle>
-Title
-</SectionTitle>
-<Subtitle color='blue'>
-  Subtitle
-</Subtitle>
+<SectionTitle text='Title'/>
+<Subtitle text='Subtitle' color='blue' />
 <Text>Lorem ipsum dolor sit amet, te ius detracto tacimates, eos senserit reprehendunt eu, id eirmod facilis his. Ex animal probatus quaerendum vix, melius deseruisse appellantur no sit. Dico assueverit ei vis. Eos animal prodesset id. No intellegat voluptatum definitionem his, cu has euripidis aliquando, mei tantas viderer in. Singulis tractatos honestatis ne eum.</Text>
 <Box mt={3} width={[1,300]}>
 <FullButton to='/design-system' text='Design system'/>
@@ -394,8 +390,8 @@ Title
 ```jsx
 <Section bg='lightGrey'>
   <IntroTitle color='green' text='Intro'/>
-  <SectionTitle>Title</SectionTitle>
-  <Subtitle color='blue'>Subtitle</Subtitle>
+  <SectionTitle text='Title'/>
+  <Subtitle color='blue' text='Subtitle/>
   <Text>...sample text</Text>
   <Box width={[1,300]} mt={3}>
     <FullButton to='/design-system' text='Design system'/>
