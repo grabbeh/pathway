@@ -1,4 +1,4 @@
-import github from '@theme-ui/prism/presets/night-owl.json'
+import prism from '@theme-ui/prism/presets/prism.json'
 
 const Heading = {
   fontFamily: 'heading',
@@ -66,7 +66,7 @@ export default {
       ...Heading
     },
     pre: {
-      ...github
+      ...prism
     },
     a: {
       color: 'blue'
