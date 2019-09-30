@@ -8,6 +8,7 @@ export default {
       width={[1, 1, 3/4]}
       style={{ overflowX: 'auto' }}
       mt={3}
+      bg='#fdfdfd'
       p={0}
     >
       {props.children}
