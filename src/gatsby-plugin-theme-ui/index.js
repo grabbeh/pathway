@@ -67,7 +67,6 @@ export default {
     }, 
     code: {
       p: 3,
-      width: [1,3/4],
       mt: 3,
       overflowX: 'auto'
     },
