@@ -68,7 +68,8 @@ export default {
     code: {
       p: 3,
       mt: 3,
-      overflowX: 'auto'
+      overflowX: 'auto',
+      fontSize: 3
     },
     pre: {
       ...prism
