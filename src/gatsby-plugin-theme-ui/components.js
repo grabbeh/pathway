@@ -6,7 +6,7 @@ export default {
   pre: props => (
     <Box
       width={[1, 1, 3/4]}
-      style={{ overflowX: 'auto' }}
+      overflowX='auto'
       mt={3}
       bg='#fdfdfd'
       p={0}
