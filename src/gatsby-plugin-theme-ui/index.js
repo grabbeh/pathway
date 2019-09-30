@@ -65,11 +65,6 @@ export default {
     h4: {
       ...Heading
     },
-    code: {
-      p: 3,
-      fontSize: 3,
-      width: [1, 1 / 2]
-    },
     pre: {
       ...github
     },
