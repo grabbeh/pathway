@@ -50,7 +50,7 @@ const Wrapper = props => {
         <MDXProvider components={components}>
           <Context.Provider value={context}>
             <Flex justifyContent='center'>
-              <Box maxWidth={1000} width={1} px={[2, 3]}>
+              <Box maxWidth={1024} width={1} px={[2, 3]}>
                 {props.children}
               </Box>
             </Flex>
