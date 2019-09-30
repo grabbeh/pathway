@@ -9,7 +9,7 @@ export default {
       width={[1, 1, 3/4]}
       overflowX='auto'
       mt={3}
-      p={2}
+      p={3}
     >
      <Text fontSize={3}>
       {props.children}
