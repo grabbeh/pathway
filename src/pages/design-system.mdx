@@ -144,14 +144,16 @@ The hero component is usually used as an introduction to a page and includes a p
 </Box>
 
 ```jsx
-<Hero 
-  bg='yellow'
-  mobileBg='black'
-  mobileColor='white'
-  title={heroTitle}
-  imageData={heroImage.fluid}
-  mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
-  headerColor='white'
+<ImageHero
+   mobileBg='black'
+   mobileColor='white'
+   title={heroTitle}
+   subtitle={heroSubtitle.childMarkdownRemark.html}
+   imageData={heroImage.fluid}
+   mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
+   bg='blue'
+   headerColor='green'
+   subtitleColor='white'
 />
 ```
 
@@ -173,7 +175,7 @@ This will be used at the bottom of a page to give links to other key pages. The 
 
 Used to give additional references for content. It usually takes some markdown text.
 
-<Box mb={-50}>
+<Box mb={-25}>
 <Footnotes />
 </Box>
 
