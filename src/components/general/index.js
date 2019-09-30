@@ -6,6 +6,7 @@ import CenterSection from './CenterSection'
 import Flex from './Flex'
 import InternalHoverLink from './InternalHoverLink'
 import InternalLink from './InternalLink'
+import Link from './Link'
 import List from './List'
 import ListItem from './ListItem'
 import MarkdownSpan from './MarkdownSpan'
@@ -26,6 +27,7 @@ export {
   Flex,
   InternalHoverLink,
   InternalLink,
+  Link,
   List,
   ListItem,
   MarkdownSpan,

@@ -47,7 +47,10 @@ const MainSection = () => {
         </Animation>
       </Box>
       <Box width={[1, 300]} mt={[3, 5]}>
-        <FullButton text='Online manual' to='/' />
+        <FullButton
+          text='Online manual'
+          to='https://www.pathwaysocialfranchise.org.uk'
+        />
       </Box>
     </Section>
   )

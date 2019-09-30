@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { flexbox } from 'styled-system'
 import Box from './Box'
 import propTypes from '@styled-system/prop-types'

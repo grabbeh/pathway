@@ -10,7 +10,7 @@ import {
 } from '../general/index'
 import { Text } from '../typography/index'
 import { css } from 'theme-ui'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Logo from './Logo'
 import Menu from './Menu'
 import { MdClose } from 'react-icons/md'

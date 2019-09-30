@@ -1,9 +1,8 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export default styled('div')`
-@media (min-width: 720px) {
-   transform: scale(0.5);
+  @media (min-width: 720px) {
+    transform: scale(0.75);
     transform-origin: top left;
- }
-
+  }
 `

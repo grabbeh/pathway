@@ -2,18 +2,20 @@ import React, { Fragment, useState, useContext } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { Global } from '@emotion/core'
+import { ThemeProvider, css } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui/index'
 import { Box } from '../general/index'
 import Header from './Header'
 import '../../index.css'
-import { MDXProvider } from '@mdx-js/react'
-import Table from '../mdx/Table'
-import List from '../mdx/List'
-import ListItem from '../mdx/ListItem'
-import Paragraph from '../mdx/Paragraph'
-import Sup from '../mdx/Sup'
-import OrderedList from '../mdx/OrderedList'
+import {
+  List,
+  ListItem,
+  OrderedList,
+  Paragraph,
+  Sup,
+  Table
+} from '../mdx/index'
 import { CookieBanner } from '../shared/index'
 
 const components = {
@@ -25,9 +27,13 @@ const components = {
   sup: Sup
 }
 
-const Style = createGlobalStyle`
-  * { box-sizing: border-box; }
-  body { margin:0; padding: 0;
+const styles = css`
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
     font-family: Poppins, Segoe UI, system-ui, sans-serif;
     line-height: 1.5;
   }
@@ -72,19 +78,17 @@ const Wrapper = props => {
       >
         <html lang='en' />
       </Helmet>
-      <Style />
-      <ThemeProvider theme={theme}>
-        <MDXProvider components={components}>
-          <Context.Provider value={context}>
-            <Box>
-              <Header />
-              <Box aria-hidden={open} hidden={open} zIndex={open ? -1 : 9999}>
-                {props.children}
-              </Box>
-              <CookieBanner />
+      <Global styles={styles} />
+      <ThemeProvider components={components} theme={theme}>
+        <Context.Provider value={context}>
+          <Box>
+            <Header />
+            <Box aria-hidden={open} hidden={open} zIndex={open ? -1 : 9999}>
+              {props.children}
             </Box>
-          </Context.Provider>
-        </MDXProvider>
+            <CookieBanner />
+          </Box>
+        </Context.Provider>
       </ThemeProvider>
     </Fragment>
   )

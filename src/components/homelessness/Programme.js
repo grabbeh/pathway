@@ -11,7 +11,7 @@ const query = graphql`
       edges {
         node {
           programmeImage {
-            fluid(maxWidth: 1200) {
+            fluid(maxWidth: 600) {
               ...GatsbyContentfulFluid
             }
           }

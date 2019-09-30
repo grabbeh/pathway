@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import propTypes from '@styled-system/prop-types'
 import { space, layout, color, typography } from 'styled-system'

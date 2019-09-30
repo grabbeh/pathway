@@ -7,7 +7,7 @@ import {
   ListItem
 } from '../general/index'
 import { Text } from '../typography/index'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const Menu = ({ open, toggleOpen, navigationItems }) => {
   return (

@@ -64,7 +64,7 @@ export default {
     },
     h4: {
       ...Heading
-    }, 
+    },
     code: {
       p: 3,
       mt: 3,

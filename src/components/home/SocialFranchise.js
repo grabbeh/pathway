@@ -45,7 +45,6 @@ const SocialFranchise = () => {
             </Box>
             <Box width={[1, 1, 2 / 3]}>
               <Box>
-                {' '}
                 <MDXRenderer>
                   {socialFranchiseDescription.childMdx.body}
                 </MDXRenderer>

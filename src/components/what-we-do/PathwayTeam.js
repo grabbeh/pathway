@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Box, Flex, StandardSection as Section } from '../general/index'
 import { BodyText, SectionTitle, Text } from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import PathwayTeamMobile from './PathwayTeamMobile'
 import useDetectWidth from '../../hooks/useDetectWidth'
 

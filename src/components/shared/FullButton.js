@@ -1,13 +1,13 @@
 import React from 'react'
-import { Box, Flex, InternalLink as Link, ListItem } from '../general/index'
+import { Box, Flex, Link, ListItem } from '../general/index'
 import { Text } from '../typography/index'
 import { FaAngleRight } from 'react-icons/fa'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const FullButton = ({ text, to }, props) => (
   <ListItem width={1}>
     <StyledBox>
-      <Link {...props} to={to}>
+      <Link {...props} href={to}>
         <Flex>
           <Box style={{ flex: '1' }} bg='blue' p={2}>
             <Text

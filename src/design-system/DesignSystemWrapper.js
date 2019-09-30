@@ -3,8 +3,8 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { Global } from '@emotion/core'
 import { ThemeProvider, css } from 'theme-ui'
-import theme from '../../gatsby-plugin-theme-ui/index'
-import '../../index.css'
+import theme from '../gatsby-plugin-theme-ui/index'
+import '../index.css'
 import {
   List,
   ListItem,
@@ -12,7 +12,8 @@ import {
   Paragraph,
   Sup,
   Table
-} from '../mdx/index'
+} from '../components/mdx/index'
+import { Box, Flex } from '../components/general'
 
 const components = {
   ol: OrderedList,
@@ -53,7 +54,13 @@ const Wrapper = props => {
       </Helmet>
       <Global styles={styles} />
       <ThemeProvider components={components} theme={theme}>
-        <Context.Provider value={context}>{props.children}</Context.Provider>
+        <Context.Provider value={context}>
+          <Flex justifyContent='center'>
+            <Box maxWidth={1024} width={1} px={[2, 3]}>
+              {props.children}
+            </Box>
+          </Flex>
+        </Context.Provider>
       </ThemeProvider>
     </Fragment>
   )

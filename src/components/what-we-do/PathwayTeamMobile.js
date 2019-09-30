@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex, List, ListItem } from '../general/index'
 import { Text } from '../typography/index'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const MobileStatBox = ({
   patientRange,
