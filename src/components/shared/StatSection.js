@@ -9,9 +9,9 @@ import { Text, SectionTitle } from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
 import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { MDXProvider } from '@mdx-js/react'
+import { ThemeProvider } from 'theme-ui'
 
-/*
+
 const H1 = props => <SectionTitle color='white' {...props}>{props.children}</SectionTitle>
 const Link = props => (
   <a {...props} style={{ color: 'white' }}>
@@ -21,10 +21,10 @@ const Link = props => (
 const components = {
   h1: H1,
   a: Link
-}*/
+}
 
 const StatSection = ({ stats, html, mdx, title, bg }) => (
- // <MDXProvider components={components}>
+ <ThemeProvider components={components}>
     <Box bg={bg}>
       <Section>
         <Flex flexWrap='wrap'>
@@ -64,7 +64,7 @@ const StatSection = ({ stats, html, mdx, title, bg }) => (
         </Flex>
       </Section>
     </Box>
-//  </MDXProvider>
+</ThemeProvider>
 )
 
 export default StatSection
