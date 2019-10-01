@@ -113,8 +113,11 @@ const Footer = ({ bg }) => {
                           <ListItem fontSize={1} mb={2}>
                             <Link to='/'>Terms and conditions</Link>
                           </ListItem>
-                          <ListItem fontSize={1}>
+                          <ListItem mb={2} fontSize={1}>
                             <Link to='/privacy-policy'>Privacy policy</Link>
+                          </ListItem>
+                          <ListItem fontSize={1}>
+                            <Link to='/cookie-policy'>Cookie policy</Link>
                           </ListItem>
                         </List>
                       </nav>

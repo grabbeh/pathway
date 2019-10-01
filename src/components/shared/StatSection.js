@@ -11,9 +11,13 @@ import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
-const H1 = props => <SectionTitle color='white'>{props.children}</SectionTitle>
+const H1 = props => (
+  <SectionTitle {...props} color='white'>
+    {props.children}
+  </SectionTitle>
+)
 const Link = props => (
-  <a style={{ color: 'white' }}>
+  <a {...props} style={{ color: 'white' }}>
     {props.children}
   </a>
 )
@@ -23,7 +27,7 @@ const components = {
 }
 
 const StatSection = ({ stats, html, mdx, title, bg }) => (
- <MDXProvider components={components}>
+  <MDXProvider components={components}>
     <Box bg={bg}>
       <Section>
         <Flex flexWrap='wrap'>
@@ -63,7 +67,7 @@ const StatSection = ({ stats, html, mdx, title, bg }) => (
         </Flex>
       </Section>
     </Box>
-</MDXProvider>
+  </MDXProvider>
 )
 
 export default StatSection

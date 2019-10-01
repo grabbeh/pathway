@@ -1,6 +1,18 @@
 import React from 'react'
-import Box from '../components/general/Box'
+import { Wrapper, Footer } from '../components/shared/index'
+import { SectionTitle, Text } from '../components/typography'
+import { Link, StandardSection } from '../components/general'
 
-const Error = () => <Box>ERROR!!!</Box>
+const Error = () => (
+  <Wrapper>
+    <StandardSection>
+      <SectionTitle text='Sorry, looks like something went wrong' />
+      <Text>
+        Try going <Link href='/'>home</Link>
+      </Text>
+    </StandardSection>
+    <Footer />
+  </Wrapper>
+)
 
 export default Error

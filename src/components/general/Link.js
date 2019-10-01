@@ -8,7 +8,8 @@ const isHash = str => /^#/.test(str)
 const ExternalLink = styled('a')(
   {
     cursor: 'pointer',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    color: '#37AEE3'
   },
   space,
   layout,
@@ -16,15 +17,11 @@ const ExternalLink = styled('a')(
 )
 
 const InternalLink = styled(props => <GatsbyLink {...props} />)(
-  { cursor: 'pointer', textDecoration: 'none' },
+  { cursor: 'pointer', textDecoration: 'none', color: '#37AEE3' },
   space,
   layout,
   color
 )
-
-ExternalLink.defaultProps = {
-  color: '#4a4a4a'
-}
 
 export default props => {
   let { href } = props

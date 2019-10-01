@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Global } from '@emotion/core'
 import { ThemeProvider, css } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui/index'
-import { Box } from '../general/index'
+import { Box, Link } from '../general'
 import Header from './Header'
 import '../../index.css'
 import {
@@ -19,6 +19,7 @@ import {
 import { CookieBanner } from '../shared/index'
 
 const components = {
+  a: Link,
   ol: OrderedList,
   table: Table,
   ul: List,

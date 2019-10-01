@@ -1,13 +1,13 @@
 import React from 'react'
-import { Footer, Wrapper } from '../components/shared/index'
-import { SectionTitle } from '../components/typography/index'
-import { StandardSection as Section } from '../components/general/index'
+import { Footer, Wrapper } from '../components/shared'
+import { SectionTitle } from '../components/typography'
+import { StandardSection as Section } from '../components/general'
 import { graphql, useStaticQuery } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
-    allContentfulLegalDocument(filter: { title: { eq: "Privacy policy" } }) {
+    allContentfulLegalDocument(filter: { title: { eq: "Cookie policy" } }) {
       edges {
         node {
           title
@@ -22,7 +22,7 @@ const query = graphql`
   }
 `
 
-const PrivacyPolicy = () => {
+const CookiePolicy = () => {
   const data = useStaticQuery(query)
   const { content, title } = data.allContentfulLegalDocument.edges[0].node
   return (
@@ -36,4 +36,4 @@ const PrivacyPolicy = () => {
   )
 }
 
-export default PrivacyPolicy
+export default CookiePolicy
