@@ -12,7 +12,7 @@ const SectionTitle = props => (
     my={0}
     mb={3}
   >
-    {props.text}
+    {props.text || props.children}
   </Text.h1>
 )
 
