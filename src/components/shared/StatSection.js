@@ -12,9 +12,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { ThemeProvider } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui/index'
 
-const H1 = props => <SectionTitle color='white' {...props}>{props.children}</SectionTitle>
+const H1 = props => <SectionTitle color='white'>{props.children}</SectionTitle>
 const Link = props => (
-  <a {...props} style={{ color: 'white' }}>
+  <a style={{ color: 'white' }}>
     {props.children}
   </a>
 )
