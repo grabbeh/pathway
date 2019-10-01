@@ -2,7 +2,7 @@ import React from 'react'
 import Box from './Box'
 import Flex from './Flex'
 import styled from '@emotion/styled'
-import { css } from 'theme-ui'
+import { css } from '@emotion/core'
 
 const Tab = props => (
   <Box
