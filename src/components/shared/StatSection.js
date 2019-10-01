@@ -11,7 +11,7 @@ import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
-const H1 = props => <SectionTitle color='white' {...props} />
+const H1 = props => <SectionTitle color='white' {...props}>{props.children}</SectionTitle>
 const Link = props => (
   <a {...props} style={{ color: 'white' }}>
     {props.children}
