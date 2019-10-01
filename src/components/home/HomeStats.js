@@ -30,6 +30,7 @@ const Stats = () => {
     statsHolder,
     statsSubtitle
   } = data.allContentfulHomePage.edges[0].node
+  console.log(statsSubtitle)
   return (
     <StatSection
       bg='green'
