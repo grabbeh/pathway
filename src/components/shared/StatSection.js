@@ -10,7 +10,7 @@ import Animation from '../animations/ScrollAnimation'
 import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { ThemeProvider } from 'theme-ui'
-
+import theme from '../../gatsby-plugin-theme-ui/index'
 
 const H1 = props => <SectionTitle color='white' {...props}>{props.children}</SectionTitle>
 const Link = props => (
@@ -24,7 +24,7 @@ const components = {
 }
 
 const StatSection = ({ stats, html, mdx, title, bg }) => (
- <ThemeProvider components={components}>
+ <ThemeProvider theme={theme} components={components}>
     <Box bg={bg}>
       <Section>
         <Flex flexWrap='wrap'>
