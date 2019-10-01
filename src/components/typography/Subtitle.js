@@ -4,7 +4,7 @@ import { Box } from '../general/index'
 import Text from './Text'
 
 const Subtitle = props => {
-  const { html, text, color } = props
+  const { html, color } = props
   return (
     <Box>
       {html ? (
@@ -24,7 +24,7 @@ const Subtitle = props => {
           fontWeight='subtitle'
           color={color || 'grey'}
         >
-          {text}
+          {props.text || props.children}
         </Text.h3>
       )}
     </Box>
