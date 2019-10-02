@@ -59,7 +59,6 @@ export default {
       ...Heading
     },
     h3: {
-      fontWeight: 'body'
     },  
     code: {
       p: 3,
