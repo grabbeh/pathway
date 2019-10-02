@@ -53,7 +53,7 @@ export default {
     h1: {
        fontFamily: 'heading',
         lineHeight: ['medium', 'tagline'],
-        fontWeight='bold',
+        fontWeight: 'bold',
         color='grey',
         fontSize:[5, 6],
         my: 0,
