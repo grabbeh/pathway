@@ -58,6 +58,9 @@ export default {
       fontSize: 6,
       ...Heading
     },
+    h3: {
+      fontWeight: 'text'
+    },  
     code: {
       p: 3,
       mt: 3,
