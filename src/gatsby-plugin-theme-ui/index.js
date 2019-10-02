@@ -51,8 +51,13 @@ export default {
       color: 'grey'
     },
     h1: {
-      fontSize: 8,
-      ...Heading
+       fontFamily: 'heading',
+        lineHeight: ['medium', 'tagline'],
+        fontWeight='bold',
+        color='grey',
+        fontSize:[5, 6],
+        my: 0,
+        mb: 3
     },
     h2: {
       fontSize: 6,
