@@ -59,7 +59,7 @@ export default {
       ...Heading
     },
     h3: {
-      fontWeight: 'text'
+      fontWeight: 'body'
     },  
     code: {
       p: 3,
