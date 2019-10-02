@@ -59,6 +59,8 @@ export default {
       ...Heading
     },
     h3: {
+      fontSize: 4,
+      ...Heading
     },  
     code: {
       p: 3,
