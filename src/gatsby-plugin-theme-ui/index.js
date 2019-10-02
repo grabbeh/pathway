@@ -54,7 +54,7 @@ export default {
        fontFamily: 'heading',
         lineHeight: ['medium', 'tagline'],
         fontWeight: 'bold',
-        color='grey',
+        color:'grey',
         fontSize:[5, 6],
         my: 0,
         mb: 3
