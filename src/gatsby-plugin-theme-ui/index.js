@@ -61,7 +61,7 @@ export default {
     h3: {
       fontSize: 4,
       ...Heading
-    },  
+    },
     code: {
       p: 3,
       mt: 3,

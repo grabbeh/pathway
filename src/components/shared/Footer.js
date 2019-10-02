@@ -10,6 +10,7 @@ import { Logo } from '../shared/index'
 import { Text, Subtitle } from '../typography/index'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
+import ReactSVG from 'react-svg'
 
 const query = graphql`
   query {
@@ -34,16 +35,18 @@ const query = graphql`
             }
           }
           regulatorLogo {
-            fixed(width: 150) {
-              ...GatsbyContentfulFixed
+            file {
+              url
             }
+            description
           }
           socialMediaIcons {
             url
             icon {
-              fixed(width: 40) {
-                ...GatsbyContentfulFixed
+              file {
+                url
               }
+              description
             }
           }
         }
@@ -172,17 +175,25 @@ const Footer = ({ bg }) => {
                   {socialMediaIcons.map(({ icon, url }) => (
                     <Box key={url}>
                       <Box mr={3}>
-                        <a href={url}>
-                          <Image fixed={icon.fixed} />
-                        </a>
+                        <Box width={40}>
+                          <a href={url}>
+                            <ReactSVG
+                              alt={icon.description}
+                              src={icon.file.url}
+                            />
+                          </a>
+                        </Box>
                       </Box>
                     </Box>
                   ))}
                 </Flex>
               </Box>
               <Box mt={[4, 4, 0]} width={[1, 1, 1 / 2]}>
-                <Box minWidth={150}>
-                  <Image fixed={regulatorLogo.fixed} />
+                <Box width={180}>
+                  <ReactSVG
+                    alt={regulatorLogo.description}
+                    src={regulatorLogo.file.url}
+                  />
                 </Box>
               </Box>
             </Flex>

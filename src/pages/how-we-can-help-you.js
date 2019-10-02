@@ -18,7 +18,7 @@ import Footnotes from '../components/what-you-can-do/Footnotes'
 
 const WhatYouCanDo = ({ location }) => (
   <Wrapper>
-    <SEO title='What you can do' />
+    <SEO title='How we can help you' />
     <Hero />
     <MainSection />
     <PathwayFranchise />
