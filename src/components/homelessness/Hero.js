@@ -33,7 +33,7 @@ const Hero = () => {
   return (
     <ImageHero
       bg='yellow'
-      mobileBg='black'
+      mobileBg='#518399'
       mobileColor='white'
       title={heroTitle}
       imageData={heroImage.fluid}
