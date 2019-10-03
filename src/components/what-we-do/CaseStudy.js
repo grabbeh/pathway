@@ -35,7 +35,7 @@ const CaseStudy = () => {
     <Section bg='blue'>
       <Animation>
         <Flex flexWrap='wrap'>
-          <Box width={[1, 1, 1 / 3]}>
+          <Box width={[1, 0.2, 1 / 3]}>
             <CaseStudyStamp />
             <Flex height='100%' alignItems='center'>
               <HideOnMobile>
@@ -49,9 +49,9 @@ const CaseStudy = () => {
               </HideOnMobile>
             </Flex>
           </Box>
-          <Box width={[1, 1, 2 / 3]}>
+          <Box width={[1, 0.8, 2 / 3]}>
             <Flex justifyContent='center'>
-              <Box width={[1, 1, 0.9]}>
+              <Box ml={[0, 0, 5]} width={[1]}>
                 <Subtitle
                   color='white'
                   html={wwdCaseStudy.childMarkdownRemark.html}

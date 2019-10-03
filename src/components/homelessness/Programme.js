@@ -44,41 +44,39 @@ const HomelessProgramme = () => {
   } = data.allContentfulHomelessnessPage.edges[0].node
 
   return (
-    <Box>
-      <Flex flexWrap='wrap'>
-        <Box position='relative' width={[1, 1, 1 / 3]}>
-          <BackgroundImage
-            style={{ height: '100vh' }}
-            imageData={
-              isMobile ? mobileProgrammeImage.fluid : programmeImage.fluid
-            }
-          >
-            <Box position='absolute' top={20} left={20}>
-              <CaseStudyStamp />
-            </Box>
-          </BackgroundImage>
-        </Box>
-        <Box py={[4, 5]} bg='green' width={[1, 1, 2 / 3]}>
-          <Animation>
-            <Flex justifyContent='center'>
-              <Box p={[3, 3, 0]} width={[1, 1, 0.7]}>
-                <Box mb={3}>
-                  <IntroTitle text={programmeTitle} color='white' />
-                </Box>
+    <Flex flexWrap='wrap'>
+      <Box position='relative' width={[1, 1, 1 / 3]}>
+        <BackgroundImage
+          style={{ height: '100vh' }}
+          imageData={
+            isMobile ? mobileProgrammeImage.fluid : programmeImage.fluid
+          }
+        >
+          <Box position='absolute' top={20} left={20}>
+            <CaseStudyStamp />
+          </Box>
+        </BackgroundImage>
+      </Box>
+      <Box py={[4, 5]} bg='green' width={[1, 1, 2 / 3]}>
+        <Animation>
+          <Flex justifyContent='center'>
+            <Box p={[3, 3, 0]} width={[1, 1, 0.7]}>
+              <Box mb={3}>
+                <IntroTitle text={programmeTitle} color='white' />
+              </Box>
+              <Box>
                 <Box>
-                  <Box>
-                    <Subtitle
-                      color='white'
-                      html={programmeText.childMarkdownRemark.html}
-                    />
-                  </Box>
+                  <Subtitle
+                    color='white'
+                    html={programmeText.childMarkdownRemark.html}
+                  />
                 </Box>
               </Box>
-            </Flex>
-          </Animation>
-        </Box>
-      </Flex>
-    </Box>
+            </Box>
+          </Flex>
+        </Animation>
+      </Box>
+    </Flex>
   )
 }
 
