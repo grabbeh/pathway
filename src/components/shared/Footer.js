@@ -38,15 +38,13 @@ const query = graphql`
             file {
               url
             }
-            description
           }
           socialMediaIcons {
             url
             icon {
-              file {
-                url
+              fixed(width: 40) {
+                ...GatsbyContentfulFixed
               }
-              description
             }
           }
         }
@@ -175,21 +173,16 @@ const Footer = ({ bg }) => {
                   {socialMediaIcons.map(({ icon, url }) => (
                     <Box key={url}>
                       <Box mr={3}>
-                        <Box width={40}>
-                          <a href={url}>
-                            <ReactSVG
-                              alt={icon.description}
-                              src={icon.file.url}
-                            />
-                          </a>
-                        </Box>
+                        <a href={url}>
+                          <Image fixed={icon.fixed} />
+                        </a>
                       </Box>
                     </Box>
                   ))}
                 </Flex>
               </Box>
               <Box mt={[4, 4, 0]} width={[1, 1, 1 / 2]}>
-                <Box width={180}>
+                <Box width={125}>
                   <ReactSVG
                     alt={regulatorLogo.description}
                     src={regulatorLogo.file.url}
