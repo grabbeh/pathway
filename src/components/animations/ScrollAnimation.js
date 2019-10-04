@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 
 const ScrollAnimation = ({ children, threshold = 0 }) => {
   const [ref, inView] = useInView({
-    rootMargin: '-50px',
+    //rootMargin: '-50px',
     triggerOnce: true
   })
 
