@@ -116,7 +116,7 @@ export default Tab
 const HideOnMobile = styled('div')(
   css({
     display: 'flex',
-    '@media screen and (max-width: 1200px)': {
+    '@media screen and (max-width: 640px)': {
       display: 'none'
     }
   })
