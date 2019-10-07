@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Footer } from '../components/shared/index'
+import { Wrapper, Footer } from '../components/shared'
 import { SectionTitle, Text } from '../components/typography'
 import { Link, StandardSection } from '../components/general'
 

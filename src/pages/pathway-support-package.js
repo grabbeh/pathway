@@ -4,7 +4,7 @@ import {
   Footer,
   seo as SEO,
   Wrapper
-} from '../components/shared/index'
+} from '../components/shared'
 import Hero from '../components/online-manual/Hero'
 import MainSection from '../components/online-manual/MainSection'
 

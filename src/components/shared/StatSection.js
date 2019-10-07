@@ -4,8 +4,8 @@ import {
   Flex,
   MarkdownText,
   WideSection as Section
-} from '../general/index'
-import { Text, SectionTitle } from '../typography/index'
+} from '../general'
+import { Text, SectionTitle } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'

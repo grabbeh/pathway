@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Box, Flex } from '../general/index'
-import { Text, BodyText } from '../typography/index'
+import { Box, Flex } from '../general'
+import { Text, BodyText } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`

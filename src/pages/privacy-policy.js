@@ -1,7 +1,7 @@
 import React from 'react'
-import { Footer, Wrapper } from '../components/shared/index'
-import { SectionTitle } from '../components/typography/index'
-import { StandardSection as Section } from '../components/general/index'
+import { Footer, Wrapper } from '../components/shared'
+import { SectionTitle } from '../components/typography'
+import { StandardSection as Section } from '../components/general'
 import { graphql, useStaticQuery } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 

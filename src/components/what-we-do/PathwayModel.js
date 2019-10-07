@@ -5,8 +5,8 @@ import {
   Flex,
   StandardSection as Section,
   WideSection
-} from '../general/index'
-import { BodyText, SectionTitle, Subtitle } from '../typography/index'
+} from '../general'
+import { BodyText, SectionTitle, Subtitle } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import PathwayServicesList from '../what-we-do/PathwayServicesList'
 import WhatWeDoFact from '../../svg/WhatWeDoFact'

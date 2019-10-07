@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Flex } from '../general/index'
-import { BodyText, Text } from '../typography/index'
+import { Box, Flex } from '../general'
+import { BodyText, Text } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import ReactSVG from 'react-svg'
 

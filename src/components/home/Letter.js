@@ -1,12 +1,12 @@
 import React from 'react'
-import { Box, Flex, CenterSection as Section } from '../general/index'
+import { Box, Flex, CenterSection as Section } from '../general'
 import {
   BodyText,
   IntroTitle,
   SectionTitle,
   Tagline,
   Text
-} from '../typography/index'
+} from '../typography'
 import { useStaticQuery, graphql } from 'gatsby'
 import Animation from '../animations/ScrollAnimation'
 

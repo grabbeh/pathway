@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Box } from '../general/index'
-import { Subtitle } from '../typography/index'
+import { Box } from '../general'
+import { Subtitle } from '../typography'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`

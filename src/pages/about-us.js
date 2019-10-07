@@ -4,7 +4,7 @@ import {
   FindOutMore,
   seo as SEO,
   Footer
-} from '../components/shared/index'
+} from '../components/shared'
 import MainSection from '../components/about-us/MainSection'
 import Hero from '../components/about-us/Hero'
 import Survey from '../components/about-us/Survey'

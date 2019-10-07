@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Flex, Link, ListItem } from '../general/index'
-import { Text } from '../typography/index'
+import { Box, Flex, Link, ListItem } from '../general'
+import { Text } from '../typography'
 import { FaAngleRight } from 'react-icons/fa'
 import styled from '@emotion/styled'
 

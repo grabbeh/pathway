@@ -3,16 +3,9 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { Global } from '@emotion/core'
 import { ThemeProvider, css } from 'theme-ui'
-import theme from '../../gatsby-plugin-theme-ui/index'
+import theme from '../../gatsby-plugin-theme-ui'
 import '../../index.css'
-import {
-  List,
-  ListItem,
-  OrderedList,
-  Paragraph,
-  Sup,
-  Table
-} from '../mdx/index'
+import { List, ListItem, OrderedList, Paragraph, Sup, Table } from '../mdx'
 
 const components = {
   ol: OrderedList,

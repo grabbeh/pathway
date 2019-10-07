@@ -1,6 +1,6 @@
 import React from 'react'
 import Text from './Text'
-import { Box } from '../general/index'
+import { Box } from '../general'
 import MarkdownText from '../general/MarkdownText'
 
 const Tagline = props => (

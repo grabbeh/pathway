@@ -4,8 +4,8 @@ import {
   Flex,
   MarkdownText as BodyText,
   StandardSection as Section
-} from '../general/index'
-import { Text, SectionTitle } from '../typography/index'
+} from '../general'
+import { Text, SectionTitle } from '../typography'
 import FullButton from './FullButton'
 import List from '../general/List'
 import { graphql, useStaticQuery } from 'gatsby'

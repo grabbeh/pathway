@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '../components/general/index'
+import { Box } from '../components/general'
 
 const space = [0, 4, 8, 16, 32, 64, 128]
 const Spacing = () => (

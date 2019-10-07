@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Box, Flex, StandardSection as Section } from '../general/index'
-import { BodyText, SectionTitle, Subtitle } from '../typography/index'
+import { Box, Flex, StandardSection as Section } from '../general'
+import { BodyText, SectionTitle, Subtitle } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import ReactSVG from 'react-svg'
 

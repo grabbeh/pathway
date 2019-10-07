@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Flex, WideSection as Section } from '../general/index'
-import { Subtitle, Text } from '../typography/index'
+import { Box, Flex, WideSection as Section } from '../general'
+import { Subtitle, Text } from '../typography'
 import { useStaticQuery, graphql } from 'gatsby'
 import Animation from '../animations/ScrollAnimation'
 import { MDXRenderer } from 'gatsby-plugin-mdx'

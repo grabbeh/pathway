@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, StandardSection as Section } from '../general/index'
-import { SectionTitle, Subtitle, IntroTitle } from '../typography/index'
+import { Box, StandardSection as Section } from '../general'
+import { SectionTitle, Subtitle, IntroTitle } from '../typography'
 import { graphql, useStaticQuery } from 'gatsby'
 import Animation from '../animations/ScrollAnimation'
 import { MDXRenderer } from 'gatsby-plugin-mdx'

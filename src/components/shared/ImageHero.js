@@ -1,9 +1,8 @@
 import React from 'react'
-import { Heading, Subtitle } from '../typography/index'
-import { BackgroundImage, Box, Flex } from '../general/index'
+import { Heading, Subtitle } from '../typography'
+import { BackgroundImage, Box, Flex } from '../general'
 import LoadAnimation from '../animations/InitialLoadAnimation'
-import useLoad from '../../hooks/useLoad'
-import useDetectWidth from '../../hooks/useDetectWidth'
+import { useLoad, useDetectWidth } from '../../hooks'
 
 const ImageHero = props => {
   const { isMobile } = useDetectWidth()

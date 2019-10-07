@@ -1,10 +1,10 @@
 import React from 'react'
-import { Box, Flex, BackgroundImage } from '../general/index'
-import { IntroTitle, Subtitle } from '../typography/index'
+import { Box, Flex, BackgroundImage } from '../general'
+import { IntroTitle, Subtitle } from '../typography'
 import { useStaticQuery, graphql } from 'gatsby'
 import Animation from '../animations/ScrollAnimation'
 import CaseStudyStamp from '../../svg/CaseStudyStamp'
-import useDetectWidth from '../../hooks/useDetectWidth'
+import { useDetectWidth } from '../../hooks'
 
 const query = graphql`
   query {

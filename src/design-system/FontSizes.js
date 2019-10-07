@@ -1,7 +1,7 @@
 import React from 'react'
-import theme from '../gatsby-plugin-theme-ui/index'
-import { Box, Flex } from '../components/general/index'
-import { Text } from '../components/typography/index'
+import theme from '../gatsby-plugin-theme-ui'
+import { Box, Flex } from '../components/general'
+import { Text } from '../components/typography'
 
 const FontSizes = () => (
   <Flex alignItems='baseline' flexWrap='wrap'>

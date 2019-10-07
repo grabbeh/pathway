@@ -7,8 +7,8 @@ import {
   InternalLink as Link,
   List,
   ListItem
-} from '../general/index'
-import { Text } from '../typography/index'
+} from '../general'
+import { Text } from '../typography'
 import { css } from 'theme-ui'
 import styled from '@emotion/styled'
 import Logo from './Logo'

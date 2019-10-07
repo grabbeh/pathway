@@ -8,8 +8,8 @@ import {
   Tabs,
   TabList,
   TabPanels
-} from '../general/index'
-import { BodyText, SectionTitle, Subtitle } from '../typography/index'
+} from '../general'
+import { BodyText, SectionTitle, Subtitle } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { ImageHero } from '../shared/index'
+import { ImageHero } from '../shared'
 
 const query = graphql`
   query {

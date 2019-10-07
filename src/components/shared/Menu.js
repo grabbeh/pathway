@@ -5,8 +5,8 @@ import {
   InternalLink as Link,
   List,
   ListItem
-} from '../general/index'
-import { Text } from '../typography/index'
+} from '../general'
+import { Text } from '../typography'
 import styled from '@emotion/styled'
 
 const Menu = ({ open, toggleOpen, navigationItems }) => {

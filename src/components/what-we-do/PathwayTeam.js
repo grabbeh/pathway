@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Box, Flex, StandardSection as Section } from '../general/index'
-import { BodyText, SectionTitle, Text } from '../typography/index'
+import { Box, Flex, StandardSection as Section } from '../general'
+import { BodyText, SectionTitle, Text } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import styled from '@emotion/styled'
 import PathwayTeamMobile from './PathwayTeamMobile'
-import useDetectWidth from '../../hooks/useDetectWidth'
+import { useDetectWidth } from '../../hooks'
 
 const query = graphql`
   query {

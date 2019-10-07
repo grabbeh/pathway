@@ -1,8 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Box, Flex, WideSection as Section } from '../general/index'
-import { Subtitle, Tagline } from '../typography/index'
-import { HideOnMobile } from '../shared/index'
+import { Box, Flex, WideSection as Section } from '../general'
+import { Subtitle, Tagline } from '../typography'
+import { HideOnMobile } from '../shared'
 import Animation from '../animations/ScrollAnimation'
 import CaseStudyStamp from '../../svg/CaseStudyStamp'
 

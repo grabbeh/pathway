@@ -5,9 +5,9 @@ import {
   InternalHoverLink as Link,
   List,
   ListItem
-} from '../general/index'
-import { Logo } from '../shared/index'
-import { Text, Subtitle } from '../typography/index'
+} from '../general'
+import { Logo } from '../shared'
+import { Text, Subtitle } from '../typography'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
 import ReactSVG from 'react-svg'

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, StandardSection as Section } from '../general/index'
-import { BodyText, SectionTitle, Subtitle } from '../typography/index'
+import { Box, StandardSection as Section } from '../general'
+import { BodyText, SectionTitle, Subtitle } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import { useStaticQuery, graphql } from 'gatsby'
-import { FullButton } from '../shared/index'
+import { FullButton } from '../shared'
 
 const query = graphql`
   query {

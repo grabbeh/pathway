@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '../typography/index'
+import { Text } from '../typography'
 
 export const Sup = props => (
   <Text.sup {...props} fontSize={2} color='grey'>

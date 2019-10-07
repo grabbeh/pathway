@@ -4,19 +4,12 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Global } from '@emotion/core'
 import { ThemeProvider, css } from 'theme-ui'
-import theme from '../../gatsby-plugin-theme-ui/index'
+import theme from '../../gatsby-plugin-theme-ui'
 import { Box, Link } from '../general'
 import Header from './Header'
 import '../../index.css'
-import {
-  List,
-  ListItem,
-  OrderedList,
-  Paragraph,
-  Sup,
-  Table
-} from '../mdx/index'
-import { CookieBanner } from '../shared/index'
+import { List, ListItem, OrderedList, Paragraph, Sup, Table } from '../mdx'
+import { CookieBanner } from '../shared'
 
 const components = {
   a: Link,
@@ -33,9 +26,9 @@ const styles = css`
     box-sizing: border-box;
   }
   body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
   }

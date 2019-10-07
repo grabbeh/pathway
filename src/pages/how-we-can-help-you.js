@@ -4,7 +4,7 @@ import {
   seo as SEO,
   Footer,
   Wrapper
-} from '../components/shared/index'
+} from '../components/shared'
 import MainSection from '../components/what-you-can-do/MainSection'
 import Hero from '../components/what-you-can-do/Hero'
 import PathwayFranchise from '../components/what-you-can-do/PathwayFranchise'

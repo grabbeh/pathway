@@ -1,5 +1,5 @@
 import React from 'react'
-import { FindOutMore, Footer, Wrapper } from '../components/shared/index'
+import { FindOutMore, Footer, Wrapper } from '../components/shared'
 import Hero from '../components/homelessness/Hero'
 import MainSection from '../components/homelessness/MainSection'
 import Programme from '../components/homelessness/Programme'

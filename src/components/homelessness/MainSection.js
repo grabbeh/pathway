@@ -1,11 +1,11 @@
 import React from 'react'
-import { Box, StandardSection as Section } from '../general/index'
+import { Box, StandardSection as Section } from '../general'
 import {
   BodyText,
   IntroTitle,
   SectionTitle,
   Subtitle
-} from '../typography/index'
+} from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import { useStaticQuery, graphql } from 'gatsby'
 import HomelessStats from './Stats'
