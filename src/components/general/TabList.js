@@ -17,7 +17,7 @@ class TabList extends Component {
     })
     return (
       <Flex
-        justifyContent={['center', 'center', 'flex-start']}
+        justifyContent={['center', 'flex-start']}
         flexWrap={['wrap', 'none']}
       >
         {children}
