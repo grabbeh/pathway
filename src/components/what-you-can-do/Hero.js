@@ -9,6 +9,7 @@ const query = graphql`
         node {
           heroTitle
           heroImage {
+            description
             fluid(maxWidth: 1200) {
               ...GatsbyContentfulFluid
             }
@@ -33,6 +34,7 @@ const Hero = () => {
 
   return (
     <ImageHero
+      alt={heroImage.description}
       bg='blue'
       mobileBg='#F5A623'
       mobileColor='white'

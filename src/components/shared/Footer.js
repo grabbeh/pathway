@@ -42,6 +42,7 @@ const query = graphql`
           socialMediaIcons {
             url
             icon {
+              description
               fixed(width: 40) {
                 ...GatsbyContentfulFixed
               }
@@ -174,7 +175,7 @@ const Footer = ({ bg }) => {
                     <Box key={url}>
                       <Box mr={3}>
                         <a href={url}>
-                          <Image fixed={icon.fixed} />
+                          <Image alt={icon.description} fixed={icon.fixed} />
                         </a>
                       </Box>
                     </Box>

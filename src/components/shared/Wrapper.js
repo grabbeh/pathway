@@ -33,10 +33,11 @@ const styles = css`
     box-sizing: border-box;
   }
   body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Poppins, Segoe UI, system-ui, sans-serif;
-    line-height: 1.5;
   }
 `
 

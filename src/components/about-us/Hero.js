@@ -14,6 +14,7 @@ const query = graphql`
           }
           heroTitle
           heroImage {
+            description
             fluid(maxWidth: 1200) {
               ...GatsbyContentfulFluid
             }
@@ -38,6 +39,7 @@ const Hero = () => {
   } = data.allContentfulAboutPage.edges[0].node
   return (
     <ImageHero
+      alt={heroImage.description}
       mobileBg='black'
       mobileColor='white'
       title={heroTitle}

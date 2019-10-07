@@ -8,6 +8,7 @@ const query = graphql`
       edges {
         node {
           logoImage {
+            description
             fixed(width: 200) {
               ...GatsbyContentfulFixed
             }
@@ -20,8 +21,8 @@ const query = graphql`
 
 const Logo = () => {
   const data = useStaticQuery(query)
-  const { fixed } = data.allContentfulLogo.edges[0].node.logoImage
-  return <Image fixed={fixed} />
+  const { fixed, description } = data.allContentfulLogo.edges[0].node.logoImage
+  return <Image alt={description} fixed={fixed} />
 }
 
 export default Logo

@@ -22,7 +22,7 @@ const ImageHero = props => {
         </Box>
       ) : (
         <Box width={1} style={{ flex: '1' }}>
-          <BackgroundImage imageData={props.imageData}>
+          <BackgroundImage alt={props.alt} imageData={props.imageData}>
             <Hero load={load} {...props} />
           </BackgroundImage>
         </Box>

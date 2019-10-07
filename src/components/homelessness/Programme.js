@@ -12,6 +12,7 @@ const query = graphql`
       edges {
         node {
           programmeImage {
+            description
             fluid(maxWidth: 600) {
               ...GatsbyContentfulFluid
             }
@@ -47,6 +48,7 @@ const HomelessProgramme = () => {
     <Flex flexWrap='wrap'>
       <Box position='relative' width={[1, 1, 1 / 3]}>
         <BackgroundImage
+          alt={programmeImage.description}
           style={{ height: '100vh' }}
           imageData={
             isMobile ? mobileProgrammeImage.fluid : programmeImage.fluid

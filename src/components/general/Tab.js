@@ -6,6 +6,7 @@ import { css } from '@emotion/core'
 
 const Tab = props => (
   <Box
+    width={[null, 1, null]}
     onClick={props.isDisabled ? null : props.onSelect}
     onMouseEnter={props.isDisabled ? null : props.onSelect}
     onMouseLeave={props.isDisabled ? props.onSelect : null}
@@ -13,9 +14,7 @@ const Tab = props => (
   >
     <Flex>
       <StyledNumber {...props}>{props.number + 1}</StyledNumber>
-      <HideOnMobile>
-        <StyledWord {...props}>{props.phase}</StyledWord>
-      </HideOnMobile>
+      <StyledWord {...props}>{props.phase}</StyledWord>
     </Flex>
   </Box>
 )
@@ -113,12 +112,3 @@ const StyledNumber = styled(Box)`
 `
 
 export default Tab
-
-const HideOnMobile = styled('div')(
-  css({
-    display: 'flex',
-    '@media screen and (max-width: 640px)': {
-      display: 'none'
-    }
-  })
-)

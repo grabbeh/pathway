@@ -36,22 +36,20 @@ const MainSection = () => {
       <Animation>
         <SectionTitle text={title} />
       </Animation>
-      <Box>
-        <Animation>
-          <Subtitle color='blue' text={subtitle} />
-        </Animation>
-      </Box>
-      <Box>
-        <Animation>
-          <BodyText html={content.childMarkdownRemark.html} />
-        </Animation>
-      </Box>
-      <Box width={[1, 300]} mt={[3, 5]}>
-        <FullButton
-          text='Online manual'
-          to='https://www.pathwaysocialfranchise.org.uk'
-        />
-      </Box>
+      <Animation>
+        <Subtitle color='blue' text={subtitle} />
+      </Animation>
+      <Animation>
+        <BodyText html={content.childMarkdownRemark.html} />
+      </Animation>
+      <Animation>
+        <Box width={[1, 300]} mt={[3]}>
+          <FullButton
+            text='Online manual'
+            to='https://www.pathwaysocialfranchise.org.uk'
+          />
+        </Box>
+      </Animation>
     </Section>
   )
 }

@@ -2,11 +2,18 @@ import React from 'react'
 import styled from '@emotion/styled'
 import BackgroundImage from 'gatsby-background-image'
 
-const BackgroundSection = ({ style, children, imageData, backgroundColor }) => {
+const BackgroundSection = ({
+  style,
+  alt,
+  children,
+  imageData,
+  backgroundColor
+}) => {
   return (
     <BackgroundImage
       style={style}
       fluid={imageData}
+      alt={alt}
       backgroundColor={backgroundColor}
     >
       {children}
