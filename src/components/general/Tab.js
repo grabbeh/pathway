@@ -26,6 +26,7 @@ font-size: 22px;
 font-weight: bold;
 color: #4A4A4A;
 padding-top: 3px;
+margin-right: 15px;
 transition: all 0.3s ease;
 @media (max-width: 640px) {
   display: none;
