@@ -1,9 +1,16 @@
 import React from 'react'
 import { Box, StandardSection as Section } from '../general'
-import { BodyText, SectionTitle, Subtitle } from '../typography'
+import { Subtitle } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import { useStaticQuery, graphql } from 'gatsby'
 import { FullButton } from '../shared'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+
+const H2 = props => <Subtitle color='blue'>{props.children}</Subtitle>
+const components = {
+  h2: H2
+}
 
 const query = graphql`
   query {
@@ -11,12 +18,10 @@ const query = graphql`
       edges {
         node {
           content {
-            childMarkdownRemark {
-              html
+            childMdx {
+              body
             }
           }
-          title
-          subtitle
         }
       }
     }
@@ -25,32 +30,23 @@ const query = graphql`
 
 const MainSection = () => {
   const data = useStaticQuery(query)
-  const {
-    title,
-    subtitle,
-    content
-  } = data.allContentfulOnlineManualPage.edges[0].node
-
+  const { content } = data.allContentfulOnlineManualPage.edges[0].node
   return (
-    <Section>
-      <Animation>
-        <SectionTitle text={title} />
-      </Animation>
-      <Animation>
-        <Subtitle color='blue' text={subtitle} />
-      </Animation>
-      <Animation>
-        <BodyText html={content.childMarkdownRemark.html} />
-      </Animation>
-      <Animation>
-        <Box width={[1, 300]} mt={[3]}>
-          <FullButton
-            text='Online manual'
-            to='https://www.pathwaysocialfranchise.org.uk'
-          />
-        </Box>
-      </Animation>
-    </Section>
+    <MDXProvider components={components}>
+      <Section pt={0}>
+        <Animation>
+          <MDXRenderer>{content.childMdx.body}</MDXRenderer>
+        </Animation>
+        <Animation>
+          <Box width={[1, 300]} mt={[3]}>
+            <FullButton
+              text='Online manual'
+              to='https://www.pathwaysocialfranchise.org.uk'
+            />
+          </Box>
+        </Animation>
+      </Section>
+    </MDXProvider>
   )
 }
 

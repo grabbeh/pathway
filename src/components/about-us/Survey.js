@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Box, Flex, WideSection as Section } from '../general'
-import { Tagline, Text } from '../typography'
+import { Box, Flex, WideSection as Section } from '../general/index'
+import { Tagline, Text } from '../typography/index'
 import Animation from '../animations/ScrollAnimation'
 import KeyStatsStamp from '../../svg/KeyStatsStamp'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -43,10 +43,10 @@ const AboutSurvey = () => {
     <MDXProvider components={components}>
       <Section bg='blue'>
         <Flex flexWrap='wrap'>
-          <Box width={[1, 1, 0.15]}>
+          <Box width={[1, 0.15]}>
             <KeyStatsStamp />
           </Box>
-          <Box width={[1, 1, 0.85]}>
+          <Box width={[1, 0.85]}>
             <Animation>
               <MDXRenderer>{studyText.childMdx.body}</MDXRenderer>
             </Animation>

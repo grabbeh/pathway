@@ -6,7 +6,7 @@ import {
   List,
   ListItem
 } from '../general'
-import { Logo } from '../shared'
+import { Logo } from './'
 import { Text, Subtitle } from '../typography'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
@@ -94,14 +94,14 @@ const Footer = ({ bg }) => {
           <Box p={[3, 4]} width={[1, 2 / 3]}>
             <Flex flexWrap='wrap'>
               <Box width={[1, 1, 1 / 3]}>
-                <Box mr={3}>
+                <Box>
                   <Logo />
                 </Box>
               </Box>
               <Box width={[1, 1, 2 / 3]}>
                 <Flex flexWrap='wrap'>
-                  <Box width={[1, 1, 1 / 2]}>
-                    <Box mr={3}>
+                  <Box width={[1, 1 / 2]}>
+                    <Box ml={[0, 0, 3]} mr={3}>
                       <nav>
                         <Subtitle color='green'>Quick links</Subtitle>
                         <List>
@@ -125,7 +125,7 @@ const Footer = ({ bg }) => {
                       </nav>
                     </Box>
                   </Box>
-                  <Box width={[1, 1, 1 / 2]}>
+                  <Box width={[1, 1 / 2]}>
                     <Box mr={3}>
                       <Subtitle color='green'>Contact</Subtitle>
                       <Text fontWeight='bold' fontSize={1}>
@@ -154,8 +154,8 @@ const Footer = ({ bg }) => {
               </Box>
             </Flex>
           </Box>
-          <Box bg='grey' p={[3, 4]} width={[1, 1, 1 / 3]}>
-            <Box width={[1, 1, 1, 1 / 2]}>
+          <Box bg='grey' p={[3, 4]} width={[1, 1 / 3]}>
+            <Box width={[1, 1 / 2]}>
               <Box mb={4}>
                 <Box mb={3}>
                   <Image fixed={companyLogo.fixed} />

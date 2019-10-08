@@ -9,7 +9,7 @@ import { Box, Link } from '../general'
 import Header from './Header'
 import '../../index.css'
 import { List, ListItem, OrderedList, Paragraph, Sup, Table } from '../mdx'
-import { CookieBanner } from '../shared'
+import { CookieBanner } from '.'
 
 const components = {
   a: Link,

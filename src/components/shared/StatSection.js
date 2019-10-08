@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  Box,
-  Flex,
-  MarkdownText,
-  WideSection as Section
-} from '../general'
+import { Box, Flex, MarkdownText, WideSection as Section } from '../general'
 import { Text, SectionTitle } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import KeyStatsStamp from '../../svg/KeyStatsStamp'

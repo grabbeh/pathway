@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Box,
-  Flex,
-  InternalLink as Link,
-  List,
-  ListItem
-} from '../general'
+import { Box, Flex, InternalLink as Link, List, ListItem } from '../general'
 import { Text } from '../typography'
 import styled from '@emotion/styled'
 
