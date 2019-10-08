@@ -59,7 +59,7 @@ const PathwayModel = () => {
       </Section>
       <WideSection pb={0} pt={[0, 3]}>
         <Flex flexWrap='wrap'>
-          <Box px={[3,7,3]} width={[1, 1, 0.4]}>
+          <Box px={[3,6,3]} width={[1, 1, 0.4]}>
             <Flex justifyContent='center'>
               <Box width={1}>
                 <WhatWeDoFact />
