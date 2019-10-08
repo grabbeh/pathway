@@ -33,7 +33,7 @@ const MainSection = () => {
   const { content } = data.allContentfulOnlineManualPage.edges[0].node
   return (
     <MDXProvider components={components}>
-      <Section pt={0}>
+      <Section pt={3}>
         <Animation>
           <MDXRenderer>{content.childMdx.body}</MDXRenderer>
         </Animation>
