@@ -40,7 +40,7 @@ const Hero = () => {
   return (
     <ImageHero
       alt={heroImage.description}
-      mobileBg='black'
+      mobileBg='#00A880'
       mobileColor='white'
       title={heroTitle}
       subtitle={heroSubtitle.childMarkdownRemark.html}

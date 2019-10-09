@@ -37,7 +37,7 @@ const Hero = () => {
       alt={heroImage.description}
       bg='blue'
       mobileBg='#F5A623'
-      mobileColor='white'
+      mobileColor='grey'
       title={heroTitle}
       imageData={heroImage.fluid}
       mobileBackgroundImage={mobileHeroBackgroundImage.fluid}

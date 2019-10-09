@@ -36,13 +36,13 @@ const Hero = () => {
   return (
     <ImageHero
       alt={heroImage.description}
-      mobileBg='#4A4A4A'
+      mobileBg='#37AEE3'
       title={heroTitle}
       subtitle={heroSubtitle}
       imageData={heroImage.fluid}
       mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
       bg='green'
-      mobileColor='blue'
+      mobileColor='white'
       headerColor='blue'
       subtitleColor='white'
     />

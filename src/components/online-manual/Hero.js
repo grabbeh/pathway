@@ -40,7 +40,7 @@ const Hero = () => {
       bg='blue'
       headerColor='blue'
       mobileBg='#00A880'
-      mobileColor='grey'
+      mobileColor='white'
     />
   )
 }
