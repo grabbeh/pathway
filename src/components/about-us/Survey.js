@@ -43,10 +43,10 @@ const AboutSurvey = () => {
     <MDXProvider components={components}>
       <Section bg='blue'>
         <Flex flexWrap='wrap'>
-          <Box width={[1, 0.15]}>
+          <Box width={[1, 1, 0.15]}>
             <KeyStatsStamp />
           </Box>
-          <Box width={[1, 0.85]}>
+          <Box width={[1, 1, 0.85]}>
             <Animation>
               <MDXRenderer>{studyText.childMdx.body}</MDXRenderer>
             </Animation>
