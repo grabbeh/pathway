@@ -14,7 +14,7 @@ const IndexPage = () => (
     <SocialFranchise />
     <Letter />
     <Stats />
-    <Quote quote='This is a test quote :)' />
+    <Quote variant='modes.blue' quote='This is a test quote :)' />
     <FindOutMore />
     <Footnotes />
     <Footer bg='lightGrey' />

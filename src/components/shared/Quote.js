@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
-import { StandardSection as Section } from '../general'
-import { Subtitle } from '../typography'
+import { jsx } from 'theme-ui'
+import { StandardSection as Section, Box } from '../general'
 
-const Quote = ({ quote, bg, color, variant, borderColor }) => (
-  <Section bg={bg}>
-    <Box sx={{ variant: 'modes.blue' }}>{quote}</Box>
+const Quote = ({ quote, bg, variant }) => (
+  <Section variant={variant} bg={bg}>
+    <Box sx={{ fontSize: 5, fontWeight: 'bold', variant: 'modes.blue' }}>
+      {quote}
+    </Box>
   </Section>
 )
 
