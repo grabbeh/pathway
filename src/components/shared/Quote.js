@@ -1,12 +1,11 @@
-import React from 'react'
-import { StandardSection as Section, Box } from '../general'
-import { Text } from '../typography'
+/** @jsx jsx */
+import { jsx, Box } from 'theme-ui'
+import { StandardSection as Section } from '../general'
+import { Subtitle } from '../typography'
 
-const Quote = ({ quote, bg }) => (
+const Quote = ({ quote, bg, color, variant, borderColor }) => (
   <Section bg={bg}>
-    <Box>
-      <Text fontStyle='italic'>{quote}</Text>
-    </Box>
+    <Box sx={{ variant: 'modes.blue' }}>{quote}</Box>
   </Section>
 )
 

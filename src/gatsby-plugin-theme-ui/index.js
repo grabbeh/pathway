@@ -17,7 +17,35 @@ export default {
     grey: '#4A4A4A',
     lightGrey: '#F9F9F9',
     yellow: '#F5A623',
-    turquoise: '#518399'
+    turquoise: '#518399',
+    modes: {
+      light: {
+        text: '#4A4A4A',
+        background: '#fff'
+      },
+      blue: {
+        text: '#fff',
+        background: '#37AEE3'
+      },
+      green: {
+        text: '#fff',
+        background: '#00A880'
+      }
+    }
+  },
+  modes: {
+    light: {
+      color: '#4A4A4A',
+      bg: '#fff'
+    },
+    blue: {
+      color: '#fff',
+      bg: '#37AEE3'
+    },
+    green: {
+      color: '#fff',
+      bg: '#00A880'
+    }
   },
   radii: [0, 2, 4, 16, 9999, '100%'],
   fonts: {

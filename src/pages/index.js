@@ -1,15 +1,11 @@
 import React from 'react'
-import {
-  FindOutMore,
-  Footer,
-  seo as SEO,
-  Wrapper
-} from '../components/shared'
+import { FindOutMore, Footer, seo as SEO, Wrapper } from '../components/shared'
 import Stats from '../components/home/HomeStats'
 import Hero from '../components/home/Hero'
 import SocialFranchise from '../components/home/SocialFranchise'
 import Letter from '../components/home/Letter'
 import Footnotes from '../components/home/Footnotes'
+import Quote from '../components/shared/Quote'
 
 const IndexPage = () => (
   <Wrapper>
@@ -18,6 +14,7 @@ const IndexPage = () => (
     <SocialFranchise />
     <Letter />
     <Stats />
+    <Quote quote='This is a test quote :)' />
     <FindOutMore />
     <Footnotes />
     <Footer bg='lightGrey' />
