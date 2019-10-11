@@ -156,7 +156,7 @@ const Footer = ({ bg }) => {
             </Flex>
           </Box>
           <Box bg='grey' p={[3, 4]} width={[1, 1 / 3]}>
-            <Box width={[1, 1 / 2]}>
+            <Box width={[1, 1, 1 / 2]}>
               <Box mb={4}>
                 <Box mb={3}>
                   <Image fixed={companyLogo.fixed} />
