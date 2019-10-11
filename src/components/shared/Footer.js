@@ -114,13 +114,13 @@ const Footer = ({ bg }) => {
                             )
                           )}
                           <ListItem fontSize={1} mb={2}>
-                            <HoverLink to='/'>Terms and conditions</Link>
+                            <HoverLink to='/'>Terms and conditions</HoverLink>
                           </ListItem>
                           <ListItem mb={2} fontSize={1}>
-                            <HoverLink to='/privacy-policy'>Privacy policy</Link>
+                            <HoverLink to='/privacy-policy'>Privacy policy</HoverLink>
                           </ListItem>
                           <ListItem fontSize={1}>
-                            <HoverLink to='/cookie-policy'>Cookie policy</Link>
+                            <HoverLink to='/cookie-policy'>Cookie policy</HoverLink>
                           </ListItem>
                         </List>
                       </nav>
