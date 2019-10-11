@@ -109,7 +109,7 @@ const Footer = ({ bg }) => {
                           {navigation.navigationItem.map(
                             ({ url, title }, i) => (
                               <ListItem fontSize={1} mb={2} key={i}>
-                                <HoverLink to={`/${url}`}>{title}</Link>
+                                <HoverLink to={`/${url}`}>{title}</HoverLink>
                               </ListItem>
                             )
                           )}
