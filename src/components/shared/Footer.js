@@ -146,7 +146,7 @@ const Footer = ({ bg }) => {
                           M:{' '}
                         </Text.span>
                         <Text.span color='grey' fontSize={1}>
-                          <Link href={phoneNumber}>{phoneNumber}</Link>
+                          <Link href={`tel:${phoneNumber}`}>{phoneNumber}</Link>
                         </Text.span>
                       </Box>
                     </Box>
