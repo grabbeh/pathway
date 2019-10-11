@@ -2,7 +2,8 @@ import React from 'react'
 import {
   Box,
   Flex,
-  InternalHoverLink as Link,
+  InternalHoverLink as HoverLink,
+  Link,
   List,
   ListItem
 } from '../general'
@@ -108,18 +109,18 @@ const Footer = ({ bg }) => {
                           {navigation.navigationItem.map(
                             ({ url, title }, i) => (
                               <ListItem fontSize={1} mb={2} key={i}>
-                                <Link to={`/${url}`}>{title}</Link>
+                                <HoverLink to={`/${url}`}>{title}</Link>
                               </ListItem>
                             )
                           )}
                           <ListItem fontSize={1} mb={2}>
-                            <Link to='/'>Terms and conditions</Link>
+                            <HoverLink to='/'>Terms and conditions</Link>
                           </ListItem>
                           <ListItem mb={2} fontSize={1}>
-                            <Link to='/privacy-policy'>Privacy policy</Link>
+                            <HoverLink to='/privacy-policy'>Privacy policy</Link>
                           </ListItem>
                           <ListItem fontSize={1}>
-                            <Link to='/cookie-policy'>Cookie policy</Link>
+                            <HoverLink to='/cookie-policy'>Cookie policy</Link>
                           </ListItem>
                         </List>
                       </nav>
@@ -145,7 +146,7 @@ const Footer = ({ bg }) => {
                           M:{' '}
                         </Text.span>
                         <Text.span color='grey' fontSize={1}>
-                          <a href={phoneNumber}>{phoneNumber}</a>
+                          <Link href={phoneNumber}>{phoneNumber}</Link>
                         </Text.span>
                       </Box>
                     </Box>
