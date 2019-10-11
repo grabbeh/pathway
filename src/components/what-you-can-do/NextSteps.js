@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Box, Flex, StandardSection as Section } from '../general'
+import { Box, Flex, StandardSection as Section, Link } from '../general'
 import { BodyText, SectionTitle, Subtitle, Text } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 
@@ -135,7 +135,7 @@ const ContactDetails = ({
         M:{' '}
       </Text.span>
       <Text.span fontSize={[2, 4]} color='white'>
-        <a href={phoneNumber}>{phoneNumber}</a>
+        <Link href={phoneNumber}>{phoneNumber}</Link>
       </Text.span>
     </Box>
   </>
