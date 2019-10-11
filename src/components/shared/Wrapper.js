@@ -72,6 +72,8 @@ const Wrapper = props => {
         ]}
       >
         <html lang='en' />
+        <meta name="format-detection" content="telephone=no"/>
+
       </Helmet>
       <Global styles={styles} />
       <ThemeProvider components={components} theme={theme}>

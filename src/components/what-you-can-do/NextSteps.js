@@ -124,18 +124,18 @@ const ContactDetails = ({
     </Text>
     <Box mb={3}>
       <Text.span fontSize={[2, 4]} color='white' fontWeight='bold'>
-        Email:
-      </Text.span>{' '}
+        Email:{' '}
+      </Text.span>
       <Text.span fontSize={[2, 4]} color='white'>
         {emailAddress}
       </Text.span>
     </Box>
     <Box>
       <Text.span fontSize={[2, 4]} color='white' fontWeight='bold'>
-        M:
+        M:{' '}
       </Text.span>
       <Text.span fontSize={[2, 4]} color='white'>
-        {phoneNumber}
+        <a href={phoneNumber}>{phoneNumber}</a>
       </Text.span>
     </Box>
   </>
