@@ -117,10 +117,14 @@ const Footer = ({ bg }) => {
                             <HoverLink to='/'>Terms and conditions</HoverLink>
                           </ListItem>
                           <ListItem mb={2} fontSize={1}>
-                            <HoverLink to='/privacy-policy'>Privacy policy</HoverLink>
+                            <HoverLink to='/privacy-policy'>
+                              Privacy policy
+                            </HoverLink>
                           </ListItem>
                           <ListItem fontSize={1}>
-                            <HoverLink to='/cookie-policy'>Cookie policy</HoverLink>
+                            <HoverLink to='/cookie-policy'>
+                              Cookie policy
+                            </HoverLink>
                           </ListItem>
                         </List>
                       </nav>
@@ -146,7 +150,9 @@ const Footer = ({ bg }) => {
                           M:{' '}
                         </Text.span>
                         <Text.span color='grey' fontSize={1}>
-                          <Link href={`tel:${phoneNumber}`}>{phoneNumber}</Link>
+                          <Link color='grey' href={`tel:${phoneNumber}`}>
+                            {phoneNumber}
+                          </Link>
                         </Text.span>
                       </Box>
                     </Box>

@@ -135,7 +135,9 @@ const ContactDetails = ({
         M:{' '}
       </Text.span>
       <Text.span fontSize={[2, 4]} color='white'>
-        <Link href={phoneNumber}>{phoneNumber}</Link>
+        <Link color='white' href={phoneNumber}>
+          {phoneNumber}
+        </Link>
       </Text.span>
     </Box>
   </>
