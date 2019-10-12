@@ -17,21 +17,7 @@ export default {
     grey: '#4A4A4A',
     lightGrey: '#F9F9F9',
     yellow: '#F5A623',
-    turquoise: '#518399',
-    modes: {
-      light: {
-        text: '#4A4A4A',
-        background: '#fff'
-      },
-      blue: {
-        text: '#fff',
-        background: '#37AEE3'
-      },
-      green: {
-        text: '#fff',
-        background: '#00A880'
-      }
-    }
+    turquoise: '#518399'
   },
   modes: {
     light: {

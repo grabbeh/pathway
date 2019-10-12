@@ -5,7 +5,6 @@ import Hero from '../components/home/Hero'
 import SocialFranchise from '../components/home/SocialFranchise'
 import Letter from '../components/home/Letter'
 import Footnotes from '../components/home/Footnotes'
-import Quote from '../components/shared/Quote'
 
 const IndexPage = () => (
   <Wrapper>
@@ -14,7 +13,6 @@ const IndexPage = () => (
     <SocialFranchise />
     <Letter />
     <Stats />
-    <Quote variant='modes.blue' quote='This is a test quote :)' />
     <FindOutMore />
     <Footnotes />
     <Footer bg='lightGrey' />

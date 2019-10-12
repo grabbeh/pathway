@@ -89,7 +89,7 @@ const Header = props => {
             <MdClose />
           </Text>
         ) : (
-          <Box position='absolute' top={2} right={2}>
+          <Box position='absolute' top={2} right={0}>
             <BurgerShow>
               <Button
                 style={{ cursor: 'pointer' }}

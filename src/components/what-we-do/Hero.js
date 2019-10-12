@@ -31,11 +31,10 @@ const Hero = () => {
     mobileHeroBackgroundImage,
     heroTitle
   } = data.allContentfulWwdPage.edges[0].node
-
   return (
     <ImageHero
       alt={heroImage.description}
-      bg='green'
+      bg='yellow'
       mobileBg='#37AEE3'
       mobileColor='white'
       title={heroTitle}
