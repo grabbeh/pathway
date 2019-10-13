@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  FindOutMore,
-  seo as SEO,
-  Footer,
-  Wrapper
-} from '../components/shared'
+import { FindOutMore, seo as SEO, Footer, Wrapper } from '../components/shared'
 import MainSection from '../components/what-you-can-do/MainSection'
 import Hero from '../components/what-you-can-do/Hero'
 import PathwayFranchise from '../components/what-you-can-do/PathwayFranchise'
@@ -15,6 +10,7 @@ import GuyStats from '../components/what-you-can-do/GuyStats'
 import FinancialInfo from '../components/what-you-can-do/FranchiseeFinancialInfo'
 import NextSteps from '../components/what-you-can-do/NextSteps'
 import Footnotes from '../components/what-you-can-do/Footnotes'
+import Quote from '../components/what-you-can-do/Quote'
 
 const WhatYouCanDo = ({ location }) => (
   <Wrapper>
@@ -28,6 +24,7 @@ const WhatYouCanDo = ({ location }) => (
     <GuyStats />
     <FinancialInfo />
     <NextSteps />
+    <Quote />
     <FindOutMore currentPath={location.pathname} bg='lightGrey' />
     <Footnotes bg='lightGrey' />
     <Footer />

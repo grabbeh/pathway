@@ -9,6 +9,7 @@ import CostEffective from '../components/what-we-do/CostEffective'
 import PathwayTeamCosts from '../components/what-we-do/PathwayTeamCosts'
 import PathwayTeam from '../components/what-we-do/PathwayTeam'
 import Footnotes from '../components/what-we-do/Footnotes'
+import Quote from '../components/what-we-do/Quote'
 
 const WhatWeDoPage = ({ location }) => (
   <Wrapper>
@@ -21,6 +22,7 @@ const WhatWeDoPage = ({ location }) => (
     <CostEffective />
     <PathwayTeam />
     <PathwayTeamCosts />
+    <Quote />
     <FindOutMore bg='lightGrey' currentPath={location.pathname} />
     <Footnotes bg='lightGrey' />
     <Footer />

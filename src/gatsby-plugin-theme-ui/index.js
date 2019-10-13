@@ -20,9 +20,13 @@ export default {
     turquoise: '#518399'
   },
   modes: {
-    light: {
+    white: {
       color: '#37AEE3',
       bg: '#fff'
+    },
+    light: {
+      color: '#37AEE3',
+      bg: '#F9F9F9'
     },
     blue: {
       color: '#fff',

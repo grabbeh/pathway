@@ -1,16 +1,15 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { StandardSection as Section, Box } from '../general'
+import { jsx, Box } from 'theme-ui'
+import { StandardSection as Section } from '../general'
 
 const QuoteTemplate = ({ children, bg, variant }) => (
   <Section variant={variant} bg={bg}>
     <Box
+      as='h2'
       sx={{
-        borderLeft: '10px solid',
-        pl: [3, 5],
-        py: 3,
-        fontSize: 7,
-        fontWeight: 'bold',
+        fontSize: [5, 6],
+        fontWeight: 'subtitle',
+        lineHeight: ['medium', 'tagline'],
         fontStyle: 'italic'
       }}
     >
