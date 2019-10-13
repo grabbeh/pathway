@@ -41,9 +41,9 @@ const Hero = () => {
       subtitle={heroSubtitle}
       imageData={heroImage.fluid}
       mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
-      bg='green'
-      mobileColor='white'
-      headerColor='blue'
+      sidebarColor='green'
+      mobileHeadingColor='white'
+      desktopHeadingColor='blue'
       subtitleColor='white'
     />
   )

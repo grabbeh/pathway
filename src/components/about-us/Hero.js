@@ -41,13 +41,13 @@ const Hero = () => {
     <ImageHero
       alt={heroImage.description}
       mobileBg='#00A880'
-      mobileColor='white'
+      mobileHeadingColor='white'
       title={heroTitle}
       subtitle={heroSubtitle.childMarkdownRemark.html}
       imageData={heroImage.fluid}
       mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
-      bg='blue'
-      headerColor='green'
+      sidebarColor='blue'
+      desktopHeadingColor='green'
       subtitleColor='white'
     />
   )

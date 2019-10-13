@@ -16,6 +16,7 @@ module.exports = {
         plugins: []
       }
     },
+    `gatsby-plugin-favicon`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-theme-ui',

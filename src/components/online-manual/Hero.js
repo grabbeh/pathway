@@ -33,10 +33,10 @@ const Hero = () => {
   } = data.allContentfulOnlineManualPage.edges[0].node
   return (
     <ImageHero
-      bg='turquoise'
-      headerColor='blue'
+      sidebarColor='turquoise'
+      desktopHeadingColor='blue'
       mobileBg='#F5A623'
-      mobileColor='grey'
+      mobileHeadingColor='grey'
       alt={heroImage.description}
       title={heroTitle}
       imageData={heroImage.fluid}

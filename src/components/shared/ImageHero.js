@@ -6,16 +6,14 @@ import { useLoad, useDetectWidth } from '../../hooks'
 
 const ImageHero = props => {
   const { isMobile } = useDetectWidth()
+  console.log(isMobile)
   const load = useLoad()
   return (
-    <Flex bg={props.mobileBg} flexWrap='wrap'>
-      <Flex bg={props.bg} flex='0 0 20px' />
+    <Flex flexWrap='wrap'>
+      <Flex bg={props.sidebarColor} flex='0 0 20px' />
       {isMobile ? (
-        <Box width={1} style={{ flex: '1' }}>
-          <BackgroundImage
-            backgroundColor={props.mobileBg}
-            imageData={props.mobileBackgroundImage}
-          >
+        <Box bg={props.mobileBg} width={1} style={{ flex: '1' }}>
+          <BackgroundImage imageData={props.mobileBackgroundImage}>
             <Hero load={load} {...props} />
           </BackgroundImage>
         </Box>
@@ -33,8 +31,8 @@ const ImageHero = props => {
 const Hero = props => {
   const {
     load,
-    mobileColor,
-    headerColor,
+    mobileHeadingColor,
+    desktopHeadingColor,
     title,
     subtitle,
     subtitleColor
@@ -45,7 +43,9 @@ const Hero = props => {
         <Flex alignItems='center' height={500}>
           <Box width={[1, 3 / 4, 0.5]} px={[3, 4]}>
             <LoadAnimation load={load}>
-              <Heading color={[mobileColor, headerColor]}>{title}</Heading>
+              <Heading color={[mobileHeadingColor, desktopHeadingColor]}>
+                {title}
+              </Heading>
               <Subtitle color={subtitleColor} html={subtitle} />
             </LoadAnimation>
           </Box>
