@@ -4,6 +4,7 @@ import Stats from '../components/home/HomeStats'
 import Hero from '../components/home/Hero'
 import SocialFranchise from '../components/home/SocialFranchise'
 import Letter from '../components/home/Letter'
+import Quote from '../components/home/Quote'
 import Footnotes from '../components/home/Footnotes'
 
 const IndexPage = () => (
@@ -13,6 +14,7 @@ const IndexPage = () => (
     <SocialFranchise />
     <Letter />
     <Stats />
+    <Quote />
     <FindOutMore />
     <Footnotes />
     <Footer bg='lightGrey' />

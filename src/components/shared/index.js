@@ -12,6 +12,7 @@ import Menu from './Menu'
 import seo from './seo'
 import Services from './Services'
 import StatSection from './StatSection'
+import QuoteTemplate from './QuoteTemplate'
 import Wrapper from './Wrapper'
 
 export {
@@ -29,5 +30,6 @@ export {
   seo,
   Services,
   StatSection,
+  QuoteTemplate,
   Wrapper
 }

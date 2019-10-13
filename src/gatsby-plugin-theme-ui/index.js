@@ -21,7 +21,7 @@ export default {
   },
   modes: {
     light: {
-      color: '#4A4A4A',
+      color: '#37AEE3',
       bg: '#fff'
     },
     blue: {
@@ -65,7 +65,7 @@ export default {
       color: 'grey'
     },
     h1: {
-      fontSize: 8,
+      fontSize: 6,
       ...Heading
     },
     h2: {

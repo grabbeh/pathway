@@ -14,7 +14,7 @@ const BackgroundSection = ({
       style={style}
       fluid={imageData}
       alt={alt}
-      backgroundColor='#fafafa'
+      backgroundColor={backgroundColor}
     >
       {children}
     </BackgroundImage>

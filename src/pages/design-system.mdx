@@ -146,15 +146,16 @@ The hero component is usually used as an introduction to a page and includes a p
 
 ```jsx
 <ImageHero
-   mobileBg='black'
-   mobileColor='white'
-   title={heroTitle}
-   subtitle={heroSubtitle.childMarkdownRemark.html}
-   imageData={heroImage.fluid}
-   mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
-   bg='blue'
-   headerColor='green'
-   subtitleColor='white'
+      alt={heroImage.description}
+      mobileBg='#37AEE3'
+      title={heroTitle}
+      subtitle={heroSubtitle}
+      imageData={heroImage.fluid}
+      mobileBackgroundImage={mobileHeroBackgroundImage.fluid}
+      sidebarColor='green'
+      mobileHeadingColor='white'
+      desktopHeadingColor='blue'
+      subtitleColor='white'
 />
 ```
 

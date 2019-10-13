@@ -6,14 +6,16 @@ import { useLoad, useDetectWidth } from '../../hooks'
 
 const ImageHero = props => {
   const { isMobile } = useDetectWidth()
-  console.log(isMobile)
   const load = useLoad()
   return (
     <Flex flexWrap='wrap'>
       <Flex bg={props.sidebarColor} flex='0 0 20px' />
       {isMobile ? (
         <Box bg={props.mobileBg} width={1} style={{ flex: '1' }}>
-          <BackgroundImage imageData={props.mobileBackgroundImage}>
+          <BackgroundImage
+            backgroundColor={props.mobileBg}
+            imageData={props.mobileBackgroundImage}
+          >
             <Hero load={load} {...props} />
           </BackgroundImage>
         </Box>
