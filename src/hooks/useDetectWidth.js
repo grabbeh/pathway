@@ -13,10 +13,10 @@ function useDetectWidth () {
     }
   }, [])
   let isMobile = false
-  let isWideDesktop = false
+  let isDesktop = false
   if (width < 640) isMobile = true
-  if (width > 1024) isWideDesktop = true
-  return { isMobile, isWideDesktop }
+  if (width > 1024) isDesktop = true
+  return { isMobile, isDesktop }
 }
 
 export default useDetectWidth

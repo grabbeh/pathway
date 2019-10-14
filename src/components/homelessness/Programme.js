@@ -35,49 +35,58 @@ const query = graphql`
 `
 
 const HomelessProgramme = () => {
-  const { isMobile } = useDetectWidth()
+  const { isDesktop } = useDetectWidth()
   const data = useStaticQuery(query)
   const {
     programmeText,
     programmeTitle,
-    programmeImage,
-    mobileProgrammeImage
+    programmeImage
   } = data.allContentfulHomelessnessPage.edges[0].node
 
   return (
     <Flex flexWrap='wrap'>
-      <Box position='relative' width={[1, 1, 1 / 3]}>
-        <BackgroundImage
-          alt={programmeImage.description}
-          style={{ height: '100vh' }}
-          imageData={
-            isMobile ? mobileProgrammeImage.fluid : programmeImage.fluid
-          }
-        >
-          <Box position='absolute' top={20} left={20}>
-            <CaseStudyStamp />
-          </Box>
-        </BackgroundImage>
-      </Box>
-      <Box py={[4, 5]} bg='green' width={[1, 1, 2 / 3]}>
-        <Animation>
-          <Flex justifyContent='center'>
-            <Box p={[3, 3, 0]} width={[1, 1, 0.7]}>
-              <Box mb={3}>
-                <IntroTitle text={programmeTitle} color='white' />
+      <Flex width={[1, 1, 1 / 3]} flexBasis='auto'>
+        <Box position='relative' width={1}>
+          {isDesktop ? (
+            <BackgroundImage
+              alt={programmeImage.description}
+              style={{ height: '100%' }}
+              imageData={programmeImage.fluid}
+            >
+              <Box position='absolute' top={20} left={20}>
+                <CaseStudyStamp />
               </Box>
-              <Box>
-                <Box>
-                  <Subtitle
-                    color='white'
-                    html={programmeText.childMarkdownRemark.html}
-                  />
+            </BackgroundImage>
+          ) : (
+            <BackgroundImage
+              alt={programmeImage.description}
+              style={{ height: '300px' }}
+              imageData={programmeImage.fluid}
+            >
+              <Box position='absolute' top={20} left={20}>
+                <CaseStudyStamp />
+              </Box>
+            </BackgroundImage>
+          )}
+        </Box>
+      </Flex>
+      <Flex flex='1'>
+        <Box bg='green'>
+          <Animation>
+            <Flex height='100%' alignItems='center'>
+              <Box py={[3, 5]} px={[3, 3, 5]}>
+                <Box mb={3}>
+                  <IntroTitle text={programmeTitle} color='white' />
                 </Box>
+                <Subtitle
+                  color='white'
+                  html={programmeText.childMarkdownRemark.html}
+                />
               </Box>
-            </Box>
-          </Flex>
-        </Animation>
-      </Box>
+            </Flex>
+          </Animation>
+        </Box>
+      </Flex>
     </Flex>
   )
 }
