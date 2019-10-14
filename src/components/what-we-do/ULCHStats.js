@@ -15,9 +15,7 @@ const query = graphql`
           ulchStats {
             figure
             text {
-              childMarkdownRemark {
-                html
-              }
+              text
             }
             subtitle
           }
