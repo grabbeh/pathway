@@ -17,11 +17,6 @@ const query = graphql`
               ...GatsbyContentfulFluid
             }
           }
-          mobileProgrammeImage {
-            fluid(maxWidth: 400) {
-              ...GatsbyContentfulFluid
-            }
-          }
           programmeText {
             childMarkdownRemark {
               html
