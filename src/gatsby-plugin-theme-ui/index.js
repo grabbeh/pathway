@@ -35,10 +35,6 @@ export default {
     green: {
       color: '#fff',
       bg: '#00A880'
-    },
-    yellow: {
-      color: '#4A4A4A',
-      bg: '#F5A623'
     }
   },
   radii: [0, 2, 4, 16, 9999, '100%'],
