@@ -9,6 +9,7 @@ const QuoteTemplate = ({ children, bg, variant }) => (
       <Box
         as='h2'
         sx={{
+          textAlign: 'center',
           fontSize: [5, 6],
           fontWeight: 'subtitle',
           lineHeight: ['medium', 'tagline'],
