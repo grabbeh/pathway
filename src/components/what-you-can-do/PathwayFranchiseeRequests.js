@@ -48,7 +48,7 @@ const PathwayFranchiseeRequests = () => {
           </Animation>
         </Box>
         <Box width={[1, 1, 1 / 2]}>
-          <Box mt={[3, 0]} pl={[2, 5]}>
+          <Box mt={[3, 0]} pr={[2,5,0]} pl={[2, 5]}>
             <Animation>
               <WhatYouCanDoFact />
             </Animation>

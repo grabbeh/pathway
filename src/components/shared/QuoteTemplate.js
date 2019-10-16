@@ -12,8 +12,7 @@ const QuoteTemplate = ({ children, bg, variant }) => (
           textAlign: 'center',
           fontSize: [5, 6],
           fontWeight: 'subtitle',
-          lineHeight: ['medium', 'tagline'],
-          fontStyle: 'italic'
+          lineHeight: ['medium', 'tagline']
         }}
       >
         {children}
