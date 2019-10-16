@@ -8,6 +8,7 @@ const KeyStatStamp = () => (
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
   >
+    <title>Key stat stamp</title>
     <circle cx='60' cy='60' r='60' fill='#F5A623' />
     <g>
       <path

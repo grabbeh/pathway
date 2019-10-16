@@ -165,7 +165,9 @@ const Footer = ({ bg }) => {
             <Box width={[1, 1, 1 / 2]}>
               <Box mb={4}>
                 <Box mb={3}>
-                  <Image fixed={companyLogo.fixed} />
+                  <Link href='https://www.pathway.org.uk'>
+                    <Image fixed={companyLogo.fixed} />
+                  </Link>
                 </Box>
                 <Text fontSize={1} color='white'>
                   {companyNumber}
