@@ -15,8 +15,8 @@ const IndexPage = props => (
     <Letter />
     <Stats />
     <Quote />
-    <FindOutMore />
-    <Footnotes currentPath={props.location.pathname} />
+    <FindOutMore currentPath={props.location.pathname} />
+    <Footnotes />
     <Footer bg='lightGrey' />
   </Wrapper>
 )
