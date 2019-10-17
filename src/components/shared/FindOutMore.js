@@ -38,12 +38,10 @@ const query = graphql`
 `
 
 const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
-  console.log(currentPath)
   const data = useStaticQuery(query)
   const { title, content, links } = data.allContentfulFindOutMore.edges[0].node
-  console.log(links)
   const nonCurrent = links.filter(l => {
-    return `/${l.url}` !== currentPath
+    return `/${l.url}` || `/${l.url}/` !== currentPath
   })
   return (
     <section>
