@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, MarkdownText, StandardSection as Section } from '../general'
 import { Subtitle } from '../typography'
 
-const Footnotes = ({ footnotes, bg }) => (
+const Footnotes = ({ footnotes, bg = 'white' }) => (
   <section>
     <Box bg={bg}>
       <Section pt={0}>
