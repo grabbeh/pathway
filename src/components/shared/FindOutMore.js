@@ -50,7 +50,7 @@ const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
     }
   }
   const nonCurrent = links.filter(l => {
-    return `/${link}` !== currentPath
+    return `/${l.link}` !== currentPath
   })
   return (
     <section>
