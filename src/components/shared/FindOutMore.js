@@ -39,9 +39,14 @@ const query = graphql`
 
 const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
   const data = useStaticQuery(query)
-  const { title, content, links } = data.allContentfulFindOutMore.edges[0].node
+  const { title, content, links } = data.allContentfulFindOutMore.edges[0].nod
   const nonCurrent = links.filter(l => {
-    return `/${l.url}` || `/${l.url}/` !== currentPath
+    let link = l.url
+    let lastSlash = link.lastIndexOf("/")
+    if (lastSlash + 1 === link.length) {
+      link = link.slice(0, lastSlash)
+    }
+    return `/${link}` !== currentPath
   })
   return (
     <section>
