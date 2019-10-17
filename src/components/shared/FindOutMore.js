@@ -43,9 +43,13 @@ const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
   const nonCurrent = links.filter(l => {
     let link = l.url
     let lastSlash = link.lastIndexOf("/")
+    console.log(lastSlash)
+    console.log(link.length)
     if (lastSlash + 1 === link.length) {
+      console.log("Slash at end")
       link = link.slice(0, lastSlash)
     }
+    console.log(link)
     return `/${link}` !== currentPath
   })
   return (
