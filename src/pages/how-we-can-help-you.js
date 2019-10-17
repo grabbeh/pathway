@@ -25,7 +25,7 @@ const WhatYouCanDo = ({ location }) => (
     <FinancialInfo />
     <NextSteps />
     <Quote />
-    <FindOutMore currentPath={location.pathname} bg='lightGrey' />
+    <FindOutMore currentPath={location.pathname} />
     <Footnotes bg='lightGrey' />
     <Footer />
   </Wrapper>
