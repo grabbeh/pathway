@@ -46,9 +46,9 @@ const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
       currentPath = currentPath.slice(0, lastSlash)
     }
   }
-  console.log(l.link)
-  console.log(currentPath)
   const nonCurrent = links.filter(l => {
+    console.log(l.link)
+    console.log(currentPath)
     return `/${l.link}` !== currentPath
   })
   console.log(nonCurrent)
