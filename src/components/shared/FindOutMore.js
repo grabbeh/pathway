@@ -40,13 +40,14 @@ const query = graphql`
 const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
   const data = useStaticQuery(query)
   const { title, content, links } = data.allContentfulFindOutMore.edges[0].node
-  
-  let lastSlash = currentPath.lastIndexOf("/")
-  console.log(lastSlash)
-  console.log(currentPath.length)
-  if (lastSlash + 1 === currentPath.length) {
-    console.log("Slash at end")
-    currentPath = currentPath.slice(0, lastSlash)
+  if (currentPath) {
+    let lastSlash = currentPath.lastIndexOf("/")
+    console.log(lastSlash)
+    console.log(currentPath.length)
+    if (lastSlash + 1 === currentPath.length) {
+      console.log("Slash at end")
+      currentPath = currentPath.slice(0, lastSlash)
+    }
   }
   const nonCurrent = links.filter(l => {
     return `/${link}` !== currentPath
