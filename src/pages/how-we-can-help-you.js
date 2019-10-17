@@ -12,7 +12,7 @@ import NextSteps from '../components/what-you-can-do/NextSteps'
 import Footnotes from '../components/what-you-can-do/Footnotes'
 import Quote from '../components/what-you-can-do/Quote'
 
-const WhatYouCanDo = ({ location }) => (
+const WhatYouCanDo = props => (
   <Wrapper>
     <SEO title='How we can help you' />
     <Hero />
@@ -25,7 +25,7 @@ const WhatYouCanDo = ({ location }) => (
     <FinancialInfo />
     <NextSteps />
     <Quote />
-    <FindOutMore currentPath={location.pathname} />
+    <FindOutMore currentPath={props.location.pathname} />
     <Footnotes bg='white' />
     <Footer />
   </Wrapper>

@@ -11,7 +11,7 @@ import PathwayTeam from '../components/what-we-do/PathwayTeam'
 import Footnotes from '../components/what-we-do/Footnotes'
 import Quote from '../components/what-we-do/Quote'
 
-const WhatWeDoPage = ({ location }) => (
+const WhatWeDoPage = props => (
   <Wrapper>
     <SEO title='What we do' />
     <Hero />
@@ -23,7 +23,7 @@ const WhatWeDoPage = ({ location }) => (
     <PathwayTeam />
     <PathwayTeamCosts />
     <Quote />
-    <FindOutMore bg='lightGrey' currentPath={location.pathname} />
+    <FindOutMore bg='lightGrey' currentPath={props.location.pathname} />
     <Footnotes bg='lightGrey' />
     <Footer />
   </Wrapper>

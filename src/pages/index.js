@@ -7,7 +7,7 @@ import Letter from '../components/home/Letter'
 import Quote from '../components/home/Quote'
 import Footnotes from '../components/home/Footnotes'
 
-const IndexPage = () => (
+const IndexPage = props => (
   <Wrapper>
     <SEO title='Home' />
     <Hero />
@@ -16,7 +16,7 @@ const IndexPage = () => (
     <Stats />
     <Quote />
     <FindOutMore />
-    <Footnotes />
+    <Footnotes currentPath={props.location.pathname} />
     <Footer bg='lightGrey' />
   </Wrapper>
 )

@@ -6,14 +6,14 @@ import Survey from '../components/about-us/Survey'
 import Services from '../components/about-us/Services'
 import Footnotes from '../components/about-us/Footnotes'
 
-const AboutPage = () => (
+const AboutPage = props => (
   <Wrapper>
     <SEO title='About' />
     <Hero />
     <MainSection />
     <Survey />
     <Services />
-    <FindOutMore bg='lightGrey' />
+    <FindOutMore bg='lightGrey' currentPath={props.location.pathname} />
     <Footnotes bg='lightGrey' />
     <Footer />
   </Wrapper>

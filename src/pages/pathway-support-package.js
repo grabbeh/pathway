@@ -4,13 +4,17 @@ import Hero from '../components/online-manual/Hero'
 import MainSection from '../components/online-manual/MainSection'
 import Quote from '../components/online-manual/Quote'
 
-const OnlineManual = () => (
+const OnlineManual = props => (
   <Wrapper>
     <SEO title='Pathway support package' />
     <Hero />
     <MainSection />
     <Quote />
-    <FindOutMore pb={[4, 5]} bg='lightGrey' />
+    <FindOutMore
+      pb={[4, 5]}
+      bg='lightGrey'
+      currentPath={props.location.pathname}
+    />
     <Footer />
   </Wrapper>
 )
