@@ -2,12 +2,12 @@ import React from 'react'
 import {
   Box,
   Flex,
+  List,
   MarkdownText as BodyText,
   StandardSection as Section
 } from '../general'
 import { Text, SectionTitle } from '../typography'
 import FullButton from './FullButton'
-import List from '../general/List'
 import { graphql, useStaticQuery } from 'gatsby'
 import ReactSVG from 'react-svg'
 
