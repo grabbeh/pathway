@@ -25,9 +25,9 @@ const WhatYouCanDo = props => (
     <FinancialInfo />
     <NextSteps />
     <Quote />
-    <FindOutMore currentPath={props.location.pathname} />
+    <FindOutMore bg='white' currentPath={props.location.pathname} />
     <Footnotes bg='white' />
-    <Footer />
+    <Footer bg='lightGrey' />
   </Wrapper>
 )
 
