@@ -22,7 +22,7 @@ const WWDFootnotes = () => {
   const data = useStaticQuery(query)
   const { footnotes } = data.allContentfulWhatYouCanDoPage.edges[0].node
   return (
-    <Footnotes bg='lightGrey' footnotes={footnotes.childMarkdownRemark.html} />
+    <Footnotes bg='white' footnotes={footnotes.childMarkdownRemark.html} />
   )
 }
 
