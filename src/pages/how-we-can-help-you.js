@@ -26,7 +26,7 @@ const WhatYouCanDo = props => (
     <NextSteps />
     <Quote />
     <FindOutMore bg='white' currentPath={props.location.pathname} />
-    <Footnotes bg='white' />
+    <Footnotes />
     <Footer bg='lightGrey' />
   </Wrapper>
 )
