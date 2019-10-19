@@ -6,31 +6,27 @@ import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
   query {
-    allContentfulContactDetails {
-      edges {
-        node {
-          name
-          title
-          emailAddress
-          phoneNumber
-        }
+    contactDetails: allContentfulContactDetails {
+      nodes {
+        name
+        title
+        emailAddress
+        phoneNumber
       }
     }
-    allContentfulWhatYouCanDoPage {
-      edges {
-        node {
-          nextStepsTitle
-          nextStepsSubtitle
-          nextStepsContent {
-            childMarkdownRemark {
-              html
-            }
+    howWeCanHelpPage: allContentfulWhatYouCanDoPage {
+      nodes {
+        nextStepsTitle
+        nextStepsSubtitle
+        nextStepsContent {
+          childMarkdownRemark {
+            html
           }
-          nextSteps {
-            step
-          }
-          queriesTitle
         }
+        nextSteps {
+          step
+        }
+        queriesTitle
       }
     }
   }
@@ -44,13 +40,13 @@ const PathwayFranchiseeRequests = () => {
     nextStepsContent,
     nextSteps,
     queriesTitle
-  } = data.allContentfulWhatYouCanDoPage.edges[0].node
+  } = data.howWeCanHelpPage.nodes[0]
   const {
     name,
     title,
     emailAddress,
     phoneNumber
-  } = data.allContentfulContactDetails.edges[0].node
+  } = data.contactDetails.nodes[0]
   return (
     <Box>
       <Section pt={0} pb={0}>

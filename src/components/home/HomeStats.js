@@ -4,21 +4,19 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 const query = graphql`
   query {
-    allContentfulHomePage {
-      edges {
-        node {
-          statsSubtitle {
-            childMdx {
-              body
-            }
+    homePage: allContentfulHomePage {
+      nodes {
+        statsSubtitle {
+          childMdx {
+            body
           }
-          statsHolder {
-            figure
-            text {
-              text
-            }
-            subtitle
+        }
+        statsHolder {
+          figure
+          text {
+            text
           }
+          subtitle
         }
       }
     }
@@ -26,10 +24,7 @@ const query = graphql`
 `
 const Stats = () => {
   const data = useStaticQuery(query)
-  const {
-    statsHolder,
-    statsSubtitle
-  } = data.allContentfulHomePage.edges[0].node
+  const { statsHolder, statsSubtitle } = data.homePage.nodes[0]
   return (
     <StatSection
       bg='green'

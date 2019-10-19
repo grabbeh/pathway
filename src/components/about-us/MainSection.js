@@ -8,19 +8,17 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 const query = graphql`
   query {
     allContentfulAboutPage {
-      edges {
-        node {
-          aboutIntroTitle
-          aboutTitle
-          aboutSubtitle {
-            childMarkdownRemark {
-              html
-            }
+      nodes {
+        aboutIntroTitle
+        aboutTitle
+        aboutSubtitle {
+          childMarkdownRemark {
+            html
           }
-          aboutDescription {
-            childMdx {
-              body
-            }
+        }
+        aboutDescription {
+          childMdx {
+            body
           }
         }
       }
@@ -35,7 +33,7 @@ const AboutSection = () => {
     aboutIntroTitle,
     aboutDescription,
     aboutSubtitle
-  } = data.allContentfulAboutPage.edges[0].node
+  } = data.allContentfulAboutPage.nodes[0]
   return (
     <Section>
       <Animation>

@@ -46,7 +46,7 @@ export default {
   },
   fontSizes: [12, 14, 16, 18, 22, 26, 36, 48, 60, 72, 100],
   fontWeights: {
-    light: 200,
+    light: 250,
     body: 300,
     subtitle: 600,
     bold: 700,

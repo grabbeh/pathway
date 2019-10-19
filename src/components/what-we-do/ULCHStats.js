@@ -4,21 +4,19 @@ import { StatSection } from '../shared'
 
 const query = graphql`
   query {
-    allContentfulWwdPage {
-      edges {
-        node {
-          ulchStatsTitle {
-            childMdx {
-              body
-            }
+    whatWeDoPage: allContentfulWwdPage {
+      nodes {
+        ulchStatsTitle {
+          childMdx {
+            body
           }
-          ulchStats {
-            figure
-            text {
-              text
-            }
-            subtitle
+        }
+        ulchStats {
+          figure
+          text {
+            text
           }
+          subtitle
         }
       }
     }
@@ -27,8 +25,7 @@ const query = graphql`
 
 const UCLHStats = () => {
   const data = useStaticQuery(query)
-  const { ulchStatsTitle, ulchStats } = data.allContentfulWwdPage.edges[0].node
-
+  const { ulchStatsTitle, ulchStats } = data.whatWeDoPage.nodes[0]
   return (
     <StatSection
       bg='green'

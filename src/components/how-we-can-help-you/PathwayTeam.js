@@ -14,23 +14,21 @@ import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
   query {
-    allContentfulWhatYouCanDoPage {
-      edges {
-        node {
-          pathwayTeamTitle
-          pathwayTeamSubtitle
-          franchiseOfferPhases {
-            phase
-            color
-            steps {
-              childMarkdownRemark {
-                html
-              }
+    howWeCanHelpPage: allContentfulWhatYouCanDoPage {
+      nodes {
+        pathwayTeamTitle
+        pathwayTeamSubtitle
+        franchiseOfferPhases {
+          phase
+          color
+          steps {
+            childMarkdownRemark {
+              html
             }
-            content {
-              childMarkdownRemark {
-                html
-              }
+          }
+          content {
+            childMarkdownRemark {
+              html
             }
           }
         }
@@ -45,7 +43,7 @@ const MainSection = () => {
     pathwayTeamTitle,
     pathwayTeamSubtitle,
     franchiseOfferPhases
-  } = data.allContentfulWhatYouCanDoPage.edges[0].node
+  } = data.howWeCanHelpPage.nodes[0]
   return (
     <Section bg='lightGrey'>
       <Animation>

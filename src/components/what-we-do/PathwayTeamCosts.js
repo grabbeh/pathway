@@ -7,17 +7,15 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
-    allContentfulWwdPage {
-      edges {
-        node {
-          hospitalTeamCostsTitle
-          hospitalTeamCostsTable {
-            childMarkdownRemark {
-              html
-            }
-            childMdx {
-              body
-            }
+    whatWeDoPage: allContentfulWwdPage {
+      nodes {
+        hospitalTeamCostsTitle
+        hospitalTeamCostsTable {
+          childMarkdownRemark {
+            html
+          }
+          childMdx {
+            body
           }
         }
       }
@@ -27,8 +25,10 @@ const query = graphql`
 
 const PathwayTeamCosts = () => {
   const data = useStaticQuery(query)
-  const { node } = data.allContentfulWwdPage.edges[0]
-  const { hospitalTeamCostsTitle, hospitalTeamCostsTable } = node
+  const {
+    hospitalTeamCostsTitle,
+    hospitalTeamCostsTable
+  } = data.whatWeDoPage.nodes[0]
   return (
     <Section>
       <Animation>

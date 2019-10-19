@@ -1,34 +1,27 @@
 import React from 'react'
 import { Box, StandardSection as Section } from '../general'
-import {
-  BodyText,
-  IntroTitle,
-  SectionTitle,
-  Subtitle
-} from '../typography'
+import { BodyText, IntroTitle, SectionTitle, Subtitle } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import { useStaticQuery, graphql } from 'gatsby'
 import HomelessStats from './Stats'
 
 const query = graphql`
   query {
-    allContentfulHomelessnessPage {
-      edges {
-        node {
-          homelessnessDescriptionPartOne {
-            childMarkdownRemark {
-              html
-            }
+    homelessnessPage: allContentfulHomelessnessPage {
+      nodes {
+        homelessnessDescriptionPartOne {
+          childMarkdownRemark {
+            html
           }
-          homelessnessDescriptionPartTwo {
-            childMarkdownRemark {
-              html
-            }
+        }
+        homelessnessDescriptionPartTwo {
+          childMarkdownRemark {
+            html
           }
-          homelessnessSubtitle {
-            childMarkdownRemark {
-              html
-            }
+        }
+        homelessnessSubtitle {
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -42,7 +35,7 @@ const HomelessnessMainSection = () => {
     homelessnessDescriptionPartOne,
     homelessnessDescriptionPartTwo,
     homelessnessSubtitle
-  } = data.allContentfulHomelessnessPage.edges[0].node
+  } = data.homelessnessPage.nodes[0]
   return (
     <Section>
       <Animation>

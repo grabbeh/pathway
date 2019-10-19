@@ -4,13 +4,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 const query = graphql`
   query {
-    allContentfulHomelessnessPage {
-      edges {
-        node {
-          footnotes {
-            childMarkdownRemark {
-              html
-            }
+    homelessnessPage: allContentfulHomelessnessPage {
+      nodes {
+        footnotes {
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -20,7 +18,7 @@ const query = graphql`
 
 const HomelessnessFootnotes = () => {
   const data = useStaticQuery(query)
-  const { footnotes } = data.allContentfulHomelessnessPage.edges[0].node
+  const { footnotes } = data.homelessnessPage.nodes[0]
   return <Footnotes footnotes={footnotes.childMarkdownRemark.html} />
 }
 

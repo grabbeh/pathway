@@ -8,19 +8,17 @@ import WhatYouCanDoFact from '../../svg/WhatYouCanDoFact.js'
 
 const query = graphql`
   query {
-    allContentfulWhatYouCanDoPage {
-      edges {
-        node {
-          pathwayFranchiseeRequestsTitle
-          pathwayFranchiseeRequestsList {
-            childMdx {
-              body
-            }
+    howWeCanHelpPage: allContentfulWhatYouCanDoPage {
+      nodes {
+        pathwayFranchiseeRequestsTitle
+        pathwayFranchiseeRequestsList {
+          childMdx {
+            body
           }
-          keyStatContent {
-            childMarkdownRemark {
-              html
-            }
+        }
+        keyStatContent {
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -33,7 +31,7 @@ const PathwayFranchiseeRequests = () => {
   const {
     pathwayFranchiseeRequestsTitle,
     pathwayFranchiseeRequestsList
-  } = data.allContentfulWhatYouCanDoPage.edges[0].node
+  } = data.howWeCanHelpPage.nodes[0]
   return (
     <Section pt={4} pb={0}>
       <Flex flexWrap='wrap'>
@@ -48,7 +46,7 @@ const PathwayFranchiseeRequests = () => {
           </Animation>
         </Box>
         <Box width={[1, 1, 1 / 2]}>
-          <Box mt={[3, 0]} pr={[2,5,0]} pl={[2, 5]}>
+          <Box mt={[3, 0]} pr={[2, 5, 0]} pl={[2, 5]}>
             <Animation>
               <WhatYouCanDoFact />
             </Animation>

@@ -7,14 +7,14 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
-    allContentfulLegalDocument(filter: { title: { eq: "Privacy policy" } }) {
-      edges {
-        node {
-          title
-          content {
-            childMdx {
-              body
-            }
+    legalDocument: allContentfulLegalDocument(
+      filter: { title: { eq: "Privacy policy" } }
+    ) {
+      nodes {
+        title
+        content {
+          childMdx {
+            body
           }
         }
       }
@@ -24,7 +24,7 @@ const query = graphql`
 
 const PrivacyPolicy = () => {
   const data = useStaticQuery(query)
-  const { content, title } = data.allContentfulLegalDocument.edges[0].node
+  const { content, title } = data.legalDocument.nodes[0]
   return (
     <Wrapper>
       <Section>

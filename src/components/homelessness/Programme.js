@@ -8,22 +8,20 @@ import { useDetectWidth } from '../../hooks'
 
 const query = graphql`
   query {
-    allContentfulHomelessnessPage {
-      edges {
-        node {
-          programmeImage {
-            description
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid
-            }
+    homelessnessPage: allContentfulHomelessnessPage {
+      nodes {
+        programmeImage {
+          description
+          fluid(maxWidth: 600) {
+            ...GatsbyContentfulFluid
           }
-          programmeText {
-            childMarkdownRemark {
-              html
-            }
-          }
-          programmeTitle
         }
+        programmeText {
+          childMarkdownRemark {
+            html
+          }
+        }
+        programmeTitle
       }
     }
   }
@@ -36,7 +34,7 @@ const HomelessProgramme = () => {
     programmeText,
     programmeTitle,
     programmeImage
-  } = data.allContentfulHomelessnessPage.edges[0].node
+  } = data.homelessnessPage.nodes[0]
 
   return (
     <Flex flexWrap='wrap'>

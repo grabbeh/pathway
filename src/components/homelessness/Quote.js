@@ -9,14 +9,12 @@ const shortcodes = { QuoteTemplate }
 
 const query = graphql`
   query {
-    allContentfulHomelessnessPage {
-      edges {
-        node {
-          quoteContainer {
-            text {
-              childMdx {
-                body
-              }
+    homelessnessPage: allContentfulHomelessnessPage {
+      nodes {
+        quoteContainer {
+          text {
+            childMdx {
+              body
             }
           }
         }
@@ -29,7 +27,7 @@ const Quote = () => {
   const data = useStaticQuery(query)
   const {
     quoteContainer: { text }
-  } = data.allContentfulHomelessnessPage.edges[0].node
+  } = data.homelessnessPage.nodes[0]
   return (
     <ThemeProvider theme={theme} components={shortcodes}>
       <MDXRenderer>{text.childMdx.body}</MDXRenderer>

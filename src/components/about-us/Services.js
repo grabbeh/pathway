@@ -7,20 +7,18 @@ import { Services } from '../shared'
 const query = graphql`
   query {
     allContentfulAboutPage {
-      edges {
-        node {
-          servicesSubtitle
-          servicesHolder {
-            description {
-              childMarkdownRemark {
-                html
-              }
+      nodes {
+        servicesSubtitle
+        servicesHolder {
+          description {
+            childMarkdownRemark {
+              html
             }
-            name
-            icon {
-              file {
-                url
-              }
+          }
+          name
+          icon {
+            file {
+              url
             }
           }
         }
@@ -34,7 +32,7 @@ const AboutServices = () => {
   const {
     servicesHolder,
     servicesSubtitle
-  } = data.allContentfulAboutPage.edges[0].node
+  } = data.allContentfulAboutPage.nodes[0]
   return (
     <Section>
       <Subtitle color='blue' text={servicesSubtitle} />

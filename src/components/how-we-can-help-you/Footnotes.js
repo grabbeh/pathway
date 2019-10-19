@@ -4,13 +4,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 const query = graphql`
   query {
-    allContentfulWhatYouCanDoPage {
-      edges {
-        node {
-          footnotes {
-            childMarkdownRemark {
-              html
-            }
+    howWeCanHelpPage: allContentfulWhatYouCanDoPage {
+      nodes {
+        footnotes {
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -20,7 +18,7 @@ const query = graphql`
 
 const WWDFootnotes = () => {
   const data = useStaticQuery(query)
-  const { footnotes } = data.allContentfulWhatYouCanDoPage.edges[0].node
+  const { footnotes } = data.howWeCanHelpPage.nodes[0]
   return (
     <Footnotes bg='lightGrey' footnotes={footnotes.childMarkdownRemark.html} />
   )

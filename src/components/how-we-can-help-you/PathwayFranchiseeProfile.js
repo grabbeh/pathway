@@ -7,20 +7,18 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
-    allContentfulWhatYouCanDoPage {
-      edges {
-        node {
-          franchiseeProfileTitle
-          franchiseeProfileIntro {
-            childMarkdownRemark {
-              html
-            }
+    howWeCanHelpPage: allContentfulWhatYouCanDoPage {
+      nodes {
+        franchiseeProfileTitle
+        franchiseeProfileIntro {
+          childMarkdownRemark {
+            html
           }
-          franchiseeProfileSubtitle
-          franchiseeProfileContent {
-            childMdx {
-              body
-            }
+        }
+        franchiseeProfileSubtitle
+        franchiseeProfileContent {
+          childMdx {
+            body
           }
         }
       }
@@ -35,7 +33,7 @@ const MainSection = () => {
     franchiseeProfileIntro,
     franchiseeProfileSubtitle,
     franchiseeProfileContent
-  } = data.allContentfulWhatYouCanDoPage.edges[0].node
+  } = data.howWeCanHelpPage.nodes[0]
   return (
     <Section pt={[4, 3]}>
       <Animation>

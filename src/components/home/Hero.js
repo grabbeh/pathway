@@ -4,21 +4,19 @@ import { ImageHero } from '../shared'
 
 const query = graphql`
   query {
-    allContentfulHomePage {
-      edges {
-        node {
-          heroSubtitle
-          heroTitle
-          heroImage {
-            description
-            fluid(maxWidth: 1200) {
-              ...GatsbyContentfulFluid
-            }
+    homePage: allContentfulHomePage {
+      nodes {
+        heroSubtitle
+        heroTitle
+        heroImage {
+          description
+          fluid(maxWidth: 1200) {
+            ...GatsbyContentfulFluid
           }
-          mobileHeroBackgroundImage {
-            fluid(maxWidth: 400) {
-              ...GatsbyContentfulFluid
-            }
+        }
+        mobileHeroBackgroundImage {
+          fluid(maxWidth: 400) {
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -32,7 +30,7 @@ const Hero = () => {
     heroImage,
     mobileHeroBackgroundImage,
     heroTitle
-  } = data.allContentfulHomePage.edges[0].node
+  } = data.homePage.nodes[0]
   return (
     <ImageHero
       alt={heroImage.description}
@@ -44,7 +42,7 @@ const Hero = () => {
       sidebarColor='green'
       mobileHeadingColor='white'
       desktopHeadingColor='blue'
-      subtitleColor='white'
+      subtitleColor='grey'
     />
   )
 }

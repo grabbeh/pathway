@@ -9,29 +9,27 @@ import { useDetectWidth } from '../../hooks'
 
 const query = graphql`
   query {
-    allContentfulWwdPage {
-      edges {
-        node {
-          hospitalTeamData {
-            rows {
-              text
-              values
-            }
-            headers {
-              text
-              volume
-            }
-            mobile {
-              oneToThirty
-              thirtyToTwoHundred
-              twoHundredPlus
-            }
+    whatWeDoPage: allContentfulWwdPage {
+      nodes {
+        hospitalTeamData {
+          rows {
+            text
+            values
           }
-          pathwayTeamTitle
-          hospitalTeamTableSubtitle {
-            childMarkdownRemark {
-              html
-            }
+          headers {
+            text
+            volume
+          }
+          mobile {
+            oneToThirty
+            thirtyToTwoHundred
+            twoHundredPlus
+          }
+        }
+        pathwayTeamTitle
+        hospitalTeamTableSubtitle {
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -46,7 +44,7 @@ const PathwayTeam = () => {
     pathwayTeamTitle,
     hospitalTeamData,
     hospitalTeamTableSubtitle
-  } = data.allContentfulWwdPage.edges[0].node
+  } = data.whatWeDoPage.nodes[0]
   const { mobile, headers, rows } = hospitalTeamData
   const first = headers.slice(0, 1)
   const mainHeaders = headers.slice(1, headers.length)

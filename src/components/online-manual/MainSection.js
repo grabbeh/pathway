@@ -14,13 +14,11 @@ const components = {
 
 const query = graphql`
   query {
-    allContentfulOnlineManualPage {
-      edges {
-        node {
-          content {
-            childMdx {
-              body
-            }
+    supportPackage: allContentfulOnlineManualPage {
+      nodes {
+        content {
+          childMdx {
+            body
           }
         }
       }
@@ -30,7 +28,7 @@ const query = graphql`
 
 const MainSection = () => {
   const data = useStaticQuery(query)
-  const { content } = data.allContentfulOnlineManualPage.edges[0].node
+  const { content } = data.supportPackage.nodes[0]
   return (
     <MDXProvider components={components}>
       <Section pt={3}>

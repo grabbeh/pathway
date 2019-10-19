@@ -20,13 +20,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 const query = graphql`
   query {
     allContentfulNavigationContainer {
-      edges {
-        node {
-          navigationItem {
-            title
-            subtitle
-            url
-          }
+      nodes {
+        navigationItem {
+          title
+          subtitle
+          url
         }
       }
     }
@@ -35,7 +33,7 @@ const query = graphql`
 
 const Header = props => {
   const data = useStaticQuery(query)
-  const { navigationItem } = data.allContentfulNavigationContainer.edges[0].node
+  const { navigationItem } = data.allContentfulNavigationContainer.nodes[0]
   const state = useAppContext() || props
   return (
     <Box position='relative'>

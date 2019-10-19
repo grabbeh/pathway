@@ -13,6 +13,9 @@ import WhatWeDoFact from '../svg/WhatWeDoFact'
 import Hero from '../components/about-us/Hero'
 import Letter from '../components/home/Letter'
 import Footnotes from '../components/home/Footnotes'
+import HomeQuote from '../components/home/Quote'
+import HomelessnessQuote from '../components/homelessness/Quote'
+import SupportPackageQuote from '../components/online-manual/Quote'
 import Transform from '../design-system/transform'
 
 export default DesignSystemWrapper
@@ -22,6 +25,109 @@ export default DesignSystemWrapper
 This page gives details on the core design elements that form the Pathway site. It runs through from the basic typography and colors, through to core components and visual prompts.
 
 We define the values used for typography and everything else to style the site in a [theme](https://theme-ui.com/theme-spec). Defining values in one place can help to ensure consistency throughout the site.
+
+Here's the theme object used in the site:
+
+```
+import prism from '@theme-ui/prism/presets/prism.json'
+
+const Heading = {
+  fontFamily: 'heading',
+  fontWeight: 'bold',
+  color: 'grey',
+  mt: 4,
+  mb: 2
+}
+
+export default {
+  breakpoints: ['40em', '64em'],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  colors: {
+    blue: '#37AEE3',
+    green: '#00A880',
+    grey: '#4A4A4A',
+    lightGrey: '#F9F9F9',
+    yellow: '#F5A623',
+    turquoise: '#518399'
+  },
+  modes: {
+    white: {
+      color: '#37AEE3',
+      bg: '#fff'
+    },
+    light: {
+      color: '#37AEE3',
+      bg: '#F9F9F9'
+    },
+    blue: {
+      color: '#fff',
+      bg: '#37AEE3'
+    },
+    green: {
+      color: '#fff',
+      bg: '#00A880'
+    }
+  },
+  radii: [0, 2, 4, 16, 9999, '100%'],
+  fonts: {
+    body:
+      'Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+    heading:
+      'Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
+  },
+  fontSizes: [12, 14, 16, 18, 22, 26, 36, 48, 60, 72, 100],
+  fontWeights: {
+    light: 200,
+    body: 300,
+    subtitle: 600,
+    bold: 700,
+    heavy: 900
+  },
+  lineHeights: {
+    text: '24px',
+    subtitle: '30px',
+    medium: '36px',
+    tagline: '46px',
+    heading: '68px',
+    heavy: '90px'
+  },
+  styles: {
+    root: {
+      fontFamily: 'body',
+      fontWeight: 'body'
+    },
+    text: {
+      color: 'grey'
+    },
+    h1: {
+      fontSize: 6,
+      ...Heading
+    },
+    h2: {
+      fontSize: 6,
+      ...Heading
+    },
+    h3: {
+      fontSize: 4,
+      ...Heading
+    },
+    code: {
+      p: 3,
+      mt: 3,
+      overflowX: 'auto',
+      fontSize: 3
+    },
+    pre: {
+      ...prism
+    },
+    a: {
+      color: 'blue'
+    }
+  }
+}
+
+
+```
 
 ## Typography
 
@@ -240,6 +346,24 @@ const UCLHStats = () => {
 }
 ```
 
+### Quotes
+
+Quote sections call out quotes from people who have benefitted from Pathway services. The Quote component takes the variant prop which can be used in Contentful to define specific color schemes defined in the theme object.
+
+<Box mb={[0,-50]}>
+<Transform>
+<HomeQuote />
+<HomelessnessQuote />
+<SupportPackageQuote />
+</Transform>
+</Box>
+
+```
+<HomeQuote variant='light' />
+<HomelessnessQuote variant='blue' />
+<SupportPackageQuote variant='green' />
+```
+
 ### Fact bubbles
 
 <WhatWeDoFact size={200} />
@@ -324,26 +448,24 @@ Gatsby makes requests to Contentful using [GraphQL](https://graphql.org). GraphQ
 const query = graphql`
   query {
     allContentfulAboutPage {
-      edges {
-        node {
-          heroSubtitle {
-            childMarkdownRemark {
-              html
-            }
-          }
-          heroTitle
-          heroImage {
-            fluid(maxWidth: 1200) {
-              ...GatsbyContentfulFluid
-            }
-          }
-          mobileHeroBackgroundImage {
-            fluid(maxWidth: 400) {
-              ...GatsbyContentfulFluid
-            }
+      nodes {
+        heroSubtitle {
+          childMarkdownRemark {
+            html
           }
         }
-      }
+        heroTitle
+        heroImage {
+          fluid(maxWidth: 1200) {
+            ...GatsbyContentfulFluid
+          }
+        }
+        mobileHeroBackgroundImage {
+          fluid(maxWidth: 400) {
+            ...GatsbyContentfulFluid
+          }
+        }
+      } 
     }
   }
 `

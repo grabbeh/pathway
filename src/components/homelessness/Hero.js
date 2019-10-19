@@ -4,20 +4,18 @@ import { ImageHero } from '../shared'
 
 const query = graphql`
   query {
-    allContentfulHomelessnessPage {
-      edges {
-        node {
-          heroTitle
-          heroImage {
-            description
-            fluid(maxWidth: 1200) {
-              ...GatsbyContentfulFluid
-            }
+    homelessnessPage: allContentfulHomelessnessPage {
+      nodes {
+        heroTitle
+        heroImage {
+          description
+          fluid(maxWidth: 1200) {
+            ...GatsbyContentfulFluid
           }
-          mobileHeroBackgroundImage {
-            fluid(maxWidth: 400) {
-              ...GatsbyContentfulFluid
-            }
+        }
+        mobileHeroBackgroundImage {
+          fluid(maxWidth: 400) {
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -30,7 +28,7 @@ const Hero = () => {
     heroImage,
     mobileHeroBackgroundImage,
     heroTitle
-  } = data.allContentfulHomelessnessPage.edges[0].node
+  } = data.homelessnessPage.nodes[0]
   return (
     <ImageHero
       alt={heroImage.description}

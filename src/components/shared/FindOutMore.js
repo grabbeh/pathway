@@ -13,23 +13,21 @@ import ReactSVG from 'react-svg'
 
 const query = graphql`
   query {
-    allContentfulFindOutMore {
-      edges {
-        node {
+    findOutMore: allContentfulFindOutMore {
+      nodes {
+        title
+        links {
           title
-          links {
-            title
-            url
-            icon {
-              file {
-                url
-              }
+          url
+          icon {
+            file {
+              url
             }
           }
-          content {
-            childMarkdownRemark {
-              html
-            }
+        }
+        content {
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -39,8 +37,7 @@ const query = graphql`
 
 const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
   const data = useStaticQuery(query)
-
-  const { title, content, links } = data.allContentfulFindOutMore.edges[0].node
+  const { title, content, links } = data.findOutMore.nodes[0]
   if (currentPath) {
     let lastSlash = currentPath.lastIndexOf('/')
     if (lastSlash + 1 === currentPath.length) {

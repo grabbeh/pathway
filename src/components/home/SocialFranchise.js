@@ -14,14 +14,12 @@ const components = {
 
 const query = graphql`
   query {
-    allContentfulHomePage {
-      edges {
-        node {
-          socialFranchiseSubtitle
-          socialFranchiseDescription {
-            childMdx {
-              body
-            }
+    homePage: allContentfulHomePage {
+      nodes {
+        socialFranchiseSubtitle
+        socialFranchiseDescription {
+          childMdx {
+            body
           }
         }
       }
@@ -34,7 +32,7 @@ const SocialFranchise = () => {
   const {
     socialFranchiseDescription,
     socialFranchiseSubtitle
-  } = data.allContentfulHomePage.edges[0].node
+  } = data.homePage.nodes[0]
   return (
     <MDXProvider components={components}>
       <Section pt={3} pb={3} bg='lightGrey'>

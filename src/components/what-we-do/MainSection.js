@@ -7,20 +7,18 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
-    allContentfulWwdPage {
-      edges {
-        node {
-          wwdIntro
-          wwdMainSectionTitle
-          wwdMainSectionSubtitle {
-            childMarkdownRemark {
-              html
-            }
+    whatWeDoPage: allContentfulWwdPage {
+      nodes {
+        wwdIntro
+        wwdMainSectionTitle
+        wwdMainSectionSubtitle {
+          childMarkdownRemark {
+            html
           }
-          wwdMainSection {
-            childMdx {
-              body
-            }
+        }
+        wwdMainSection {
+          childMdx {
+            body
           }
         }
       }
@@ -35,7 +33,7 @@ const MainSection = () => {
     wwdMainSectionTitle,
     wwdMainSectionSubtitle,
     wwdMainSection
-  } = data.allContentfulWwdPage.edges[0].node
+  } = data.whatWeDoPage.nodes[0]
 
   return (
     <Section>

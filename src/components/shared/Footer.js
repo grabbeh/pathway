@@ -15,51 +15,45 @@ import ReactSVG from 'react-svg'
 
 const query = graphql`
   query {
-    allContentfulContactDetails {
-      edges {
-        node {
-          name
-          title
-          emailAddress
-          phoneNumber
-        }
+    contactDetails: allContentfulContactDetails {
+      nodes {
+        name
+        title
+        emailAddress
+        phoneNumber
       }
     }
-    allContentfulFooter {
-      edges {
-        node {
-          companyNumber
-          charityNumber
-          companyLogo {
-            fixed(width: 150) {
+    footer: allContentfulFooter {
+      nodes {
+        companyNumber
+        charityNumber
+        companyLogo {
+          fixed(width: 150) {
+            ...GatsbyContentfulFixed
+          }
+        }
+        regulatorLogo {
+          file {
+            url
+          }
+        }
+        socialMediaIcons {
+          url
+          icon {
+            description
+            fixed(width: 40) {
               ...GatsbyContentfulFixed
             }
           }
-          regulatorLogo {
-            file {
-              url
-            }
-          }
-          socialMediaIcons {
-            url
-            icon {
-              description
-              fixed(width: 40) {
-                ...GatsbyContentfulFixed
-              }
-            }
-          }
         }
       }
     }
-    allContentfulNavigationContainer {
-      edges {
-        node {
-          navigationItem {
-            title
-            subtitle
-            url
-          }
+    navigation: allContentfulNavigationContainer {
+      nodes {
+        navigationItem {
+          title
+          subtitle
+          url
         }
       }
     }
@@ -68,25 +62,16 @@ const query = graphql`
 
 const Footer = ({ bg }) => {
   const data = useStaticQuery(query)
-  const {
-    allContentfulNavigationContainer,
-    allContentfulFooter,
-    allContentfulContactDetails
-  } = data
-  const navigation = allContentfulNavigationContainer.edges[0].node
+  const { navigation, footer, contactDetails } = data
+  const { navigationItem } = navigation.nodes[0]
   const {
     charityNumber,
     companyNumber,
     companyLogo,
     regulatorLogo,
     socialMediaIcons
-  } = allContentfulFooter.edges[0].node
-  const {
-    name,
-    title,
-    emailAddress,
-    phoneNumber
-  } = allContentfulContactDetails.edges[0].node
+  } = footer.nodes[0]
+  const { name, title, emailAddress, phoneNumber } = contactDetails.nodes[0]
 
   return (
     <footer>
@@ -106,13 +91,11 @@ const Footer = ({ bg }) => {
                       <nav>
                         <Subtitle color='green'>Quick links</Subtitle>
                         <List>
-                          {navigation.navigationItem.map(
-                            ({ url, title }, i) => (
-                              <ListItem fontSize={1} mb={2} key={i}>
-                                <HoverLink to={`/${url}`}>{title}</HoverLink>
-                              </ListItem>
-                            )
-                          )}
+                          {navigationItem.map(({ url, title }, i) => (
+                            <ListItem fontSize={1} mb={2} key={i}>
+                              <HoverLink to={`/${url}`}>{title}</HoverLink>
+                            </ListItem>
+                          ))}
                           <ListItem fontSize={1} mb={2}>
                             <HoverLink to='/'>Terms and conditions</HoverLink>
                           </ListItem>

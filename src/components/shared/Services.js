@@ -9,7 +9,7 @@ const Services = ({ services }) => (
     {services.map(({ name, description, icon }, i) => (
       <Box mb={3} width={[1, 1 / 2, 1 / 3]} key={i}>
         <Animation>
-          <Box mr={4}>
+          <Box mr={[0, 4]}>
             {icon && (
               <Box height={75}>
                 <ReactSVG src={icon.file.url} />

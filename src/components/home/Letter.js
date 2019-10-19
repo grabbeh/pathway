@@ -12,16 +12,14 @@ import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
   query {
-    allContentfulHomePage {
-      edges {
-        node {
-          letterIntroTitle
-          letterTitle
-          letterTagline
-          letterContent {
-            childMarkdownRemark {
-              html
-            }
+    homePage: allContentfulHomePage {
+      nodes {
+        letterIntroTitle
+        letterTitle
+        letterTagline
+        letterContent {
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -36,7 +34,7 @@ const Letter = ({ bg }) => {
     letterTitle,
     letterTagline,
     letterContent
-  } = data.allContentfulHomePage.edges[0].node
+  } = data.homePage.nodes[0]
   return (
     <Section bg={bg}>
       <Box>

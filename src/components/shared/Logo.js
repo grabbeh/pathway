@@ -4,14 +4,12 @@ import Image from 'gatsby-image'
 
 const query = graphql`
   query {
-    allContentfulLogo {
-      edges {
-        node {
-          logoImage {
-            description
-            fixed(width: 200) {
-              ...GatsbyContentfulFixed
-            }
+    logo: allContentfulLogo {
+      nodes {
+        logoImage {
+          description
+          fixed(width: 200) {
+            ...GatsbyContentfulFixed
           }
         }
       }
@@ -21,7 +19,7 @@ const query = graphql`
 
 const Logo = () => {
   const data = useStaticQuery(query)
-  const { fixed, description } = data.allContentfulLogo.edges[0].node.logoImage
+  const { fixed, description } = data.logo.nodes[0].logoImage
   return <Image alt={description} fixed={fixed} />
 }
 

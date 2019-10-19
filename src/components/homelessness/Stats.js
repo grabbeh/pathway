@@ -6,15 +6,13 @@ import Animation from '../animations/ScrollAnimation'
 
 const query = graphql`
   query {
-    allContentfulHomelessnessPage {
-      edges {
-        node {
-          statisticsHolder {
-            figure
-            text {
-              childMarkdownRemark {
-                html
-              }
+    homelessnessPage: allContentfulHomelessnessPage {
+      nodes {
+        statisticsHolder {
+          figure
+          text {
+            childMarkdownRemark {
+              html
             }
           }
         }
@@ -25,7 +23,7 @@ const query = graphql`
 
 const HomelessStats = () => {
   const data = useStaticQuery(query)
-  const { statisticsHolder } = data.allContentfulHomelessnessPage.edges[0].node
+  const { statisticsHolder } = data.homelessnessPage.nodes[0]
   return (
     <Box>
       <Flex flexWrap='wrap'>

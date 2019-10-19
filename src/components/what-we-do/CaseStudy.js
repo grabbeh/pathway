@@ -8,18 +8,16 @@ import CaseStudyStamp from '../../svg/CaseStudyStamp'
 
 const query = graphql`
   query {
-    allContentfulWwdPage {
-      edges {
-        node {
-          wwdCaseStudy {
-            childMarkdownRemark {
-              html
-            }
+    whatWeDoPage: allContentfulWwdPage {
+      nodes {
+        wwdCaseStudy {
+          childMarkdownRemark {
+            html
           }
-          wwdCaseStudySubtitle {
-            childMarkdownRemark {
-              html
-            }
+        }
+        wwdCaseStudySubtitle {
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -29,8 +27,7 @@ const query = graphql`
 
 const CaseStudy = () => {
   const data = useStaticQuery(query)
-  const { node } = data.allContentfulWwdPage.edges[0]
-  const { wwdCaseStudy, wwdCaseStudySubtitle } = node
+  const { wwdCaseStudy, wwdCaseStudySubtitle } = data.whatWeDoPage.nodes[0]
   return (
     <Section bg='blue'>
       <Animation>
@@ -41,7 +38,6 @@ const CaseStudy = () => {
                 <CaseStudyStamp />
               </Box>
             </Box>
-
             <Flex height='100%' alignItems='center'>
               <HideOnMobile>
                 <Box mt={[0, 6, 0]}>

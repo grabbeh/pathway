@@ -24,12 +24,10 @@ const components = {
 const query = graphql`
   query {
     allContentfulAboutPage {
-      edges {
-        node {
-          studyText {
-            childMdx {
-              body
-            }
+      nodes {
+        studyText {
+          childMdx {
+            body
           }
         }
       }
@@ -38,7 +36,7 @@ const query = graphql`
 `
 const AboutSurvey = () => {
   const data = useStaticQuery(query)
-  const { studyText } = data.allContentfulAboutPage.edges[0].node
+  const { studyText } = data.allContentfulAboutPage.nodes[0]
   return (
     <MDXProvider components={components}>
       <Section bg='blue'>

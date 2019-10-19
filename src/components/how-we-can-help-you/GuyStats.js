@@ -4,20 +4,18 @@ import { StatSection } from '../shared'
 
 const query = graphql`
   query {
-    allContentfulWhatYouCanDoPage {
-      edges {
-        node {
-          statsTitle {
-            childMdx {
-              body
-            }
+    howWeCanHelpPage: allContentfulWhatYouCanDoPage {
+      nodes {
+        statsTitle {
+          childMdx {
+            body
           }
-          stats {
-            figure
-            subtitle
-            text {
-              text
-            }
+        }
+        stats {
+          figure
+          subtitle
+          text {
+            text
           }
         }
       }
@@ -27,7 +25,7 @@ const query = graphql`
 
 const GuyStats = () => {
   const data = useStaticQuery(query)
-  const { statsTitle, stats } = data.allContentfulWhatYouCanDoPage.edges[0].node
+  const { statsTitle, stats } = data.howWeCanHelpPage.nodes[0]
   return <StatSection bg='blue' mdx={statsTitle.childMdx.body} stats={stats} />
 }
 

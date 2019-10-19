@@ -13,12 +13,10 @@ import MainSectionTwo from '../components/about-us/MainSectionTwo'
 const query = graphql`
   query {
     allContentfulAboutPage {
-      edges {
-        node {
-          fullMdxPage {
-            childMdx {
-              body
-            }
+      nodes {
+        fullMdxPage {
+          childMdx {
+            body
           }
         }
       }
@@ -40,7 +38,7 @@ const shortcodes = {
 
 const TestPage = () => {
   const data = useStaticQuery(query)
-  const { fullMdxPage } = data.allContentfulAboutPage.edges[0].node
+  const { fullMdxPage } = data.allContentfulAboutPage.nodes[0]
   return (
     <MDXProvider components={shortcodes}>
       <MDXRenderer>{fullMdxPage.childMdx.body}</MDXRenderer>

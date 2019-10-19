@@ -7,25 +7,23 @@ import ReactSVG from 'react-svg'
 
 const query = graphql`
   query {
-    allContentfulWwdPage {
-      edges {
-        node {
-          pathwayTeamCostEffectivenessTitle
-          wwdCostEffectiveSection {
+    whatWeDoPage: allContentfulWwdPage {
+      nodes {
+        pathwayTeamCostEffectivenessTitle
+        wwdCostEffectiveSection {
+          childMarkdownRemark {
+            html
+          }
+        }
+        hospitalTeamBenefitsHolder {
+          mainContent {
             childMarkdownRemark {
               html
             }
           }
-          hospitalTeamBenefitsHolder {
-            mainContent {
-              childMarkdownRemark {
-                html
-              }
-            }
-            icon {
-              file {
-                url
-              }
+          icon {
+            file {
+              url
             }
           }
         }
@@ -40,7 +38,7 @@ const CostEffective = () => {
     pathwayTeamCostEffectivenessTitle,
     wwdCostEffectiveSection,
     hospitalTeamBenefitsHolder
-  } = data.allContentfulWwdPage.edges[0].node
+  } = data.whatWeDoPage.nodes[0]
   return (
     <Section>
       <Animation>

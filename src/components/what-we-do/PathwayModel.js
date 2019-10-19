@@ -1,11 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import {
-  Box,
-  Flex,
-  StandardSection as Section,
-  WideSection
-} from '../general'
+import { Box, Flex, StandardSection as Section, WideSection } from '../general'
 import { BodyText, SectionTitle, Subtitle } from '../typography'
 import Animation from '../animations/ScrollAnimation'
 import PathwayServicesList from '../what-we-do/PathwayServicesList'
@@ -13,24 +8,22 @@ import WhatWeDoFact from '../../svg/WhatWeDoFact'
 
 const query = graphql`
   query {
-    allContentfulWwdPage {
-      edges {
-        node {
-          pathwayModelTitle
-          wwdPathwayModel {
-            childMarkdownRemark {
-              html
-            }
+    whatWeDoPage: allContentfulWwdPage {
+      nodes {
+        pathwayModelTitle
+        wwdPathwayModel {
+          childMarkdownRemark {
+            html
           }
-          wwdPathwayModelPartTwo {
-            childMarkdownRemark {
-              html
-            }
+        }
+        wwdPathwayModelPartTwo {
+          childMarkdownRemark {
+            html
           }
-          wwdPathwayModelSubtitle {
-            childMarkdownRemark {
-              html
-            }
+        }
+        wwdPathwayModelSubtitle {
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -45,7 +38,7 @@ const PathwayModel = () => {
     wwdPathwayModelSubtitle,
     wwdPathwayModel,
     wwdPathwayModelPartTwo
-  } = data.allContentfulWwdPage.edges[0].node
+  } = data.whatWeDoPage.nodes[0]
 
   return (
     <Animation>
@@ -59,7 +52,7 @@ const PathwayModel = () => {
       </Section>
       <WideSection pb={0} pt={[0, 3]}>
         <Flex flexWrap='wrap'>
-          <Box px={[3,6,3]} width={[1, 1, 0.4]}>
+          <Box px={[3, 6, 3]} width={[1, 1, 0.4]}>
             <Flex justifyContent='center'>
               <Box width={1}>
                 <WhatWeDoFact />

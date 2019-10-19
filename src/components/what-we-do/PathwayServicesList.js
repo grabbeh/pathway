@@ -6,14 +6,12 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const query = graphql`
   query {
-    allContentfulWwdPage {
-      edges {
-        node {
-          pathwayServicesListTitle
-          pathwayServicesList {
-            childMdx {
-              body
-            }
+    whatWeDoPage: allContentfulWwdPage {
+      nodes {
+        pathwayServicesListTitle
+        pathwayServicesList {
+          childMdx {
+            body
           }
         }
       }
@@ -26,7 +24,7 @@ const PathwayServicesList = () => {
   const {
     pathwayServicesListTitle,
     pathwayServicesList
-  } = data.allContentfulWwdPage.edges[0].node
+  } = data.whatWeDoPage.nodes[0]
   return (
     <Box>
       <Subtitle text={pathwayServicesListTitle} color='green' />
