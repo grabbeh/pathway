@@ -123,7 +123,7 @@ const PathwayTeam = () => {
             dotLength={50}
             requirements={mobile.twoHundredPlus}
           />
-          <Box px={3}>
+          <Box pb={3} px={3}>
             <BodyText
               html={hospitalTeamTableSubtitle.childMarkdownRemark.html}
             />
