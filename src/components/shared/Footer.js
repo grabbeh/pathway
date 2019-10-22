@@ -97,7 +97,9 @@ const Footer = ({ bg }) => {
                             </ListItem>
                           ))}
                           <ListItem fontSize={1} mb={2}>
-                            <HoverLink to='/'>Terms and conditions</HoverLink>
+                            <HoverLink to='/terms-of-use'>
+                              Terms of use
+                            </HoverLink>
                           </ListItem>
                           <ListItem mb={2} fontSize={1}>
                             <HoverLink to='/privacy-policy'>
