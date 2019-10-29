@@ -20,6 +20,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-theme-ui',
+    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

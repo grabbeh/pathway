@@ -45,5 +45,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve"
+  },
+  "devDependencies": {
+    "gatsby-plugin-remove-trailing-slashes": "^2.1.12"
   }
 }

@@ -38,12 +38,6 @@ const query = graphql`
 const FindOutMore = ({ bg, currentPath, pb = 0 }) => {
   const data = useStaticQuery(query)
   const { title, content, links } = data.findOutMore.nodes[0]
-  if (currentPath) {
-    let lastSlash = currentPath.lastIndexOf('/')
-    if (lastSlash + 1 === currentPath.length) {
-      currentPath = currentPath.slice(0, lastSlash)
-    }
-  }
   const nonCurrent = links.filter(l => {
     return `/${l.url}` !== currentPath
   })
