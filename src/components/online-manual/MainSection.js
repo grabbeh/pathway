@@ -39,7 +39,7 @@ const MainSection = () => {
           <Box width={[1, 300]} mt={[3]}>
             <FullButton
               text='Online manual'
-              to='https://www.pathwaysocialfranchise.org.uk'
+              to='https://www.pathwaypartnership.org.uk'
             />
           </Box>
         </Animation>
